@@ -37,3 +37,7 @@ Thumbs.db
 *~
 .compose-project-name
 static/css
+
+# Environment
+.envrc
+.python-version
