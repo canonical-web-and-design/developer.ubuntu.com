@@ -59,10 +59,16 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django_asset_server_url.asset_server_url',
+            ],
+            'loaders': [
+                ('webapp.loaders.MarkdownLoader',
+                    (
+                        'django.template.loaders.filesystem.Loader',
+                        'django.template.loaders.app_directories.Loader',
+                    )),
             ],
         },
     },
