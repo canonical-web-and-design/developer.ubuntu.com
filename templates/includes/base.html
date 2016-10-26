@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+
+<title>{% block title %}{% endblock %} | Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://assets.ubuntu.com/v1/docs-vanilla-theme-version-1.1.0.min.css" />
+<link rel="stylesheet" href="css/global.css" />
+
+</head>
+<body class="theme">
+
+{% include './base/header.html' %}
+
+<div class="row">
+  <div class="theme__wrap">
+
+    <div class="col-3 theme__sidebar">
+        {% include './base/sidebar.html' %}
+    </div>
+
+    <div class="col-12 theme__main">
+      <main id="main-content" class="theme__inner">
+          {% block main_content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</div>
+
+{% include './base/footer.html' %}
+
+{% include './base/scripts_footer.html' %}
+
+</body>
+</html>

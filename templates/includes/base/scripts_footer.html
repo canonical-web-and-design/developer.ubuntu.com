@@ -1,0 +1,15 @@
+<script>
+/* Setup sticky table of contents */
+var toc = document.querySelector('.p-toc');
+if (toc) {
+  window.addEventListener(
+    'scroll',
+    function(scrollEvent) {
+      toc.classList.toggle(
+        'fixed',
+        window.innerWidth >= 768 && window.scrollY > 50
+      );
+    }
+  );
+}
+</script>

@@ -1,0 +1,34 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block main_content %}
+<div class="row u-no-padding--left">
+    <h1>Documentation</h1>
+</div>
+
+<div class="row u-no-padding--left">
+    <div class="col-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare posuere nec a augue. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+        <h2>Section heading</h2>
+        <ul class="u-no-padding--left">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li>Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare</li>
+            <li>Duis dapibus molestie ultricies. Etiam laoreet, dui vel cursus blandit</li>
+        </ul>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare posuere nec a augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis dapibus molestie ultricies. Etiam laoreet, dui vel cursus blandit, orci ante mollis ex, et pretium enim justo vitae diam. Proin felis nunc, auctor at turpis ac, pellentesque dignissim enim. Vestibulum commodo felis quam, a aliquam quam molestie posuere. Quisque faucibus felis id risus dignissim ultrices.</p>
+
+        <ul class="list u-no-padding--left">
+            <li class="p-list__item"><a href="#">Link number 1</a></li>
+            <li class="p-list__item"><a href="#">Link number 2</a></li>
+        </ul>
+    </div>
+
+    <div class="col-4 theme__aside">
+        {% include 'includes/base/table_of_contents.html' %}
+    </div>
+
+</div>
+{% endblock main_content %}
