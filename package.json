@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "docs-vanilla-theme": "1.1.0",
     "node-sass": "3.8.0"
   },
   "scripts": {

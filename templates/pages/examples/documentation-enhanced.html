@@ -1,0 +1,48 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}Documentation enhanced{% endblock %}
+
+{% block main_content %}
+<div class="row u-no-padding--left">
+    <h1>Get the Ubuntu SDK</h1>
+</div>
+
+<div class="row u-no-padding--left">
+    <div class="col-8">
+        <p>Here&rsquo;s where you learn the exact steps needed to install the Ubuntu SDK, Ubuntu&rsquo;s integrated development environment (IDE) for developing Ubuntu Apps.</p>
+        <p>The Ubuntu SDK is available for Ubuntu 14.04 (Trusty) onwards.</p>
+
+        <h2>Adding the SDK Release PPA</h2>
+        <p>Please add the SDK Release PPA as follows, entering your password as prompted:</p>
+        <p><pre><code>$ sudo add-apt-repository ppa:ubuntu-sdk-team/ppa</code></pre></p>
+
+        <h2>Installing the Ubuntu SDK</h2>
+        <p>Install as follows:</p>
+        <p><pre><code>$ sudo apt update &amp;&amp; sudo apt install ubuntu-sdk</code></pre></p>
+
+        <p>Tip: Some people, particularly those running the development version of Ubuntu, should ensure all installed packages are updated to the latest available versions with:</p>
+
+        <p><pre><code>$ sudo apt update &amp;&amp; sudo apt dist-upgrade</code></pre></p>
+
+        <h2>Launching the Ubuntu SDK IDE</h2>
+        <ol>
+            <li><p>Search the Dash for &ldquo;Ubuntu SDK&rdquo;.</p></li>
+            <li><p>Launch it from this icon:</p></li>
+            <li>
+                <p>You can also launch the SDK from a terminal with:</p>
+                <pre><code>$ ubuntu-sdk</code></pre>
+            </li>
+        </ol>
+
+        <p>Tip: You might want the SDK icon always on your Unity launcher panel to make it easy find and launch. Just launch the SDK, find its icon on the launcher panel on the left side of the Ubuntu Desktop, right click it, and select Lock to Launcher.</p>
+
+        <h2>Next steps</h2>
+
+        <p>A good next move is one of the quick tutorials in the Ubuntu SDK section, for example <a href="">Create an App Project</a> and <a href="">Running Apps from the SDK</a>.</p>
+
+        <ul class="p-pagination p-inline-list">
+            <li class="p-inline-list__item"><a href="">&lt; Previous task</a></li>
+            <li class="p-inline-list__item"><a href="">Next task &gt;</a></li>
+    </div>
+</div>
+{% endblock main_content %}
