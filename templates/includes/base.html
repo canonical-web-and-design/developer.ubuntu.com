@@ -1,11 +1,12 @@
+{% load versioned_static %}
+
 <!doctype html>
 <html>
 <head>
 
 <title>{% block title %}{% endblock %} | Developer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://assets.ubuntu.com/v1/docs-vanilla-theme-version-1.1.0.min.css" />
-<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="{% versioned_static 'css/global.css' %} />
 
 </head>
 <body class="theme">
