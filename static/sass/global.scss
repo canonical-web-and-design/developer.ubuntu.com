@@ -1,3 +1,80 @@
+@charset "utf-8";
+
+// import global settings
+@import 'global-settings';
+
 // import vanilla themes
 @import 'docs-vanilla-theme/scss/theme';
 @include docs-vanilla-theme;
+
+.theme__main {
+  border-color: $mid-grey;
+
+  p a,
+  p a:link,
+  p a:visited {
+    border-bottom-color: transparent;
+    color: $ubuntu-orange;
+  }
+  
+  a:hover,
+  a:visited:hover,
+  a:link:hover {
+    border-bottom-color: $ubuntu-orange;
+  }
+}
+
+.p-navigation {
+  background: $ubuntu-orange;
+  border-bottom: 0;
+  color: #fff;
+  padding: 0;
+}
+
+.p-navigation .p-navigation__link,
+.p-navigation .p-navigation__link:visited,
+.p-navigation .p-navigation__link:link,
+.p-navigation .p-navigation__logo,
+.p-navigation {
+  color: #fff;
+  overflow: hidden;
+}
+
+.p-navigation .p-navigation__logo .p-navigation__link:hover {
+  text-decoration: none;
+}
+
+.theme__inner {
+  margin: 0 auto;
+}
+
+.p-sidebar-nav__back-link {
+  border: none;
+  font-size: 1.25rem;
+}
+
+/* pagination */
+.p-inline-list__item--next {
+  float: right;
+}
+
+.p-pagination__link {
+  border: 1px solid $mid-grey;
+  padding: .5rem;
+}
+
+.p-footer {
+  border-color: $mid-grey;
+}
+
+.p-inline-list--tags__item::after {
+  content: ", ";
+}
+
+.p-inline-list--tags__item:last-child::after {
+  content: " ";
+}
+
+@import
+  'sidebar-nav';
+
