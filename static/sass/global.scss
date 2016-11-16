@@ -24,21 +24,28 @@
   }
 }
 
-.theme > {
+.theme {
   .p-navigation {
     background: $ubuntu-orange;
     border-bottom: 0;
     color: #fff;
     padding: 0;
   }
-
+  
   .p-navigation .p-navigation__link,
   .p-navigation .p-navigation__link:visited,
   .p-navigation .p-navigation__link:link,
-  .p-navigation .p-navigation__logo,
-  .p-navigation {
-    color: #fff;
+  .p-navigation {    
+    @media only screen and (min-width: $breakpoint-medium) {
+      color: #fff;
+    }
     overflow: hidden;
+  }
+  
+  .p-navigation .p-navigation__logo {
+    .p-navigation__link {
+      color: #fff;
+    }
   }
   
   .p-navigation .p-navigation__logo .p-navigation__link:hover {

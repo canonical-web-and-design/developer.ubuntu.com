@@ -5,9 +5,6 @@
 }
 
 .sidebar-nav {
-  background: $light-grey;
-  padding: 0;
-  display: flex;
 
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
@@ -17,39 +14,38 @@
     $button-width: 10px;
     $gutter: 20px;
     $navigation-width: 270px;
+    width: 100%;
 
     // To enabling hiding of the bottom-most border in the navigation
     overflow: hidden;
 
     @media only screen and (min-width: $breakpoint-medium) {
-      width: $navigation-width;
       min-width: $navigation-width;
+      width: $navigation-width;
     }
 
     ul {
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
       list-style: none;
       margin: 0;
       padding-left: 0;
       padding-right: 0;
-
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
       user-select: none;
 
       li {
+        margin: 0;
         padding-left: $gutter;
         padding-right: $gutter;
         padding-top: 7px;
-
-        margin: 0;
         position: relative;
 
         a {
-          display: block;
-          color: $cool-grey;
           border: 0;
+          color: $cool-grey;
+          display: block;
 
           &:hover, &:focus {
             text-decoration: none;
@@ -61,13 +57,13 @@
         }
 
         &:after {
-          width: $button-width;
-          height: 1.875em;
-          display: block;
-          position: absolute;
-          top: $gutter / 2;
-          right: $gutter;
           cursor: pointer;
+          display: block;
+          height: 1.875em;
+          position: absolute;
+          right: $gutter;
+          top: $gutter / 2;
+          width: $button-width;
         }
 
         &.collapsed {
@@ -103,11 +99,13 @@
 
       & > li {
         border-bottom: 1px dotted #b2b2b2;
-        padding-top: $gutter / 2;
         padding-bottom: $gutter / 2;
-
-        & > a {
-          font-size: 1.25em;
+        padding-top: $gutter / 2;
+        
+        @media only screen and (min-width: $breakpoint-medium) {
+          & > a {
+            font-size: 1.25rem;
+          }
         }
 
         & > ul {
@@ -122,8 +120,8 @@
           background-repeat: no-repeat;
         }
         &.collapsed:after {
-          content: '';
           background-image: url('https://assets.ubuntu.com/v1/04d2075a-chevron_down.svg');
+          content: '';
         }
         &.expanded:after {
           content: '';
@@ -151,24 +149,24 @@
 
       .label {
         display: block;
-        margin-bottom: .5em;
+        margin-bottom: .5rem;
       }
 
       ul {
-        display: inline;
         border-right: 1px solid $light-mid-grey;
-        padding-bottom: .2em;
+        display: inline;
+        padding-bottom: .2rem;
 
         li {
           display: inline-block;
-          margin-right: .3em;
+          margin-right: .3rem;
 
           a {
-            padding: 0;
-            margin: 0;
             border-bottom: 1px solid $warm-grey;
-            text-decoration: none;
             line-height: 1.1;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
           }
 
           strong {
@@ -178,19 +176,19 @@
       }
 
       .stable {
-        margin-left: .5em;
         border-bottom: 1px solid $warm-grey;
+        margin-left: .5rem;
         text-decoration: none;
       }
     }
   }
 
   .note {
-    padding: 20px;
     background-color: #fdf6e7;
-    border: 1px solid #eca918;
     border-radius: 2px;
+    border: 1px solid #eca918;
     color: inherit;
+    padding: 20px;
   }
 
   &__content {
@@ -201,20 +199,20 @@
     }
 
     iframe {
-      margin: 0.25em 0 1em 0;
+      margin: 0.25rem 0 1rem 0;
       width: 100%;
     }
 
     dl+h2 {
-      margin-top: .563em;
+      margin-top: .563rem;
     }
 
     dl+p {
-      margin-top: .75em;
+      margin-top: .75rem;
     }
 
     dt {
-      margin: 1em 0 0.5em;
+      margin: 1em 0 0.5rem;
     }
 
     pre {
@@ -233,13 +231,13 @@
 // Make main section fill the vertical space (sticky footer)
 .docs {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .docs .wrapper {
-  flex: 1;
   display: flex;
+  flex: 1;
   margin: 0;
 }
 

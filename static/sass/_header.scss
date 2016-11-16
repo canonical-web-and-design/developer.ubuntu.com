@@ -1,8 +1,8 @@
 .banner {
   max-width: $site-max-width;
 
-  .nav-toggle {
-    background-image: url("https://assets.ubuntu.com/v1/1fd83579-navigation-menu-black.svg");
+  .p-navigation__toggle--open {
+    background-image: url("https://assets.ubuntu.com/v1/4447809f-navigation-menu-plain.svg");
   }
 
   .logo {
