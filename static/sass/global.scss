@@ -7,21 +7,22 @@
 @import 'docs-vanilla-theme/scss/theme';
 @include docs-vanilla-theme;
 
+
+a,
+a:link,
+a:visited {
+  border-bottom-color: transparent;
+  color: $ubuntu-orange;
+}
+
+a:hover,
+a:visited:hover,
+a:link:hover {
+  border-bottom-color: $ubuntu-orange;
+}
+
 .theme__main {
   border-color: $mid-grey;
-
-  a,
-  a:link,
-  a:visited {
-    border-bottom-color: transparent;
-    color: $ubuntu-orange;
-  }
-  
-  a:hover,
-  a:visited:hover,
-  a:link:hover {
-    border-bottom-color: $ubuntu-orange;
-  }
 }
 
 .theme {
@@ -64,7 +65,7 @@
   font-size: 1.25rem;
 }
 
-.p-footer {
+.theme > .p-footer {
   border-color: $mid-grey;
 }
 
@@ -115,6 +116,15 @@
 }
  
 .p-pagination__link {
-  border: 1px solid $mid-grey;
-  padding: .5rem;
+  border-bottom: 1px solid $mid-grey;
+  opacity: 0.5;  
+  
+  &:link,
+  &:visited {
+    border: 1px solid $mid-grey;
+    
+    &:hover {
+      border: 1px solid $mid-grey;
+    }
+  }
 }
