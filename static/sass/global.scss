@@ -77,6 +77,10 @@
     &:visited {
       color: $mid-grey;
     }
+
+    &:hover {
+      color: $ubuntu-orange !important;
+    }
   }
   
   &__item {
