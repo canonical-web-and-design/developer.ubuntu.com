@@ -10,9 +10,9 @@
 .theme__main {
   border-color: $mid-grey;
 
-  p a,
-  p a:link,
-  p a:visited {
+  a,
+  a:link,
+  a:visited {
     border-bottom-color: transparent;
     color: $ubuntu-orange;
   }
@@ -36,9 +36,11 @@
   .p-navigation .p-navigation__link:visited,
   .p-navigation .p-navigation__link:link,
   .p-navigation {    
+    
     @media only screen and (min-width: $breakpoint-medium) {
       color: #fff;
     }
+    
     overflow: hidden;
   }
   
@@ -62,29 +64,53 @@
   font-size: 1.25rem;
 }
 
-/* pagination */
-.p-inline-list__item--next {
-  float: right;
-}
-
-.p-pagination__link {
-  border: 1px solid $mid-grey;
-  padding: .5rem;
-}
-
 .p-footer {
   border-color: $mid-grey;
 }
 
-.p-inline-list--tags__item::after {
-  content: ", ";
+.p-inline-list--tags {
+
+  &__link {
+    color: $mid-grey !important;
+    
+    &:link,
+    &:visited {
+      color: $mid-grey;
+    }
+  }
+  
+  &__item {
+    color: $mid-grey;
+    
+    &:after {
+      content: ", ";
+    }
+    
+    &:last-child::after {
+      content: " ";
+    }
+  }
 }
 
-.p-inline-list--tags__item:last-child::after {
-  content: " ";
+.p-toc {
+  border-left-color: $mid-grey;  
+}
+
+.p-toc__header {
+  color: $warm-grey;
 }
 
 @import
   'sidebar-nav',
   'helpers';
 
+
+/* pagination */
+.p-inline-list__item--next {
+  float: right;
+}
+ 
+.p-pagination__link {
+  border: 1px solid $mid-grey;
+  padding: .5rem;
+}
