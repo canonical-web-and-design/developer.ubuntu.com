@@ -1,7 +1,8 @@
 .theme__sidebar {
   background: $light-grey;
+  border-left: 1px solid $light-mid-grey;
   display: flex;
-  padding: 0;
+  padding: 10px 0 0;
 }
 
 .sidebar-nav {
@@ -117,14 +118,15 @@
         &:after {
           background-position: center center;
           background-repeat: no-repeat;
+          height: 1.5rem;
         }
         &.collapsed:after {
           background-image: url('https://assets.ubuntu.com/v1/04d2075a-chevron_down.svg');
           content: '';
         }
         &.expanded:after {
-          content: '';
           background-image: url('https://assets.ubuntu.com/v1/f3f43376-chevron_up.svg');
+          content: '';
         }
       }
     }
@@ -142,8 +144,8 @@
       padding: 1em 0;
 
       .unavailable {
-        text-decoration: line-through;
         color: $warm-grey;
+        text-decoration: line-through;
       }
 
       .label {
@@ -184,8 +186,8 @@
 
   .note {
     background-color: #fdf6e7;
-    border-radius: 2px;
     border: 1px solid #eca918;
+    border-radius: 2px;
     color: inherit;
     padding: 20px;
   }

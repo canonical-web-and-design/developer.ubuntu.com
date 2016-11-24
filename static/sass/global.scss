@@ -7,6 +7,22 @@
 @import 'docs-vanilla-theme/scss/theme';
 @include docs-vanilla-theme;
 
+.theme__wrap,
+.p-footer__inner {
+  background: #fff;
+  margin: 0 auto;
+  
+  @media only screen and (min-width: $breakpoint-large) {
+    width: 1024px;
+  }
+}
+
+.p-navigation__inner {
+  @media only screen and (min-width: $breakpoint-large) {
+    margin: 0 auto;
+    width: 1024px;
+  }
+}
 
 a,
 a:link,
@@ -33,25 +49,67 @@ a:link:hover {
     padding: 0;
   }
   
+  .p-navigation__links {
+    padding: 0;
+  }
+  
   .p-navigation .p-navigation__link,
   .p-navigation .p-navigation__link:visited,
-  .p-navigation .p-navigation__link:link,
-  .p-navigation {    
+  .p-navigation .p-navigation__link:link {    
+    font-weight: bold;
+    font-size: .875rem;
+    padding: 13px 14px;
+    position: relative;
     
     @media only screen and (min-width: $breakpoint-medium) {
+      border-left: 1px solid darken($ubuntu-orange, 6%);
       color: #fff;
     }
     
     overflow: hidden;
   }
   
+  .p-navigation__links .p-navigation__link:last-of-type { 
+    border-right: 0;  
+  }
+  
+  .p-navigation__link.p-navigation__link:before{
+    background: lighten($ubuntu-orange, 12%);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+        
   .p-navigation .p-navigation__logo {
+    border: 0;
+    padding-top: 6px;
+    padding-right: 5px;
+    
     .p-navigation__link {
       color: #fff;
+      font-size: 1.4375rem;
+      font-weight: normal;
+      padding: 0;
+      border: 0;
+      
+      &:before {
+        width: 0;
+      }
     }
   }
   
   .p-navigation .p-navigation__logo .p-navigation__link:hover {
+    background: none;
+    text-decoration: none;
+  }
+  
+  .p-navigation .p-navigation__link:hover {
+    background: lighten($ubuntu-orange, 6%);
     text-decoration: none;
   }
 }
@@ -70,13 +128,15 @@ a:link:hover {
 }
 
 .p-inline-list--tags {
+  margin-top: -1em;
 
   &__link {
     color: $mid-grey !important;
     
     &:link,
     &:visited {
-      color: $mid-grey;
+      color: $mid-grey;    
+      text-decoration: none;
     }
 
     &:hover {
@@ -110,13 +170,16 @@ a:link:hover {
   'helpers';
 
 
-/* pagination */
+// pagination
 .p-inline-list__item--next {
-  float: right;
+  @media only screen and (min-width: $breakpoint-medium) {
+    float: right;
+  }
 }
  
 .p-pagination__link {
   border-bottom: 1px solid $mid-grey;
+  margin-bottom: 1rem;
   opacity: 0.5;  
   
   &:link,
@@ -125,6 +188,35 @@ a:link:hover {
     
     &:hover {
       border: 1px solid $mid-grey;
+    }
+  }
+}
+
+// cards
+.row--cards {
+  &__title {
+    color: #888;
+    font-size: 1rem;
+    padding-bottom: .75rem;
+    text-transform: uppercase; 
+  }
+  
+  .p-card--highlighted {
+    min-height: 24em;
+    padding-bottom: 2em;
+    
+    &__title {
+      font-size: 1.3125rem;
+    }
+    
+    &__source {
+      color: #888;
+      text-transform: uppercase; 
+    }
+
+    &__date {
+      color: #888;
+      margin-top: -1rem;
     }
   }
 }
