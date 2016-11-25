@@ -134,6 +134,11 @@ a:link:hover {
   margin: 0 auto;
 }
 
+.theme__aside {
+  padding-top: 0;
+  margin-top: -.5rem;
+}
+
 .p-sidebar-nav__back-link {
   border: none;
   font-size: 1.25rem;
@@ -175,6 +180,7 @@ a:link:hover {
 
 .p-toc {
   border-left-color: $mid-grey;  
+  padding-top: .75rem;
   
   &__header {
     color: #666;
