@@ -7,14 +7,29 @@
 @import 'docs-vanilla-theme/scss/theme';
 @include docs-vanilla-theme;
 
+@import
+  'sidebar-nav',
+  'helpers';
+
+body {
+  background: #f7f7f7; // temporary style
+}
+
 .theme__wrap,
 .p-footer__inner {
-  background: #fff;
   margin: 0 auto;
   
   @media only screen and (min-width: $breakpoint-large) {
     width: 1024px;
   }
+}
+
+.theme__wrap {
+  @include rounded_corners(4px); 
+  background: #fff;
+  box-shadow: 0 0 3px #c9c9c9;
+  clear: both;
+  margin-bottom: 30px !important;
 }
 
 .p-navigation__inner {
@@ -34,11 +49,12 @@ a:visited {
 a:hover,
 a:visited:hover,
 a:link:hover {
-  border-bottom-color: $ubuntu-orange;
+  border-bottom-color: currentcolor;
 }
 
 .theme__main {
   border-color: $mid-grey;
+  padding-top: 0;
 }
 
 .theme {
@@ -46,6 +62,7 @@ a:link:hover {
     background: $ubuntu-orange;
     border-bottom: 0;
     color: #fff;
+    margin-bottom: 30px; // temporary style
     padding: 0;
   }
   
@@ -83,7 +100,6 @@ a:link:hover {
     position: absolute;
     width: 1px;
   }
-  
         
   .p-navigation .p-navigation__logo {
     border: 0;
@@ -131,16 +147,16 @@ a:link:hover {
   margin-top: -1em;
 
   &__link {
-    color: $mid-grey !important;
+    color: #666 !important;
     
     &:link,
     &:visited {
-      color: $mid-grey;    
+      color: #666;    
       text-decoration: none;
     }
 
     &:hover {
-      color: $ubuntu-orange !important;
+      //color: $ubuntu-orange !important;
     }
   }
   
@@ -159,16 +175,21 @@ a:link:hover {
 
 .p-toc {
   border-left-color: $mid-grey;  
+  
+  &__header {
+    color: #666;
+  }
+  
+  &__item {
+    margin-bottom: .5rem;
+  }
+  
+  &__link,
+  &__link:visited,
+  &__link:link {
+    color: $cool-grey;
+  }
 }
-
-.p-toc__header {
-  color: $warm-grey;
-}
-
-@import
-  'sidebar-nav',
-  'helpers';
-
 
 // pagination
 .p-inline-list__item--next {
@@ -178,16 +199,16 @@ a:link:hover {
 }
  
 .p-pagination__link {
-  border-bottom: 1px solid $mid-grey;
+  border-bottom: 1px solid currentcolor;
   margin-bottom: 1rem;
   opacity: 0.5;  
   
   &:link,
   &:visited {
-    border: 1px solid $mid-grey;
+    //border: 1px solid $mid-grey;
     
     &:hover {
-      border: 1px solid $mid-grey;
+      //border: 1px solid $mid-grey;
     }
   }
 }
@@ -195,7 +216,7 @@ a:link:hover {
 // cards
 .row--cards {
   &__title {
-    color: #888;
+    color: #666;
     font-size: 1rem;
     padding-bottom: .75rem;
     text-transform: uppercase; 
@@ -210,12 +231,12 @@ a:link:hover {
     }
     
     &__source {
-      color: #888;
+      color: #666;
       text-transform: uppercase; 
     }
 
     &__date {
-      color: #888;
+      color: #666;
       margin-top: -1rem;
     }
   }
