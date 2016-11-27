@@ -233,8 +233,8 @@ a:link:hover {
   }
   
   .p-card--highlighted {
-    min-height: 24em;
-    padding-bottom: 2em;
+    min-height: 21.5em;
+    //padding-bottom: 2em;
     
     &__title {
       font-size: 1.3125rem;
@@ -243,6 +243,7 @@ a:link:hover {
     &__source {
       color: $color-dark;
       text-transform: uppercase; 
+      margin-bottom: 0;
     }
 
     &__date {
