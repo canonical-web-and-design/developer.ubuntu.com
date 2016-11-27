@@ -6,8 +6,8 @@
 
 .theme__sidebar {
   @include rounded_corners(4px 4px 0 ); 
-  background: $light-grey;
-  border-left: 1px solid $light-mid-grey;
+  background: $color-light;
+  border-left: 1px solid $color-mid-light;
   display: flex;
   padding: 10px 0 0;
 }
@@ -21,15 +21,14 @@
   &__nav {
     $button-width: 10px; 
     $gutter: 20px;
-    $navigation-width: 270px;
-    width: 100%;
+    $navigation-width: 256px;
 
     // To enabling hiding of the bottom-most border in the navigation
     overflow: hidden;
 
     @media only screen and (min-width: $breakpoint-medium) {
-      min-width: $navigation-width;
       width: $navigation-width;
+      min-width: $navigation-width;
     }
 
     ul {
@@ -52,7 +51,7 @@
 
         a {
           border: 0;
-          color: $cool-grey;
+          color: $color-mid-dark;
           display: block;
 
           &:hover, &:focus {
@@ -151,7 +150,7 @@
       padding: 1em 0;
 
       .unavailable {
-        color: $warm-grey;
+        color: $color-dark;
         text-decoration: line-through;
       }
 
@@ -161,7 +160,7 @@
       }
 
       ul {
-        border-right: 1px solid $light-mid-grey;
+        border-right: 1px solid $color-mid-light;
         display: inline;
         padding-bottom: .2rem;
 
@@ -170,7 +169,7 @@
           margin-right: .3rem;
 
           a {
-            border-bottom: 1px solid $warm-grey;
+            border-bottom: 1px solid $color-dark;
             line-height: 1.1;
             margin: 0;
             padding: 0;
@@ -178,13 +177,13 @@
           }
 
           strong {
-            border-bottom: 1px solid $ubuntu-orange;
+            border-bottom: 1px solid $color-brand;
           }
         }
       }
 
       .stable {
-        border-bottom: 1px solid $warm-grey;
+        border-bottom: 1px solid $color-dark;
         margin-left: .5rem;
         text-decoration: none;
       }
@@ -224,13 +223,13 @@
     }
 
     pre {
-      background-color: $cool-grey;
+      background-color: $color-mid-dark;
       border: none;
-      color: $mid-grey;
+      color: $color-mid-light;
 
       code {
         margin-bottom: 0;
-        color: $mid-grey;
+        color: $color-mid-light;
       }
     }
   }

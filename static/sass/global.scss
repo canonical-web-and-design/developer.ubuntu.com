@@ -45,7 +45,7 @@ a,
 a:link,
 a:visited {
   border-bottom-color: transparent;
-  color: $ubuntu-orange;
+  color: $color-brand;
 }
 
 a:hover,
@@ -55,13 +55,13 @@ a:link:hover {
 }
 
 .theme__main {
-  border-color: $mid-grey;
+  border-color: $color-mid-light;
   padding-top: 0;
 }
 
 .theme {
   .p-navigation {
-    background: $ubuntu-orange;
+    background: $color-brand;
     border-bottom: 0;
     color: #fff;
     padding: 0;
@@ -84,7 +84,7 @@ a:link:hover {
     position: relative;
     
     @media only screen and (min-width: $breakpoint-medium) {
-      border-left: 1px solid darken($ubuntu-orange, 6%);
+      border-left: 1px solid darken($color-brand, 6%);
       color: #fff;
     }
     
@@ -96,7 +96,7 @@ a:link:hover {
   }
   
   .p-navigation__link.p-navigation__link:before {
-    background: lighten($ubuntu-orange, 12%);
+    background: lighten($color-brand, 12%);
     content: '';
     display: block;
     height: 100%;
@@ -130,7 +130,7 @@ a:link:hover {
   }
   
   .p-navigation .p-navigation__link:hover {
-    background: lighten($ubuntu-orange, 6%);
+    background: lighten($color-brand, 6%);
     text-decoration: none;
   }
 }
@@ -150,28 +150,28 @@ a:link:hover {
 }
 
 .theme > .p-footer {
-  border-color: $mid-grey;
+  border-color: $color-mid-light;
 }
 
 .p-inline-list--tags {
   margin-top: -1em;
 
   &__link {
-    color: #666 !important;
+    color: $color-dark !important;
     
     &:link,
     &:visited {
-      color: #666;    
+      color: $color-dark;    
       text-decoration: none;
     }
 
     &:hover {
-      //color: $ubuntu-orange !important;
+      //color: $color-brand !important;
     }
   }
   
   &__item {
-    color: $mid-grey;
+    color: $color-mid-light;
     
     &:after {
       content: ", ";
@@ -184,11 +184,11 @@ a:link:hover {
 }
 
 .p-toc {
-  border-left-color: $mid-grey;  
+  border-left-color: $color-mid-light;  
   padding-top: .75rem;
   
   &__header {
-    color: #666;
+    color: $color-dark;
   }
   
   &__item {
@@ -198,7 +198,7 @@ a:link:hover {
   &__link,
   &__link:visited,
   &__link:link {
-    color: $cool-grey;
+    color: $color-mid-dark;
   }
 }
 
@@ -213,7 +213,7 @@ a:link:hover {
   
   &:link,
   &:visited {
-    border: 1px solid #666;
+    border: 1px solid $color-dark;
     
     &:hover {
       //border: 1px solid currentcolor;
@@ -224,7 +224,7 @@ a:link:hover {
 // cards
 .row--cards {
   &__title {
-    color: #666;
+    color: $color-dark;
     font-size: 1rem;
     padding-bottom: .75rem;
     text-transform: uppercase; 
@@ -239,12 +239,12 @@ a:link:hover {
     }
     
     &__source {
-      color: #666;
+      color: $color-dark;
       text-transform: uppercase; 
     }
 
     &__date {
-      color: #666;
+      color: $color-dark;
       margin-top: -1rem;
     }
   }
