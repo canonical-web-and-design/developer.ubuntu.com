@@ -9,7 +9,8 @@
 
 @import
   'sidebar-nav',
-  'helpers';
+  'helpers',
+  '../../global-nav/src/sass/global.scss';
 
 body {
   background: #f7f7f7; // temporary style
@@ -252,3 +253,63 @@ a:link:hover {
     }
   }
 }
+
+$grid-border-style: 1px dotted $color-mid-light;
+
+.grid-list {
+
+  @media only screen and (min-width: $breakpoint-medium) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    display: block;
+    margin: auto;
+    max-width: 60px;
+  }
+
+  &__item {
+    border-bottom: $grid-border-style;
+    display: flex;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+
+      > [class*='col-'] {
+
+        // scss-lint:disable NestingDepth
+        &:first-child {
+          width: 25%;
+          padding-right: 1rem;
+        }
+
+        &:last-child {
+          width: 75%;
+        }
+        // scss-lint:enable NestingDepth
+        
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: flex;
+      flex-wrap: wrap;
+      border-right: $grid-border-style;
+      margin: 0;
+      padding: 1.5em .75em 1.5em;
+
+      &:last-child,
+      &.last-col {
+        border-right: 0;
+        margin-bottom: 0;
+      }
+
+      &.last-row {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
