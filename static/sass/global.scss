@@ -91,11 +91,7 @@ a:link:hover {
     overflow: hidden;
   }
   
-  .p-navigation__links .p-navigation__link:last-of-type { 
-    border-right: 0;  
-  }
-  
-  .p-navigation__link.p-navigation__link:before {
+  .p-navigation__links:after {
     background: lighten($color-brand, 12%);
     content: '';
     display: block;
@@ -105,6 +101,22 @@ a:link:hover {
     position: absolute;
     width: 1px;
   }
+  
+  .p-navigation__links .p-navigation__link:last-of-type { 
+    border-right: 1px solid darken($color-brand, 6%);  
+  }
+  
+  .p-navigation__link .p-navigation__link:before {
+    background: lighten($color-brand, 12%);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 1px;
+  }
+
         
   .p-navigation .p-navigation__logo {
     border: 0;
@@ -163,22 +175,6 @@ a:link:hover {
     &:visited {
       color: $color-mid-dark;    
       text-decoration: none;
-    }
-
-    &:hover {
-      //color: $color-brand !important;
-    }
-  }
-  
-  &__item {
-    color: $color-mid-light;
-    
-    &:after {
-      content: ", ";
-    }
-    
-    &:last-child::after {
-      content: " ";
     }
   }
 }
