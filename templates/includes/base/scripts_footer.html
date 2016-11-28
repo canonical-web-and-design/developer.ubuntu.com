@@ -1,3 +1,4 @@
+{% load versioned_static %}
 <script>
 /* Setup sticky table of contents */
 var toc = document.querySelector('.p-toc');
@@ -13,3 +14,5 @@ if (toc) {
   );
 }
 </script>
+
+<script src="{% versioned_static 'js/global.js' %}"></script>
