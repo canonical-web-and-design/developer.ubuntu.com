@@ -158,11 +158,11 @@ a:link:hover {
   margin-top: -1em;
 
   &__link {
-    color: $color-dark !important;
+    color: $color-mid-dark !important;
     
     &:link,
     &:visited {
-      color: $color-dark;    
+      color: $color-mid-dark;    
       text-decoration: none;
     }
 
@@ -189,7 +189,7 @@ a:link:hover {
   padding-top: .75rem;
   
   &__header {
-    color: $color-dark;
+    color: $color-mid-dark;
   }
   
   &__item {
@@ -214,14 +214,14 @@ a:link:hover {
   
   &:link,
   &:visited {
-    border: 1px solid $color-dark;
+    border: 1px solid $color-mid-dark;
   }
 }
 
 // cards
 .row--cards {
   &__title {
-    color: $color-dark;
+    color: $color-mid-dark;
     font-size: 1rem;
     margin-bottom: .75rem;
     text-transform: uppercase; 
@@ -237,13 +237,13 @@ a:link:hover {
     }
     
     &__source {
-      color: $color-dark;
+      color: $color-mid-dark;
       text-transform: uppercase; 
       margin-bottom: 0;
     }
 
     &__date {
-      color: $color-dark;
+      color: $color-mid-dark;
       margin-top: -1rem;
     }
   }
