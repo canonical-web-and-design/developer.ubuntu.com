@@ -35,7 +35,7 @@ body {
 }
 
 .p-navigation__inner {
-  @media only screen and (min-width: $breakpoint-large) {
+  @media only screen and (min-width: $breakpoint-medium) {
     margin: 0 auto;
     width: 1024px;
   }
@@ -224,12 +224,13 @@ a:link:hover {
     font-size: 1rem;
     margin-bottom: .75rem;
     text-transform: uppercase; 
-    background: rgba(0, 0, 0, 0) url("https://assets.ubuntu.com/v1/e1bba201-external-link-cool-grey.svg") no-repeat scroll left center / 16px auto;
+    background: rgba(0, 0, 0, 0) url("https://assets.ubuntu.com/v1/9334aabe-external-link-cool-grey.svg") no-repeat scroll left center / 16px auto;
     padding-left: 22px;
   }
   
   .p-card--highlighted {
     min-height: 21.5em;
+    padding-bottom: 40px;
     
     &__title {
       font-size: 1.3125rem;
@@ -239,6 +240,8 @@ a:link:hover {
       color: $color-mid-dark;
       text-transform: uppercase; 
       margin-bottom: 0;
+      position: absolute;
+      bottom: 20px;
     }
 
     &__date {
