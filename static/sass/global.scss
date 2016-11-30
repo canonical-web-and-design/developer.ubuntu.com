@@ -222,6 +222,7 @@ a:link:hover {
   &:link,
   &:visited {
     border: 1px solid $color-mid-dark;
+    color: inherit;
   }
 }
 
