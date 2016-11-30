@@ -199,7 +199,8 @@ a:link:hover {
   
   &__link,
   &__link:visited,
-  &__link:link {    color: $color-mid-dark;
+  &__link:link {    
+    color: $color-mid-dark;
   }
 }
 
@@ -218,12 +219,10 @@ a:link:hover {
 }
  
 .p-pagination__link {
-  
   &:link,
   &:visited {
     border: 1px solid $color-mid-dark;
   }
-
 }
 
 // cards
@@ -319,3 +318,6 @@ $grid-border-style: 1px dotted $color-mid-light;
   }
 }
 
+.p-link--external:after {
+  @include link-svg-icon($color: $color-brand);
+}
