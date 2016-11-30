@@ -238,8 +238,14 @@ a:link:hover {
   }
   
   .p-card--highlighted {
-    min-height: 21.5em;
+    margin-bottom: 40px;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      min-height: 21.5em;
+    }
+    
     padding-bottom: 40px;
+    position: relative;
     
     &__title {
       font-size: 1.3125rem;
