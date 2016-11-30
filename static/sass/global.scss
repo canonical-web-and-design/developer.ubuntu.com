@@ -12,7 +12,7 @@
   'helpers';
 
 body {
-  background: #f7f7f7; // temporary style
+  background: $color-light; // temporary style
 }
 
 .theme__wrap,
@@ -27,10 +27,11 @@ body {
 .theme__wrap {
   @media only screen and (min-width: $breakpoint-large) {
     @include rounded_corners(4px);
-    box-shadow: 0 0 3px #c9c9c9;
+    box-shadow: 0 0 3px $color-mid-light;
     margin-bottom: 30px !important;
   } 
-  background: #fff;
+  
+  background: $color-x-light;
   clear: both;
 }
 
@@ -59,62 +60,73 @@ a:link:hover {
   padding-top: 0;
 }
 
+.theme__inner {
+  margin: 0 auto;
+}
+
 .theme {
   .p-navigation {
     background: $color-brand;
     border-bottom: 0;
-    color: #fff;
+    color: $color-x-light;
     padding: 0;
 
     @media only screen and (min-width: $breakpoint-large) {
       margin-bottom: 30px; // temporary style
     }
-  }
-  
-  .p-navigation__links {
-    padding: 0;
-  }
-  
-  .p-navigation .p-navigation__link,
-  .p-navigation .p-navigation__link:visited,
-  .p-navigation .p-navigation__link:link {    
-    font-weight: bold;
-    font-size: .875rem;
-    padding: 13px 14px;
-    position: relative;
     
-    @media only screen and (min-width: $breakpoint-medium) {
-      border-left: 1px solid darken($color-brand, 6%);
-      color: #fff;
+    &__links {
+      
+      @media only screen and (min-width: $breakpoint-medium) {
+        background: $color-brand;
+      }
+      
+      padding: 0;
+    
+      &:after {
+        background: lighten($color-brand, 12%);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 1px;
+      }
+      
+      .p-navigation__link:last-of-type { 
+        border-right: 1px solid darken($color-brand, 6%);
+      }
     }
     
-    overflow: hidden;
-  }
-  
-  .p-navigation__links:after {
-    background: lighten($color-brand, 12%);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  .p-navigation__links .p-navigation__link:last-of-type { 
-    border-right: 1px solid darken($color-brand, 6%);
-  }
-  
-  .p-navigation__link .p-navigation__link:before {
-    background: lighten($color-brand, 12%);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    width: 1px;
+    .p-navigation__link,
+    .p-navigation__link:visited,
+    .p-navigation__link:link { 
+      font-size: .875rem;
+      font-weight: bold;
+      padding: 13px 14px;
+      position: relative;
+      
+      @media only screen and (min-width: $breakpoint-medium) {
+        background: $color-brand; 
+        border-bottom: 0;
+        border-left: 1px solid darken($color-brand, 6%);
+        color: $color-x-light;
+      }
+      
+      overflow: hidden;
+      
+      &:before {
+        background: lighten($color-brand, 12%);
+        content: ' ';
+        display: block;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 1px;
+      }      
+    }
   }
 
   .p-navigation .p-navigation__logo {
@@ -123,11 +135,10 @@ a:link:hover {
     padding-right: 5px;
     
     .p-navigation__link {
-      color: #fff;
+      border: 0;
       font-size: 1.4375rem;
       font-weight: normal;
       padding: 0;
-      border: 0;
       
       &:before {
         width: 0;
@@ -146,10 +157,6 @@ a:link:hover {
   }
 }
 
-.theme__inner {
-  margin: 0 auto;
-}
-
 .theme__aside {
   padding-top: 0;
   margin-top: -.5rem;
@@ -165,7 +172,7 @@ a:link:hover {
 }
 
 .p-inline-list--tags {
-  margin-top: -1em;
+  margin-top: -1rem;
 
   &__link {
     color: $color-mid-dark !important;
@@ -192,16 +199,19 @@ a:link:hover {
   
   &__link,
   &__link:visited,
-  &__link:link {
-    color: $color-mid-dark;
+  &__link:link {    color: $color-mid-dark;
   }
 }
 
 // pagination
-.p-inline-list__item--next {
+.pagination__link--next {
   @media only screen and (min-width: $breakpoint-medium) {
     float: right;
   }
+}
+
+.pagination__link--previous {
+  margin-bottom: 1rem;
 }
  
 .p-pagination__link {
@@ -210,6 +220,7 @@ a:link:hover {
   &:visited {
     border: 1px solid $color-mid-dark;
   }
+
 }
 
 // cards
@@ -264,8 +275,8 @@ $grid-border-style: 1px dotted $color-mid-light;
   &__item {
     border-bottom: $grid-border-style;
     display: flex;
-    padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
 
     @media only screen and (max-width: $breakpoint-medium) {
 
@@ -273,8 +284,8 @@ $grid-border-style: 1px dotted $color-mid-light;
 
         // scss-lint:disable NestingDepth
         &:first-child {
-          width: 25%;
           padding-right: 1rem;
+          width: 25%;
         }
 
         &:last-child {
@@ -286,11 +297,11 @@ $grid-border-style: 1px dotted $color-mid-light;
     }
 
     @media only screen and (min-width: $breakpoint-medium) {
+      border-right: $grid-border-style;
       display: flex;
       flex-wrap: wrap;
-      border-right: $grid-border-style;
       margin: 0;
-      padding: 1.5em .75em 1.5em;
+      padding: 1.5rem .75rem 1.5rem;
 
       &:last-child,
       &.last-col {
