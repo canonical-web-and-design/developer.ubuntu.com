@@ -4,6 +4,11 @@
   border-radius: $radius;
 }
 
+$button-width: 10px; 
+$gutter: 20px;
+$navigation-width: 256px;
+
+
 .theme__sidebar {
   @include rounded_corners(4px 4px 0 ); 
   background: $color-light;
@@ -17,14 +22,24 @@
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
-
+  
+  &__title {
+    font-size: 1.125rem;
+    margin-bottom: .625rem;
+    padding-left: $gutter;
+  }
+  
+  &__title-link,
+  &__title-link:link,
+  &__title-link:visited {
+    color: $color-mid-dark;
+  }
+  
   &__nav {
-    $button-width: 10px; 
-    $gutter: 20px;
-    $navigation-width: 256px;
 
     // To enabling hiding of the bottom-most border in the navigation
     overflow: hidden;
+    width: 100%;
 
     @media only screen and (min-width: $breakpoint-medium) {
       width: $navigation-width;
