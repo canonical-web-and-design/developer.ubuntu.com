@@ -95,6 +95,7 @@ $navigation-width: 256px;
         }
 
         &.collapsed {
+          cursor: pointer;
           padding-right: $gutter + $button-width;
 
           & > ul {
@@ -107,6 +108,8 @@ $navigation-width: 256px;
         }
 
         &.expanded {
+          cursor: pointer;
+          
           & > ul {
             display: block;
           }

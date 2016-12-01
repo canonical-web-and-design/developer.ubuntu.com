@@ -78,17 +78,13 @@ a:link:hover {
     .p-navigation__toggle--close {
       overflow: hidden;
       background-image: url("https://assets.ubuntu.com/sites/ubuntu/latest/u/img/icons/navigation-menu-plain.svg");
-      background-size: 25px 25px;
+      background-size: 30px 30px;
       background-repeat: no-repeat;
       text-indent: -999em;
       width: 25px;
       height: 25px;
+      margin-top: 20px;
       padding: 0;
-      margin: .8rem;
-      
-      @media only screen and (min-width: $breakpoint-medium) {
-        margin-top: 20px;
-      }
       
       &:hover {
         border: 0;
@@ -176,20 +172,14 @@ a:link:hover {
 
   .p-navigation .p-navigation__logo {
     border: 0;
+    padding-top: 6px;
     padding-right: 5px;
-    margin: .5rem;
-    margin-left: 1rem;
-    
-    @media only screen and (min-width: $breakpoint-medium) {
-      margin: 1rem;
-      padding-top: 6px;
-    }
     
     .p-navigation__link {
       background: none;
       border: 0;
       color: $color-x-light;
-      font-size: 1.5rem;
+      font-size: 1.4375rem;
       font-weight: normal;
       padding: 0;
       width: 100%;
