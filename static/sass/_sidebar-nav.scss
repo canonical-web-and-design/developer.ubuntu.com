@@ -33,7 +33,12 @@ $navigation-width: 256px;
   &__title-link,
   &__title-link:link,
   &__title-link:visited {
+    border-bottom: 0;
     color: $color-mid-dark;
+  }
+  
+  &__title-link:hover {
+    color: $color-brand;
   }
   
   &__nav {
