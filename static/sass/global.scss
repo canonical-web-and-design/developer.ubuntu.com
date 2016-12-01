@@ -322,6 +322,7 @@ $grid-border-style: 1px dotted $color-mid-light;
   @media only screen and (min-width: $breakpoint-medium) {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -1rem;
   }
 
   &__img {
