@@ -1,3 +1,7 @@
+----
+title: Core
+page_type: summary
+----
 # Core
 
 Hello!

@@ -63,14 +63,22 @@ class MarkdownView(TemplateView):
 
         return template, template_path if template else None
 
+    def _get_page_type_path(self, page_type):
+        return 'includes/markdown_page_types/{0}.html'.format(page_type)
+
     def get_context_data(self, **kwargs):
         path = self.kwargs['path']
         template, template_path = self._find_template(path)
         with open(template.origin.name, 'r') as f:
             metadata = self._parse_frontmatter(f.read())
 
+        page_type = metadata.get('page_type')
+        page_type_path = None
+        if page_type:
+            page_type_path = self._get_page_type_path(page_type)
+
         # Override the template if it is set in frontmatter
-        self.template_override = metadata.get('template', '')
+        self.template_override = metadata.get('template') or page_type_path
 
         context = super(MarkdownView, self).get_context_data(**kwargs)
         # We want to preserve context keys. So we need to it backwards and flip
@@ -79,4 +87,5 @@ class MarkdownView(TemplateView):
         # More specific overrides and defaults.
         context['title'] = metadata.get('title', '')
         context['markdown_path'] = template_path
+        context['page_type'] = page_type
         return context

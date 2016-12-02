@@ -5,7 +5,10 @@
 {% block main_content %}
 <div class="row u-no-padding--left">
 
-    {% include markdown_path %}
+    {% block inner_content %}
+        {% include markdown_path %}
+        {% block after_markdown %}{% endblock %}
+    {% endblock %}
 
 </div>
 {% endblock main_content %}
