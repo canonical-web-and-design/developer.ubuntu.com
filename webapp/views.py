@@ -73,6 +73,10 @@ class MarkdownView(TemplateView):
         self.template_override = metadata.get('template', '')
 
         context = super(MarkdownView, self).get_context_data(**kwargs)
+        # We want to preserve context keys. So we need to it backwards and flip
+        metadata.update(context)
+        context = metadata
+        # More specific overrides and defaults.
         context['title'] = metadata.get('title', '')
         context['markdown_path'] = template_path
         return context
