@@ -1,1 +1,2 @@
-#example-redirect: "http://example.com"
+# Remove trailing slash, .html, or index from URLs
+(?P<path>.*)?(/|.html|index): /{path}
