@@ -5,7 +5,6 @@
 }
 
 $button-width: 10px; 
-$gutter: 20px;
 $navigation-width: 256px;
 
 
@@ -27,7 +26,7 @@ $navigation-width: 256px;
     font-size: 1.125rem;
     margin-bottom: .625rem;
     margin-top: 1rem;
-    padding-left: $gutter;
+    padding-left: $grid-gutter-width;
   }
   
   &__title-link,
@@ -65,9 +64,9 @@ $navigation-width: 256px;
 
       li {
         margin: 0;
-        padding-left: $gutter;
-        padding-right: $gutter;
-        padding-top: $gutter;
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+        padding-top: $grid-gutter-width;
         position: relative;
 
         a {
@@ -80,7 +79,7 @@ $navigation-width: 256px;
           }
 
           &:hover, &.active {
-            color: #e95420;
+            color: $color-brand;
           }
         }
 
@@ -89,14 +88,14 @@ $navigation-width: 256px;
           display: block;
           height: 1.875em;
           position: absolute;
-          right: $gutter;
-          top: $gutter / 2;
+          right: $grid-gutter-width;
+          top: $grid-gutter-width / 2;
           width: $button-width;
         }
 
         &.collapsed {
           cursor: pointer;
-          padding-right: $gutter + $button-width;
+          padding-right: $grid-gutter-width + $button-width;
 
           & > ul {
             display: none;
@@ -129,8 +128,8 @@ $navigation-width: 256px;
       }
 
       & > li {
-        padding-bottom: $gutter / 2;
-        padding-top: $gutter / 2;
+        padding-bottom: $grid-gutter-width / 2;
+        padding-top: $grid-gutter-width / 2;
         
         @media only screen and (min-width: $breakpoint-medium) {
           & > a {
@@ -140,7 +139,7 @@ $navigation-width: 256px;
 
         & > ul {
           & > li {
-            padding-left: $gutter;
+            padding-left: $grid-gutter-width;
             padding-right: 0;
           }
         }
@@ -151,11 +150,11 @@ $navigation-width: 256px;
           height: 1.5rem;
         }
         &.collapsed:after {
-          background-image: url('https://assets.ubuntu.com/v1/04d2075a-chevron_down.svg');
+          background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
           content: '';
         }
         &.expanded:after {
-          background-image: url('https://assets.ubuntu.com/v1/f3f43376-chevron_up.svg');
+          background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
           content: '';
         }
       }
@@ -212,14 +211,6 @@ $navigation-width: 256px;
         text-decoration: none;
       }
     }
-  }
-
-  .note {
-    background-color: #fdf6e7;
-    border: 1px solid #eca918;
-    border-radius: 2px;
-    color: inherit;
-    padding: 20px;
   }
 
   &__content {

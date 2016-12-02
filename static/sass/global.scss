@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   
   @media only screen and (min-width: $breakpoint-large) {
-    width: 1024px;
+    width: $breakpoint-large;
   }
 }
 
@@ -61,7 +61,7 @@ a:link:hover {
   .p-navigation {
     background: $color-brand;
     border-color: $color-mid-light;
-    border-bottom-color: #cdcdcd;
+    border-bottom-color: $color-mid-light;
     color: $color-x-light;
     padding: 0;
     
@@ -77,14 +77,14 @@ a:link:hover {
     .p-navigation__toggle--open,
     .p-navigation__toggle--close {
       overflow: hidden;
-      background-image: url("https://assets.ubuntu.com/sites/ubuntu/latest/u/img/icons/navigation-menu-plain.svg");
-      background-size: 30px 30px;
+      background-image: url('#{$assets-path}12387180-navigation-menu-plain.svg');
+      background-size: 25px 25px;
       background-repeat: no-repeat;
       text-indent: -999em;
       width: 25px;
       height: 25px;
-      margin-top: 20px;
       padding: 0;
+      margin: .8rem;
       
       &:hover {
         border: 0;
@@ -95,14 +95,14 @@ a:link:hover {
       border-color: $color-mid-light;
       width: auto;
         
-      @media only screen and (min-width: $breakpoint-medium) {
+      @media only screen and (min-width: $breakpoint-large) {
         margin: 0 auto;
-        width: 1024px;
+        width: $breakpoint-large;
       }
     }
     
     &__links {
-      background: #f0f0f0; 
+      background: darken($color-light, 3%); 
       float: left;
       width: 100%;
       
@@ -128,13 +128,13 @@ a:link:hover {
     .p-navigation__link,
     .p-navigation__link:visited,
     .p-navigation__link:link { 
-      background: #f0f0f0;
-      border-right: 1px solid #cdcdcd;
+      background: darken($color-light, 3%);
+      border-right: 1px solid $color-mid-light;
       color: $color-dark;
       float: left;
       font-size: 1rem;
       font-weight: normal;
-      padding: 13px 14px;
+      padding: 9px 10px;
       position: relative;
       width: 50%;
       
@@ -146,14 +146,14 @@ a:link:hover {
         color: $color-x-light;
         font-weight: bold;
         font-size: .875rem;
+        overflow: hidden;
+        padding: 13px 14px;
         width: auto;
         
         &:last-of-type { 
           border-right: 1px solid darken($color-brand, 6%);
         }
       }
-      
-      overflow: hidden;
       
       @media only screen and (min-width: $breakpoint-medium) {
         &:before {
@@ -172,8 +172,15 @@ a:link:hover {
 
   .p-navigation .p-navigation__logo {
     border: 0;
-    padding-top: 6px;
     padding-right: 5px;
+    margin: .5rem;
+    margin-left: 1rem;
+
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      margin: 0 1rem;
+      padding-top: 6px;
+    }
     
     .p-navigation__link {
       background: none;
@@ -200,8 +207,8 @@ a:link:hover {
   }
   
   .p-navigation .p-navigation__link:hover {
-    background: #f8f8f8;
-    border-color: #cdcdcd;
+    background: $color-light;
+    border-color: $color-mid-light;
     text-decoration: none;
     
     @media only screen and (min-width: $breakpoint-medium) {
@@ -278,7 +285,7 @@ a:link:hover {
 // cards
 .row--cards {
   &__title {
-    background: rgba(0, 0, 0, 0) url("https://assets.ubuntu.com/v1/9334aabe-external-link-cool-grey.svg") no-repeat scroll left center / 16px auto;
+    background: rgba(0, 0, 0, 0) url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
     color: $color-mid-dark;
     font-size: 1rem;
     margin-bottom: .75rem;
@@ -315,9 +322,10 @@ a:link:hover {
   }
 }
 
-$grid-border-style: 1px dotted $color-mid-light;
 
 .grid-list {
+  
+  $grid-border-style: 1px dotted $color-mid-light;
 
   @media only screen and (min-width: $breakpoint-medium) {
     display: flex;
