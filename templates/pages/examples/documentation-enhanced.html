@@ -4,45 +4,37 @@
 
 {% block main_content %}
 <div class="row u-no-padding--left">
+  <div class="col-12">
     <h1>Get the Ubuntu SDK</h1>
-</div>
-
-<div class="row u-no-padding--left">
-    <div class="col-8">
-        <p>Here&rsquo;s where you learn the exact steps needed to install the Ubuntu SDK, Ubuntu&rsquo;s integrated development environment (IDE) for developing Ubuntu Apps.</p>
-        <p>The Ubuntu SDK is available for Ubuntu 14.04 (Trusty) onwards.</p>
-
-        <h2>Adding the SDK Release PPA</h2>
-        <p>Please add the SDK Release PPA as follows, entering your password as prompted:</p>
-        <p><pre><code>$ sudo add-apt-repository ppa:ubuntu-sdk-team/ppa</code></pre></p>
-
-        <h2>Installing the Ubuntu SDK</h2>
-        <p>Install as follows:</p>
-        <p><pre><code>$ sudo apt update &amp;&amp; sudo apt install ubuntu-sdk</code></pre></p>
-
-        <p>Tip: Some people, particularly those running the development version of Ubuntu, should ensure all installed packages are updated to the latest available versions with:</p>
-
-        <p><pre><code>$ sudo apt update &amp;&amp; sudo apt dist-upgrade</code></pre></p>
-
-        <h2>Launching the Ubuntu SDK IDE</h2>
-        <ol>
-            <li><p>Search the Dash for &ldquo;Ubuntu SDK&rdquo;.</p></li>
-            <li><p>Launch it from this icon:</p></li>
-            <li>
-                <p>You can also launch the SDK from a terminal with:</p>
-                <pre><code>$ ubuntu-sdk</code></pre>
-            </li>
-        </ol>
-
-        <p>Tip: You might want the SDK icon always on your Unity launcher panel to make it easy find and launch. Just launch the SDK, find its icon on the launcher panel on the left side of the Ubuntu Desktop, right click it, and select Lock to Launcher.</p>
-
-        <h2>Next steps</h2>
-
-        <p>A good next move is one of the quick tutorials in the Ubuntu SDK section, for example <a href="">Create an App Project</a> and <a href="">Running Apps from the SDK</a>.</p>
-
-        <ul class="p-pagination p-inline-list">
-            <li class="p-inline-list__item"><a href="">&lt; Previous task</a></li>
-            <li class="p-inline-list__item"><a href="">Next task &gt;</a></li>
-    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare posuere nec a augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis dapibus molestie ultricies. Etiam laoreet, dui vel cursus blandit, orci ante mollis ex, et pretium enim justo vitae diam.</p>
+    
+    <p><img src="http://placehold.it/984x300" alt="" /></p>
+    
+    <h2>Section heading</h2>
+    
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+      <li>Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare posuere nec a augue</li>
+      <li>Duis dapibus molestie ultricies. Etiam laoreet, dui vel cursus blandit</li>
+    </ul>
+    
+    <ol>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+      <li>Pellentesque aliquam risus felis. Etiam porta nibh sit amet urna ornare posuere nec a augue</li>
+      <li>Duis dapibus molestie ultricies. Etiam laoreet, dui vel cursus blandit</li>
+    </ol>
+    
+    <ul class="p-list u-no-padding--left">
+      <li class="p-list__item"><a href="#">Link number 1&nbsp;&rsaquo;</a></li>
+      <li class="p-list__item"><a href="#">Link number 2&nbsp;&rsaquo;</a></li>
+      <li class="p-list__item"><a href="#">Link number 3&nbsp;&rsaquo;</a></li>
+    </ul>
+                
+    <ul class="p-pagination p-inline-list">
+      <li class="p-inline-list__item p-pagination__item"><a class="p-button--neutral p-pagination__link pagination__link--previous is--disabled" aria-disabled="true" href="#">&lsaquo; Previous task</a></li>
+      <li class="p-inline-list__item p-pagination__item p-pagination__item--left"><a class="p-button--neutral p-pagination__link pagination__link--next" href="#">Next task &rsaquo;</a></li>
+    </ul>
+    
+  </div>
 </div>
 {% endblock main_content %}

@@ -1,0 +1,268 @@
+@mixin rounded_corners($radius: 4px 4px 4px 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+$button-width: 10px; 
+$navigation-width: 256px;
+
+
+.theme__sidebar {
+  @include rounded_corners(4px 4px 0 ); 
+  background: $color-light;
+  border-left: 1px solid $color-mid-light;
+  display: flex;
+  padding: 10px 0 0;
+}
+
+.sidebar-nav {
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
+  }
+  
+  &__title {
+    font-size: 1.125rem;
+    margin-bottom: .625rem;
+    margin-top: 1rem;
+    padding-left: $grid-gutter-width;
+  }
+  
+  &__title-link,
+  &__title-link:link,
+  &__title-link:visited {
+    border-bottom: 0;
+    color: $color-mid-dark;
+  }
+  
+  &__title-link:hover {
+    color: $color-brand;
+  }
+  
+  &__nav {
+
+    // To enabling hiding of the bottom-most border in the navigation
+    overflow: hidden;
+    width: 100%;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      width: $navigation-width;
+      min-width: $navigation-width;
+    }
+
+    ul {
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      user-select: none;
+
+      li {
+        margin: 0;
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+        padding-top: $grid-gutter-width;
+        position: relative;
+
+        a {
+          border: 0;
+          color: $color-mid-dark;
+          display: block;
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+
+          &:hover, &.active {
+            color: $color-brand;
+          }
+        }
+
+        &:after {
+          cursor: pointer;
+          display: block;
+          height: 1.875em;
+          position: absolute;
+          right: $grid-gutter-width;
+          top: $grid-gutter-width / 2;
+          width: $button-width;
+        }
+
+        &.collapsed {
+          cursor: pointer;
+          padding-right: $grid-gutter-width + $button-width;
+
+          & > ul {
+            display: none;
+          }
+
+          &:after {
+            content: '+';
+          }
+        }
+
+        &.expanded {
+          cursor: pointer;
+          
+          & > ul {
+            display: block;
+          }
+          &:after {
+            content: '-';
+          }
+        }
+      }
+    }
+
+    & > ul {
+      // Hide the bottom-most border
+      // only if it's pushing right up against the footer
+      // so we don't get an ugly double-border effect
+      @media only screen and (min-width: $breakpoint-medium) {
+        margin-bottom: -1px;
+      }
+
+      & > li {
+        padding-bottom: $grid-gutter-width / 2;
+        padding-top: $grid-gutter-width / 2;
+        
+        @media only screen and (min-width: $breakpoint-medium) {
+          & > a {
+            font-size: 1rem;
+          }
+        }
+
+        & > ul {
+          & > li {
+            padding-left: $grid-gutter-width;
+            padding-right: 0;
+          }
+        }
+
+        &:after {
+          background-position: center center;
+          background-repeat: no-repeat;
+          height: 1.5rem;
+        }
+        &.collapsed:after {
+          background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
+          content: '';
+        }
+        &.expanded:after {
+          background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
+          content: '';
+        }
+      }
+    }
+
+    // Top level sections get bottom padding.
+    .section {
+      padding: 0 0 20px;
+      // Subsections & collapsed sections get no padding.
+      &.collapsed, .section {
+        padding: 0;
+      }
+    }
+
+    .versions-nav {
+      padding: 1em 0;
+
+      .unavailable {
+        color: $color-dark;
+        text-decoration: line-through;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: .5rem;
+      }
+
+      ul {
+        border-right: 1px solid $color-mid-light;
+        display: inline;
+        padding-bottom: .2rem;
+
+        li {
+          display: inline-block;
+          margin-right: .3rem;
+
+          a {
+            border-bottom: 1px solid $color-dark;
+            line-height: 1.1;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+          }
+
+          strong {
+            border-bottom: 1px solid $color-brand;
+          }
+        }
+      }
+
+      .stable {
+        border-bottom: 1px solid $color-dark;
+        margin-left: .5rem;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__content {
+    padding: 20px;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      padding: 20px 40px;
+    }
+
+    iframe {
+      margin: 0.25rem 0 1rem 0;
+      width: 100%;
+    }
+
+    dl+h2 {
+      margin-top: .563rem;
+    }
+
+    dl+p {
+      margin-top: .75rem;
+    }
+
+    dt {
+      margin: 1em 0 0.5rem;
+    }
+
+    pre {
+      background-color: $color-mid-dark;
+      border: none;
+      color: $color-mid-light;
+
+      code {
+        margin-bottom: 0;
+        color: $color-mid-light;
+      }
+    }
+  }
+}
+
+// Make main section fill the vertical space (sticky footer)
+.docs {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.docs .wrapper {
+  display: flex;
+  flex: 1;
+  margin: 0;
+}
+
+.documentation {
+  flex: 1;
+}
