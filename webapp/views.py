@@ -22,7 +22,8 @@ def custom_500(request):
 
 
 class MarkdownView(TemplateView):
-    template_name = 'includes/base_markdown.html'
+    def get_template_names(self):
+        return self.template_override or self.kwargs['template_name']
 
     def _parse_frontmatter(self, markdown_content):
         metadata = {}
@@ -67,6 +68,9 @@ class MarkdownView(TemplateView):
         template, template_path = self._find_template(path)
         with open(template.origin.name, 'r') as f:
             metadata = self._parse_frontmatter(f.read())
+
+        # Override the template if it is set in frontmatter
+        self.template_override = metadata.get('template', '')
 
         context = super(MarkdownView, self).get_context_data(**kwargs)
         context['title'] = metadata.get('title', '')
