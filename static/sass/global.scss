@@ -389,3 +389,14 @@ a:link:hover {
 .p-link--external:after {
   @include link-svg-icon($color: $color-brand);
 }
+
+// global nav overrides
+body.theme #nav-global .nav-global-wrapper {
+    width: $breakpoint-large !important;
+    display: none;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: block;
+    }
+}
+
