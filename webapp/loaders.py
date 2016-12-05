@@ -1,6 +1,4 @@
 import hashlib
-import frontmatter
-import markdown
 import os
 
 from django.conf import settings
@@ -12,6 +10,8 @@ from django.template.loaders.base import Loader
 from yaml.scanner import ScannerError
 from yaml.parser import ParserError
 
+from webapp.lib.markdown import parse_markdown
+
 find_template_loader = Engine.get_default().find_template_loader
 
 
@@ -21,25 +21,6 @@ def make_origin(display_name, loader, name, dirs):
         template_name=name,
         loader=loader,
     )
-
-
-def parse_markdown(markdown_content):
-    metadata = {}
-    try:
-        file_parts = frontmatter.loads(markdown_content)
-        metadata = file_parts.metadata
-        markdown_content = file_parts.content
-    except (ScannerError, ParserError):
-        """
-        If there's a parsererror, it's because frontmatter had to parse
-        the entire file (not finding frontmatter at the top)
-        and encountered an unexpected format somewhere in it.
-        This means the file has no frontmatter, so we can simply continue.
-        """
-        pass
-
-    markdown_parser = markdown.Markdown()
-    return markdown_parser.convert(markdown_content)
 
 
 class MarkdownLoader(Loader):

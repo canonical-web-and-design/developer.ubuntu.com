@@ -7,4 +7,7 @@ django-template-finder-view==0.3
 django-unslashed==0.3.0
 django-yaml-redirects==0.5.4
 markdown==2.6.7
+mdx-anchors-away==1.0.1
+mdx-callouts==1.0.0
+mdx-foldouts==1.0.0
 python-frontmatter==0.2.1

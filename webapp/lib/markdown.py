@@ -1,7 +1,24 @@
+from __future__ import absolute_import
+
 import frontmatter
+import markdown as _markdown
+
 from django.conf import settings
 from django.template import loader
 from django.template import TemplateDoesNotExist
+
+
+markdown_extensions = [
+    'markdown.extensions.attr_list',
+    'markdown.extensions.def_list',
+    'markdown.extensions.fenced_code',
+    'markdown.extensions.meta',
+    'markdown.extensions.tables',
+    'markdown.extensions.toc',
+    'mdx_callouts',
+    'mdx_anchors_away',
+    'mdx_foldouts',
+]
 
 
 def parse_frontmatter(markdown_content):
@@ -18,6 +35,25 @@ def parse_frontmatter(markdown_content):
         """
         pass
     return metadata
+
+
+def parse_markdown(markdown_content):
+    metadata = {}
+    try:
+        file_parts = frontmatter.loads(markdown_content)
+        metadata = file_parts.metadata
+        markdown_content = file_parts.content
+    except (ScannerError, ParserError):
+        """
+        If there's a parsererror, it's because frontmatter had to parse
+        the entire file (not finding frontmatter at the top)
+        and encountered an unexpected format somewhere in it.
+        This means the file has no frontmatter, so we can simply continue.
+        """
+        pass
+
+    markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
+    return markdown_parser.convert(markdown_content)
 
 
 def get_page_data(pages, root_path=None):
