@@ -1,4 +1,3 @@
-import frontmatter
 from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django.template import (
@@ -8,6 +7,8 @@ from django.template import (
     TemplateDoesNotExist,
 )
 from django.views.generic import TemplateView
+
+from webapp.lib.markdown import parse_frontmatter
 
 
 def custom_404(request):
@@ -22,23 +23,15 @@ def custom_500(request):
 
 
 class MarkdownView(TemplateView):
-    def get_template_names(self):
-        return self.template_override or self.kwargs['template_name']
+    def __init__(self, *args, **kwargs):
+        self.page_type_template = None
+        return super(MarkdownView, self).__init__(*args, **kwargs)
 
-    def _parse_frontmatter(self, markdown_content):
-        metadata = {}
-        try:
-            file_parts = frontmatter.loads(markdown_content)
-            metadata = file_parts.metadata
-        except (ScannerError, ParserError):
-            """
-            If there's a parsererror, it's because frontmatter had to parse
-            the entire file (not finding frontmatter at the top)
-            and encountered an unexpected format somewhere in it.
-            This means the file has no frontmatter, so we can simply continue.
-            """
-            pass
-        return metadata
+    def get_template_names(self):
+        return self.page_type_template or self._get_base_template_name()
+
+    def _get_base_template_name(self):
+        return self.template_name or self.kwargs['template_name']
 
     def _find_template(self, path):
         template_root = getattr(settings, 'TEMPLATE_FINDER_PATH', None)
@@ -63,20 +56,27 @@ class MarkdownView(TemplateView):
 
         return template, template_path if template else None
 
-    def get_context_data(self, **kwargs):
-        path = self.kwargs['path']
-        template, template_path = self._find_template(path)
-        with open(template.origin.name, 'r') as f:
-            metadata = self._parse_frontmatter(f.read())
+    def _get_page_type_template(self, page_type):
+        return 'includes/markdown_page_types/{0}.html'.format(page_type)
 
-        # Override the template if it is set in frontmatter
-        self.template_override = metadata.get('template', '')
+    def get_context_data(self, **kwargs):
+        request_path = self.kwargs['path']
+        template, template_path = self._find_template(request_path)
+        with open(template.origin.name, 'r') as f:
+            metadata = parse_frontmatter(f.read())
+
+        self.template_name = metadata.get('template')
+        page_type = metadata.get('page_type')
+        if page_type:
+            self.page_type_template = self._get_page_type_template(page_type)
 
         context = super(MarkdownView, self).get_context_data(**kwargs)
-        # We want to preserve context keys. So we need to it backwards and flip
+        # We want to preserve context keys. So do it backwards and flip around
         metadata.update(context)
         context = metadata
         # More specific overrides and defaults.
-        context['title'] = metadata.get('title', '')
+        context['base_template'] = self._get_base_template_name()
         context['markdown_path'] = template_path
+        context['page_type'] = page_type
+        context['title'] = metadata.get('title', '')
         return context

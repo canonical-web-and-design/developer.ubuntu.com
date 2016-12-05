@@ -1,0 +1,8 @@
+<ul>
+    {% for page in pages %}
+        <li>
+            <a href="{{ page.path }}">{{ page.title }}</a>
+            <p>{{ page.description }}</p>
+        </li>
+    {% endfor %}
+</ul>
