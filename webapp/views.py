@@ -1,4 +1,3 @@
-import frontmatter
 from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
 from django.template import (
@@ -8,6 +7,8 @@ from django.template import (
     TemplateDoesNotExist,
 )
 from django.views.generic import TemplateView
+
+from webapp.lib.markdown import parse_frontmatter
 
 
 def custom_404(request):
@@ -31,21 +32,6 @@ class MarkdownView(TemplateView):
 
     def _get_base_template_name(self):
         return self.template_name or self.kwargs['template_name']
-
-    def _parse_frontmatter(self, markdown_content):
-        metadata = {}
-        try:
-            file_parts = frontmatter.loads(markdown_content)
-            metadata = file_parts.metadata
-        except (ScannerError, ParserError):
-            """
-            If there's a parsererror, it's because frontmatter had to parse
-            the entire file (not finding frontmatter at the top)
-            and encountered an unexpected format somewhere in it.
-            This means the file has no frontmatter, so we can simply continue.
-            """
-            pass
-        return metadata
 
     def _find_template(self, path):
         template_root = getattr(settings, 'TEMPLATE_FINDER_PATH', None)
@@ -77,7 +63,7 @@ class MarkdownView(TemplateView):
         request_path = self.kwargs['path']
         template, template_path = self._find_template(request_path)
         with open(template.origin.name, 'r') as f:
-            metadata = self._parse_frontmatter(f.read())
+            metadata = parse_frontmatter(f.read())
 
         self.template_name = metadata.get('template')
         page_type = metadata.get('page_type')

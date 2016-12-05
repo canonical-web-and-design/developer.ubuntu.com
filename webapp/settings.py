@@ -45,8 +45,9 @@ ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
+    'webapp',
     'django.contrib.staticfiles',
-    'django_versioned_static_url'
+    'django_versioned_static_url',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -62,7 +63,11 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'OPTIONS': {
+            'builtins': [
+                'webapp.templatetags',
+            ],
             'context_processors': [
+                'django.template.context_processors.request',
                 'django_asset_server_url.asset_server_url',
             ],
             'loaders': [
