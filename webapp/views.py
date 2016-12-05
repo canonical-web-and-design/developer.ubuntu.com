@@ -22,8 +22,15 @@ def custom_500(request):
 
 
 class MarkdownView(TemplateView):
+    def __init__(self, *args, **kwargs):
+        self.page_type_template = None
+        return super(MarkdownView, self).__init__(*args, **kwargs)
+
     def get_template_names(self):
-        return self.template_override or self.kwargs['template_name']
+        return self.page_type_template or self._get_base_template_name()
+
+    def _get_base_template_name(self):
+        return self.template_name or self.kwargs['template_name']
 
     def _parse_frontmatter(self, markdown_content):
         metadata = {}
@@ -63,29 +70,27 @@ class MarkdownView(TemplateView):
 
         return template, template_path if template else None
 
-    def _get_page_type_path(self, page_type):
+    def _get_page_type_template(self, page_type):
         return 'includes/markdown_page_types/{0}.html'.format(page_type)
 
     def get_context_data(self, **kwargs):
-        path = self.kwargs['path']
-        template, template_path = self._find_template(path)
+        request_path = self.kwargs['path']
+        template, template_path = self._find_template(request_path)
         with open(template.origin.name, 'r') as f:
             metadata = self._parse_frontmatter(f.read())
 
+        self.template_name = metadata.get('template')
         page_type = metadata.get('page_type')
-        page_type_path = None
         if page_type:
-            page_type_path = self._get_page_type_path(page_type)
-
-        # Override the template if it is set in frontmatter
-        self.template_override = metadata.get('template') or page_type_path
+            self.page_type_template = self._get_page_type_template(page_type)
 
         context = super(MarkdownView, self).get_context_data(**kwargs)
-        # We want to preserve context keys. So we need to it backwards and flip
+        # We want to preserve context keys. So do it backwards and flip around
         metadata.update(context)
         context = metadata
         # More specific overrides and defaults.
-        context['title'] = metadata.get('title', '')
+        context['base_template'] = self._get_base_template_name()
         context['markdown_path'] = template_path
         context['page_type'] = page_type
+        context['title'] = metadata.get('title', '')
         return context
