@@ -14,10 +14,10 @@ markdown_extensions = [
     'markdown.extensions.fenced_code',
     'markdown.extensions.meta',
     'markdown.extensions.tables',
-    'markdown.extensions.toc',
     'mdx_callouts',
     'mdx_anchors_away',
     'mdx_foldouts',
+    'webapp.lib.markdown.extensions.vanilla_toc',
 ]
 
 
