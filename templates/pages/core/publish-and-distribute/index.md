@@ -1,6 +1,7 @@
 ----
 title: Publish and distribute
-description: Publish and distribute summary page
+description: Package and release your [topic specific product] to users through the [topic specific platform].
+
 page_type: summary
 summary_pages:
     - publish
@@ -9,4 +10,4 @@ summary_pages:
 
 # Publish and distribute
 
-Package and release your [topic specific product] to users through the [topic specific platform].
+Publish and distribute introduction
