@@ -1,6 +1,6 @@
 ---
 title: Get started
-description: Get started in minutes with Ubuntu Core on a supported board or in a virtual machine
+description: Your first steps, installing Ubuntu Core on a supported board or in a virtual machine
 ---
 
 # Get started
