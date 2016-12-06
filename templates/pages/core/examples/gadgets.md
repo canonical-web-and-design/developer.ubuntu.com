@@ -1,11 +1,11 @@
 ----
-title: Gadget snaps
-description: Gadget snaps page
+title: Gadget snaps examples
+description: Gadget snaps examples
 ----
 
 # Gadget snaps
 
-Gadget snaps introduction copy...
+A gadget snap is responsible for defining and manipulating the system properties specific to one or more devices. Here are a few examples of gadget snaps for various devices and development boards.
 
 ##Raspberry Pi 2 gadget snap
 This repository contains the official Ubuntu Core gadget snap for the Raspberry Pi 2 (32b ARM).
