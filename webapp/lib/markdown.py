@@ -1,6 +1,7 @@
 import frontmatter
 from django.conf import settings
 from django.template import loader
+from django.template import TemplateDoesNotExist
 
 
 def parse_frontmatter(markdown_content):
