@@ -1,7 +1,7 @@
 ----
 title: Examples
 description: Reusable code snippets to speed up your [topic] journey, [topic specific contextualisation]
-page_type: summary
+page_type: modular
 summary_pages:
     - gadget-snaps
     - interfaces
