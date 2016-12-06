@@ -373,7 +373,6 @@ a:link:hover {
       margin: 0;
       padding: 1.5rem .75rem 1.5rem;
 
-      &:last-child,
       &.last-col,
       &:nth-child(even) {
         border-right: 0;
@@ -381,11 +380,18 @@ a:link:hover {
       }
             
       &.last-row,
-      &:nth-last-child(2),
-      &:last-child {
+      &.last-item {
         border-bottom: 0;
       }
     }
+  }
+
+  .last-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+  
+  .odd:nth-last-child(-n+2) {
+    border-bottom: 0;
   }
 }
 

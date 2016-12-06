@@ -1,6 +1,6 @@
 <ul class="grid-list u-clearfix u-no-margin--left u-no-padding--left col-12">
     {% for page in pages %}
-        <li class="col-6 grid-list__item">
+        <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
             <div class="col-12">
                 <h5><a href="{{ page.path }}">{{ page.title }}</a></h5>
                 <p>{{ page.description }}</p>
