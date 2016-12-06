@@ -11,12 +11,6 @@ This will erase any existing content on the removable drive.
 
 The process is the same on any OS, you will: download an image file, insert your removable drive (SD Card, USB flash drive, etc.), unmount it, replace the drive content with the image file content, eject the drive.
 
-You can follow the detailed steps:
-
-* [On Ubuntu &rsaquo;](#on-ubuntu)
-* [On Windows &rsaquo;](#on-windows)
-* [On Mac OS &rsaquo;](#on-mac-os)
-
 ## On Ubuntu
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
