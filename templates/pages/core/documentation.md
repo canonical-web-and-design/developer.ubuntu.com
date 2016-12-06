@@ -1,6 +1,6 @@
 ----
 title: Documentation
-description: Documentation summary page
+description: Everything there is to know about [topic]. The complete documentation and API reference.
 ----
 
 # Documentation
