@@ -29,9 +29,16 @@ def get_page_data(pages, root_path=None):
         # If trying to lookup relative path
         if root_path and not path.startswith('/'):
             path = '/'.join([root_path, path])
+        # We don't need any slashes at the ends
+        path.strip('/')
 
-        template_path = ''.join([template_root, path, '.md'])
-        template = loader.get_template(template_path)
+        try:
+            template_path = ''.join([template_root, path, '.md'])
+            template = loader.get_template(template_path)
+        except TemplateDoesNotExist:
+            template_path = ''.join([template_root, path, '/index.md'])
+            template = loader.get_template(template_path)
+
         with open(template.origin.name, 'r') as f:
             metadata = parse_frontmatter(f.read())
             metadata['path'] = path
