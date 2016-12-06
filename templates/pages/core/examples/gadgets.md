@@ -1,48 +1,28 @@
 ----
-title: Gadget snaps
-description: Gadget snaps page
+title: Gadget snaps examples
+description: Gadget snaps examples
 ----
 
 # Gadget snaps
 
-Gadget snaps introduction copy...
+A gadget snap is responsible for defining and manipulating the system properties specific to one or more devices. Here are a few examples of gadget snaps for various devices and development boards.
 
-##Example name 1
-Summary copy...
-[link ](http..)>
+##Raspberry Pi 2 gadget snap
+This repository contains the official Ubuntu Core gadget snap for the Raspberry Pi 2 (32b ARM).
+[link ](https://github.com/snapcore/pi2-gadget)&rsaquo;
 
-##Example name 2
-Summary copy...
-[link ](http..)>
+##Raspberry Pi 3 gadget snap
+This repository contains the official Ubuntu Core gadget snap for the Raspberry Pi 3 (32b ARM).
+[link ](https://github.com/snapcore/pi3-gadget)&rsaquo;
 
-##Example name 3
-Summary copy...
-[link ](http..)>
+##DragonBoard 410c gadget snap
+This repository contains the official Ubuntu Core gadget snap for the DragonBoard 410c (64b ARM).
+[link ](http..)&rsaquo;
 
-##Example name 4
-Summary copy...
-[link ](http..)>
+##PC x86 gadget snap
+This repository contains the official Ubuntu Core gadget snap for an x86 PC(32b x86).
+[link ](https://github.com/snapcore/pc-i386-gadget)&rsaquo;
 
-##Example name 5
-Summary copy...
-[link ](http..)>
-
-##Example name 6
-Summary copy...
-[link ](http..)>
-
-##Example name 7
-Summary copy...
-[link ](http..)>
-
-##Example name 8
-Summary copy...
-[link ](http..)>
-
-##Example name 9
-Summary copy...
-[link ](http..)>
-
-##Example name 10
-Summary copy...
-[link ](http..)>
+##PC AMD64 gadget snap
+This repository contains the official Ubuntu Core gadget snap for an AMD64 PC.
+[link ](https://github.com/snapcore/pc-amd64-gadget)&rsaquo;
