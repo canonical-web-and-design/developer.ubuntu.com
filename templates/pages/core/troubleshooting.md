@@ -1,6 +1,6 @@
 ----
 title: Troubleshooting
-description: Troubleshooting summary page
+description: Got stuck? A series of steps to help you debug [topic] and move forward with your project.
 ----
 
 # Troubleshooting
