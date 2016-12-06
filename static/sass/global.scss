@@ -365,7 +365,7 @@ a:link:hover {
 
       }
     }
-
+    
     @media only screen and (min-width: $breakpoint-medium) {
       border-right: $grid-border-style;
       display: flex;
@@ -374,12 +374,15 @@ a:link:hover {
       padding: 1.5rem .75rem 1.5rem;
 
       &:last-child,
-      &.last-col {
+      &.last-col,
+      &:nth-child(even) {
         border-right: 0;
         margin-bottom: 0;
       }
-
-      &.last-row {
+            
+      &.last-row,
+      &:nth-last-child(2),
+      &:last-child {
         border-bottom: 0;
       }
     }
