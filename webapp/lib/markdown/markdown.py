@@ -7,6 +7,10 @@ from django.conf import settings
 from django.template import loader
 from django.template import TemplateDoesNotExist
 
+from .extensions.vanilla_toc import VanillaTocExtension
+
+from markdown.extensions.toc import TocExtension
+
 
 markdown_extensions = [
     'markdown.extensions.attr_list',
@@ -17,7 +21,7 @@ markdown_extensions = [
     'mdx_callouts',
     'mdx_anchors_away',
     'mdx_foldouts',
-    'webapp.lib.markdown.extensions.vanilla_toc',
+    TocExtension(),
 ]
 
 
@@ -53,6 +57,8 @@ def parse_markdown(markdown_content):
         pass
 
     markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
+    for test in markdown_parser.toc:
+        print(test)
     return markdown_parser.convert(markdown_content)
 
 

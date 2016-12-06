@@ -2,7 +2,7 @@
 title: Get started
 description: Your Ubuntu Core first steps, installing Ubuntu Core on your board or in a Virtual Machine.
 ---
-
+[TOC]
 # Get started
 
 Ubuntu Core is supported on a variety of chipsets, boards, SOCs and virtual machines, including Raspberry Pi 2 and 3, Qualcomm DragonBoard 410c, Intel NUC, Intel Joule, Samsung Artik and KVM.

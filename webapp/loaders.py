@@ -104,6 +104,7 @@ class MarkdownLoader(Loader):
             template = Template(source, origin, template_name)
         except NotImplementedError:
             template, origin = self.find_template(template_name, template_dirs)
+        print(template)
         return template, origin
 
     def reset(self):
