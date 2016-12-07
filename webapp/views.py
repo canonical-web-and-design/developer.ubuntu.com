@@ -41,7 +41,6 @@ class MarkdownView(TemplateView):
 
         template_paths = [
             ''.join([path, '.md']),
-            ''.join([path, '/index.md']),
         ]
         try:
             template = loader.select_template(template_paths)

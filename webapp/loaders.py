@@ -52,13 +52,20 @@ class MarkdownLoader(Loader):
         raise TemplateDoesNotExist(name)
 
     def load_template_source(self, template_name, template_dirs=None):
+        template_name_parts = template_name.split('.md')
+        template_name_index = ''.join([template_name_parts[0], '/index.md'])
+        template_names = [
+            template_name,
+            template_name_index,
+        ]
         for loader in self.loaders:
-            try:
-                return loader.load_template_source(
-                    template_name, template_dirs
-                )
-            except TemplateDoesNotExist:
-                pass
+            for template_name in template_names:
+                try:
+                    return loader.load_template_source(
+                        template_name, template_dirs
+                    )
+                except TemplateDoesNotExist:
+                    pass
         raise TemplateDoesNotExist(template_name)
 
     def load_template(self, template_name, template_dirs=None):
