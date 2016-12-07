@@ -264,24 +264,27 @@ a:link:hover {
 }
 
 // pagination
-.p-pagination__item {
-  float: left;
-}
+.p-pagination {
+  display: flex;
 
-.p-pagination__item--left {
-  float: right;
-}
-
-.pagination__link--previous {
-  float: left;
-  margin-bottom: 1rem;
-}
-
-.p-pagination__link {
-  &:link,
-  &:visited {
-    border: 1px solid $color-mid-dark;
-    color: inherit;
+  &__item {
+    flex: 1;
+  }
+  
+  &__link--previous {
+    margin-bottom: 1rem;
+  }
+  
+  &__item--left {
+    text-align: right;
+  }
+  
+  &__link {
+    &:link,
+    &:visited {
+      border: 1px solid $color-mid-dark;
+      color: inherit;
+    }
   }
 }
 
