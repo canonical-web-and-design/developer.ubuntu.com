@@ -1,13 +1,15 @@
-----
+---
 Title: Intel Joule
-Description:
-----
+Description: These steps will walk you through flashing Ubuntu Core on an Intel Joule.
+---
 
 ![](http://i.imgur.com/NoshHIW.png)
 
 ## Ubuntu Core on an Intel Joule
 
-We will walk you through the steps of flashing Ubuntu Core on an Intel Joule.
+We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At the end of this process, you will have a board ready for production or testing snaps.
+
+As an alternative, you can also install Ubuntu Classic to have a fully-fledged development environment and [develop snaps on target](/core/get-started/developer-setup).
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
@@ -31,9 +33,8 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule.
 
 ## Installation instructions
 
-1. You will need [an Ubuntu SSO account and an SSH key linked to it](#prerequisites), to create the first user on the device
-* Download and copy the Ubuntu Desktop 16.04.1 LTS image on the first USB flash drive by following the [...](...)
-* Download the Ubuntu Core image and copy the file on the second USB drive
+1. Download and copy the Ubuntu Desktop 16.04.1 LTS image on the first USB flash drive by following the Live USB Ubuntu Desktop instuctions for [Ubuntu](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu) | [Windows](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows) | [Mac OS X](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx)
+* Download the Ubuntu Core image for Intel Joule and **copy the file** on the second USB drive
 * Connect your USB hub, keyboard, mouse, monitor to the Joule
 * Insert the first USB flash drive, containing Ubuntu Desktop 16.04.1 LTS
 * Power-up the Joule board, boot-up the device from USB and select “Try Ubuntu without installing” in the first boot menu
@@ -42,6 +43,6 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule.
 
         xzcat /media/ubuntu/<disk label>/tuchuck*.img.xz | sudo dd of=/dev/mmcblk0 bs=32M status=progress; sync
 
-* Remove the USB flash drive and reboot the system
+* Remove all USB flash drives and reboot the system, it will reboot from the internal memory now containing Ubuntu Core
 
 {% include "includes/markdown/get_started_first_boot.md" %}

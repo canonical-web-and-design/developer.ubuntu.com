@@ -14,4 +14,4 @@ We will guide you through the steps of installing Ubuntu Core on these platforms
  * [DragonBoard 410c ›](/core/get-started/dragonboard-410c)
  * [Intel Nuc ›](/core/get-started/intel-nuc)
  * [Samsung Artik 5 or 10 ›](/core/get-started/artik-5-10)
- * [Intel Joule ›](/core/get-started/intel-joule)
+ * [Locally on KVM ›](/core/get-started/kvm)
