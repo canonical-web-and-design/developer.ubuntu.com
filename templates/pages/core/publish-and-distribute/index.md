@@ -1,6 +1,6 @@
 ----
 title: Publish and distribute
-description: Package and release your [topic specific product] to users through the [topic specific platform].
+description: Package, release and distribute your snaps to your devices through the Ubuntu Store or your private Store.
 
 page_type: modular
 summary_pages:
