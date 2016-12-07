@@ -2,10 +2,8 @@
 Title: KVM
 Description: These steps will walk you through installing Ubuntu Core on your Linux desktop in a virtual machine.
 ---
-
+# Ubuntu Core on KVM
 ![](http://i.imgur.com/SYwbSCl.png)
-
-## Ubuntu Core on KVM
 
 We will walk you through the steps of installing Ubuntu Core on your Linux desktop in a virtual machine.
 
