@@ -20,7 +20,7 @@ Interfaces allow snaps to communicate or share resources according to a protocol
 ##Gadgets
 A gadget snap is responsible for defining and manipulating the system properties specific to one or more devices. Here are a few examples of gadget snaps for various devices and development boards.
 
-[See examples for gadgets ›](/core/examples/gadgets)
+[See examples for gadgets ›](/core/examples/gadget-snap)
 
 ##Assertions
 Assertions are digitally signed documents that express a fact or policy by a particular authority about a particular object in the snap universe. For example a user assertion can be used by a system administrator to create users on a specific device.
