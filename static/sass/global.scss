@@ -365,7 +365,7 @@ a:link:hover {
 
       }
     }
-
+    
     @media only screen and (min-width: $breakpoint-medium) {
       border-right: $grid-border-style;
       display: flex;
@@ -373,16 +373,25 @@ a:link:hover {
       margin: 0;
       padding: 1.5rem .75rem 1.5rem;
 
-      &:last-child,
-      &.last-col {
+      &.last-col,
+      &:nth-child(even) {
         border-right: 0;
         margin-bottom: 0;
       }
-
-      &.last-row {
+            
+      &.last-row,
+      &.last-item {
         border-bottom: 0;
       }
     }
+  }
+
+  .last-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+  
+  .odd:nth-last-child(-n+2) {
+    border-bottom: 0;
   }
 }
 
