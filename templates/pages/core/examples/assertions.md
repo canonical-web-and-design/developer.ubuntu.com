@@ -1,6 +1,6 @@
 ----
-title: Assertions examples
-description: Assertions examples
+title: Assertion examples
+description: Assertion examples
 ----
 
 # Assertion examples
