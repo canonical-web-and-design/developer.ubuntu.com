@@ -69,12 +69,15 @@ def get_page_data(pages, root_path=None):
         # We don't need any slashes at the ends
         path.strip('/')
 
+        template_paths = [
+            ''.join([template_root, path, '.md']),
+            ''.join([template_root, path, '/index.md']),
+        ]
         try:
-            template_path = ''.join([template_root, path, '.md'])
-            template = loader.get_template(template_path)
+            template = loader.select_template(template_paths)
+            template_path = template.origin.name
         except TemplateDoesNotExist:
-            template_path = ''.join([template_root, path, '/index.md'])
-            template = loader.get_template(template_path)
+            raise Exception("Can't find template metadata for: %s" % path)
 
         with open(template.origin.name, 'r') as f:
             metadata = parse_frontmatter(f.read())

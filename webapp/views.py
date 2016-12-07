@@ -24,6 +24,7 @@ def custom_500(request):
 
 class MarkdownView(TemplateView):
     def __init__(self, *args, **kwargs):
+        self.metadata = []
         self.page_type_template = None
         return super(MarkdownView, self).__init__(*args, **kwargs)
 
@@ -38,20 +39,14 @@ class MarkdownView(TemplateView):
         if template_root:
             path = ''.join([template_root, '/', path])
 
-        template = None
-        template_path = None
+        template_paths = [
+            ''.join([path, '.md']),
+            ''.join([path, '/index.md']),
+        ]
         try:
-            template_path = ''.join([path, '.md'])
-            template = loader.get_template(template_path)
+            template = loader.select_template(template_paths)
+            template_path = template.origin.name
         except TemplateDoesNotExist:
-            pass
-        if not template:
-            try:
-                template_path = ''.join([path, '/index.md'])
-                template = loader.get_template(template_path)
-            except TemplateDoesNotExist:
-                pass
-        if not template:
             raise Http404("Can't find page for: %s" % path)
 
         return template, template_path if template else None
@@ -62,7 +57,7 @@ class MarkdownView(TemplateView):
     def get_context_data(self, **kwargs):
         request_path = self.kwargs['path']
         template, template_path = self._find_template(request_path)
-        with open(template.origin.name, 'r') as f:
+        with open(template_path, 'r') as f:
             metadata = parse_frontmatter(f.read())
 
         self.template_name = metadata.get('template')
