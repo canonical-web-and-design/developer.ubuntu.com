@@ -6,9 +6,11 @@ from django.template import (
     RequestContext,
     TemplateDoesNotExist,
 )
+from django.template.engine import Engine
 from django.views.generic import TemplateView
 
 from webapp.lib.markdown import parse_frontmatter
+from webapp.loaders import MarkdownLoader
 
 
 def custom_404(request):
@@ -26,6 +28,7 @@ class MarkdownView(TemplateView):
     def __init__(self, *args, **kwargs):
         self.metadata = []
         self.page_type_template = None
+        self.markdown_loader = self._find_markdown_loader()
         return super(MarkdownView, self).__init__(*args, **kwargs)
 
     def get_template_names(self):
@@ -33,6 +36,13 @@ class MarkdownView(TemplateView):
 
     def _get_base_template_name(self):
         return self.template_name or self.kwargs['template_name']
+
+    def _find_markdown_loader(self):
+        loaders = Engine.get_default().template_loaders
+        for loader in loaders:
+            if isinstance(loader, MarkdownLoader):
+                return loader
+        raise Exception("Could not find MarkdownLoader")
 
     def _find_template(self, path):
         template_root = getattr(settings, 'TEMPLATE_FINDER_PATH', None)
