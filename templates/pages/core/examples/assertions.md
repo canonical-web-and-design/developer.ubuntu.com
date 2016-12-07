@@ -3,7 +3,7 @@ title: Assertions examples
 description: Assertions examples
 ----
 
-# Assertions examples
+# Assertion examples
 
 Assertions are digitally signed documents that express a fact or policy by a particular authority about a particular object in the snap universe. For example a user assertion can be used by a system administrator to create users on a specific device. 
 
