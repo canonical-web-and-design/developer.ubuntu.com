@@ -278,6 +278,8 @@ a:link:hover {
 }
 
 .p-pagination__link {
+  min-width: 10rem;
+
   &:link,
   &:visited {
     border: 1px solid $color-mid-dark;
