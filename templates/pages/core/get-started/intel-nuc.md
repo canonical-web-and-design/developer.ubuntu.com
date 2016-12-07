@@ -2,10 +2,8 @@
 Title: Intel Nuc
 Description: These steps will walk you through flashing Ubuntu Core on an Intel NUC.
 ---
-
+# Ubuntu Core on an Intel Nuc
 ![](http://i.imgur.com/wB6bD81.png)
-
-## Ubuntu Core on an Intel Nuc
 
 We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At the end of this process, you will have a board ready for production or testing snaps.
 
