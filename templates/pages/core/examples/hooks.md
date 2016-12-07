@@ -3,7 +3,7 @@ title: Hooks examples
 description: Hooks examples
 ----
 
-# Hooks examples
+# Hook examples
 
 A hook is an executable file that is called under a certain pre-configured condition. For example, a hook can ensure a database update occurs when a snap gets upgraded. 
 
