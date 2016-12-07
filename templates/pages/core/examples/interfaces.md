@@ -1,6 +1,6 @@
 ----
-title: Interfaces examples
-description: Interfaces examples
+title: Interface examples
+description: Interface examples
 ----
 
 # Interfaces examples
