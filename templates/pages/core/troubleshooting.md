@@ -10,11 +10,11 @@ When building your device or managing a fleet of devices you might bump into iss
 ## Ask Ubuntu 
 Use this as your first port of call to get answers for the most commonly asked questions. If you’re stuck, chances are that someone else has encountered the same problem and they can help. 
 
-Take a look at the "ubuntu-core" tag for questions related to building and managing Ubuntu Core devices.
+Take a look at the "ubuntu-core" tag for questions related to building and managing Ubuntu Core devices on Ask Ubuntu.
 
 [Ask Ubuntu for Ubuntu Core](http://askubuntu.com/questions/tagged/ubuntu-core)
 
-Take a look at the "snap" tag for questions related to building snaps AskUbuntu.
+Take a look at the "snap" tag for questions related to building snaps on Ask Ubuntu.
 
 [Ask Ubuntu for snap](http://askubuntu.com/questions/tagged/snap)
 
