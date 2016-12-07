@@ -5,7 +5,7 @@ description: Got stuck? A series of steps to help you debug [topic] and move for
 
 # Troubleshooting
 
-When building your device or managing a fleet of devices you might bump into issues... The Ubuntu community is renowned for the wealth of information you can find about various topics across a number of channels. Pick the one best suited to your taste and needs.
+When building your device or managing a fleet of devices you might bump into issues. The Ubuntu community is renowned for the wealth of information you can find about various topics across a number of channels. Pick the one best suited to your taste and needs.
 
 ## Ask Ubuntu 
 Use this as your first port of call to get answers for the most commonly asked questions. If you’re stuck, chances are that someone else has encountered the same problem and they can help. 
@@ -29,7 +29,7 @@ Join this IRC channel is useful when you need an urgent response or think that a
 [#snappy channel on IRC](https://webchat.freenode.net/?channels=snappy)
 
 ## Filing bugs on Launchpad
-If you think you have encountered a bug, please file it on Launchpad the tool used by the Ubuntu community to track bugs and host code. We value your feedback!
+If you think you have encountered a bug, please file it on Launchpad, the tool used by the Ubuntu community to track bugs and host code. We value your feedback.
 
 ### For Ubuntu Core and snapd
 [Check for open bugs](https://bugs.launchpad.net/snappy/+bugs)
