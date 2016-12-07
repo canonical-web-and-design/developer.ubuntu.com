@@ -1,0 +1,15 @@
+{% extends base_template %}
+
+
+{% block main_content %}
+<div class="row u-no-padding--left">
+
+    {{ markdown|safe }}
+
+</div>
+
+{% if table_of_contents %}
+{{ table_of_contents|safe }}
+{% endif %}
+
+{% endblock main_content %}

@@ -9,8 +9,6 @@ from django.template import TemplateDoesNotExist
 
 from .extensions.vanilla_toc import VanillaTocExtension
 
-from markdown.extensions.toc import TocExtension
-
 
 markdown_extensions = [
     'markdown.extensions.attr_list',
@@ -21,7 +19,7 @@ markdown_extensions = [
     'mdx_callouts',
     'mdx_anchors_away',
     'mdx_foldouts',
-    TocExtension(),
+    VanillaTocExtension(marker=''),
 ]
 
 
@@ -41,7 +39,7 @@ def parse_frontmatter(markdown_content):
     return metadata
 
 
-def parse_markdown(markdown_content):
+def get_markdown_with_parser(markdown_content):
     metadata = {}
     try:
         file_parts = frontmatter.loads(markdown_content)
@@ -56,10 +54,20 @@ def parse_markdown(markdown_content):
         """
         pass
 
+
     markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
-    for test in markdown_parser.toc:
-        print(test)
-    return markdown_parser.convert(markdown_content)
+    parsed_markdown = markdown_parser.convert(markdown_content)
+    table_of_contents = markdown_parser.toc
+    if table_of_contents:
+        metadata['table_of_contents'] = table_of_contents
+    return markdown_parser, parsed_markdown, metadata
+
+
+def parse_markdown(markdown_content):
+    parser, parsed_markdown, metadata = get_markdown_with_parser(
+        markdown_content
+    )
+    return parsed_markdown, metadata
 
 
 def get_page_data(pages, root_path=None):
