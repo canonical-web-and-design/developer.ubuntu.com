@@ -18,7 +18,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Board 2 - Hardware and software requirements
@@ -27,7 +27,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Board 3 - Hardware and software requirements
@@ -36,7 +36,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Board 4 - Hardware and software requirements
@@ -45,7 +45,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Board 5 - Hardware and software requirements
@@ -54,7 +54,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Board 6 - Hardware and software requirements
@@ -63,7 +63,7 @@ Introduction copy...
  2. item2
  3. item3
  4. item4
- 
+
 Summary steps link >
 
 ##Summary steps
