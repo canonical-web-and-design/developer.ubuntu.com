@@ -1,15 +1,15 @@
 ----
 title: Interfaces example
-description: Interfaces example page
+description: Interfaces example
 ----
 
 # Interfaces
 
-Interfaces allow snaps to communicate or share resources according to a protofcol defined by the interface. Here is a list of example code highlighting how to implement interfaces, for example code on how to use interfaces refer to the interface [reference](http://snapcraft.io/docs/reference/interfaces).
+Interfaces allow snaps to communicate or share resources according to a protofcol defined by the interface. Here is a list of example code highlighting how to implement interfaces. For example code on how to use interfaces refer to the interface [reference](http://snapcraft.io/docs/reference/interfaces).
 
 
 ##Serial port interface
-Complete implementation of the serial port interface in Ubuntu Core, use this as a reference if you want to build your own interface
+Complete implementation of the serial port interface in Ubuntu Core. Use this as a reference if you want to build your own interface.
 
 [View serial port interface on Github ›](https://github.com/snapcore/snapd/blob/98c8e937625ce3134cf17025d8f0eb3e1016259a/interfaces/builtin/serial_port.go)
 
