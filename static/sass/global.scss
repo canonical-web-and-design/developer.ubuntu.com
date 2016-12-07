@@ -400,3 +400,17 @@ body.theme #nav-global .nav-global-wrapper {
     }
 }
 
+// override vanilla pre
+pre {
+  background-color: $color-light;
+  border: 1px solid $color-mid-light;
+  border-radius: 4px;
+  color: $color-dark;
+  font-family: Ubuntu Mono;
+  font-size: 1rem;
+  font-weight: 300;
+  overflow: hidden;
+  padding: 0.7rem 1rem;
+  position: relative;
+  width: 100%;
+}
