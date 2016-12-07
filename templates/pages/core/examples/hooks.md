@@ -1,6 +1,6 @@
 ----
-title: Hooks examples
-description: Hooks examples
+title: Hook examples
+description: Hook examples
 ----
 
 # Hook examples
