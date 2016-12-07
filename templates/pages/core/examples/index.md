@@ -1,6 +1,6 @@
 ----
 title: Examples
-description: Reusable code snippets to speed up your [topic] journey, [topic specific contextualisation]
+description: Reusable code snippets to speed up your Ubuntu Core development and deployment journey, from using interfaces to building a gadget snap.
 ----
 
 # Examples
