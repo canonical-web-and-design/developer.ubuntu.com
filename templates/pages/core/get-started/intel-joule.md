@@ -2,10 +2,8 @@
 Title: Intel Joule
 Description: These steps will walk you through flashing Ubuntu Core on an Intel Joule.
 ---
-
+# Ubuntu Core on an Intel Joule
 ![](http://i.imgur.com/NoshHIW.png)
-
-## Ubuntu Core on an Intel Joule
 
 We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At the end of this process, you will have a board ready for production or testing snaps.
 
