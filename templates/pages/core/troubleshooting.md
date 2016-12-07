@@ -36,6 +36,6 @@ Sometimes a policy denial is a result of a bug in the template policy (ubuntu-co
 
 Snapcraft: [List of open bugs](https://bugs.launchpad.net/snapcraft/+bugs), [file a new bug](https://bugs.launchpad.net/snapcraft/+filebug).
 
-Store: [List of open bugs](), [file a new bug](). [TO BE ADDED]
+Store: [List of open bugs](https://bugs.launchpad.net/software-center-agent), [file a new bug](https://bugs.launchpad.net/software-center-agent/+filebug).
 
 Our developer site (developer.ubuntu.com): [List of open bugs](https://bugs.launchpad.net/developer-ubuntu-com/+bugs), [file a new bug](https://bugs.launchpad.net/developer-ubuntu-com/+filebug).
