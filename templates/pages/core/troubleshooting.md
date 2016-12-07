@@ -1,6 +1,6 @@
 ----
 title: Troubleshooting
-description: Got stuck? A series of steps to help you debug [topic] and move forward with your project.
+description: Got stuck? Here's where to find help to move forward with your Ubuntu Core project.
 ----
 
 # Troubleshooting
@@ -34,26 +34,26 @@ If you think you have encountered a bug, please file it on Launchpad, the tool u
 ### For Ubuntu Core and snapd
 [Check for open bugs](https://bugs.launchpad.net/snappy/+bugs)
 
-[File a new bug](https://bugs.launchpad.net/snappy/+filebug).
+[File a new bug](https://bugs.launchpad.net/snappy/+filebug)
 
 ### For template policies
 Sometimes a policy denial is linked to a bug in the template Ubuntu Core policy.
 
 [Check for of open bugs](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+bugs)
 
-[File a new bug](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+filebug).
+[File a new bug](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+filebug)
 
 ### For Snapcraft
-[Check for open bugs](https://bugs.launchpad.net/snapcraft/+bugs), 
+[Check for open bugs](https://bugs.launchpad.net/snapcraft/+bugs)
 
-[File a new bug](https://bugs.launchpad.net/snapcraft/+filebug).
+[File a new bug](https://bugs.launchpad.net/snapcraft/+filebug)
 
 ### For Ubuntu Store
-[Check for open bugs](https://bugs.launchpad.net/software-center-agent), 
+[Check for open bugs](https://bugs.launchpad.net/software-center-agent)
 
-[File a new bug](https://bugs.launchpad.net/software-center-agent/+filebug).
+[File a new bug](https://bugs.launchpad.net/software-center-agent/+filebug)
 
 ### For Our developer site (developer.ubuntu.com)
-[Check for open bugs](https://bugs.launchpad.net/developer-ubuntu-com/+bugs), 
+[Check for open bugs](https://bugs.launchpad.net/developer-ubuntu-com/+bugs)
 
-[File a new bug](https://bugs.launchpad.net/developer-ubuntu-com/+filebug).
+[File a new bug](https://bugs.launchpad.net/developer-ubuntu-com/+filebug)
