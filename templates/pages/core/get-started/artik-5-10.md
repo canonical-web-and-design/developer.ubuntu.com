@@ -3,9 +3,8 @@ Title: Samsung Artik 5 or 10
 Description: These steps will walk you through flashing Ubuntu Core on a Samsung Artik 5 or 10.
 ---
 
+# Samsung Artik 5 or 10
 ![](http://i.imgur.com/tZ619Fm.png)
-
-## Ubuntu Core on a Samsung Artik 5 or 10
 
 We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 or 10. At the end of this process, you will have a board ready for production or testing snaps.
 
@@ -13,7 +12,7 @@ As an alternative, you can also install Ubuntu Classic to have a fully-fledged d
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-### Ubuntu Core image
+## Ubuntu Core image
 
  * [Ubuntu Core 16 image for Samsung Artik 5](http://people.canonical.com/~platform/snappy/artik/uc-series16-beta-image/artik5.img.tar.xz)
  * [Ubuntu Core 16 image for Samsung Artik 10](http://people.canonical.com/~platform/snappy/artik/uc-series16-beta-image/artik10.img.tar.xz)
