@@ -39,7 +39,7 @@ def parse_frontmatter(markdown_content):
     return metadata
 
 
-def get_markdown_with_parser(markdown_content):
+def parse_markdown(markdown_content):
     metadata = {}
     try:
         file_parts = frontmatter.loads(markdown_content)
@@ -54,19 +54,11 @@ def get_markdown_with_parser(markdown_content):
         """
         pass
 
-
     markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
     parsed_markdown = markdown_parser.convert(markdown_content)
     table_of_contents = markdown_parser.toc
     if table_of_contents:
         metadata['table_of_contents'] = table_of_contents
-    return markdown_parser, parsed_markdown, metadata
-
-
-def parse_markdown(markdown_content):
-    parser, parsed_markdown, metadata = get_markdown_with_parser(
-        markdown_content
-    )
     return parsed_markdown, metadata
 
 
