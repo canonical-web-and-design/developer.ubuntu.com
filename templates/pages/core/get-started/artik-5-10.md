@@ -19,7 +19,7 @@ As an alternative, you can also install Ubuntu Classic to have a fully-fledged d
 
 ## Installation instructions
 
- 1. Copy the Ubuntu Core image on the SD Card by following the [installation media instructions](/core/get-started/installation-medias)
+ 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions](/core/get-started/installation-medias)
  * Prepare your Artik to boot from the SD card, by setting the "SW2" switches to 1:on and 2:on
  * Insert the SD card
  * Connect the 5V power supply to the board, then use the power button on the board to switch it on
