@@ -8,6 +8,8 @@ summary_pages:
     - publish-and-distribute
     - documentation
     - troubleshooting
+insights_feed:
+    tag: core
 ----
 
 # Core

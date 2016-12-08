@@ -1,3 +1,4 @@
+
 {% extends base_template %}
 
 {% block inner_content %}
@@ -5,5 +6,11 @@
 {{ block.super }}
 
 {% page_cards summary_pages %}
+
+{% if insights_feed %}
+    {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
+    {% feed_cards feed_url limit=4 %}
+    {% endwith %}
+{% endif %}
 
 {% endblock %}
