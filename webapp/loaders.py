@@ -1,6 +1,4 @@
 import hashlib
-import frontmatter
-import markdown
 import os
 
 from django.conf import settings
@@ -9,8 +7,8 @@ from django.template.base import Template
 from django.template.engine import Engine
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loaders.base import Loader
-from yaml.scanner import ScannerError
-from yaml.parser import ParserError
+
+from webapp.lib.markdown import parse_markdown
 
 find_template_loader = Engine.get_default().find_template_loader
 
@@ -21,25 +19,6 @@ def make_origin(display_name, loader, name, dirs):
         template_name=name,
         loader=loader,
     )
-
-
-def parse_markdown(markdown_content):
-    metadata = {}
-    try:
-        file_parts = frontmatter.loads(markdown_content)
-        metadata = file_parts.metadata
-        markdown_content = file_parts.content
-    except (ScannerError, ParserError):
-        """
-        If there's a parsererror, it's because frontmatter had to parse
-        the entire file (not finding frontmatter at the top)
-        and encountered an unexpected format somewhere in it.
-        This means the file has no frontmatter, so we can simply continue.
-        """
-        pass
-
-    markdown_parser = markdown.Markdown()
-    return markdown_parser.convert(markdown_content)
 
 
 class MarkdownLoader(Loader):
@@ -71,13 +50,24 @@ class MarkdownLoader(Loader):
         raise TemplateDoesNotExist(name)
 
     def load_template_source(self, template_name, template_dirs=None):
+        """
+        Look for template through loaders, including checking if the source
+        is a folder with an index file.
+        """
+        template_name_parts = template_name.split('.md')
+        template_name_index = ''.join([template_name_parts[0], '/index.md'])
+        template_names = [
+            template_name,
+            template_name_index,
+        ]
         for loader in self.loaders:
-            try:
-                return loader.load_template_source(
-                    template_name, template_dirs
-                )
-            except TemplateDoesNotExist:
-                pass
+            for template_name in template_names:
+                try:
+                    return loader.load_template_source(
+                        template_name, template_dirs
+                    )
+                except TemplateDoesNotExist:
+                    pass
         raise TemplateDoesNotExist(template_name)
 
     def load_template(self, template_name, template_dirs=None):
@@ -90,11 +80,6 @@ class MarkdownLoader(Loader):
             template, origin = self._generate_template(
                 template_name, template_dirs
             )
-            if not hasattr(template, 'render'):
-                try:
-                    template = Template(source, origin, template_name)
-                except (TemplateDoesNotExist, UnboundLocalError):
-                    return template, origin
             self.template_cache[key] = template
         return self.template_cache[key], None
 
@@ -106,7 +91,7 @@ class MarkdownLoader(Loader):
             source, display_name = self.load_template_source(
                 template_name, template_dirs
             )
-            source = parse_markdown(source)
+            source, metadata = parse_markdown(source)
             origin = make_origin(
                 display_name,
                 self.load_template_source,
@@ -116,6 +101,13 @@ class MarkdownLoader(Loader):
             template = Template(source, origin, template_name)
         except NotImplementedError:
             template, origin = self.find_template(template_name, template_dirs)
+
+        if not hasattr(template, 'render'):
+            try:
+                template = Template(source, origin, template_name)
+            except (TemplateDoesNotExist, UnboundLocalError):
+                return template, origin
+
         return template, origin
 
     def reset(self):

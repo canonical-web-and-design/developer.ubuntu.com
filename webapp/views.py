@@ -6,9 +6,11 @@ from django.template import (
     RequestContext,
     TemplateDoesNotExist,
 )
+from django.template.engine import Engine
 from django.views.generic import TemplateView
 
-from webapp.lib.markdown import parse_frontmatter
+from webapp.lib.markdown import parse_markdown
+from webapp.loaders import MarkdownLoader
 
 
 def custom_404(request):
@@ -25,6 +27,7 @@ def custom_500(request):
 class MarkdownView(TemplateView):
     def __init__(self, *args, **kwargs):
         self.page_type_template = None
+        self.markdown_loader = self._find_markdown_loader()
         return super(MarkdownView, self).__init__(*args, **kwargs)
 
     def get_template_names(self):
@@ -33,50 +36,62 @@ class MarkdownView(TemplateView):
     def _get_base_template_name(self):
         return self.template_name or self.kwargs['template_name']
 
-    def _find_template(self, path):
+    def _find_markdown_loader(self):
+        loaders = Engine.get_default().template_loaders
+        for loader_instance in loaders:
+            if isinstance(loader_instance, MarkdownLoader):
+                return loader_instance
+        raise Exception("Could not find MarkdownLoader")
+
+    def _find_template_source(self, path):
         template_root = getattr(settings, 'TEMPLATE_FINDER_PATH', None)
         if template_root:
             path = ''.join([template_root, '/', path])
 
-        template = None
-        template_path = None
+        template_path = ''.join([path, '.md'])
         try:
-            template_path = ''.join([path, '.md'])
-            template = loader.get_template(template_path)
+            markdown_loader = self.markdown_loader
+            markdown, template_path = markdown_loader.load_template_source(
+                template_path
+            )
         except TemplateDoesNotExist:
-            pass
-        if not template:
-            try:
-                template_path = ''.join([path, '/index.md'])
-                template = loader.get_template(template_path)
-            except TemplateDoesNotExist:
-                pass
-        if not template:
             raise Http404("Can't find page for: %s" % path)
 
-        return template, template_path if template else None
+        return markdown, template_path
 
     def _get_page_type_template(self, page_type):
         return 'includes/markdown_page_types/{0}.html'.format(page_type)
 
-    def get_context_data(self, **kwargs):
-        request_path = self.kwargs['path']
-        template, template_path = self._find_template(request_path)
-        with open(template.origin.name, 'r') as f:
-            metadata = parse_frontmatter(f.read())
+    def _parse_markdown(self, path):
+        markdown, template_path = self._find_template_source(path)
+        parsed_markdown, metadata = parse_markdown(markdown)
 
         self.template_name = metadata.get('template')
         page_type = metadata.get('page_type')
         if page_type:
             self.page_type_template = self._get_page_type_template(page_type)
 
+        return parsed_markdown, metadata
+
+    def get_context_data(self, markdown, metadata, **kwargs):
         context = super(MarkdownView, self).get_context_data(**kwargs)
         # We want to preserve context keys. So do it backwards and flip around
         metadata.update(context)
         context = metadata
         # More specific overrides and defaults.
         context['base_template'] = self._get_base_template_name()
-        context['markdown_path'] = template_path
-        context['page_type'] = page_type
+        context['markdown'] = markdown
+        context['page_type'] = metadata.get('page_type')
         context['title'] = metadata.get('title', '')
         return context
+
+    def get(self, request, *args, **kwargs):
+        request_path = self.kwargs['path']
+        markdown, metadata = self._parse_markdown(request_path)
+
+        context = self.get_context_data(
+            markdown=markdown,
+            metadata=metadata,
+            **kwargs
+        )
+        return self.render_to_response(context)
