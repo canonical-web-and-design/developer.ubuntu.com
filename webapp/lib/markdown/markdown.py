@@ -78,11 +78,7 @@ def get_page_data(pages, root_path=None):
         template_paths = [
             ''.join([template_root, path, '.md']),
         ]
-        try:
-            template = loader.select_template(template_paths)
-            template_path = template.origin.name
-        except TemplateDoesNotExist:
-            raise Exception("Can't find template metadata for: %s" % path)
+        template = loader.select_template(template_paths)
 
         with open(template.origin.name, 'r') as f:
             metadata = parse_frontmatter(f.read())
