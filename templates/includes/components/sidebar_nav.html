@@ -1,0 +1,12 @@
+<ul>
+    {% for key, item in sitemap.children.items %}
+        <li><a href="{{ item.path }}">{{ item.title }}</a>
+        {% if item.children %}
+        <ul>
+            {% for key, item in item.children.items %}
+                <li><a href="{{ item.path }}">{{ item.title }}</a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endfor %}
+</ul>
