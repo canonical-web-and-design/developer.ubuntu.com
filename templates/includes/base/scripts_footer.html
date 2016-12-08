@@ -16,5 +16,13 @@
 
   /* Global navigation */
   ubuntu.globalNav.setup();
+
+  /* External links classes */
+  var links = document.querySelector('.theme__wrap').querySelectorAll('a');
+  links.forEach(function(link) {
+	if (link.hostname && link.hostname != location.hostname) {
+	  link.className += ' p-link--external';
+	}
+  });
 </script>
 
