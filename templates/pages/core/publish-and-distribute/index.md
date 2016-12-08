@@ -6,24 +6,24 @@ description: Package, release and distribute your snaps to your devices through 
 
 # Publish and distribute
 
-Package, release and distribute your snaps to your devices through the Ubuntu Store or your private Store.
+Package, release and distribute your snaps to your devices through the Ubuntu Store or your private store.
 
-## Publish
+## Publishing snaps
 
 [Illustration]
 
 Snaps allow you to go from creation to instant publication in the release channel of your choice without leaving the command line.
 
-You can also integrate the workflow in your CI process and, for example, release beta or daily builds to all users who subscribe to a specific release channel.
+You can also integrate the publication workflow into your CI process.  For example, you could release beta or daily builds to all users who subscribe to a specific release channel.
 
 [Learn how to publish your snaps](http://snapcraft.io/docs/build-snaps/publish)
 
-## Distribute
+## Distributing snaps
 
 [Illustration]
 
-Ubuntu Core allows you to quickly go to production with your own devices and branded store.
+Ubuntu Core allows you to go to production with your own devices and branded store quickly.
 
-Learn how to create your own store, push automatically-applied updates to devices in the field, customize your kernel and seed your own extra snaps on Ubuntu Core images.
+Create your own store, automatically push updates to devices in the field, customise your kernel, and seed your own extra snaps on Ubuntu Core images.
 
-Documentation coming soon.
+[Contact us to learn more](https://www.ubuntu.com/core/contact-us)
