@@ -1,4 +1,5 @@
-from markdown.extensions.toc import *
+from markdown.util import etree
+from markdown.extensions.toc import TocExtension, TocTreeprocessor
 
 
 class VanillaTocTreeprocessor(TocTreeprocessor):
@@ -7,16 +8,16 @@ class VanillaTocTreeprocessor(TocTreeprocessor):
         div = etree.Element("div")
         div.attrib["class"] = "p-toc"
 
-        # Add title to the div
-        if self.title:
-            header = etree.SubElement(div, "span")
-            header.attrib["class"] = "toctitle"
-            header.text = self.title
+        if len(toc_list) > 1:
+            raise SyntaxError('More than one top-level heading detected.')
 
-        def build_etree_ul(toc_list, parent):
-            ul = etree.SubElement(parent, "ul")
-            ul.attrib['class'] = 'p-toc__list'
-            for item in toc_list:
+        ul = etree.SubElement(div, "ul")
+        ul.attrib['class'] = 'p-toc__list'
+
+        if len(toc_list) == 1 and 'children' in toc_list[0]:
+            second_level_headings = toc_list[0]['children']
+
+            for item in second_level_headings:
                 # List item link, to be inserted into the toc div
                 li = etree.SubElement(ul, "li")
                 li.attrib['class'] = 'p-toc__item'
@@ -24,14 +25,10 @@ class VanillaTocTreeprocessor(TocTreeprocessor):
                 link.text = item.get('name', '')
                 link.attrib['class'] = 'p-toc__link'
                 link.attrib["href"] = '#' + item.get('id', '')
-                if item['children']:
-                    build_etree_ul(item['children'], li)
-            return ul
 
-        build_etree_ul(toc_list, div)
         prettify = self.markdown.treeprocessors.get('prettify')
-        if prettify:
-            prettify.run(div)
+        prettify.run(div)
+
         return div
 
 
