@@ -1,6 +1,6 @@
 ----
 title: Publish and distribute
-description: Package, release and distribute your snaps to your devices through the Ubuntu Store or your private Store.
+description: Package, release and distribute your snaps to your devices through the Ubuntu Store or your private store.
 
 ----
 
