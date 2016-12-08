@@ -69,5 +69,5 @@ end of the account configuration step.
 
 ##### First boot tips
 
-  * During setup,` console-conf` will download the SSH key registered with your Store account and configure it so you can log into the device via `ssh -p 8022 <Ubuntu SSO account name>@localhost` without a password.
+  * During setup,` console-conf` will download the SSH key registered with your store account and configure it so you can log into the device via `ssh -p 8022 <Ubuntu SSO account name>@localhost` without a password.
   * There is no default `ubuntu` user on these images, but you can run `sudo passwd <account name>` to set a password in case you need a local console login.
