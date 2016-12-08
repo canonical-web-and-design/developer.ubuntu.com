@@ -75,13 +75,19 @@ class MarkdownView(TemplateView):
 
     def get_context_data(self, markdown, metadata, **kwargs):
         context = super(MarkdownView, self).get_context_data(**kwargs)
+
         # We want to preserve context keys. So do it backwards and flip around
         metadata.update(context)
         context = metadata
+
         # More specific overrides and defaults.
         context['base_template'] = self._get_base_template_name()
         context['markdown'] = markdown
         context['page_type'] = metadata.get('page_type')
+        context['table_of_contents_title'] = metadata.get(
+            'table_of_contents_title',
+            'In this page'
+        )
         context['title'] = metadata.get('title', '')
         return context
 

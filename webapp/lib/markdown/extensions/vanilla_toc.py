@@ -1,35 +1,59 @@
-from markdown.util import etree
-from markdown.extensions.toc import TocExtension, TocTreeprocessor
+# Core
+import re
+
+# Third party
+from markdown.util import string_type
+from markdown.extensions.toc import (
+    stashedHTML2text,
+    TocExtension,
+    TocTreeprocessor,
+    unique
+)
 
 
 class VanillaTocTreeprocessor(TocTreeprocessor):
-    def build_toc_div(self, toc_list):
-        """ Return a string div given a toc list. """
-        div = etree.Element("div")
-        div.attrib["class"] = "p-toc"
+    """
+    A version of the standard TOC plugin, with the following changes:
+    - Only collect second-level headings
+    - Instead or returning HTML, return an object of list items,
+      so you can craft the HTML yourself
+    """
 
-        if len(toc_list) > 1:
-            raise SyntaxError('More than one top-level heading detected.')
+    def run(self, doc):
+        # Get a list of id attributes
+        used_ids = set()
+        for el in doc.iter():
+            if "id" in el.attrib:
+                used_ids.add(el.attrib["id"])
 
-        ul = etree.SubElement(div, "ul")
-        ul.attrib['class'] = 'p-toc__list'
+        toc_items = []
+        for el in doc.iter():
+            if isinstance(el.tag, string_type) and re.match(
+                "[hH]2",
+                el.tag
+            ):
+                self.set_level(el)
+                text = ''.join(el.itertext()).strip()
 
-        if len(toc_list) == 1 and 'children' in toc_list[0]:
-            second_level_headings = toc_list[0]['children']
+                # Do not override pre-existing ids
+                if "id" not in el.attrib:
+                    innertext = stashedHTML2text(text, self.markdown)
+                    el.attrib["id"] = unique(
+                        self.slugify(innertext, self.sep),
+                        used_ids
+                    )
 
-            for item in second_level_headings:
-                # List item link, to be inserted into the toc div
-                li = etree.SubElement(ul, "li")
-                li.attrib['class'] = 'p-toc__item'
-                link = etree.SubElement(li, "a")
-                link.text = item.get('name', '')
-                link.attrib['class'] = 'p-toc__link'
-                link.attrib["href"] = '#' + item.get('id', '')
+                toc_items.append({
+                    'id': el.attrib["id"],
+                    'name': text
+                })
 
-        prettify = self.markdown.treeprocessors.get('prettify')
-        prettify.run(div)
+                if self.use_anchors:
+                    self.add_anchor(el, el.attrib["id"])
+                if self.use_permalinks:
+                    self.add_permalink(el, el.attrib["id"])
 
-        return div
+        self.markdown.toc_items = toc_items
 
 
 class VanillaTocExtension(TocExtension):

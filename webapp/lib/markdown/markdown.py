@@ -47,10 +47,7 @@ def parse_markdown(markdown_content):
     markdown_content, metadata = parse_frontmatter(markdown_content)
     markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
     parsed_markdown = markdown_parser.convert(markdown_content)
-    table_of_contents = markdown_parser.toc
-
-    if table_of_contents:
-        metadata['table_of_contents'] = table_of_contents
+    metadata['table_of_contents_items'] = markdown_parser.toc_items
 
     return parsed_markdown, metadata
 
