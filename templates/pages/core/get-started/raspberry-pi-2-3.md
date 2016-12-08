@@ -11,12 +11,12 @@ We will walk you through the steps of flashing Ubuntu Core on a Raspberry Pi 2 o
 
 ## Hardware and software requirements
 
-  * a Raspberry Pi 2 or 3
-  * a micro SD card
-  * a monitor with an HDMI interface
-  * an HDMI cable
-  * a USB keyboard
-  * an Ubuntu Core image
+  * A Raspberry Pi 2 or 3
+  * A microSD card
+  * A monitor with an HDMI interface
+  * An HDMI cable
+  * A USB keyboard
+  * An Ubuntu Core image
 
 ### Ubuntu Core image
 

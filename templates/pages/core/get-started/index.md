@@ -1,6 +1,6 @@
 ---
 title: Get started
-description: Your Ubuntu Core first steps, installing Ubuntu Core on your board or in a Virtual Machine.
+description: Your Ubuntu Core first steps, installing Ubuntu Core on your board or in a virtual machine.
 ---
 
 # Get started
