@@ -14,7 +14,7 @@ As an alternative, you can also install Ubuntu Classic to have a fully-fledged d
 ## Hardware and software requirements
 
 * An Intel® Joule
-  * The board needs to have its BIOS updated to version #131, which is available
+    * The board needs to have its BIOS updated to version #131, which is available
 [here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-09-23-131_Public.zip).
 * 2 USB 2.0 or 3.0 flash drives (2GB min.)
 * A monitor with an HDMI interface
