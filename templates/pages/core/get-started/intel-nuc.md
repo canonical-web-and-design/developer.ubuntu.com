@@ -13,14 +13,14 @@ As an alternative, you can also install Ubuntu Classic to have a fully-fledged d
 
 ## Hardware and software requirements
 
- * an Intel® NUC
+ * An Intel® NUC
     * The NUC needs to have its BIOS updated to the latest version. For this, you can follow online instructions [on the Intel website](http://www.intel.com/content/www/us/en/support/boards-and-kits/000005850.html)
  * 2 USB 2.0 or 3.0 flash drive (respectively 2GB and 8GB min.)
- * a monitor with an HDMI interface
- * a USB keyboard and a mouse
- * a network connection with Internet access
- * an [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
- * An Ubuntu Core Image
+ * A monitor with an HDMI interface
+ * A USB keyboard and a mouse
+ * A network connection with Internet access
+ * An [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
+ * An Ubuntu Core image
 
 ### Ubuntu Core image
 
