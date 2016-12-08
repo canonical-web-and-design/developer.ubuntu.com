@@ -12,13 +12,13 @@ We will walk you through the steps of flashing Ubuntu Core on a DragonBoard 410c
 
 ## Hardware and software requirements
 
-  * a DragonBoard 410c
-  * a micro SD card
-  * a monitor with an HDMI interface
-  * an HDMI cable
-  * a USB keyboard
-  * an USB to RJ45 adaptor or a WiFi connection
-  * an Ubuntu Core image
+  * A DragonBoard 410c
+  * A microSD card
+  * A monitor with an HDMI interface
+  * An HDMI cable
+  * A USB keyboard
+  * An USB to RJ45 adaptor or a WiFi connection
+  * An Ubuntu Core image
 
 ### Ubuntu Core image
 
@@ -26,10 +26,10 @@ We will walk you through the steps of flashing Ubuntu Core on a DragonBoard 410c
 
 ## Installation instructions
 
- 1. Copy the Ubuntu Core image on the SD Card by following the [installation media instructions](/core/get-started/installation-medias)
+ 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions](/core/get-started/installation-medias)
  * Make sure the DragonBoard is unplugged from power
  * Set the S6 switch to `0-1-0-0`, where 1 is the "SD boot" option
  * Attach the monitor and keyboard to the board
- * Insert the SD Card and plug the power adaptor into the board
+ * Insert the SD card and plug the power adaptor into the board
 
 {% include "includes/markdown/get_started_first_boot.md" %}
