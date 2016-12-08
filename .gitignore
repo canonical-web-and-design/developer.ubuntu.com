@@ -1,3 +1,6 @@
+# App
+cache.sqlite
+
 # Python
 __pycache__/
 env/
