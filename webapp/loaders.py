@@ -7,8 +7,6 @@ from django.template.base import Template
 from django.template.engine import Engine
 from django.template.exceptions import TemplateDoesNotExist
 from django.template.loaders.base import Loader
-from yaml.scanner import ScannerError
-from yaml.parser import ParserError
 
 from webapp.lib.markdown import parse_markdown
 
@@ -82,11 +80,6 @@ class MarkdownLoader(Loader):
             template, origin = self._generate_template(
                 template_name, template_dirs
             )
-            if not hasattr(template, 'render'):
-                try:
-                    template = Template(source, origin, template_name)
-                except (TemplateDoesNotExist, UnboundLocalError):
-                    return template, origin
             self.template_cache[key] = template
         return self.template_cache[key], None
 
@@ -108,6 +101,12 @@ class MarkdownLoader(Loader):
             template = Template(source, origin, template_name)
         except NotImplementedError:
             template, origin = self.find_template(template_name, template_dirs)
+
+        if not hasattr(template, 'render'):
+            try:
+                template = Template(source, origin, template_name)
+            except (TemplateDoesNotExist, UnboundLocalError):
+                return template, origin
 
         return template, origin
 

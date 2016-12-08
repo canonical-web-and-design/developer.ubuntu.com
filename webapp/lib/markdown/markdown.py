@@ -5,7 +5,8 @@ import markdown as _markdown
 
 from django.conf import settings
 from django.template import loader
-from django.template import TemplateDoesNotExist
+from yaml.scanner import ScannerError
+from yaml.parser import ParserError
 
 from .extensions.vanilla_toc import VanillaTocExtension
 

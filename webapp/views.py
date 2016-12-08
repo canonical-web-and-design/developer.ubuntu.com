@@ -9,8 +9,6 @@ from django.template import (
 from django.template.engine import Engine
 from django.views.generic import TemplateView
 
-from webapp.lib.markdown import parse_frontmatter
-# from webapp.lib.markdown import get_markdown_with_parser
 from webapp.lib.markdown import parse_markdown
 from webapp.loaders import MarkdownLoader
 
@@ -40,9 +38,9 @@ class MarkdownView(TemplateView):
 
     def _find_markdown_loader(self):
         loaders = Engine.get_default().template_loaders
-        for loader in loaders:
-            if isinstance(loader, MarkdownLoader):
-                return loader
+        for loader_instance in loaders:
+            if isinstance(loader_instance, MarkdownLoader):
+                return loader_instance
         raise Exception("Could not find MarkdownLoader")
 
     def _find_template_source(self, path):
@@ -52,7 +50,8 @@ class MarkdownView(TemplateView):
 
         template_path = ''.join([path, '.md'])
         try:
-            markdown, template_path = self.markdown_loader.load_template_source(
+            markdown_loader = self.markdown_loader
+            markdown, template_path = markdown_loader.load_template_source(
                 template_path
             )
         except TemplateDoesNotExist:
@@ -65,9 +64,7 @@ class MarkdownView(TemplateView):
 
     def _parse_markdown(self, path):
         markdown, template_path = self._find_template_source(path)
-        # parser, parsed_markdown, metadata = get_markdown_with_parser(markdown)
         parsed_markdown, metadata = parse_markdown(markdown)
-
 
         self.template_name = metadata.get('template')
         page_type = metadata.get('page_type')
