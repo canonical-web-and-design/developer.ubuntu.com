@@ -13,17 +13,17 @@ As an alternative, you can also install Ubuntu Classic to have a fully-fledged d
 
 ## Hardware and software requirements
 
-* an Intel® Joule
+* An Intel® Joule
   * The board needs to have its BIOS updated to version #131, which is available
 [here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-09-23-131_Public.zip).
 * 2 USB 2.0 or 3.0 flash drives (2GB min.)
-* a monitor with an HDMI interface
-* a Mini HDMI to HDMI cable
-* a USB keyboard and a mouse
-* a USB Hub for all the above USB pieces (4)
-* an 802.11 a/b/g/n WiFi network with Internet access
-* an [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
-* an Ubuntu Core image
+* A monitor with an HDMI interface
+* A Mini HDMI to HDMI cable
+* A USB keyboard and a mouse
+* A USB Hub for all the above USB pieces (4)
+* An 802.11 a/b/g/n WiFi network with Internet access
+* An [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
+* An Ubuntu Core image
 
 ### Ubuntu Core image
 
