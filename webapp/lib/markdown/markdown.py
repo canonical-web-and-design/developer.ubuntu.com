@@ -26,22 +26,7 @@ markdown_extensions = [
 
 def parse_frontmatter(markdown_content):
     metadata = {}
-    try:
-        file_parts = frontmatter.loads(markdown_content)
-        metadata = file_parts.metadata
-    except (ScannerError, ParserError):
-        """
-        If there's a parsererror, it's because frontmatter had to parse
-        the entire file (not finding frontmatter at the top)
-        and encountered an unexpected format somewhere in it.
-        This means the file has no frontmatter, so we can simply continue.
-        """
-        pass
-    return metadata
 
-
-def parse_markdown(markdown_content):
-    metadata = {}
     try:
         file_parts = frontmatter.loads(markdown_content)
         metadata = file_parts.metadata
@@ -55,11 +40,15 @@ def parse_markdown(markdown_content):
         """
         pass
 
+    return markdown_content, metadata
+
+
+def parse_markdown(markdown_content):
+    markdown_content, metadata = parse_frontmatter(markdown_content)
     markdown_parser = _markdown.Markdown(extensions=markdown_extensions)
     parsed_markdown = markdown_parser.convert(markdown_content)
-    table_of_contents = markdown_parser.toc
-    if table_of_contents:
-        metadata['table_of_contents'] = table_of_contents
+    metadata['table_of_contents_items'] = markdown_parser.toc_items
+
     return parsed_markdown, metadata
 
 
@@ -82,7 +71,7 @@ def get_page_data(pages, root_path=None):
         template = loader.select_template(template_paths)
 
         with open(template.origin.name, 'r') as f:
-            metadata = parse_frontmatter(f.read())
+            markdown_content, metadata = parse_frontmatter(f.read())
             metadata['path'] = path
             page_data.append(metadata)
 
