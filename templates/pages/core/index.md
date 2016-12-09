@@ -4,6 +4,7 @@ description: Core summary page
 page_type: modular
 summary_pages:
     - get-started
+    - tutorials
     - examples
     - publish-and-distribute
     - documentation
