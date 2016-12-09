@@ -7,7 +7,7 @@ description: A series of tutorials, step by step practical guides to help you ac
 
 Tutorials are practical guides, with step-by-step instructions to achieve the most common development tasks. They cover a variety of areas from getting started tasks to more advanced topics. Easy to follow, practical, and instructive, they should give you an understanding of key Ubuntu Core concepts and, more importantly, help you build components of your solution.
 
-Tutorials are still in beta, but to get an early preview, you can access the offline snap version of the tutorials. To give us feedback or to ask for new tutorials to be created, please [file a issue](https://github.com/ubuntu/codelabs/issues) on the GitHub project.
+Tutorials are still in beta, but to get an early preview, you can access the offline snap version of the tutorials. To give us feedback or to ask for new tutorials to be created, please [file an issue](https://github.com/ubuntu/codelabs/issues) on the GitHub project.
 
 ## Tutorials in a snap
 
