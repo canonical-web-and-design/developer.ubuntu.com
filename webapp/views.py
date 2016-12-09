@@ -8,13 +8,19 @@ except ImportError:
 
 # Third party modules
 from django.conf import settings
-from django.http import HttpResponseNotFound, HttpResponseServerError, Http404
+from django.http import (
+    Http404,
+    HttpResponse,
+    HttpResponseNotFound,
+    HttpResponseServerError,
+)
 from django.template import (
     Context,
     loader,
     RequestContext,
     TemplateDoesNotExist,
 )
+from django.template import RequestContext, Template
 from django.template.engine import Engine
 from django.views.generic import TemplateView
 
@@ -86,13 +92,12 @@ class MarkdownView(TemplateView):
 
     def get_context_data(self, markdown, metadata, **kwargs):
         context = super(MarkdownView, self).get_context_data(**kwargs)
-
         # We want to preserve context keys. So do it backwards and flip around
         metadata.update(context)
         context = metadata
-
         # More specific overrides and defaults.
         context['base_template'] = self._get_base_template_name()
+        context['page_template'] = self.get_template_names()
         context['markdown'] = markdown
         context['page_type'] = metadata.get('page_type')
         context['table_of_contents_title'] = metadata.get(
@@ -111,7 +116,15 @@ class MarkdownView(TemplateView):
             metadata=metadata,
             **kwargs
         )
-        return self.render_to_response(context)
+
+        markdown_template = Template(markdown.join((
+            "{% extends page_template %} \n{% block markdown %}",
+            "\n{% endblock %}",
+        )))
+        return HttpResponse(
+            markdown_template.render(RequestContext(request, context)),
+            content_type='text/html',
+        )
 
 
 class SearchView(TemplateView):
