@@ -7,10 +7,12 @@
 
 {% page_cards summary_pages %}
 
+<div class="cards">
 {% if insights_feed %}
     {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
     {% feed_cards feed_url limit=4 %}
     {% endwith %}
 {% endif %}
+</div>
 
 {% endblock %}

@@ -289,14 +289,13 @@ a:link:hover {
 }
 
 // cards
-.row--cards {
-  
+.cards {
   &__container {
     @media only screen and (max-width: $breakpoint-large) {
       width: 100%;
     }
   }
-  
+
   &__title {
     background: rgba(0, 0, 0, 0) url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
     color: $color-mid-dark;
@@ -310,10 +309,6 @@ a:link:hover {
     margin-bottom: 40px;
     padding-bottom: 40px;
     position: relative;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      min-height: 21.5em;
-    }
 
     &__title {
       font-size: 1.3125rem;

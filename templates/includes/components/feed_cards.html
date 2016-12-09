@@ -1,14 +1,17 @@
 {% get_rss_feed feed_url limit=limit as feed %}
+<div class="col-4 row--cards__container">
 
-<h2>News</h2>
-
-<ul class="grid-list u-clearfix u-no-margin--left u-no-padding--left col-12">
-{% for item in feed %}
-    <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
-        <div class="col-12">
-            <h5><a href="{{ item.link }}">{{ item.title }}</a></h5>
-            <p><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
-        </div>
-    </li>
-{% endfor %}
-</ul>
+    <h2 class="row--cards__title">News</h2>
+    
+    <ul class="p-list">
+    {% for item in feed %}
+        <li>
+            <div class="p-card--highlighted">
+                <h3 class="p-card--highlighted__title"><a href="{{ item.link }}">{{ item.title }}</a></h3>
+                <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
+                <p class="p-card--highlighted__content"></p>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
