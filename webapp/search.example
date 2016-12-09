@@ -1,0 +1,158 @@
+
+{
+        
+"query": "ubuntu (site:www.ubuntu.com | site:www.canonical.com | site:help.ubuntu.com | site:insights.ubuntu.com )",
+"results": [
+    
+      {
+        "url": "http://www.ubuntu.com/",
+        "title": "The leading operating system for PCs, tablets, phones, IoT <b>...</b>",
+        "summary": "<b>Ubuntu</b> is an open source software platform that runs everywhere from IoT<br> devices, the smartphone, the tablet and the PC to the server and the <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "34k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/about/about-ubuntu",
+        "title": "About <b>Ubuntu</b> | <b>Ubuntu</b>",
+        "summary": "<b>Ubuntu</b> is an open source software platform that runs everywhere from IoT<br> devices, the smartphone, the tablet and the PC to the server and the <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "29k"
+      }
+    
+        ,
+      
+      {
+        "url": "http://insights.ubuntu.com/",
+        "title": "<b>Ubuntu</b> Insights",
+        "summary": "<b>...</b> Search: <b>Ubuntu</b> Insights. Your <b>...</b> Taking a stand against unofficial <b>Ubuntu</b><br> images. By Canonical on 1 December 2016. <b>Ubuntu</b> <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "37k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/about/canonical-and-ubuntu",
+        "title": "Canonical and <b>Ubuntu</b> | <b>Ubuntu</b>",
+        "summary": "<b>Ubuntu</b> is an open source software platform that runs everywhere from IoT<br> devices, the smartphone, the tablet and the PC to the server and the <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "26k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/management/ubuntu-advantage",
+        "title": "Plans and pricing | Support | <b>Ubuntu</b>",
+        "summary": "Both options are part of the <b>Ubuntu</b> Advantage service package, however you<br> can try Landscape for free for 30 days, without committing to a <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "46k"
+      }
+    
+        ,
+      
+      {
+        "url": "http://www.ubuntu.com/cloud",
+        "title": "<b>Ubuntu</b> in the cloud | Cloud | <b>Ubuntu</b>",
+        "summary": "Whether you&#39;re building your own OpenStack cloud, want a hosted private<br> cloud or want to use <b>Ubuntu</b> in the public cloud, we offer all the training <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "53k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/download/ubuntu-flavours",
+        "title": "<b>Ubuntu</b> flavours | <b>Ubuntu</b>",
+        "summary": "<b>Ubuntu</b> flavours offer a unique way to experience <b>Ubuntu</b>, each with their own<br> choice of default applications and settings, backed by the full <b>Ubuntu</b> <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "32k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/desktop/ubuntu-kylin",
+        "title": "<b>Ubuntu</b> Kylin | <b>Ubuntu</b>",
+        "summary": "<b>Ubuntu</b> Kylin is a Chinese flavour of <b>Ubuntu</b>. Canonical partnered<br> with CSIP and NUDT to produce a fully localised and <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "36k"
+      }
+    
+        ,
+      
+      {
+        "url": "http://www.ubuntu.com/things",
+        "title": "<b>Ubuntu</b> for the Internet of Things | <b>Ubuntu</b>",
+        "summary": "From home control to drones, robots and industrial systems, <b>Ubuntu</b> Core<br> provides robust security, app stores and reliable updates for all your IoT <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "39k"
+      }
+    
+        ,
+      
+      {
+        "url": "https://www.ubuntu.com/download/ubuntu-kylin",
+        "title": "Download <b>Ubuntu</b> Kylin | Download | <b>Ubuntu</b>",
+        "summary": "<b>Ubuntu</b> is an open source software platform that runs everywhere from IoT<br> devices, the smartphone, the tablet and the PC to the server and the <b>...</b>  ",
+        "meta_tags" : [
+    
+         ]
+    
+        ,
+        "size": "29k"
+      }
+    
+],
+    
+      "results_nav": {
+      "total_results": "1290",
+      "results_start": "1",
+      "results_end": "10",
+      "current_view": "0"
+        ,
+        "have_next": "1"
+      
+      }
+    
+          }
+        
