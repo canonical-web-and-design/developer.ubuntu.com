@@ -301,13 +301,12 @@ a:link:hover {
 
   .p-card--highlighted {
     margin-bottom: 40px;
+    padding-bottom: 40px;
+    position: relative;
 
     @media only screen and (min-width: $breakpoint-medium) {
       min-height: 21.5em;
     }
-
-    padding-bottom: 40px;
-    position: relative;
 
     &__title {
       font-size: 1.3125rem;
@@ -350,6 +349,10 @@ a:link:hover {
     display: flex;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
+    
+    &.odd {
+      padding-left: 0;
+    }
 
     @media only screen and (max-width: $breakpoint-medium) {
 
@@ -357,7 +360,7 @@ a:link:hover {
 
         // scss-lint:disable NestingDepth
         &:first-child {
-          padding-right: 1rem;
+          padding-right: $grid-gutter-width;
           width: 25%;
         }
 
@@ -374,7 +377,7 @@ a:link:hover {
       display: flex;
       flex-wrap: wrap;
       margin: 0;
-      padding: 1.5rem .75rem 1.5rem;
+      padding: 1.5rem $grid-gutter-width 1.5rem;
 
       &.last-col,
       &:nth-child(even) {
