@@ -10,6 +10,7 @@
                 <h3 class="p-card--highlighted__title"><a href="{{ item.link }}">{{ item.title }}</a></h3>
                 <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
                 <p class="p-card--highlighted__content"></p>
+                <p class="note p-card--highlighted__source">Ubuntu Insights</p>
             </div>
         </li>
     {% endfor %}
