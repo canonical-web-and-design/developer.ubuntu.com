@@ -3,11 +3,8 @@ Title: Intel Nuc
 Description: These steps will walk you through flashing Ubuntu Core on an Intel NUC.
 ---
 # Intel Nuc
-![](http://i.imgur.com/wB6bD81.png)
 
 We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At the end of this process, you will have a board ready for production or testing snaps.
-
-As an alternative, you can also install Ubuntu Classic to have a fully-fledged development environment and [develop snaps on target](/core/get-started/developer-setup).
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 

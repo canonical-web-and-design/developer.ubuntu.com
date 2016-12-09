@@ -4,7 +4,6 @@ Description: These steps will walk you through flashing Ubuntu Core on a DragonB
 ---
 
 # DragonBoard 410c
-![](http://i.imgur.com/Hd2gRBo.png)
 
 We will walk you through the steps of flashing Ubuntu Core on a DragonBoard 410c. At the end of this process, you will have a board ready for production or testing snaps.
 

@@ -4,11 +4,8 @@ Description: These steps will walk you through flashing Ubuntu Core on a Samsung
 ---
 
 # Samsung Artik 5 or 10
-![](http://i.imgur.com/tZ619Fm.png)
 
 We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 or 10. At the end of this process, you will have a board ready for production or testing snaps.
-
-As an alternative, you can also install Ubuntu Classic to have a fully-fledged development environment and [develop snaps on target](/core/get-started/developer-setup).
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
