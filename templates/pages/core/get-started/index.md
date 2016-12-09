@@ -10,7 +10,7 @@ Ubuntu Core is supported on a variety of chipsets, boards, SOCs and virtual mach
 We will guide you through the steps of installing Ubuntu Core on these platforms.
 
 
-![](https://assets.ubuntu.com/v1/635f5dbf-raspberry_pi_logo_rgb_.svg?fmt=png&w=100)
+![](https://assets.ubuntu.com/v1/635f5dbf-raspberry_pi_logo_rgb_.svg?fmt=png&w=90)
 
 Ubuntu Core allows you to install apps on your board in just a few clicks.
 
@@ -22,7 +22,7 @@ Ubuntu Core lets you interact and control complex hardware and modules.
 
 [Get started on an Intel® Joule ›](/core/get-started/intel-joule)
  
-![](https://assets.ubuntu.com/v1/5ea48272-Qualcomm_Snapdragon_logo.png?w=200)
+![](https://assets.ubuntu.com/v1/d9ccf84b-qualcoom.png?w=180)
 
 Ubuntu Core helps you harness the power of boards tailored for the IoT ecosystem.
 
