@@ -345,7 +345,6 @@ a:link:hover {
 
   &__item {
     border-bottom: $grid-border-style;
-    display: flex;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     
@@ -373,7 +372,6 @@ a:link:hover {
     
     @media only screen and (min-width: $breakpoint-medium) {
       border-right: $grid-border-style;
-      display: flex;
       flex-wrap: wrap;
       margin: 0;
       padding: 1.5rem $grid-gutter-width 1.5rem;
