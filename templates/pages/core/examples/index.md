@@ -17,7 +17,7 @@ Interfaces allow snaps to communicate or share resources according to a protocol
 
 [See examples for interfaces ›](/core/examples/interfaces)
 
-##Gadgets
+##Gadget snaps
 A gadget snap is responsible for defining and manipulating the system properties specific to one or more devices. Here are a few examples of gadget snaps for various devices and development boards.
 
 [See examples for gadgets ›](/core/examples/gadget-snap)
