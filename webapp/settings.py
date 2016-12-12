@@ -37,6 +37,7 @@ APPEND_SLASH = False
 REMOVE_SLASH = True
 STATIC_ROOT = "static"
 STATIC_URL = '/static/'
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_FINDER_PATH = 'pages'
 
 WHITENOISE_ALLOW_ALL_ORIGINS = False
@@ -61,7 +62,7 @@ STATICFILES_FINDERS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [TEMPLATE_PATH],
         'OPTIONS': {
             'builtins': [
                 'webapp.templatetags',
