@@ -1,6 +1,6 @@
 ---
 title: Create installation medias for Ubuntu Core
-description: These steps will walk you through creating a bootable Ubuntu Core SD Card or USB flash drive.
+description: These steps will walk you through creating a bootable Ubuntu Core SD card or USB flash drive.
 ---
 
 # Create installation medias for Ubuntu Core
@@ -9,13 +9,13 @@ These steps will walk you through creating a bootable Ubuntu Core SD Card or USB
 
 This will erase any existing content on the removable drive.
 
-The process is the same on any OS, you will: download an image file, insert your removable drive (SD Card, USB flash drive, etc.), unmount it, replace the drive content with the image file content, eject the drive.
+The process is the same on any operating system, you will: download an image file, insert your removable drive (SD card, USB flash drive, etc.), unmount it, replace the drive content with the image file content, eject the drive.
 
 ## On Ubuntu
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
 
- * Insert your SD Card or USB flash drive
+ * Insert your SD card or USB flash drive
 
  * Identify its address by opening the "Disks" application and look for the "Device" line. If the line is in the `/dev/mmcblk0p1` format, then your drive address is: `/dev/mmcblk0`. If it is in the `/dev/sdb1` format, then the address is `/dev/sdb`
 
@@ -41,11 +41,11 @@ The process is the same on any OS, you will: download an image file, insert your
 
  * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [7-zip](http://www.7-zip.org/).
 
- * Insert your SD Card or USB flash drive
+ * Insert your SD card or USB flash drive
 
  * Download and install [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/files/latest/download), then launch it
 
- * Find out where your removable drive is mounted by opening a File Explorer window to check which mount point the drive is listed under. Here is an example of an SD Card listed under `E`:
+ * Find out where your removable drive is mounted by opening a File Explorer window to check which mount point the drive is listed under. Here is an example of an SD card listed under `E`:
 
     ![](http://i.imgur.com/QXLkLsa.png)
 
@@ -66,10 +66,10 @@ need 2 elements:
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
 
- * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. You can. To do so, you might have to install an archive extractor software, like [The
+ * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [The
  Unarchiver](https://itunes.apple.com/gb/app/the-unarchiver/id425424353?mt=12).
 
- * Insert your SD Card or USB flash drive
+ * Insert your SD card or USB flash drive
 
  * Open a terminal window (Go to Application -> Utilities, you will find the
 Terminal app there), then run the following command:
@@ -92,13 +92,13 @@ Terminal app there), then run the following command:
           0:     FDisk_partition_scheme                        *7.9 GB     disk3
           1:                 DOS_FAT_32 NO NAME                 7.9 GB     disk3s1
 
-    Note that your removable drive must be `DOS_FAT_32` formatted. In this example, `/dev/disk3` is the drive address of an 8GB SD Card.
+    Note that your removable drive must be `DOS_FAT_32` formatted. In this example, `/dev/disk3` is the drive address of an 8GB SD card.
 
  * Unmount your SD card with the following command:
 
         diskutil unmountDisk <drive address>
 
- * When successful you should see a message similar to this one:
+ * When successful, you should see a message similar to this one:
 
         Unmount of all volumes on <drive address> was successful
 
