@@ -1,74 +1,56 @@
-----
+---
 Title: Developer setup
-Description:
-----
+Description: These steps will walk you through installing a developer environment on an Ubuntu Core device.
+---
 
-#Developer setup
-Introduction copy...
+# Developer setup
 
-##Prerequisites
-Introduction copy...
-* list 1
-* list 2
-* list 3
+Installing a classic Ubuntu environment is required to develop and build snaps directly on your Ubuntu Core device.
 
-##Board 1 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+## Developing on target
 
-Summary steps link >
+You can use any Ubuntu 16.04 LTS workstation to develop a snap using [snapcraft](http://snapcraft.io/docs/build-snaps/), then build for another architecture [using Launchpad or a chroot setup](http://snapcraft.io/docs/build-snaps/build-for-another-arch), but developing on the target device itself is convenient when testing device specific features and lets you iterate faster.
 
-##Board 2 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+### Installing and using developer tools
 
-Summary steps link >
+Ubuntu Core provides a read-only file system; that doesn't let you install deb packages. Installing the "classic" snap creates a classic Ubuntu environment for you to use on the device.
 
-##Board 3 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+1. SSH to your device using your Ubuntu SSO user name
+2. Install the latest version of the "classic" snap from the [`edge` channel](http://snapcraft.io/docs/reference/channels), with the `--devmode` flag to give it unconfined access to the device.
 
-Summary steps link >
+        snap install classic --edge --devmode
 
-##Board 4 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+3. Unpack the classic environment and access it using:
 
-Summary steps link >
+        sudo classic
 
-##Board 5 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+4. You are now presented with the bash shell of a classic Ubuntu 16.04 LTS environment, ready to install your required snap development tools (`snapcraft`, `build-essential`) and other developer tools you might need (`git`, `nodejs`, `bzr`, etc.).
 
-Summary steps link >
+        sudo apt update
+        sudo apt install snapcraft build-essential git
 
-##Board 6 - Hardware and software requirements
-Introduction copy...
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+5. Next, you can learn how to create snaps on [snapcraft.io](http://snapcraft.io/docs/build-snaps/)
 
-Summary steps link >
+### Testing your snaps locally
 
-##Summary steps
-Introduction copy
- 1. item1
- 2. item2
- 3. item3
- 4. item4
+You have two ways to test your built snaps in your production environment, either installing a built snap file with `snap install` or using the `snap try` command in your project folder.
+
+#### snap install
+
+The `snap install` command lets you install the snap on your system as a user would do from the store.
+
+ 1. Exit the classic environment with `Ctrl+D`
+ * Install your built snap, with the `--dangerous` flag to bypass store signature checks:
+
+          snap install <snap file> --dangerous
+
+#### snap try
+
+The `snap try` command will mount a directory with the content of a snap, as an installed snap on your system. This directory will stay writable, so you can make changes to your snap source code while it's running.
+
+It requires you to have ran `snapcraft` on your project folder at least once, so a `prime` directory with the content of your snap has been generated.
+
+1. Exit the classic environment with `Ctrl+D`
+* Run `snap try` in your project folder
+
+The `snap enable` and `disable` commands will let you stop and restart your snap after you changed its code, if for example, it is providing a service that runs when the snap is installed.

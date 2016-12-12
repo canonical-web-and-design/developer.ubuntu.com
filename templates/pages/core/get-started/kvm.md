@@ -3,7 +3,6 @@ Title: KVM
 Description: These steps will walk you through installing Ubuntu Core on your Linux desktop in a virtual machine.
 ---
 # KVM
-![](http://i.imgur.com/SYwbSCl.png)
 
 We will walk you through the steps of installing Ubuntu Core on your Linux desktop in a virtual machine.
 
@@ -71,3 +70,9 @@ end of the account configuration step.
 
   * During setup,` console-conf` will download the SSH key registered with your store account and configure it so you can log into the device via `ssh -p 8022 <Ubuntu SSO account name>@localhost` without a password.
   * There is no default `ubuntu` user on these images, but you can run `sudo passwd <account name>` to set a password in case you need a local console login.
+
+### 5. Install snaps
+
+Your virtual machine is ready to have snaps installed.
+
+[Get started with the snap command](http://snapcraft.io/docs/core/usage)

@@ -3,7 +3,6 @@ Title: Raspberry Pi 2 or 3
 Description: These steps will walk you through flashing Ubuntu Core on a Raspberry Pi 2 or 3.
 ---
 # Raspberry Pi 2 or 3
-![](http://i.imgur.com/MtSazih.png)
 
 We will walk you through the steps of flashing Ubuntu Core on a Raspberry Pi 2 or 3. At the end of this process, you will have a board ready for production or testing snaps.
 
