@@ -13,14 +13,14 @@ You can use any Ubuntu 16.04 LTS workstation to develop a snap using [snapcraft]
 
 ### Installing and using developer tools
 
-Ubuntu Core provides a read-only file system, that doesn't let you install deb packages. Installing the "classic" snap creates a classic Ubuntu environment for you to use on the device.
+Ubuntu Core provides a read-only file system; that doesn't let you install deb packages. Installing the "classic" snap creates a classic Ubuntu environment for you to use on the device.
 
 1. SSH to your device using your Ubuntu SSO user name
 2. Install the latest version of the "classic" snap from the [`edge` channel](http://snapcraft.io/docs/reference/channels), with the `--devmode` flag to give it unconfined access to the device.
 
         snap install classic --edge --devmode
 
-3. You can now unpack the classic environment and access it using:
+3. Unpack the classic environment and access it using:
 
         sudo classic
 
@@ -29,7 +29,7 @@ Ubuntu Core provides a read-only file system, that doesn't let you install deb p
         sudo apt update
         sudo apt install snapcraft build-essential git
 
-5. Learn how to create snaps on [snapcraft.io](http://snapcraft.io/docs/build-snaps/)
+5. Next, you can learn how to create snaps on [snapcraft.io](http://snapcraft.io/docs/build-snaps/)
 
 ### Testing your snaps locally
 
