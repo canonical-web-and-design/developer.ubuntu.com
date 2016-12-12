@@ -1,13 +1,28 @@
 # Core modules
 import fnmatch
 import os
+from collections import OrderedDict
 from copy import deepcopy
 
 # Third party modules
+import yaml
 from django.conf import settings
 
 # Local modules
 from webapp.lib.markdown import get_page_data
+
+
+def dict_representer(dumper, data):
+    return dumper.represent_dict(data.iteritems())
+
+
+def dict_constructor(loader, node):
+    return OrderedDict(loader.construct_pairs(node))
+
+
+_mapping_tag = yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG
+yaml.add_representer(OrderedDict, dict_representer)
+yaml.add_constructor(_mapping_tag, dict_constructor)
 
 
 class Sitemap:
@@ -93,7 +108,6 @@ class Sitemap:
         markdown_files = self._parse_markdown_files(root_path)
 
         tree = markdown_files
-        print tree
         if root_path:
             self.sitemap[root_path] = tree['core']
 
@@ -101,9 +115,59 @@ class Sitemap:
 
     def get(self, root_path=None):
         if root_path:
-            full_map = self._generate_sitemap(root_path)
-            return full_map[root_path]
-        return self._generate_sitemap()
+            if not self.sitemap.get(root_path):
+                self._generate_sitemap(root_path)
+            return self.sitemap[root_path]
+        if not self.sitemap:
+            self._generate_sitemap()
+        return self.sitemap
+
+    def build_navigation(self, root_path=None):
+        """
+
+        """
+        template_path = getattr(settings, 'TEMPLATE_PATH')
+        config_path = os.path.join(
+            template_path,
+            'includes',
+            'navigation.yaml'
+        )
+        config = []
+        if os.path.exists(config_path):
+            with open(config_path, 'r') as navigation_file:
+                config = yaml.load(navigation_file)
+
+        unsorted_tree = self.get(root_path)
+        sorted_tree = OrderedDict()
+        if root_path:
+            config = config[root_path]
+            sorted_tree = OrderedDict({
+                'path': unsorted_tree['path'],
+                'title': unsorted_tree['title'],
+                'description': unsorted_tree['description'],
+                'children': OrderedDict(),
+            })
+
+        def sort_tree(config, unsorted, sorting):
+            """
+            Recurse through config dictionary and lookup keys from sitemap.
+            Put these keys in a new OrderedDict. As it iterates through, pass
+            reference to the current nesting level of sorted/unsorted dicts.
+            """
+            unsorted = unsorted['children']
+            sorting = sorting['children']
+            for key, value in config.iteritems():
+                sorting[key] = OrderedDict({
+                    'path': unsorted[key]['path'],
+                    'title': unsorted[key]['title'],
+                    'description': unsorted[key]['description'],
+                    'children': OrderedDict(),
+                })
+                if isinstance(value, OrderedDict):
+                    sort_tree(value, unsorted[key], sorting[key])
+
+        sort_tree(config, unsorted_tree, sorted_tree)
+        return sorted_tree
 
 
 sitemap = Sitemap()

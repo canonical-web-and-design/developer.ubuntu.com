@@ -41,7 +41,7 @@ def page_cards(context, pages):
     'includes/components/sidebar_nav.html'
 )
 def sidebar_nav(root_path=None):
-    site_tree = sitemap.get(root_path)
+    site_tree = sitemap.build_navigation(root_path)
     return {
         'sitemap': site_tree,
     }

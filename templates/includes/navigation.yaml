@@ -1,0 +1,27 @@
+root:
+  - Devices:
+    - Devices
+  - Topics:
+    - Development setup
+    - Ubuntu core
+    - Snapcraft
+    - Native apps
+    - Scops
+    - Web apps
+    - LXD containers
+    - MAAS
+  - Supporting content:
+    - Community resources
+    - Design
+
+core:
+  get-started:
+  tutorials:
+  examples:
+    gadget-snaps:
+    interfaces:
+    hooks:
+    assertions:
+  publish-and-distribute:
+  documentation:
+  troubleshooting:
