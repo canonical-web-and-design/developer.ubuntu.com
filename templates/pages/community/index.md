@@ -21,5 +21,17 @@ The Ubuntu community provides you with a strong support network that can help yo
 
 Above and beyond code there are many more ways to contribute to the Ubuntu community, documentation, testing, organising local events, will you let your imagination be the limit? 
 
+To contribute documentation:
+* For Ubuntu Core
+* For snapcraft.io
+
+To contribute questions and answers
+Link to AskUbuntu
+
+To organise or setup a workshop/meetup go to community/developer/workshops
 [Check out the community site for options](http://community.ubuntu.com/)
+
+To contribute snapcraft parts
+
+
 
