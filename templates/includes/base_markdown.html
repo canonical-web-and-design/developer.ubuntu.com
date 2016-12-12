@@ -6,7 +6,7 @@
 <div class="row u-no-padding--left u-no-padding--right">
 
     {% block inner_content %}
-        {{ markdown|safe }}
+        {% block markdown %}{% endblock %}
         {% block after_markdown %}{% endblock %}
     {% endblock %}
 
