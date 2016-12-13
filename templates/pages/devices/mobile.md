@@ -3,14 +3,14 @@ title: Mobile
 description: Developing for mobile devices
 page_type: modular
 summary_pages:
-    - /development set-up
+    - /development/set-up
     - /snapcraft
-    - /ubuntu core
+    - /core
     - /native-apps
     - /scopes
-    - / webapps 
+    - /web-apps 
     
-//GOTO CODELABS-FOR-MOBILETECH*
+# GOTO CODELABS-FOR-MOBILETECH*
 ----
 
 # Developing for mobile devices
