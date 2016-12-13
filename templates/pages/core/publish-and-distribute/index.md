@@ -10,7 +10,8 @@ Package, release and distribute your snaps to your devices through the Ubuntu St
 
 ## Publishing snaps
 
-[Illustration]
+![](https://assets.ubuntu.com/v1/807da529-dev_publish_workflow.svg)
+
 
 Snaps allow you to go from creation to instant publication in the release channel of your choice without leaving the command line.
 
@@ -20,7 +21,7 @@ You can also integrate the publication workflow into your CI process.  For examp
 
 ## Distributing snaps
 
-[Illustration]
+![](https://assets.ubuntu.com/v1/9637529f-dev_distribution_workflow+%281%29.svg?w=300)
 
 Ubuntu Core allows you to go to production with your own devices and branded store quickly.
 
