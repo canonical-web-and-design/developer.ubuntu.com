@@ -124,7 +124,8 @@ class Sitemap:
 
     def build_navigation(self, root_path=None):
         """
-
+        Order the sitemap using a yaml config.
+        Return a sitemap built with OrderedDict
         """
         template_path = getattr(settings, 'TEMPLATE_PATH')
         config_path = os.path.join(
