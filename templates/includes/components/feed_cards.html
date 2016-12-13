@@ -1,11 +1,11 @@
 {% get_rss_feed feed_url limit=limit as feed %}
-<div class="col-4 row--cards__container">
+<div class="col-12 cards__container">
 
-    <h2 class="row--cards__title">News</h2>
+    <h2 class="cards__title">News</h2>
     
     <ul class="p-list">
     {% for item in feed %}
-        <li>
+        <li class="cards__item col-4">
             <div class="p-card--highlighted">
                 <h3 class="p-card--highlighted__title"><a href="{{ item.link }}">{{ item.title }}</a></h3>
                 <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>

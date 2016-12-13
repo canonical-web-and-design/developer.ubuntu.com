@@ -295,7 +295,11 @@ a:link:hover {
       width: 100%;
     }
   }
-
+  
+  &__item:nth-child(4) {
+    margin-left: 0;
+  }
+  
   &__title {
     background: rgba(0, 0, 0, 0) url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
     color: $color-mid-dark;
@@ -306,6 +310,7 @@ a:link:hover {
   }
 
   .p-card--highlighted {
+    min-height: 12.9em;
     margin-bottom: 40px;
     padding-bottom: 40px;
     position: relative;
