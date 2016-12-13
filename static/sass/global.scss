@@ -310,10 +310,14 @@ a:link:hover {
   }
 
   .p-card--highlighted {
-    min-height: 12.9em;
-    margin-bottom: 40px;
     padding-bottom: 40px;
+    margin-bottom: $grid-gutter-width;
     position: relative;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      margin-bottom: 40px;
+      min-height: 12.9em;
+    }
 
     &__title {
       font-size: 1.3125rem;
