@@ -1,6 +1,6 @@
 ---
-Title: Intel Nuc
-Description: These steps will walk you through flashing Ubuntu Core on an Intel NUC.
+title: Intel Nuc
+description: These steps will walk you through flashing Ubuntu Core on an Intel NUC.
 ---
 # Intel Nuc
 
