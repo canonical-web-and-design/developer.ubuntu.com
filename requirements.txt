@@ -13,5 +13,6 @@ mdx-anchors-away==1.0.1
 mdx-callouts==1.0.0
 mdx-foldouts==1.0.0
 python-frontmatter==0.2.1
+PyYAML==3.12
 requests==2.10.0
 requests-cache==0.4.12

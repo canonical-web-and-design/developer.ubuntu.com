@@ -1,32 +1,6 @@
 <nav class="sidebar-nav__nav">
     <h2 class="sidebar-nav__title"><a class="sidebar-nav__title-link" href="/core">Core</a></h2>
-    <ul>
-        <li><a href="/core/get-started">Get started</a>
-            <ul>
-                <li><a href="/core/get-started">Link 1</a></li>
-                <li><a href="/core/get-started">Link 2</a></li>
-                <li><a href="/core/get-started">Link 3</a></li>
-                <li><a href="/core/get-started">Link 4</a></li>
-            </ul>
-        </li>
-        <li><a href="/core/tutorials">Tutorials</a></li>
-        <li><a href="/core/examples">Examples</a>
-            <ul>
-                <li><a href="/core/examples/gadget-snaps">Gadget snaps</a></li>
-                <li><a href="/core/examples/interfaces">Interfaces</a></li>
-                <li><a href="/core/examples/hooks">Hooks</a></li>
-                <li><a href="/core/examples/assertions">Assertions</a></li>
-            </ul>
-        </li>
-        <li><a href="/core/publish-and-distribute">Publish and distribute</a>
-            <ul>
-                <li><a href="/core/publish-and-distribute/publish">Publish</a></li>
-                <li><a href="/core/publish-and-distribute/distribute">Distribute</a></li>
-            </ul>
-        </li>
-        <li><a href="/core/documentation">Documentation</a></li>
-        <li><a href="/core/troubleshooting">Troubleshooting</a></li>
-    </ul>
+    {% sidebar_nav 'core' %}
 </nav>
 
 <script>

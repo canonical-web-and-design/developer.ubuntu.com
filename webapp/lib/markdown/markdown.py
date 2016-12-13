@@ -61,9 +61,12 @@ def get_page_data(pages, root_path=None):
     for path in pages:
         # If trying to lookup relative path
         if root_path and not path.startswith('/'):
+            root_path = root_path.strip('/')
             path = '/'.join([root_path, path])
         # We don't need any slashes at the ends
-        path.strip('/')
+        path = path.strip('/')
+        if path.endswith('/index'):
+            path = path[:-6]
 
         template_paths = [
             ''.join([template_root, path, '.md']),
@@ -72,7 +75,7 @@ def get_page_data(pages, root_path=None):
 
         with open(template.origin.name, 'r') as f:
             markdown_content, metadata = parse_frontmatter(f.read())
-            metadata['path'] = path
+            metadata['path'] = '/' + path
             page_data.append(metadata)
 
     return page_data
