@@ -1,6 +1,6 @@
 ---
-Title: DragonBoard 410c
-Description: These steps will walk you through flashing Ubuntu Core on a DragonBoard 410c.
+title: DragonBoard 410c
+description: These steps will walk you through flashing Ubuntu Core on a DragonBoard 410c.
 ---
 
 # DragonBoard 410c

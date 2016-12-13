@@ -1,6 +1,6 @@
 ---
-Title: Developer setup
-Description: These steps will walk you through installing a developer environment on an Ubuntu Core device.
+title: Developer setup
+description: These steps will walk you through installing a developer environment on an Ubuntu Core device.
 ---
 
 # Developer setup

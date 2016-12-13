@@ -1,6 +1,6 @@
 ---
-Title: Samsung Artik 5 or 10
-Description: These steps will walk you through flashing Ubuntu Core on a Samsung Artik 5 or 10.
+title: Samsung Artik 5 or 10
+description: These steps will walk you through flashing Ubuntu Core on a Samsung Artik 5 or 10.
 ---
 
 # Samsung Artik 5 or 10

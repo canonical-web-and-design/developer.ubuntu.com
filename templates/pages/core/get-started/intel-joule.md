@@ -1,6 +1,6 @@
 ---
-Title: Intel Joule
-Description: These steps will walk you through flashing Ubuntu Core on an Intel Joule.
+title: Intel Joule
+description: These steps will walk you through flashing Ubuntu Core on an Intel Joule.
 ---
 # Intel Joule
 
