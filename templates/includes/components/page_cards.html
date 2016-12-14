@@ -1,6 +1,7 @@
 <ul class="p-list grid-list u-clearfix col-12">
     {% for page in pages %}
         <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
+            {% if page.image %}<p><img alt="{{ page.title }} logo" src="{{ page.image }}">{% endif %}</p>
             <h5><a href="{{ page.path }}">{{ page.title }}</a></h5>
             <p>{{ page.description }}</p>
         </li>

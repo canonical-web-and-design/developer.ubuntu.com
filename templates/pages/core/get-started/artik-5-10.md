@@ -1,6 +1,7 @@
 ---
 title: Samsung Artik 5 or 10
-description: These steps will walk you through flashing Ubuntu Core on a Samsung Artik 5 or 10.
+image: https://assets.ubuntu.com/v1/c5dfb2cb-samsung-artik.png?w=150
+description: Ubuntu Core runs smoothly on both small and large footprint boards.
 ---
 
 # Samsung Artik 5 or 10
