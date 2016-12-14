@@ -331,7 +331,7 @@ a:link:hover {
   }
   
   &__item {
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: $breakpoint-cards) {
       margin-left: 0;
       width: 100%; 
     }
@@ -354,7 +354,7 @@ a:link:hover {
     padding-bottom: 40px;
     position: relative;
     
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: $breakpoint-cards) {
       min-height: 20em;
     }
     
