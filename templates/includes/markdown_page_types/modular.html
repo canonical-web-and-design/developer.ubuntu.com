@@ -10,7 +10,7 @@
 <div class="cards">
 {% if insights_feed %}
     {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
-    {% feed_cards feed_url limit=4 %}
+    {% feed_cards feed_url limit=3 %}
     {% endwith %}
 {% endif %}
 </div>
