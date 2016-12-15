@@ -1,7 +1,7 @@
 from django import template
 
 from webapp.lib.feeds import get_json_feed_content, get_rss_feed_content
-from webapp.lib.markdown import get_page_data
+from webapp.lib.markdown import get_page_data as _get_page_data
 from webapp.sitemap import sitemap
 
 register = template.Library()
@@ -15,6 +15,13 @@ def get_json_feed(feed_url, **kwargs):
 @register.simple_tag
 def get_rss_feed(feed_url, **kwargs):
     return get_rss_feed_content(feed_url, **kwargs)
+
+
+@register.simple_tag(takes_context=True)
+def get_page_data(context, pages, **kwargs):
+    request = context['request']
+    page_data = _get_page_data(pages, request.path)
+    return page_data
 
 
 @register.inclusion_tag(
@@ -31,7 +38,7 @@ def feed_cards(feed_url, **kwargs):
 )
 def page_cards(context, pages):
     request = context['request']
-    page_data = get_page_data(pages, request.path)
+    page_data = _get_page_data(pages, request.path)
     return {
         'pages': page_data,
     }
