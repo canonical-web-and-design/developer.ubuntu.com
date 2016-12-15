@@ -36,6 +36,11 @@ class Sitemap:
             template_path = os.path.join(template_path, pages_path)
         return template_path
 
+    def _split_path(self, path):
+        path = path.strip('/')
+        parts = path.split('/')
+        return parts
+
     def _build_metadata(self, path):
         if path.endswith('/'):
             path = path[:-1]
@@ -122,7 +127,7 @@ class Sitemap:
             self._generate_sitemap()
         return self.sitemap
 
-    def build_navigation(self, root_path=None):
+    def build_navigation(self, current_path=None, root_path=None):
         """
         Order the sitemap using a yaml config.
         Return a sitemap built with OrderedDict
@@ -168,6 +173,32 @@ class Sitemap:
                     sort_tree(value, unsorted[key], sorting[key])
 
         sort_tree(config, unsorted_tree, sorted_tree)
+
+        # Determine current path relative to root_path
+        current_path = current_path.strip('/')
+        if root_path:
+            if root_path == current_path:
+                current_path = None
+            elif current_path.startswith(root_path):
+                current_path = current_path[len(root_path):]
+
+        # Mark current items as active if there is a path set
+        if current_path and not current_path == '':
+            active_path_keys = self._split_path(current_path)
+            final_key = active_path_keys.pop()
+
+            current_tree_branch = sorted_tree['children']
+            for key in active_path_keys:
+                current_tree_branch = current_tree_branch[key]
+                if current_tree_branch.get('children'):
+                    current_tree_branch['active_parent'] = True
+                    current_tree_branch['class'] = 'active-parent'
+                    current_tree_branch = current_tree_branch['children']
+                else:
+                    continue
+            current_tree_branch[final_key]['active'] = True
+            current_tree_branch[final_key]['class'] = 'active'
+
         return sorted_tree
 
 

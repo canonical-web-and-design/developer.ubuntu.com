@@ -45,10 +45,14 @@ def page_cards(context, pages):
 
 
 @register.inclusion_tag(
-    'includes/components/sidebar_nav.html'
+    'includes/components/sidebar_nav.html', takes_context=True
 )
-def sidebar_nav(root_path=None):
-    site_tree = sitemap.build_navigation(root_path)
+def sidebar_nav(context, root_path=None):
+    request = context['request']
+    site_tree = sitemap.build_navigation(
+        root_path=root_path,
+        current_path=request.path,
+    )
     return {
         'sitemap': site_tree,
     }

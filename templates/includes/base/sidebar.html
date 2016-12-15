@@ -1,5 +1,5 @@
 <nav class="sidebar-nav__nav">
-    <h2 class="sidebar-nav__title"><a class="sidebar-nav__title-link" href="/core">Core</a></h2>
+    <h2 class="sidebar-nav__title"><a class="sidebar-nav__title-link{% if request.path == '/core' %} active{% endif %}" href="/core">Core</a></h2>
     {% sidebar_nav 'core' %}
 </nav>
 
