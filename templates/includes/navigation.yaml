@@ -18,9 +18,9 @@ core:
   get-started:
   tutorials:
   examples:
-    gadget-snaps:
-    interfaces:
     hooks:
+    interfaces:
+    gadget-snaps:
     assertions:
   publish-and-distribute:
   documentation:
