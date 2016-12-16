@@ -1,7 +1,7 @@
-----
+---
 title: Tutorials
 description: A series of tutorials, step by step practical guides to help you achieve a variety of tasks from writing your first snap to building a node.js service.
-----
+---
 
 # Tutorials
 
@@ -19,7 +19,7 @@ To get started, install the snap:
 $ sudo snap install snap-codelabs
 ```
 
-You can then access the snap on your [local machine](http://localhost:8123/) at port 8123.
+You can then access the snap by visiting `http://localhost:8123/` in your browser.
 
 ## Available tutorials
 
