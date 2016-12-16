@@ -2,7 +2,7 @@
     {% for key, item in sitemap.children.items %}
         <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
         {% if item.children %}
-        <ul>
+        <ul class="sidebar-nav__secondary">
             {% for key, item in item.children.items %}
                 <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
             {% endfor %}
