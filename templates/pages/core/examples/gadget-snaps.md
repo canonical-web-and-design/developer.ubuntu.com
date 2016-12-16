@@ -1,5 +1,5 @@
 ----
-title: Gadget snap examples
+title: Gadget snaps
 description: Gadget snap examples
 ----
 
