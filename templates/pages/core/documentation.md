@@ -9,4 +9,4 @@ The documentation is the reference material for all things Ubuntu Core. Use the 
 
 [Ubuntu Core documentation](http://docs.ubuntu.com/core/en/)
 
-For documentation about snaps and developing snaps please refer to [snapcraft.io](http://snapcraft.io/docs/).
+For documentation about snaps and developing snaps please refer to [snapcraft.io documentation](http://snapcraft.io/docs/).
