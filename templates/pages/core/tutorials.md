@@ -19,7 +19,7 @@ To get started, install the snap:
 $ sudo snap install snap-codelabs
 ```
 
-You can then access the snap at `http://localhost:8123/` (port 8123 on your local machine).
+You can then access the snap by visiting `http://localhost:8123/` in your browser.
 
 ## Available tutorials
 
