@@ -88,7 +88,8 @@ $navigation-width: 256px;
           width: 100%;
         }
         
-        &.active {
+        &.active,
+        &.active-parent {
           color: $color-brand;
           display: block;
         }
@@ -157,7 +158,8 @@ $navigation-width: 256px;
       }
     }
     
-    &.active ul li {
+    &.active ul li,
+    &.active-parent ul li {
       display: block;
     }
     
@@ -192,7 +194,8 @@ $navigation-width: 256px;
           }
         }
         
-          &.active {
+          &.active,
+          &.active-parent {
             width: 100%; 
           
             li {
