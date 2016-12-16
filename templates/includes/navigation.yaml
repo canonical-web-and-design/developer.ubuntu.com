@@ -16,6 +16,14 @@ root:
 
 core:
   get-started:
+    installation-medias:
+    raspberry-pi-2-3:
+    intel-joule:
+    dragonboard-410c:
+    intel-nuc:
+    artik-5-10:
+    kvm:
+    developer-setup:
   tutorials:
   examples:
     hooks:
