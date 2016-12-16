@@ -1,5 +1,5 @@
 ----
-title: Interface examples
+title: Interfaces
 description: Interface examples
 ----
 
