@@ -21,7 +21,7 @@ You can also integrate the publication workflow into your CI process.  For examp
 
 ## Distributing snaps
 
-![]https://assets.ubuntu.com/v1/a895f15c-dev_distribution_workflow+%281%29.svg)
+![](https://assets.ubuntu.com/v1/a895f15c-dev_distribution_workflow+%281%29.svg)
 
 Ubuntu Core allows you to go to production with your own devices and branded store quickly.
 
