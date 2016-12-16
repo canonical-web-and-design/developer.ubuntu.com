@@ -25,7 +25,7 @@ You can then access the snap on your [local machine](http://localhost:8123/) at 
 
 ### Create your first snap
 
-This tutorial covers using snapcraft.  It will walk you through creating your first snap and learning the core snapcraft concepts.
+This tutorial covers using snapcraft. It will walk you through creating your first snap and learning the core snapcraft concepts.
 
 ### Basic snap usage
 
