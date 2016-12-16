@@ -1,5 +1,5 @@
 ----
-title: Hook examples
+title: Hooks
 description: Hook examples
 ----
 
