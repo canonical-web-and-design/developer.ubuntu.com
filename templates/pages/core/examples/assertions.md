@@ -1,5 +1,5 @@
 ----
-title: Assertion examples
+title: Assertions
 description: Assertion examples
 ----
 
