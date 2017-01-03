@@ -187,6 +187,10 @@ a:link:hover {
         }
       }
     }
+    
+    .p-navigation__link--last-item {
+      border-bottom: 0;
+    }
   }
 
   .p-navigation .p-navigation__logo {

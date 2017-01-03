@@ -138,11 +138,17 @@ $navigation-width: 256px;
 
         &.expanded {
           cursor: pointer;
+          display: block;
+          width: 100%;
           
           & > ul {
             border-bottom: 1px solid $color-mid-light;
             display: block;
             padding-bottom: .625rem;
+            
+            & > li {
+              display: block;
+            }
             
             @media only screen and (min-width: $breakpoint-medium) {
               border: 0;
@@ -189,7 +195,6 @@ $navigation-width: 256px;
               display: block;
             }
               
-            padding-left: $grid-gutter-width;
             padding-right: 0;
           }
         }
@@ -201,7 +206,6 @@ $navigation-width: 256px;
             li {
               display: block;
               padding-left: 0;
-              padding-right: $grid-gutter-width;
               width: 50%;
               
               @media only screen and (min-width: $breakpoint-medium) {

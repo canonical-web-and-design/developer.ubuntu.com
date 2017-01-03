@@ -4,7 +4,7 @@
         {% if item.children %}
         <ul class="sidebar-nav__secondary">
             {% for key, item in item.children.items %}
-                <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
+                <li{% if request.path == 'item.path' %} hurrah{% endif %}><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
