@@ -154,6 +154,7 @@ $navigation-width: 256px;
               border: 0;
               margin-left: inherit;
               padding-bottom: 0;
+              padding-left: $grid-gutter-width;
             }
           }
           
@@ -190,12 +191,12 @@ $navigation-width: 256px;
         & > ul {
           & > li {
             display: none;
+            padding-right: 0;
             
             @media only screen and (min-width: $breakpoint-medium) {
               display: block;
             }
               
-            padding-right: 0;
           }
         }
         
@@ -209,6 +210,7 @@ $navigation-width: 256px;
               width: 50%;
               
               @media only screen and (min-width: $breakpoint-medium) {
+                padding-right: $grid-gutter-width;
                 width: 100%;
               }
             }
