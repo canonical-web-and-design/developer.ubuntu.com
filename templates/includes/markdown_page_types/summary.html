@@ -1,0 +1,17 @@
+{% extends base_template %}
+
+{% block inner_content %}
+
+{{ block.super }}
+
+{% page_cards summary_pages %}
+
+<div class="cards">
+{% if insights_feed %}
+    {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
+    {% feed_cards feed_url limit=3 %}
+    {% endwith %}
+{% endif %}
+</div>
+
+{% endblock %}

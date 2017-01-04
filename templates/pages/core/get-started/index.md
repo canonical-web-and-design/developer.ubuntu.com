@@ -1,7 +1,7 @@
 ---
 title: Get started
 description: Your Ubuntu Core first steps, installing Ubuntu Core on your board or in a virtual machine.
-page_type: modular
+page_type: summary
 summary_pages:
     - raspberry-pi-2-3
     - intel-joule
