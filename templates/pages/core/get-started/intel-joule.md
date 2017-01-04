@@ -53,7 +53,7 @@ As an alternative to Ubuntu Core, you can also install Ubuntu Desktop 16.04 LTS,
 
 * [Intel Joule - Ubuntu Desktop 16.04 LTS image](http://people.canonical.com/~platform/snappy/tuchuck/tuchuck-20161014085519.img.xz)
 
-Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias)
+Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias).
 
 ### Installation instructions
 
