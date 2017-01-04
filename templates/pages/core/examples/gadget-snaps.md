@@ -3,7 +3,7 @@ title: Gadget snaps
 description: Gadget snap examples
 ----
 
-# Gadget snap examples
+# Gadget snaps examples
 
 The gadget snap is responsible for defining and manipulating the system properties specific to a device. For example, the gadget snap will describe the bootloader to be used by the device.
 
