@@ -1,7 +1,7 @@
 ---
 title: Intel Joule
 image: https://assets.ubuntu.com/v1/1f53b707-INTEL_JOULE-LOGO.png?w=200
-description: Ubuntu Core lets you interact and control complex hardware and modules..
+description: Ubuntu Core lets you interact and control complex hardware and modules.
 ---
 # Intel Joule
 
