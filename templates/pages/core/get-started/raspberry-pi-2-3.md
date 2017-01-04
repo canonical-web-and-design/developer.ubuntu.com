@@ -1,6 +1,7 @@
 ---
 title: Raspberry Pi 2 or 3
-description: These steps will walk you through flashing Ubuntu Core on a Raspberry Pi 2 or 3.
+image: https://assets.ubuntu.com/v1/635f5dbf-raspberry_pi_logo_rgb_.svg?fmt=png&w=90
+description: Ubuntu Core allows you to install apps on your board in just a few clicks.
 ---
 # Raspberry Pi 2 or 3
 

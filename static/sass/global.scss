@@ -187,6 +187,10 @@ a:link:hover {
         }
       }
     }
+    
+    .p-navigation__link--last-item {
+      border-bottom: 0;
+    }
   }
 
   .p-navigation .p-navigation__logo {
@@ -395,12 +399,21 @@ a:link:hover {
     flex-wrap: wrap;
   }
 
-  &__img {
-    display: block;
-    margin: auto;
-    max-width: 60px;
+  &__image-container {
+    display: flex;
+    min-height: 7rem;
+    margin-bottom: 1rem;
   }
-
+  
+  &__image-container {
+    align-self: center;
+  }
+  
+  &__image {
+    align-self: center;
+    flex: 0 0 auto;
+  }
+  
   &__item {
     border-bottom: $grid-border-style;
     margin-bottom: 1.5rem;

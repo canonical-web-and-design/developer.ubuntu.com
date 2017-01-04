@@ -1,6 +1,7 @@
 ---
 title: Intel NUC
-description: These steps will walk you through flashing Ubuntu Core on an Intel NUC.
+image: https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg?fmt=png&w=150
+description: Ubuntu Core can be easily installed on other architectures like Intel® 64 bits.
 ---
 # Intel NUC
 

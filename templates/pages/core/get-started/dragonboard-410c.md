@@ -1,6 +1,7 @@
 ---
 title: DragonBoard 410c
-description: These steps will walk you through flashing Ubuntu Core on a DragonBoard 410c.
+image: https://assets.ubuntu.com/v1/d9ccf84b-qualcoom.png?w=180
+description: Ubuntu Core helps you harness the power of boards tailored for the IoT ecosystem.
 ---
 
 # DragonBoard 410c
