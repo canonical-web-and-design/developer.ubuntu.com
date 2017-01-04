@@ -35,7 +35,7 @@ As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, 
 * [ARTIK 5 - Ubuntu Server 16.04 LTS image](http://people.canonical.com/~platform/snappy/artik/archive/artik5-ubuntu-server.img.tar.xz)
 * [ARTIK 10 - Ubuntu Server 16.04 LTS image](http://people.canonical.com/~platform/snappy/artik/archive/artik10-ubuntu-server.img.tar.xz)
 
-Download and copy the image for your board on an SD card by following the [installation media instructions](/core/get-started/installation-medias)
+Download and copy the image for your board on an SD card by following the [installation media instructions](/core/get-started/installation-medias).
 
 ### Installation instructions
 
