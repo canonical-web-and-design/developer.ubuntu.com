@@ -1,6 +1,7 @@
 ---
 title: Intel Joule
-description: These steps will walk you through flashing Ubuntu Core on an Intel Joule.
+image: https://assets.ubuntu.com/v1/1f53b707-INTEL_JOULE-LOGO.png?w=200
+description: Ubuntu Core lets you interact and control complex hardware and modules.
 ---
 # Intel Joule
 

@@ -45,6 +45,17 @@ def page_cards(context, pages):
 
 
 @register.inclusion_tag(
+    'includes/components/grid_cards.html', takes_context=True
+)
+def grid_cards(context, pages):
+    request = context['request']
+    page_data = _get_page_data(pages, request.path)
+    return {
+        'pages': page_data,
+    }
+
+
+@register.inclusion_tag(
     'includes/components/sidebar_nav.html', takes_context=True
 )
 def sidebar_nav(context, root_path=None):

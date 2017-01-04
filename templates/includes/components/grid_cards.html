@@ -2,8 +2,8 @@
     {% for page in pages %}
         <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
             {% if page.image %}<div class="grid-list__image-container"><img class="grid-list__image" alt="{{ page.title }} logo" src="{{ page.image }}"></div>{% endif %}
-            <h5 class="grid-list__title"><a href="{{ page.path }}">{{ page.title }}</a></h5>
             <div class="grid-list__description"><p>{{ page.description }}</p></div>
+            <p class=""><a href="{{ page.path }}">Get started<span class="u-off-screen"> with {{ page.title }}</span> &rsaquo;</a></p>
         </li>
     {% endfor %}
 </ul>
