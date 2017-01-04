@@ -1,3 +1,4 @@
+
 @mixin rounded_corners($radius: 4px 4px 4px 4px) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -23,10 +24,17 @@ $navigation-width: 256px;
   }
   
   &__title {
+    border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
     margin-bottom: .625rem;
-    margin-top: 1rem;
     padding-left: $grid-gutter-width;
+    padding-bottom: .625rem;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      border: 0;
+      margin-top: 1rem;
+      padding-bottom: 0;
+    }
   }
   
   &__title-link,
@@ -43,14 +51,18 @@ $navigation-width: 256px;
   &__nav {
 
     // To enabling hiding of the bottom-most border in the navigation
+    border-bottom: 1px solid $color-mid-light;
+    padding-bottom: .5em;
     overflow: hidden;
     width: 100%;
 
     @media only screen and (min-width: $breakpoint-medium) {
-      width: $navigation-width;
+      border: 0;
       min-width: $navigation-width;
+      padding-bottom: 0; 
+      width: $navigation-width;
     }
-
+    
     ul {
       -khtml-user-select: none;
       -moz-user-select: none;
@@ -64,21 +76,39 @@ $navigation-width: 256px;
 
       li {
         margin: 0;
-        padding-left: $grid-gutter-width;
-        padding-right: $grid-gutter-width;
         padding-top: $grid-gutter-width;
         position: relative;
+        float: left;
+        width: 50%;
+        display: none;
+
+        @media only screen and (min-width: $breakpoint-medium) {
+          float: none;
+          display: block;
+          width: 100%;
+        }
+        
+        &.active,
+        &.active-parent {
+          color: $color-brand;
+          display: block;
+        }
 
         a {
           border: 0;
-          color: $color-mid-dark;
           display: block;
+          line-height: 1.3;
+          color: $color-mid-dark;
+          padding-left: $grid-gutter-width;
+          padding-right: $grid-gutter-width;
 
-          &:hover, &:focus {
+          &:hover, 
+          &:focus {
             text-decoration: none;
           }
 
-          &:hover, &.active {
+          &:hover, 
+          &.active {
             color: $color-brand;
           }
         }
@@ -108,17 +138,38 @@ $navigation-width: 256px;
 
         &.expanded {
           cursor: pointer;
+          display: block;
+          width: 100%;
           
           & > ul {
+            border-bottom: 1px solid $color-mid-light;
             display: block;
+            padding-bottom: .625rem;
+            
+            & > li {
+              display: block;
+            }
+            
+            @media only screen and (min-width: $breakpoint-medium) {
+              border: 0;
+              margin-left: inherit;
+              padding-bottom: 0;
+              padding-left: $grid-gutter-width;
+            }
           }
+          
           &:after {
             content: '-';
           }
         }
       }
     }
-
+    
+    &.active ul li,
+    &.active-parent ul li {
+      display: block;
+    }
+    
     & > ul {
       // Hide the bottom-most border
       // only if it's pushing right up against the footer
@@ -139,23 +190,52 @@ $navigation-width: 256px;
 
         & > ul {
           & > li {
-            padding-left: $grid-gutter-width;
+            display: none;
             padding-right: 0;
+            
+            @media only screen and (min-width: $breakpoint-medium) {
+              display: block;
+            }
+              
           }
         }
+        
+          &.active,
+          &.active-parent {
+            width: 100%; 
+          
+            li {
+              display: block;
+              padding-left: 0;
+              width: 50%;
+              
+              @media only screen and (min-width: $breakpoint-medium) {
+                padding-right: $grid-gutter-width;
+                width: 100%;
+              }
+            }
+          }
 
-        &:after {
-          background-position: center center;
-          background-repeat: no-repeat;
-          height: 1.5rem;
-        }
-        &.collapsed:after {
-          background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
-          content: '';
-        }
-        &.expanded:after {
-          background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
-          content: '';
+          &:after,
+          &.collapsed:after,
+          &.expanded:after {
+            content: '';
+          }
+
+        @media only screen and (min-width: $breakpoint-medium) {
+          &:after {
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 1.5rem;
+          }
+          &.collapsed:after {
+            background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
+            content: '';
+          }
+          &.expanded:after {
+            background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
+            content: '';
+          }
         }
       }
     }
