@@ -1,9 +1,9 @@
 <ul class="p-list grid-list u-clearfix col-12">
-    {% for grid in grids %}
+    {% for page in pages %}
         <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
-            {% if grid.image %}<div class="grid-list__image-container"><img class="grid-list__image" alt="{{ page.title }} logo" src="{{ grid.image }}"></div>{% endif %}
-            <div class="grid-list__description"><p>{{ grid.description }}</p></div>
-            <p class=""><a href="{{ grid.path }}">Learn more<span class="u-off-screen"> about {{ grid.title }}</span></a></h5>
+            {% if page.image %}<div class="grid-list__image-container"><img class="grid-list__image" alt="{{ page.title }} logo" src="{{ page.image }}"></div>{% endif %}
+            <div class="grid-list__description"><p>{{ page.description }}</p></div>
+            <p class=""><a href="{{ page.path }}">Get started<span class="u-off-screen"> with {{ page.title }}</span> &rsaquo;</a></p>
         </li>
     {% endfor %}
 </ul>
