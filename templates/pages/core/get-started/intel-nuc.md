@@ -1,11 +1,13 @@
 ---
-title: Intel Nuc
+title: Intel NUC
 image: https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg?fmt=png&w=150
 description: Ubuntu Core can be easily installed on other architectures like Intel® 64 bits.
 ---
-# Intel Nuc
+# Intel NUC
 
 We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At the end of this process, you will have a board ready for production or testing snaps.
+
+(As an alternative, you can also [install Ubuntu Server 16.04 LTS](#alternative-install:-ubuntu-server-16.04-lts)).
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
@@ -62,3 +64,27 @@ This step is only necessary in case you want to install Ubuntu Core on the emmc 
  * Remove all USB flash drives and reboot the system, it will reboot from the internal memory or SSD drive now containing Ubuntu Core
 
 {% include "includes/markdown/get_started_first_boot.md" %}
+
+## Alternative install: Ubuntu Server 16.04 LTS
+
+As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, where you can use your favourite development tools to create and run snaps.
+
+### Ubuntu image
+
+* [Intel NUC - Ubuntu Desktop 16.04 LTS image](http://people.canonical.com/~platform/snappy/nuc/ubuntu-server-16.04.1-20160817-0.iso)
+
+Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias).
+
+### Installation instructions
+
+Booting the board from the USB flash drive will start the Ubuntu installer.
+
+1. Insert the USB flash drive in the NUC
+* Start the NUC and push F10 to enter the boot menu.
+* Select the USB flash drive as a boot option
+* The system will automatically execute the first stage of installation, including eMMC storage partitioning and image installation. After installation is complete, a prompt dialog will be shown and you will need to restart the system
+* Boot the system on the eMMC storage and finish the install configuration
+* Follow the instructions and enter appropriate options for language, WiFi, location (timezone), and keyboard layout
+* Pick a hostname, user account and password
+* Wait for the configuration to finish. If you connected to a WiFi network at step 4, it will take several minutes to download and apply additional updates. You can now reboot the system
+* Ubuntu is installed. Use your account and password to log in
