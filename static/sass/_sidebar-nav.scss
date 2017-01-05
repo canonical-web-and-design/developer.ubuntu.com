@@ -76,6 +76,7 @@ $navigation-width: 256px;
 
       li {
         margin: 0;
+        padding-left: 0;
         padding-top: $grid-gutter-width;
         position: relative;
         float: left;
@@ -85,6 +86,7 @@ $navigation-width: 256px;
         @media only screen and (min-width: $breakpoint-medium) {
           float: none;
           display: block;
+          padding-right: $grid-gutter-width * 2;
           width: 100%;
         }
         
@@ -95,6 +97,7 @@ $navigation-width: 256px;
         }
 
         a {
+          //background: #333;
           border: 0;
           display: block;
           line-height: 1.3;
@@ -148,6 +151,12 @@ $navigation-width: 256px;
             
             & > li {
               display: block;
+              padding-right: 0;
+              padding-left: $grid-gutter-width;
+              
+              a {
+                padding: 0;
+              }
             }
             
             @media only screen and (min-width: $breakpoint-medium) {
