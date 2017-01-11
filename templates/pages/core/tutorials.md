@@ -11,18 +11,24 @@ Tutorials are practical guides, with step-by-step instructions to achieve the mo
 [How icon] Step by step tutorials giving you a hands-on experience, ramping up skills progressively.
 [Where icon] Start, resume and finish online. Or use it offline as part of your scheduled training program.
 
-[Ubuntu Core tutorials] (tutorials.ubuntu.com)
+### [Ubuntu Core tutorials] (tutorials.ubuntu.com)
 
 ## Latest tutorials
 
-### [Create your first snap] (/create-first-snap#0)
+### Create your first snap
 
 This tutorial covers using snapcraft. It will walk you through creating your first snap and learning the core snapcraft concepts.
 
-### [Basic snap usage] (/basic-snap-usage#0)
+[Start now] (/create-first-snap#0)
+
+### Basic snap usage
 
 A tutorial about using snaps to distribute code and the main benefits of using snaps.
 
-### [Building a nodejs service] (/build-a-nodejs-service#0)
+[Start now] (/basic-snap-usage#0)
+
+### Building a nodejs service 
 
 Using the nodejs snapcraft plugin to build a simple service, covering good practice for debugging and iterating over your web server, and basic confinement notions.
+
+[Start now] (/build-a-nodejs-service#0)
