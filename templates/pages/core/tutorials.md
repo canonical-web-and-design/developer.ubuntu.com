@@ -19,10 +19,10 @@ Tutorials are practical guides, with step-by-step instructions to achieve the mo
 
 This tutorial covers using snapcraft. It will walk you through creating your first snap and learning the core snapcraft concepts.
 
-### [Basic snap usage] ()
+### [Basic snap usage] (/basic-snap-usage#0)
 
 A tutorial about using snaps to distribute code and the main benefits of using snaps.
 
-### [Building a nodejs service] ()
+### [Building a nodejs service] (/build-a-nodejs-service#0)
 
 Using the nodejs snapcraft plugin to build a simple service, covering good practice for debugging and iterating over your web server, and basic confinement notions.
