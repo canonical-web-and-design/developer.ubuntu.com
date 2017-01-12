@@ -7,11 +7,11 @@ description: A series of tutorials, step by step practical guides to help you ac
 
 Tutorials are practical guides, with step-by-step instructions to achieve the most common development tasks. They cover a variety of areas from getting started tasks to more advanced topics. Easy to follow, practical, and instructive, they should give you an understanding of key Ubuntu Core concepts and, more importantly, help you build components of your solution.
 
-[What icon] Tutorials about Ubuntu Core with concrete projects that you will be able to play with.
+![Pictogram book](https://assets.ubuntu.com/v1/e4f88585-pictogram_book02.svg) Tutorials about Ubuntu Core with concrete projects that you will be able to play with.
 
-[How icon] Step by step tutorials giving you a hands-on experience, ramping up skills progressively.
+![Pictogram steps](https://assets.ubuntu.com/v1/a315be15-pictogram_steps.svg) Step by step tutorials giving you a hands-on experience, ramping up skills progressively.
 
-[Where icon] Start, resume and finish online. Or use it offline as part of your scheduled training program.
+![Pictogram online-offline](https://assets.ubuntu.com/v1/307b01e7-pictogram_online-offline.svg) Start, resume and finish online. Or use it offline as part of your scheduled training programme.
 
 ### [Ubuntu Core tutorials] (tutorials.ubuntu.com)
 
