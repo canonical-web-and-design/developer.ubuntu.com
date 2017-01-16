@@ -15,16 +15,16 @@ Tutorials are practical guides, with step-by-step instructions to achieve the mo
 
 This tutorial covers using snapcraft. It will walk you through creating your first snap and learning the core snapcraft concepts.
 
-[Start now] (/create-first-snap#0)
+[Start now] (https://tutorials.ubuntu.com/tutorial/create-first-snap#0)
 
 ### Basic snap usage
 
 A tutorial about using snaps to distribute code and the main benefits of using snaps.
 
-[Start now] (/basic-snap-usage#0)
+[Start now] (https://tutorials.ubuntu.com/tutorial/basic-snap-usage#0)
 
 ### Building a nodejs service 
 
 Using the nodejs snapcraft plugin to build a simple service, covering good practice for debugging and iterating over your web server, and basic confinement notions.
 
-[Start now] (/build-a-nodejs-service#0)
+[Start now] (https://tutorials.ubuntu.com/tutorial/build-a-nodejs-service#0)
