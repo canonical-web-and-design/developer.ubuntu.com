@@ -19,10 +19,6 @@ body {
   background: $color-light; // temporary style
 }
 
-.u-caps {
-  text-transform: uppercase;
-}
-
 .theme__wrap,
 .p-footer__inner {
   margin: 0 auto;
@@ -521,7 +517,7 @@ pre {
         
         @media only screen and (min-width: $breakpoint-large) {
           left: -22%;
-          width: 40%;
+          width: 39%;
         }
       }
     }
@@ -529,6 +525,12 @@ pre {
     &:first-child:before {
       display: none;
     }
+  }
+  
+  &__title {
+    font-size: 1.0625rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
   }
   
   &__image {
@@ -544,7 +546,7 @@ pre {
     }
     
     @media only screen and (min-width: $breakpoint-large) {
-      padding-bottom: 4rem;
+      padding-bottom: 2.5rem;
     }
   }  
 }
