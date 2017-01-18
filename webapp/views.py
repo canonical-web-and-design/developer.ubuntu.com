@@ -18,9 +18,9 @@ from django.template import (
     Context,
     loader,
     RequestContext,
+    Template,
     TemplateDoesNotExist,
 )
-from django.template import RequestContext, Template
 from django.template.engine import Engine
 from django.views.generic import TemplateView
 
