@@ -156,10 +156,13 @@ class SearchView(TemplateView):
         - offset: where to start results at (default: 0)
         """
 
-        # On live the GSA domain will be butlerov.internal
-        # but on dev, we need to access GSA through localhost
-        # (see GSASearchView docstring above)
-        gsa_domain = 'butlerov.internal'
+        # Use the IP address for now, as Docker doesn't use the
+        # VPN DNS server
+        # @TODO: Once Docker sorts this out, go back to using butlerov
+        # https://github.com/docker/docker/issues/23910
+
+        # gsa_domain = 'butlerov.internal'
+        gsa_domain = '10.22.112.8'
 
         parser = GSAParser(gsa_domain)
 
@@ -182,21 +185,11 @@ class SearchView(TemplateView):
 
         # return self.context
         try:
-            if getattr(settings, 'DEBUG', False):
-                # Use a local file
-                example_filepath = os.path.join(
-                    os.path.dirname(__file__),
-                    'search.example'
-                )
-
-                with open(example_filepath) as example_file:
-                    gsa_results = json.load(example_file)
-            else:
-                gsa_results = parser.fixed_results(
-                    context['query'],
-                    start=context['offset'],
-                    num=context['limit']
-                )
+            gsa_results = parser.fixed_results(
+                context['query'],
+                start=context['offset'],
+                num=context['limit']
+            )
 
             nav_url = "{path}?q={query}".format(
                 path=self.request.path,
