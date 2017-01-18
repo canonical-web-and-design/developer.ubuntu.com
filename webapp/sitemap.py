@@ -196,8 +196,10 @@ class Sitemap:
                     current_tree_branch = current_tree_branch['children']
                 else:
                     continue
-            current_tree_branch[final_key]['active'] = True
-            current_tree_branch[final_key]['class'] = 'active'
+
+            if final_key in current_tree_branch:
+                current_tree_branch[final_key]['active'] = True
+                current_tree_branch[final_key]['class'] = 'active'
 
         return sorted_tree
 
