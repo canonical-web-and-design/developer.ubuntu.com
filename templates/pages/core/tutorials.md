@@ -9,6 +9,8 @@ Tutorials are practical guides, with step-by-step instructions to achieve the mo
 
 [See all Ubuntu Core tutorials](https://tutorials.ubuntu.com/)
 
+{% include "includes/components/tutorials.html" %}
+
 ## Latest tutorials
 
 ### Create your first snap

@@ -19,6 +19,10 @@ body {
   background: $color-light; // temporary style
 }
 
+.u-caps {
+  text-transform: uppercase;
+}
+
 .theme__wrap,
 .p-footer__inner {
   margin: 0 auto;
@@ -492,4 +496,55 @@ pre {
   padding: 0.7rem 1rem;
   position: relative;
   width: 100%;
+}
+
+// tutorial-intro
+.tutorial-intro {
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: block;
+
+      &:before {
+        background: url('#{$assets-path}5769a7c0-image-intro-dots.svg');
+        content: ' ';
+        display: block;
+        height: 5px;
+        left: -12%;
+        position: absolute;
+        top: 49px;
+        transition: 1s;
+        width: 20%;
+        
+        @media only screen and (min-width: $breakpoint-large) {
+          left: -22%;
+          width: 40%;
+        }
+      }
+    }
+    
+    &:first-child:before {
+      display: none;
+    }
+  }
+  
+  &__image {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $grid-gutter-width;
+    
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+    
+    @media only screen and (min-width: $breakpoint-large) {
+      padding-bottom: 4rem;
+    }
+  }  
 }
