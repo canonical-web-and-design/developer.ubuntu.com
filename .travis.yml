@@ -3,5 +3,11 @@ python:
   - "2.7"
 install:
   - pip install flake8==3.0.4
-script: flake8 webapp
+  - pip install -r requirements.txt
+  - sudo apt-get install -y linkchecker
+before_script:
+  - python manage.py runserver &
+script:
+  - flake8 webapp
+  - linkchecker --timeout=300 --no-warnings http://127.0.0.1:8000
 
