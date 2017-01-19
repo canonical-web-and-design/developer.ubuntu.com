@@ -1,16 +1,12 @@
+@import 'helpers';
 
-@mixin rounded_corners($radius: 4px 4px 4px 4px) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
 
-$button-width: 10px; 
+$button-width: 10px;
 $navigation-width: 256px;
 
 
 .theme__sidebar {
-  @include rounded_corners(4px 4px 0 ); 
+  @include rounded-corners(4px 4px 0 );
   background: $color-x-light;
   border-left: 1px solid $color-mid-light;
   display: flex;
@@ -22,32 +18,32 @@ $navigation-width: 256px;
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
-  
+
   &__title {
     border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
     margin-bottom: .625rem;
     padding-left: $grid-gutter-width;
     padding-bottom: .625rem;
-    
+
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
       margin-top: 1rem;
       padding-bottom: 0;
     }
   }
-  
+
   &__title-link,
   &__title-link:link,
   &__title-link:visited {
     border-bottom: 0;
     color: $color-mid-dark;
   }
-  
+
   &__title-link:hover {
     color: $color-brand;
   }
-  
+
   &__nav {
 
     // To enabling hiding of the bottom-most border in the navigation
@@ -59,10 +55,10 @@ $navigation-width: 256px;
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
       min-width: $navigation-width;
-      padding-bottom: 0; 
+      padding-bottom: 0;
       width: $navigation-width;
     }
-    
+
     ul {
       -khtml-user-select: none;
       -moz-user-select: none;
@@ -89,7 +85,7 @@ $navigation-width: 256px;
           padding-right: $grid-gutter-width * 2;
           width: 100%;
         }
-        
+
         &.active,
         &.active-parent {
           color: $color-brand;
@@ -105,12 +101,12 @@ $navigation-width: 256px;
           padding-left: $grid-gutter-width;
           padding-right: $grid-gutter-width;
 
-          &:hover, 
+          &:hover,
           &:focus {
             text-decoration: none;
           }
 
-          &:hover, 
+          &:hover,
           &.active {
             color: $color-brand;
           }
@@ -143,22 +139,22 @@ $navigation-width: 256px;
           cursor: pointer;
           display: block;
           width: 100%;
-          
+
           & > ul {
             border-bottom: 1px solid $color-mid-light;
             display: block;
             padding-bottom: .625rem;
-            
+
             & > li {
               display: block;
               padding-right: 0;
               padding-left: $grid-gutter-width;
-              
+
               a {
                 padding: 0;
               }
             }
-            
+
             @media only screen and (min-width: $breakpoint-medium) {
               border: 0;
               margin-left: inherit;
@@ -166,19 +162,19 @@ $navigation-width: 256px;
               padding-left: $grid-gutter-width;
             }
           }
-          
+
           &:after {
             content: '-';
           }
         }
       }
     }
-    
+
     &.active ul li,
     &.active-parent ul li {
       display: block;
     }
-    
+
     & > ul {
       // Hide the bottom-most border
       // only if it's pushing right up against the footer
@@ -190,7 +186,7 @@ $navigation-width: 256px;
       & > li {
         padding-bottom: $grid-gutter-width / 2;
         padding-top: $grid-gutter-width / 2;
-        
+
         @media only screen and (min-width: $breakpoint-medium) {
           & > a {
             font-size: 1rem;
@@ -201,23 +197,23 @@ $navigation-width: 256px;
           & > li {
             display: none;
             padding-right: 0;
-            
+
             @media only screen and (min-width: $breakpoint-medium) {
               display: block;
             }
-              
+
           }
         }
-        
+
           &.active,
           &.active-parent {
-            width: 100%; 
-          
+            width: 100%;
+
             li {
               display: block;
               padding-left: 0;
               width: 50%;
-              
+
               @media only screen and (min-width: $breakpoint-medium) {
                 padding-right: $grid-gutter-width;
                 width: 100%;
