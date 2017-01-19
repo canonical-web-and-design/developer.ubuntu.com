@@ -6,6 +6,7 @@ before_install:
   - nvm use 7.4.0
 install:
   - npm install
+  - npm install sass-lint
   - node_modules/node-sass/bin/node-sass --include-path node_modules static/sass --output static/css
   - pip install flake8==3.0.4
   - pip install -r requirements.txt
@@ -14,5 +15,6 @@ before_script:
   - python manage.py runserver &
 script:
   - flake8 webapp
+  - node_modules/sass-lint/bin/sass-lint.js -v static/sass/*
   - linkchecker --no-warnings http://127.0.0.1:8000
 
