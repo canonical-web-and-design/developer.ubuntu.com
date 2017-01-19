@@ -28,7 +28,7 @@ body {
 
 .theme__wrap {
   @media only screen and (min-width: $breakpoint-large) {
-    @include rounded-corners(4px);
+    border-radius: 4px;
     box-shadow: 0 0 3px $color-mid-light;
     margin-bottom: 30px !important;
   }
