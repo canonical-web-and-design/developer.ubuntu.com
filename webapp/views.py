@@ -1,10 +1,9 @@
 # Core modules
-import json
-import os
 try:
     from urllib.error import URLError
 except ImportError:
     from urllib2 import URLError
+import socket
 
 # Third party modules
 from django.conf import settings
@@ -39,6 +38,25 @@ def custom_404(request):
 def custom_500(request):
     t = loader.get_template('error/500.html')
     return HttpResponseServerError(t.render(Context({})))
+
+
+def is_ipv4(address):
+    try:
+        socket.inet_aton(address)
+        return True
+    except socket.error:
+        return False
+
+
+def host_exists(hostname):
+    try:
+        if is_ipv4(hostname):
+            socket.gethostbyaddr(hostname)
+        else:
+            socket.gethostbyname(hostname)
+        return True
+    except socket.error:
+        return False
 
 
 class MarkdownView(TemplateView):
@@ -185,6 +203,9 @@ class SearchView(TemplateView):
 
         # return self.context
         try:
+            # Check we can find the host
+            context['host_exists'] = host_exists(gsa_domain)
+
             gsa_results = parser.fixed_results(
                 context['query'],
                 start=context['offset'],

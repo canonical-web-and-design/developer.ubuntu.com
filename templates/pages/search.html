@@ -24,6 +24,7 @@
     </form>
 
 {% if query %}
+{% if host_exists %}
 {% if request_succeeded %}
 {% if parse_succeeded %}
 {% if results %}
@@ -89,6 +90,11 @@
         Failed to retrieve search results. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
     </label>
 {% endif %} {# request_succeeded #}
+{% else %} {# host_exists false #}
+    <label for="search-input" role="error" class="error-notification">
+        Search server not available. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
+    </label>
+{% endif %} {# host_exists #}
 
 {% endif %} {# query #}
     </div>
