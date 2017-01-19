@@ -1,7 +1,12 @@
 language: python
 python:
   - "2.7"
+before_install:
+  - nvm install 7.4.0
+  - nvm use 7.4.0
 install:
+  - npm install
+  - node_modules/node-sass/bin/node-sass --include-path node_modules static/sass --output static/css
   - pip install flake8==3.0.4
   - pip install -r requirements.txt
   - sudo apt-get install -y linkchecker
@@ -9,5 +14,5 @@ before_script:
   - python manage.py runserver &
 script:
   - flake8 webapp
-  - linkchecker --timeout=300 --no-warnings http://127.0.0.1:8000
+  - linkchecker --no-warnings http://127.0.0.1:8000
 
