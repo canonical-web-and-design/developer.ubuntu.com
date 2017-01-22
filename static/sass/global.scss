@@ -7,9 +7,7 @@
 @import 'docs-vanilla-theme/scss/theme';
 @include docs-vanilla-theme;
 
-@import
-  'sidebar-nav',
-  'helpers';
+@import 'sidebar-nav';
 
 .nav-global-main {
   margin-top: 0;
@@ -30,7 +28,7 @@ body {
 
 .theme__wrap {
   @media only screen and (min-width: $breakpoint-large) {
-    @include rounded_corners(4px);
+    border-radius: 4px;
     box-shadow: 0 0 3px $color-mid-light;
     margin-bottom: 30px !important;
   }
@@ -52,20 +50,19 @@ a:link:hover {
   border-bottom-color: currentcolor;
 }
 
-.p-link--external:after {
+.p-link--external::after {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'15\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M4.867 1.313C.6 1.32.067 1.443.067 4.51v6.4c0 3.2.533 3.2 5.333 3.2h2.133c4.8 0 5.334 0 5.334-3.2v-1.6h-1.6v1.068c0 2.133 0 2.133-4.267 2.133H5.933c-4.266 0-4.266 0-4.266-2.132V5.044c0-1.93.034-2.112 3.2-2.13v-1.6z\'/%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M6.435 2.16c.11-.446 7.113-2.196 7.448-1.86.335.334-1.416 7.335-1.863 7.447-.447.112-5.697-5.14-5.586-5.586z\'/%3E%3Cpath fill=\'%23e95420\' d=\'M9.032 3.38L4.705 7.708l1.767 1.767L10.8 5.148\'/%3E%3C/g%3E%3C/svg%3E');
   background-position: top right;
   background-repeat: no-repeat;
-  background-size: 0.7rem 0.7rem;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'15\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M4.867 1.313C.6 1.32.067 1.443.067 4.51v6.4c0 3.2.533 3.2 5.333 3.2h2.133c4.8 0 5.334 0 5.334-3.2v-1.6h-1.6v1.068c0 2.133 0 2.133-4.267 2.133H5.933c-4.266 0-4.266 0-4.266-2.132V5.044c0-1.93.034-2.112 3.2-2.13v-1.6z\'/%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M6.435 2.16c.11-.446 7.113-2.196 7.448-1.86.335.334-1.416 7.335-1.863 7.447-.447.112-5.697-5.14-5.586-5.586z\'/%3E%3Cpath fill=\'%23e95420\' d=\'M9.032 3.38L4.705 7.708l1.767 1.767L10.8 5.148\'/%3E%3C/g%3E%3C/svg%3E');
+  background-size: .7rem .7rem;
   content: '';
   display: inline-block;
-  height: .5rem;
+  height: .7rem;
   margin: 0 0 0 4px;
   position: relative;
   right: 0;
-  top: -0.3rem;
-  height: 0.7rem;
-  width: 0.7rem;
+  top: -.3rem;
+  width: .7rem;
 }
 
 .theme__main {
@@ -77,127 +74,124 @@ a:link:hover {
   margin: 0 auto;
 }
 
-.theme {
-  .p-navigation {
+.theme .p-navigation {
+  background: $color-brand;
+  border-bottom-color: $color-mid-light;
+  border-color: $color-mid-light;
+  color: $color-x-light;
+  padding: 0;
+
+  @media only screen and (min-width: $breakpoint-medium) {
     background: $color-brand;
-    border-color: $color-mid-light;
-    border-bottom-color: $color-mid-light;
-    color: $color-x-light;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    border-bottom: 0;
+    margin-bottom: 30px; // temporary style
+  }
+
+  .p-navigation__toggle--open,
+  .p-navigation__toggle--close {
+    background-image: url('#{$assets-path}12387180-navigation-menu-plain.svg');
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    height: 25px;
+    margin: .8rem;
+    overflow: hidden;
     padding: 0;
+    text-indent: -999em;
+    width: 25px;
 
-    @media only screen and (min-width: $breakpoint-medium) {
-      background: $color-brand;
-    }
-
-    @media only screen and (min-width: $breakpoint-large) {
-      border-bottom: 0;
-      margin-bottom: 30px; // temporary style
-    }
-
-    .p-navigation__toggle--open,
-    .p-navigation__toggle--close {
-      overflow: hidden;
-      background-image: url('#{$assets-path}12387180-navigation-menu-plain.svg');
-      background-size: 25px 25px;
-      background-repeat: no-repeat;
-      text-indent: -999em;
-      width: 25px;
-      height: 25px;
-      padding: 0;
-      margin: .8rem;
-
-      &:hover {
-        border: 0;
-      }
-    }
-
-    .p-navigation__inner {
-      border-color: $color-mid-light;
-      width: auto;
-        
-      @media only screen and (min-width: $breakpoint-medium) {
-        margin: 0 auto;
-        width: $breakpoint-large;
-      }
-    }
-
-    &__links {
-      background: darken($color-light, 3%);
-      float: left;
-      padding: 0;
-      width: 100%;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        border-right: 1px solid lighten($color-brand, 12%);
-        width: auto;
-      }
-      
-      &:after {
-        background: lighten($color-brand, 12%);
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        top: 0;
-        position: absolute;
-        width: 1px;
-      }
-    }
-
-    .p-navigation__link,
-    .p-navigation__link:visited,
-    .p-navigation__link:link {
-      background: darken($color-light, 3%);
-      border-right: 1px solid $color-mid-light;
-      color: $color-dark;
-      float: left;
-      font-size: 1rem;
-      font-weight: normal;
-      padding: 9px 10px;
-      position: relative;
-      width: 50%;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        background: $color-brand;
-        border-bottom: 0;
-        border-left: 1px solid darken($color-brand, 6%);
-        border-right: 0;
-        color: $color-x-light;
-        font-weight: bold;
-        font-size: .875rem;
-        overflow: hidden;
-        padding: 13px 14px;
-        width: auto;
-
-        &:last-of-type {
-          border-right: 1px solid darken($color-brand, 6%);
-        }
-      }
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        &:before {
-          background: lighten($color-brand, 12%);
-          content: ' ';
-          display: block;
-          height: 100%;
-          left: 0;
-          top: 0;
-          position: absolute;
-          width: 1px;
-        }
-      }
-    }
-    
-    .p-navigation__link--last-item {
-      border-bottom: 0;
+    &:hover {
+      border: 0;
     }
   }
 
-  .p-navigation .p-navigation__logo {
+  .p-navigation__inner {
+    border-color: $color-mid-light;
+    width: auto;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      margin: 0 auto;
+      width: $breakpoint-large;
+    }
+  }
+
+  &__links {
+    background: darken($color-light, 3%);
+    float: left;
+    padding: 0;
+    width: 100%;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      border-right: 1px solid lighten($color-brand, 12%);
+      width: auto;
+    }
+
+    &::after {
+      background: lighten($color-brand, 12%);
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+  }
+
+  .p-navigation__link,
+  .p-navigation__link:visited,
+  .p-navigation__link:link {
+    background: darken($color-light, 3%);
+    border-right: 1px solid $color-mid-light;
+    color: $color-dark;
+    float: left;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 9px 10px;
+    position: relative;
+    width: 50%;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      background: $color-brand;
+      border-bottom: 0;
+      border-left: 1px solid darken($color-brand, 6%);
+      border-right: 0;
+      color: $color-x-light;
+      font-size: .875rem;
+      font-weight: bold;
+      overflow: hidden;
+      padding: 13px 14px;
+      width: auto;
+
+      &:last-of-type {
+        border-right: 1px solid darken($color-brand, 6%);
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      &::before {
+        background: lighten($color-brand, 12%);
+        content: ' ';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+    }
+  }
+
+  .p-navigation__link--last-item {
+    border-bottom: 0;
+  }
+
+  .p-navigation__logo {
     border: 0;
+    margin: .5rem .5rem .5rem 1rem;
     padding-right: 5px;
-    margin: .5rem;
-    margin-left: 1rem;
 
 
     @media only screen and (min-width: $breakpoint-medium) {
@@ -214,7 +208,7 @@ a:link:hover {
       padding: 0;
       width: 100%;
 
-      &:before {
+      &::before {
         width: 0;
       }
 
@@ -224,12 +218,12 @@ a:link:hover {
     }
   }
 
-  .p-navigation .p-navigation__logo .p-navigation__link:hover {
+  .p-navigation__logo .p-navigation__link:hover {
     background: none;
     text-decoration: none;
   }
 
-  .p-navigation .p-navigation__link:hover {
+  .p-navigation__link:hover {
     background: $color-light;
     border-color: $color-mid-light;
     text-decoration: none;
@@ -290,15 +284,15 @@ a:link:hover {
   &__item {
     flex: 1;
   }
-  
+
   &__link--previous {
     margin-bottom: 1rem;
   }
-  
+
   &__item--left {
     text-align: right;
   }
-  
+
   &__link {
     &:link,
     &:visited {
@@ -310,43 +304,43 @@ a:link:hover {
 
 // cards
 .cards {
-  
+
   &__container {
     @media only screen and (max-width: $breakpoint-large) {
       width: 100%;
     }
   }
-  
+
   &__link {
-    
+
     &:hover {
       border: 0;
     }
-    
-    &:after {
+
+    &::after {
       background: none;
-      width: 0;
       height: 0;
+      width: 0;
 
       &:hover {
         border: 0;
       }
     }
   }
-  
+
   &__item {
     @media only screen and (max-width: $breakpoint-cards) {
       margin-left: 0;
-      width: 100%; 
+      width: 100%;
     }
-    
+
     &:nth-child(4) {
       margin-left: 0;
     }
   }
-  
+
   &__title {
-    background: rgba(0, 0, 0, 0) url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
+    background: transparent url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
     color: $color-mid-dark;
     font-size: 1rem;
     margin-bottom: .75rem;
@@ -357,11 +351,11 @@ a:link:hover {
   .p-card--highlighted {
     padding-bottom: 40px;
     position: relative;
-    
+
     @media only screen and (min-width: $breakpoint-cards) {
       min-height: 20em;
     }
-    
+
     &__content {
       color: $color-dark;
       font-weight: 300;
@@ -400,25 +394,22 @@ a:link:hover {
   }
 
   &__image-container {
-    display: flex;
-    min-height: 7rem;
-    margin-bottom: 1rem;
-  }
-  
-  &__image-container {
     align-self: center;
+    display: flex;
+    margin-bottom: 1rem;
+    min-height: 7rem;
   }
-  
+
   &__image {
     align-self: center;
     flex: 0 0 auto;
   }
-  
+
   &__item {
     border-bottom: $grid-border-style;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
-    
+
     &.odd {
       padding-left: 0;
     }
@@ -440,7 +431,7 @@ a:link:hover {
 
       }
     }
-    
+
     @media only screen and (min-width: $breakpoint-medium) {
       border-right: $grid-border-style;
       flex-wrap: wrap;
@@ -452,7 +443,7 @@ a:link:hover {
         border-right: 0;
         margin-bottom: 0;
       }
-            
+
       &.last-row,
       &.last-item {
         border-bottom: 0;
@@ -463,33 +454,32 @@ a:link:hover {
   .last-item:nth-last-child(-n+2) {
     border-bottom: 0;
   }
-  
+
   .odd:nth-last-child(-n+2) {
     border-bottom: 0;
   }
 }
 
 // global nav overrides
-body.theme #nav-global .nav-global-wrapper {
-    width: $breakpoint-large !important;
-    display: none;
-    
-    @media only screen and (min-width: $breakpoint-medium) {
-      display: block;
-    }
+.theme .nav-global-wrapper {
+  display: none;
+  width: $breakpoint-large !important;
+
+  @media only screen and (min-width: $breakpoint-medium) {
+    display: block;
+  }
 }
 
 // override vanilla pre
 pre {
   background-color: $color-light;
-  border: 1px solid $color-mid-light;
-  border-radius: 4px;
+  border: 4px solid $color-mid-light;
   color: $color-dark;
   font-family: Ubuntu Mono;
   font-size: 1rem;
   font-weight: 300;
   overflow: hidden;
-  padding: 0.7rem 1rem;
+  padding: .7rem 1rem;
   position: relative;
   width: 100%;
 }
