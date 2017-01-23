@@ -16,80 +16,70 @@
         </form>
 
 {% if query %}
-{% if host_exists %}
-{% if request_succeeded %}
-{% if parse_succeeded %}
-{% if results %}
-    <h4>{% if total %}{{ total }} {% endif %}results for "{{query}}"</h4>
-    <section id="search-results" class="no-margin-bottom list list-spaced">
-        <p class="result-line results-top">Results{% if start or end %} {{ start }} to {{ end }}{% endif %}</p>
-{% for result in results %}
-        <article class="search-result twelve-col">
-            <h4>
-                <a href="{{ result.url }}" class="title-main">{{ result.title|safe }}</a>
-                <small class="result-url">{{ result.url }}</small>
-            </h4>
-            <p>{{ result.summary|safe }}</p>
-        </article>
-{% endfor %}
+    {% if host_error or request_error or connection_error %}
+            <label for="search-input" role="error" class="error-notification">
+                Failed to retrieve search results. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
+            </label>
+    {% elif parse_error %}
+        <label for="search-input" role="error" class="error-notification">
+            Failed to parse results. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
+        </label>
+    {% else %}
+        {% if results %}
+        <h4>{% if total %}{{ total }} {% endif %}results for "{{query}}"</h4>
+        <section id="search-results" class="no-margin-bottom list list-spaced">
+            <p class="result-line results-top">Results{% if start or end %} {{ start }} to {{ end }}{% endif %}</p>
+            {% for result in results %}
+            <article class="search-result twelve-col">
+                <h4>
+                    <a href="{{ result.url }}" class="title-main">{{ result.title|safe }}</a>
+                    <small class="result-url">{{ result.url }}</small>
+                </h4>
+                <p>{{ result.summary|safe }}</p>
+            </article>
+            {% endfor %}
 
-{% if start or end %}
-        <p class="bottom-results-total result-line">Results {{ start }} to {{ end }}</p>
-{% endif %}
-    </section>
-{% else %}
-    <h2>Sorry we couldn't find "{{ query }}"</h2>
-    <h3>Why not try widening your search? You can do this by:</h3>
-    <ul>
-        <li>Adding alternative words or phrases</li>
-        <li>Using individual words instead of phrases</li>
-        <li>Trying a different spelling</li>
-    </ul>
-
-    <h2>Still no luck?</h2>
-
-    <ul>
-        <li><a href="/">Visit the Ubuntu homepage</a></li>
-        <li><a href="/contact-us">Contact us</a></li>
-    </ul>
-{% endif %} {# results #}
-
-{% if nav_items %}
-    <nav class="pagination" id="page-nav">
-        <ul class="pagination__forward">
-{% for item in nav_items %}
-{% if item.direction == 'forward' %}
-            <li class="pagination__item"><a href="{{ item.url }}">{{ item.name }}</a></li>
-{% endif %}
-{% endfor %}
+            {% if start or end %}
+                    <p class="bottom-results-total result-line">Results {{ start }} to {{ end }}</p>
+            {% endif %}
+        </section>
+        {% else %}
+        <h2>Sorry we couldn't find "{{ query }}"</h2>
+        <h3>Why not try widening your search? You can do this by:</h3>
+        <ul>
+            <li>Adding alternative words or phrases</li>
+            <li>Using individual words instead of phrases</li>
+            <li>Trying a different spelling</li>
         </ul>
 
-        <ul class="pagination__back">
-{% for item in nav_items %}
-{% if item.direction == 'back' %}
-            <li class="pagination__item"><a href="{{ item.url }}">{{ item.name }}</a></li>
-{% endif %}
-{% endfor %}
+        <h2>Still no luck?</h2>
+
+        <ul>
+            <li><a href="/">Visit the homepage</a></li>
+            <li><a href="https://bugs.launchpad.net/developer-ubuntu-com/">Report an issue with the site</a></li>
         </ul>
-    </nav>
-{% endif %} {# nav_items #}
+        {% endif %} {# results #}
 
-{% else %} {# parse_succeeded false #}
-    <label for="search-input" role="error" class="error-notification">
-        Failed to parse results. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
-    </label>
-{% endif %}
-{% else %} {# request_succeeded false #}
-    <label for="search-input" role="error" class="error-notification">
-        Failed to retrieve search results. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
-    </label>
-{% endif %} {# request_succeeded #}
-{% else %} {# host_exists false #}
-    <label for="search-input" role="error" class="error-notification">
-        Search server not available. If you have time, please <a href="https://github.com/ubuntudesign/www.ubuntu.com/issues/new">file a bug</a>.
-    </label>
-{% endif %} {# host_exists #}
+        {% if nav_items %}
+        <nav class="pagination" id="page-nav">
+            <ul class="pagination__forward">
+            {% for item in nav_items %}
+                {% if item.direction == 'forward' %}
+                <li class="pagination__item"><a href="{{ item.url }}">{{ item.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
 
+            <ul class="pagination__back">
+            {% for item in nav_items %}
+                {% if item.direction == 'back' %}
+                <li class="pagination__item"><a href="{{ item.url }}">{{ item.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </nav>
+        {% endif %} {# nav_items #}
+    {% endif %} {# errors #}
 {% endif %} {# query #}
     </div>
 </div>
