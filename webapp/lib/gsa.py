@@ -1,4 +1,5 @@
 import requests
+import cjson
 
 
 class GSAParser:
@@ -117,6 +118,6 @@ class GSAParser:
             stylesheet=self.stylesheet
         )
 
-        response = requests.get(search_url)
+        response = requests.get(search_url, timeout=10)
 
-        return response.json()
+        return cjson.decode(response.text)
