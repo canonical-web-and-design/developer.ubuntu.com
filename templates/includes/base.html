@@ -1,7 +1,7 @@
 {% load versioned_static %}
 
 <!doctype html>
-<html>
+<html class="no-js">
 <head>
 
 <title>{% block title %}{% endblock %} | Developer</title>
@@ -20,6 +20,8 @@
 
 <link rel="stylesheet" href="{% versioned_static 'css/global.css' %}" />
 
+<script src="https://assets.ubuntu.com/v1/b0601acd-modernizr.2.7.1.js"></script>
+
 <!-- global nav -->
 <link rel="stylesheet" type="text/css" media="screen" href="https://assets.ubuntu.com/latest/global.css" />
 <script src="https://assets.ubuntu.com/latest/global.js"></script>
@@ -34,8 +36,8 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-K9KCMZ');
     }</script>
-<!-- End Google Tag Manager -->    
-    
+<!-- End Google Tag Manager -->
+
 <!-- Polyfills -->
 <script>
   /* Polyfill functions
@@ -46,34 +48,34 @@
    * from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
    */
   if (!Array.prototype.forEach) {
-	  Array.prototype.forEach = function(fun) {
-		  if (
-			  this === void 0
-			  || this === null
-			  || typeof fun !== "function"
-		  ) { throw new TypeError(); }
+    Array.prototype.forEach = function(fun) {
+      if (
+        this === void 0
+        || this === null
+        || typeof fun !== "function"
+      ) { throw new TypeError(); }
 
-		  var t = Object(this);
-		  var len = t.length >>> 0;
+      var t = Object(this);
+      var len = t.length >>> 0;
 
-		  var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
-		  for (var i = 0; i < len; i++) {
-			  if (i in t) {
-				  fun.call(thisArg, t[i], i, t);
-			  }
-		  }
-	  };
+      var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+      for (var i = 0; i < len; i++) {
+        if (i in t) {
+          fun.call(thisArg, t[i], i, t);
+        }
+      }
+    };
   }
 
   /**
    * Add Array methods to NodeList
    */
   Object.getOwnPropertyNames(Array.prototype).forEach(
-	function (methodName) {
-	  if(!(methodName in NodeList.prototype)) {
-		NodeList.prototype[methodName] = Array.prototype[methodName];
-	  }
-	}
+    function (methodName) {
+      if(!(methodName in NodeList.prototype)) {
+      NodeList.prototype[methodName] = Array.prototype[methodName];
+      }
+    }
   );
 </script>
 
@@ -85,16 +87,7 @@
 
 <div class="row">
   <div class="theme__wrap">
-
-    <div class="col-3 theme__sidebar">
-        {% include './base/sidebar.html' %}
-    </div>
-
-    <div class="col-12 theme__main">
-      <main id="main-content" class="theme__inner">
-          {% block main_content %}{% endblock %}
-      </main>
-    </div>
+    {% block content %}{% endblock %}
   </div>
 </div>
 

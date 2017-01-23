@@ -22,7 +22,7 @@ class GSAParser:
     def __init__(
         self, domain,
         client="default_frontend",
-        site_collection="default_collection",
+        site_collection="developer_collection",
         stylesheet="json_frontend"
     ):
         self.domain = domain
