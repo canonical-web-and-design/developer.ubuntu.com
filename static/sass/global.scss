@@ -86,30 +86,34 @@ a:link:hover {
     color: $color-x-light;
     padding: 0;
 
-    @media only screen and (min-width: $breakpoint-medium) {
-      background: $color-brand;
-    }
-
     @media only screen and (min-width: $breakpoint-large) {
       border-bottom: 0;
       margin-bottom: 30px; // temporary style
     }
 
-    .p-navigation__toggle--open,
-    .p-navigation__toggle--close {
+    .p-navigation__toggle {
       overflow: hidden;
-      background-image: url('#{$assets-path}12387180-navigation-menu-plain.svg');
-      background-size: 25px 25px;
       background-repeat: no-repeat;
-      text-indent: -999em;
-      width: 25px;
-      height: 25px;
-      padding: 0;
-      margin: .8rem;
+      background-color: transparent;
+      width: 47px;
+      height: 47px;
+      padding: 10px 10px 11px 10px;
+      margin: 0;
+      float: right;
+      border: 0;
 
       &:hover {
-        border: 0;
+        background-color: rgba(0, 0, 0, 0.1);
       }
+
+      @media (min-width: $breakpoint-medium) {
+        display: none;
+      }
+    }
+
+    .p-navigation__icon {
+      height: 25px;
+      width: 25px;
     }
 
     .p-navigation__inner {
@@ -196,14 +200,7 @@ a:link:hover {
   .p-navigation .p-navigation__logo {
     border: 0;
     padding-right: 5px;
-    margin: .5rem;
-    margin-left: 1rem;
-
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      margin: 0 1rem;
-      padding-top: 6px;
-    }
+    margin: 6px 7px 6px 1rem;
 
     .p-navigation__link {
       background: none;
@@ -504,7 +501,7 @@ pre {
     position: relative;
     display: flex;
     align-items: flex-start;
-    
+
     @media only screen and (min-width: $breakpoint-medium) {
       display: block;
 
@@ -518,39 +515,43 @@ pre {
         top: 49px;
         transition: 1s;
         width: 20%;
-        
+
         @media only screen and (min-width: $breakpoint-large) {
           left: -22%;
           width: 39%;
         }
       }
     }
-    
+
     &:first-child:before {
       display: none;
     }
   }
-  
+
   &__title {
     font-size: 1.0625rem;
     margin-bottom: .5rem;
     text-transform: uppercase;
   }
-  
+
   &__image {
     display: block;
     flex-grow: 0;
     flex-shrink: 0;
     margin-right: $grid-gutter-width;
-    
-    
+
+
     @media only screen and (min-width: $breakpoint-medium) {
       margin: 0 auto;
       padding-bottom: 2rem;
     }
-    
+
     @media only screen and (min-width: $breakpoint-large) {
       padding-bottom: 2.5rem;
     }
-  }  
+  }
+}
+
+.is-visible {
+  display: block;
 }

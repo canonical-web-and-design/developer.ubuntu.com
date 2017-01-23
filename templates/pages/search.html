@@ -20,15 +20,15 @@
 {% if request_succeeded %}
 {% if parse_succeeded %}
 {% if results %}
-    <h3>{% if total %}{{ total }} {% endif %}results for "{{query}}"</h3>
+    <h4>{% if total %}{{ total }} {% endif %}results for "{{query}}"</h4>
     <section id="search-results" class="no-margin-bottom list list-spaced">
         <p class="result-line results-top">Results{% if start or end %} {{ start }} to {{ end }}{% endif %}</p>
 {% for result in results %}
         <article class="search-result twelve-col">
-            <h3>
+            <h4>
                 <a href="{{ result.url }}" class="title-main">{{ result.title|safe }}</a>
-                <small class="result-url"><a href="{{ result.url }}">{{ result.url }}</a></small>
-            </h3>
+                <small class="result-url">{{ result.url }}</small>
+            </h4>
             <p>{{ result.summary|safe }}</p>
         </article>
 {% endfor %}
@@ -93,4 +93,4 @@
 {% endif %} {# query #}
     </div>
 </div>
-{% endblock main_content %}
+{% endblock content %}

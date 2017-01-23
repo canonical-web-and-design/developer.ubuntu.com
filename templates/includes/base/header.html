@@ -1,5 +1,5 @@
 {% block header %}
-<header id="navigation" class="p-navigation">
+<header class="p-navigation">
     <div class="p-navigation__inner">
         <div class="p-navigation__logo">
             <a class="p-navigation__link" href="/">
@@ -7,8 +7,16 @@
               developer
             </a>
         </div>
-        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Menu</a>    <nav id="navigation" class="p-navigation__nav">
+
+        <button class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible'); document.getElementById('search').classList.remove('is-visible')">
+            <img src="{{ ASSET_SERVER_URL }}12387180-navigation-menu-plain.svg" class="p-navigation__icon" alt="Expand/collapse menu" />
+        </button>
+
+        <button class="header-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible'); document.getElementById('navigation').classList.remove('is-visible')">
+            <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
+        </button>
+
+        <nav id="navigation" class="p-navigation__nav">
             <span class="u-off-screen">
                 <a href="#main-content">Jump to main content</a>
             </span>
@@ -17,22 +25,19 @@
               <a class="p-navigation__link" href="https://developer.ubuntu.com/en/phone/">Phone</a>
               <a class="p-navigation__link" href="/core">Core</a>
               <a class="p-navigation__link" href="https://developer.ubuntu.com/en/community/">Community</a>
-              <a class="p-navigation__link p-navigation__link--last-item" href="https://developer.ubuntu.com/en/publish/">Publish</a>
-              <a class="p-navigation__link" href="https://myapps.developer.ubuntu.com/">My Apps</a>
+              <a class="p-navigation__link" href="https://developer.ubuntu.com/en/publish/">Publish</a>
+              <a class="p-navigation__link p-navigation__link--last-item" href="https://myapps.developer.ubuntu.com/">My Apps</a>
             </div>
-
-            <button class="header-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible')">
-                <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
-            </button>
-
-            <form id="search" action="/search" class="header-search">
-                <label for="edit-keys" class="header-search__label">Search</label>
-                <input class="header-search__field" type="search" name="q" id="search" placeholder="Search the site" />
-                <button type="submit" class="header-search__submit">
-                    <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
-                </button>
-            </form>
         </nav>
+
+        <form id="search" action="/search" class="header-search">
+            <label for="edit-keys" class="header-search__label">Search</label>
+            <input class="header-search__field" type="search" name="q" id="search" placeholder="Search the site" />
+            <button type="submit" class="header-search__submit">
+                <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image--large-screen" alt="Perform a search" />
+                <img src="{{ ASSET_SERVER_URL }}19750a6d-search-black.svg" class="header-search__image--small-screen" alt="Perform a search" />
+            </button>
+        </form>
     </div>
 </header>
 {% endblock header %}

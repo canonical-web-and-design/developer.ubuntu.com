@@ -3,6 +3,11 @@
   margin-bottom: 1.5em;
 }
 
+.result-url {
+  color: #888;
+  display: block;
+}
+
 .pagination {
   &__forward {
     float: right;
@@ -39,7 +44,6 @@
   }
 
   &__field, input.search__field[type='search'] {
-    height: 48px;
     margin: 0;
     float: left;
     box-shadow: none;
@@ -47,7 +51,7 @@
   }
 
   &__submit {
-    padding: 3px;
+    padding: 8px;
     line-height: 0;
     margin: 0;
     border: 0;
@@ -57,7 +61,7 @@
   }
 
   &__image {
-    height: 40px;
+    height: 30px;
   }
 }
 
@@ -66,17 +70,19 @@
   overflow: hidden;
   padding: 6px;
   width: 100%;
-  border-top: 1px solid darken($color-brand, 6%);
+  background-color: #ebebeb;
 
-  &.is-visible, .no-js & {
+  @media (min-width: $breakpoint-search) {
+    border-top: 1px solid darken($color-brand, 6%);
+    background-color: transparent;
+  }
+
+  .no-js & {
     display: block;
   }
 
-  @media (min-width: 970px) {
+  @media (min-width: 982px) {
     display: block;
-  }
-
-  @media (min-width: 970px) {
     float: left;
     height: 46px;
     width: auto;
@@ -85,13 +91,14 @@
   }
 
   &__toggle {
-    float: left;
+    float: right;
     padding: 9px;
     line-height: 0;
     background: none;
     border: 0;
+    width: auto;
 
-    @media (min-width: 970px) {
+    @media (min-width: $breakpoint-search) {
       display: none;
     }
 
@@ -124,10 +131,9 @@
   }
 
   &__field, input.header-search__field[type='search'] {
-    border-bottom: 0;
-    background-color: #c34113;
+    background-color: #ebebeb;
+    border: 0;
     -webkit-appearance: none;
-    color: #FFF;
     width: 100%;
     border: 0;
     height: 34px;
@@ -138,11 +144,28 @@
     border-radius: 4px;
     padding: 8px 40px 8px 10px;
 
-    @media only screen and (min-width: 970px) {
+    @media (min-width: $breakpoint-search) {
+      background-color: #c34113;
+      border-bottom: 0;
+      color: #FFF;
     }
   }
 
-  &__image {
+  &__image, &__image--small-screen, &__image--large-screen {
     height: 28px;
+  }
+
+  &__image--large-screen {
+    display: none;
+
+    @media (min-width: $breakpoint-search) {
+      display: block;
+    }
+  }
+
+  &__image--small-screen {
+    @media (min-width: $breakpoint-search) {
+      display: none;
+    }
   }
 }
