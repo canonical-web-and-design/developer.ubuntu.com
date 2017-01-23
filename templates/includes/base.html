@@ -87,16 +87,7 @@
 
 <div class="row">
   <div class="theme__wrap">
-
-    <div class="col-3 theme__sidebar">
-        {% include './base/sidebar.html' %}
-    </div>
-
-    <div class="col-12 theme__main">
-      <main id="main-content" class="theme__inner">
-          {% block main_content %}{% endblock %}
-      </main>
-    </div>
+    {% block content %}{% endblock %}
   </div>
 </div>
 
