@@ -21,15 +21,15 @@
               <a class="p-navigation__link" href="https://myapps.developer.ubuntu.com/">My Apps</a>
             </div>
 
-            <button class="site-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible')">
-                <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="site-search__image" alt="Perform a search" />
+            <button class="header-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible')">
+                <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
             </button>
 
-            <form id="search" action="/search" class="site-search">
-                <label for="edit-keys" class="site-search__label">Search</label>
-                <input class="site-search__field" type="search" name="q" id="search" placeholder="Search the site" />
-                <button type="submit" class="site-search__submit">
-                    <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="site-search__image" alt="Perform a search" />
+            <form id="search" action="/search" class="header-search">
+                <label for="edit-keys" class="header-search__label">Search</label>
+                <input class="header-search__field" type="search" name="q" id="search" placeholder="Search the site" />
+                <button type="submit" class="header-search__submit">
+                    <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
                 </button>
             </form>
         </nav>
