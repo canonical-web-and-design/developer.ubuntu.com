@@ -1,4 +1,4 @@
-.site-search {
+.header-search {
   display: none;
   overflow: hidden;
   padding: 6px;
@@ -60,7 +60,7 @@
     display: none;
   }
 
-  &__field, input.site-search__field[type='search'] {
+  &__field, input.header-search__field[type='search'] {
     border-bottom: 0;
     background-color: #c34113;
     -webkit-appearance: none;
