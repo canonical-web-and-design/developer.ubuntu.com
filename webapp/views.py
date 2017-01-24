@@ -4,6 +4,7 @@ try:
 except ImportError:
     from urllib2 import URLError
 import socket
+from requests import ConnectionError
 
 # Third party modules
 from django.conf import settings
@@ -43,17 +44,6 @@ def custom_500(request):
 def is_ipv4(address):
     try:
         socket.inet_aton(address)
-        return True
-    except socket.error:
-        return False
-
-
-def host_exists(hostname):
-    try:
-        if is_ipv4(hostname):
-            socket.gethostbyaddr(hostname)
-        else:
-            socket.gethostbyname(hostname)
         return True
     except socket.error:
         return False
@@ -204,7 +194,10 @@ class SearchView(TemplateView):
         # return self.context
         try:
             # Check we can find the host
-            context['host_exists'] = host_exists(gsa_domain)
+            if is_ipv4(gsa_domain):
+                socket.gethostbyaddr(gsa_domain)
+            else:
+                socket.gethostbyname(gsa_domain)
 
             gsa_results = parser.fixed_results(
                 context['query'],
@@ -224,11 +217,14 @@ class SearchView(TemplateView):
                 context,
                 nav_url
             )
-
         except URLError:
-            context['request_succeeded'] = False
+            context['request_error'] = True
         except ValueError:
-            context['parse_succeeded'] = False
+            context['parse_error'] = True
+        except ConnectionError:
+            context['connection_error'] = True
+        except socket.error:
+            context['host_error'] = True
 
         return context
 

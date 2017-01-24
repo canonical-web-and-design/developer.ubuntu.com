@@ -117,6 +117,6 @@ class GSAParser:
             stylesheet=self.stylesheet
         )
 
-        response = requests.get(search_url)
+        response = requests.get(search_url, timeout=10)
 
         return response.json()
