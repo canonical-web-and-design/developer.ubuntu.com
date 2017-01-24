@@ -1,5 +1,4 @@
 import requests
-import cjson
 
 
 class GSAParser:
@@ -120,4 +119,4 @@ class GSAParser:
 
         response = requests.get(search_url, timeout=10)
 
-        return cjson.decode(response.text)
+        return response.json()
