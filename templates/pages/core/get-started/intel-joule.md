@@ -27,7 +27,9 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 
 ### Ubuntu Core image
 
-[Ubuntu Core 16 beta image for Intel Joule](http://people.canonical.com/~platform/snappy/tuchuck/tuchuck-20161014085519.img.xz)
+[Ubuntu Core 16 (beta 4) image for Intel Joule](http://people.canonical.com/~platform/snappy/tuchuck/uc16-beta4/tuchuck-20170113012040.img.xz)
+
+* MD5SUM: ad0a1ac59a42b38d515251745f486834
 
 ## Installation instructions
 
@@ -51,7 +53,9 @@ As an alternative to Ubuntu Core, you can also install Ubuntu Desktop 16.04 LTS,
 
 ### Ubuntu image
 
-* [Intel Joule - Ubuntu Desktop 16.04 LTS image](http://people.canonical.com/~platform/snappy/tuchuck/tuchuck-20161014085519.img.xz)
+[Intel Joule - Ubuntu Desktop 16.04 LTS (beta 4) image](http://people.canonical.com/~platform/snappy/tuchuck/desktop-beta4/tuchuck-xenial-desktop-iso-20170109-0.iso)
+
+* MD5SUM: 097b4d7f4b828e307f290f31e24a686d
 
 Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias).
 
