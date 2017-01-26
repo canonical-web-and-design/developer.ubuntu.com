@@ -38,6 +38,7 @@ USE_TZ = False
 
 # SEARCH_SERVER_URL = 'http://butlerov.internal/search'
 SEARCH_SERVER_URL = 'http://10.22.112.8/search'
+SEARCH_DOMAINS = ['developer.ubuntu.com']
 
 WSGI_APPLICATION = 'webapp.wsgi.application'
 ROOT_URLCONF = 'webapp.urls'
