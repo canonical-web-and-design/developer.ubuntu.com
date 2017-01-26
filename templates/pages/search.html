@@ -37,6 +37,36 @@
 
             <p class="bottom-results-total result-line">Results {{ results.start }} to {{ results.end }} of {{ results.total }}</p>
         </section>
+
+            {% if results.last_page > 1 %}
+            <nav class="pagination" id="page-nav">
+                {% if results.current_page > 1 %}
+                <ul class="pagination__back">
+                    <li class="pagination__item">
+                        <a href="/search?q={{ query }}&limit={{ limit }}&offset=0">&#8249;&#8249; First</a>
+                    </li>
+                    {% if results.current_page > 2 %}
+                    <li class="pagination__item">
+                        <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.previous_offset }}">&#8249; Previous</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
+                {% if results.current_page != results.last_page %}
+                <ul class="pagination__forward">
+                    {% if results.current_page < results.penultimate_page %}
+                    <li class="pagination__item">
+                        <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.next_offset }}">Next &#8250;</a>
+                    </li>
+                    {% endif %}
+                    <li class="pagination__item">
+                        <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.last_page_offset }}">Last &#8250;&#8250;</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </nav>
+            {% endif %}
         {% else %}
         <h2>Sorry we couldn't find "{{ query }}"</h2>
 
@@ -54,36 +84,6 @@
             <li><a href="https://bugs.launchpad.net/developer-ubuntu-com/">Report an issue with the site</a></li>
         </ul>
         {% endif %} {# results #}
-
-        {% if results.total > 0 %}
-        <nav class="pagination" id="page-nav">
-            {% if not results.first_page %}
-            <ul class="pagination__back">
-                <li class="pagination__item">
-                    <a href="/search?q={{ query }}&limit={{ limit }}&offset=0">&#8249;&#8249; First</a>
-                </li>
-                {% if not results.second_page %}
-                <li class="pagination__item">
-                    <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.previous_offset }}">&#8249; Previous</a>
-                </li>
-                {% endif %}
-            </ul>
-            {% endif %}
-
-            {% if not results.last_page %}
-            <ul class="pagination__forward">
-                {% if not results.penultimate_page %}
-                <li class="pagination__item">
-                    <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.next_offset }}">Next &#8250;</a>
-                </li>
-                {% endif %}
-                <li class="pagination__item">
-                    <a href="/search?q={{ query }}&limit={{ limit }}&offset={{ results.last_page_offset }}">Last &#8250;&#8250;</a>
-                </li>
-            </ul>
-            {% endif %}
-        </nav>
-        {% endif %}
     {% endif %}
 {% endif %} {# query #}
     </div>
