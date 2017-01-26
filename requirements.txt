@@ -16,5 +16,5 @@ python-frontmatter==0.2.1
 PyYAML==3.12
 requests==2.10.0
 requests-cache==0.4.12
-ubuntudesign.gsa==0.1.1
+ubuntudesign.gsa==1.0.0
 
