@@ -2,9 +2,10 @@
 from django.conf.urls import url
 from django_yaml_redirects import load_redirects
 from django_template_finder_view import TemplateFinder
+from ubuntudesign.gsa.views import SearchView
 
 # Local
-from webapp.views import custom_404, custom_500, MarkdownView, SearchView
+from webapp.views import custom_404, custom_500, MarkdownView
 
 # Match any redirects first
 urlpatterns = load_redirects()
@@ -13,7 +14,7 @@ default_markdown_template = 'includes/base_markdown.html'
 
 # Try to find templates
 urlpatterns += [
-    url(r'^search/?$', SearchView.as_view()),
+    url(r'^search/?$', SearchView.as_view(template_name="pages/search.html")),
     url(
         r'^(?P<path>core(/.*)?)$',
         MarkdownView.as_view(),
