@@ -22,7 +22,7 @@ We will walk you through the steps of flashing Ubuntu Core on a DragonBoard 410c
 
 ### Ubuntu Core image
 
-[Ubuntu Core 16 image for DragonBoard 410c](http://cdimage.ubuntu.com/ubuntu-core/16/stable/ubuntu-core-16-dragonboard-410c.img.xz)
+[Ubuntu Core 16 image for DragonBoard 410c](http://cdimage.ubuntu.com/ubuntu-core/16/stable/20161102/ubuntu-core-16-dragonboard-410c.img.xz)
 
 ## Installation instructions
 
