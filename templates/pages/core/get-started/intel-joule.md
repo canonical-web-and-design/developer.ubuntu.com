@@ -14,8 +14,8 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 ## Hardware and software requirements
 
 * An Intel® Joule
-    * The board needs to have its BIOS updated to version #131, which is available
-[here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-09-23-131_Public.zip).
+    * The board needs to have its BIOS updated to version #174, which is available
+[here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-12-18-174-Public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
 * 2 USB 2.0 or 3.0 flash drives (2GB min.)
 * A monitor with an HDMI interface
 * A Mini HDMI to HDMI cable
@@ -50,6 +50,9 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 ## Alternative install: Ubuntu Desktop 16.04 LTS
 
 As an alternative to Ubuntu Core, you can also install Ubuntu Desktop 16.04 LTS, where you can use your favourite development tools to create and run snaps.
+
+* The board needs to have its BIOS updated to version #174, which is available
+[here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-12-18-174-Public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
 
 ### Ubuntu image
 
