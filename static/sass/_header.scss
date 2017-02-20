@@ -2,7 +2,7 @@
   max-width: $site-max-width;
 
   .p-navigation__toggle--open {
-    background-image: url("https://assets.ubuntu.com/v1/4447809f-navigation-menu-plain.svg");
+    background-image: url("#{$asset-server-url}4447809f-navigation-menu-plain.svg");
   }
 
   .logo {
@@ -76,7 +76,7 @@
         a.external:link,
         a.external:link:hover {
           background-color: transparent;
-          background-image: url('https://assets.ubuntu.com/v1/7d47725b-external-link.svg');
+          background-image: url('#{$asset-server-url}7d47725b-external-link.svg');
           background-position: right 1rem top 1rem;
           background-repeat: no-repeat;
           background-size: 7px 7px;
