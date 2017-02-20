@@ -101,13 +101,14 @@ a:link:hover {
       padding: 10px 10px 11px 10px;
       width: 47px;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, .1);
-      }
 
       @media (min-width: $breakpoint-medium) {
         display: none;
       }
+    }
+
+    .p-navigation__toggle:hover {
+      background-color: rgba(0, 0, 0, .1);
     }
 
     .p-navigation__icon {
@@ -397,13 +398,10 @@ a:link:hover {
   }
 
   &__image-container {
+    align-self: center;
     display: flex;
     margin-bottom: 1rem;
     min-height: 7rem;
-  }
-
-  &__image-container {
-    align-self: center;
   }
 
   &__image {
