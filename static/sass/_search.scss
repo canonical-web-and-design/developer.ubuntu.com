@@ -44,7 +44,7 @@
   }
 
   &__field,
-  input.search__field[type='search'] {
+  .search__field {
     box-shadow: none;
     float: left;
     margin: 0;
@@ -131,7 +131,7 @@
   }
 
   &__field,
-  input.header-search__field[type='search'] {
+  .header-search__field {
     background-color: #ebebeb;
     border: 0;
     border-radius: 4px;
