@@ -15,6 +15,5 @@ before_script:
   - python manage.py runserver &
 script:
   - flake8 webapp
-  - node_modules/sass-lint/bin/sass-lint.js -v static/sass/*
+  - npm run sass:lint
   - linkchecker --no-warnings http://127.0.0.1:8000
-
