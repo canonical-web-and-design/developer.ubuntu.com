@@ -464,7 +464,7 @@ a:link:hover {
 }
 
 // global nav overrides
-body.theme #nav-global .nav-global-wrapper {
+.nav-global-wrapper {
   display: none;
   width: $breakpoint-large !important;
 
