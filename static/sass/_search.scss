@@ -11,19 +11,19 @@
 .pagination {
   &__forward {
     float: right;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   &__back {
     float: left;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   &__item {
     float: left;
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
 
     &:last-child {
       padding-right: 0;
@@ -43,20 +43,20 @@
     display: none;
   }
 
-  &__field, input.search__field[type='search'] {
-    margin: 0;
-    float: left;
+  &__field,
+  input.search__field[type='search'] {
     box-shadow: none;
+    float: left;
+    margin: 0;
     padding-right: 48px;
   }
 
   &__submit {
-    padding: 7px;
-    line-height: 0;
-    margin: 0;
     border: 0;
-    margin: 1px 1px 1px -46px;
     float: left;
+    line-height: 0;
+    margin: 1px 1px 1px -46px;
+    padding: 7px;
     width: auto;
   }
 
@@ -66,15 +66,15 @@
 }
 
 .header-search {
+  background-color: #ebebeb;
   display: none;
   overflow: hidden;
   padding: 6px;
   width: 100%;
-  background-color: #ebebeb;
 
   @media (min-width: $breakpoint-search) {
-    border-top: 1px solid darken($color-brand, 6%);
     background-color: transparent;
+    border-top: 1px solid darken($color-brand, 6%);
   }
 
   .no-js & {
@@ -82,20 +82,20 @@
   }
 
   @media (min-width: 982px) {
+    border: 0;
     display: block;
     float: left;
     height: 46px;
-    width: auto;
     padding-left: 14px;
-    border: 0;
+    width: auto;
   }
 
   &__toggle {
-    float: right;
-    padding: 9px;
-    line-height: 0;
     background-color: transparent;
     border: 0;
+    float: right;
+    line-height: 0;
+    padding: 9px;
     width: auto;
 
     @media (min-width: $breakpoint-search) {
@@ -117,32 +117,31 @@
 
   &__submit {
     background: none;
+    border: 0;
     float: left;
     line-height: 0;
+    margin-bottom: 0;
     margin-left: -40px;
     padding: 3px 2px;
     width: 40px;
-    border: 0;
-    margin-bottom: 0;
   }
 
   &__label {
     display: none;
   }
 
-  &__field, input.header-search__field[type='search'] {
+  &__field,
+  input.header-search__field[type='search'] {
     background-color: #ebebeb;
     border: 0;
-    -webkit-appearance: none;
-    width: 100%;
-    border: 0;
-    height: 34px;
-    box-shadow: none;
-    padding-right: 40px;
-    float: left;
-    margin-bottom: 0;
     border-radius: 4px;
+    box-shadow: none;
+    float: left;
+    height: 34px;
+    margin-bottom: 0;
     padding: 8px 40px 8px 10px;
+    padding-right: 40px;
+    width: 100%;
 
     @media (min-width: $breakpoint-search) {
       background-color: #c34113;
@@ -151,7 +150,9 @@
     }
   }
 
-  &__image, &__image--small-screen, &__image--large-screen {
+  &__image,
+  &__image--small-screen,
+  &__image--large-screen {
     height: 28px;
   }
 
