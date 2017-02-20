@@ -1,12 +1,7 @@
-
-@mixin rounded_corners($radius: 4px 4px 4px 4px) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
+@import 'helpers';
 
 .theme__sidebar {
-  @include rounded_corners(4px 4px 0 );
+  @include rounded-corners(4px 4px 0);
   background: $color-x-light;
   border-left: 1px solid $color-mid-light;
   display: flex;
@@ -14,7 +9,6 @@
 }
 
 .sidebar-nav {
-
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
@@ -23,8 +17,8 @@
     border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
     margin-bottom: .625rem;
-    padding-left: $grid-gutter-width;
     padding-bottom: .625rem;
+    padding-left: $grid-gutter-width;
 
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
@@ -45,11 +39,10 @@
   }
 
   &__nav {
-
     // To enabling hiding of the bottom-most border in the navigation
     border-bottom: 1px solid $color-mid-light;
-    padding-bottom: .5em;
     overflow: hidden;
+    padding-bottom: .5em;
     width: 100%;
 
     @media only screen and (min-width: $breakpoint-medium) {
@@ -60,10 +53,6 @@
     }
 
     ul {
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-user-select: none;
       list-style: none;
       margin: 0;
       padding-left: 0;
@@ -71,17 +60,17 @@
       user-select: none;
 
       li {
+        display: none;
+        float: left;
         margin: 0;
         padding-left: 0;
         padding-top: $grid-gutter-width;
         position: relative;
-        float: left;
         width: 50%;
-        display: none;
 
         @media only screen and (min-width: $breakpoint-medium) {
-          float: none;
           display: block;
+          float: none;
           padding-right: $grid-gutter-width * 2;
           width: 100%;
         }
@@ -95,9 +84,9 @@
         a {
           //background: #333;
           border: 0;
+          color: $color-mid-dark;
           display: block;
           line-height: 1.3;
-          color: $color-mid-dark;
           padding-left: $grid-gutter-width;
           padding-right: $grid-gutter-width;
 
@@ -112,7 +101,7 @@
           }
         }
 
-        &:after {
+        &::after {
           cursor: pointer;
           display: block;
           height: 1.875em;
@@ -130,7 +119,7 @@
             display: none;
           }
 
-          &:after {
+          &::after {
             content: '+';
           }
         }
@@ -147,8 +136,8 @@
 
             & > li {
               display: block;
-              padding-right: 0;
               padding-left: $grid-gutter-width;
+              padding-right: 0;
 
               a {
                 padding: 0;
@@ -163,7 +152,7 @@
             }
           }
 
-          &:after {
+          &::after {
             content: '-';
           }
         }
@@ -201,43 +190,44 @@
             @media only screen and (min-width: $breakpoint-medium) {
               display: block;
             }
-
           }
         }
 
-          &.active,
-          &.active-parent {
-            width: 100%;
+        &.active,
+        &.active-parent {
+          width: 100%;
 
-            li {
-              display: block;
-              padding-left: 0;
-              width: 50%;
+          li {
+            display: block;
+            padding-left: 0;
+            width: 50%;
 
-              @media only screen and (min-width: $breakpoint-medium) {
-                padding-right: $grid-gutter-width;
-                width: 100%;
-              }
+            @media only screen and (min-width: $breakpoint-medium) {
+              padding-right: $grid-gutter-width;
+              width: 100%;
             }
           }
+        }
 
-          &:after,
-          &.collapsed:after,
-          &.expanded:after {
-            content: '';
-          }
+        &::after,
+        &.collapsed::after,
+        &.expanded::after {
+          content: '';
+        }
 
         @media only screen and (min-width: $breakpoint-medium) {
-          &:after {
+          &::after {
             background-position: center center;
             background-repeat: no-repeat;
             height: 1.5rem;
           }
-          &.collapsed:after {
+
+          &.collapsed::after {
             background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
             content: '';
           }
-          &.expanded:after {
+
+          &.expanded::after {
             background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
             content: '';
           }
@@ -248,8 +238,10 @@
     // Top level sections get bottom padding.
     .section {
       padding: 0 0 20px;
+
       // Subsections & collapsed sections get no padding.
-      &.collapsed, .section {
+      &.collapsed,
+      .section {
         padding: 0;
       }
     }
@@ -306,30 +298,30 @@
     }
 
     iframe {
-      margin: 0.25rem 0 1rem 0;
+      margin: .25rem 0 1rem 0;
       width: 100%;
     }
 
-    dl+h2 {
+    dl + h2 {
       margin-top: .563rem;
     }
 
-    dl+p {
+    dl + p {
       margin-top: .75rem;
     }
 
     dt {
-      margin: 1em 0 0.5rem;
+      margin: 1em 0 .5rem;
     }
 
     pre {
       background-color: $color-mid-dark;
-      border: none;
+      border: 0;
       color: $color-mid-light;
 
       code {
-        margin-bottom: 0;
         color: $color-mid-light;
+        margin-bottom: 0;
       }
     }
   }
