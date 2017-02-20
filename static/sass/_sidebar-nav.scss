@@ -5,10 +5,6 @@
   border-radius: $radius;
 }
 
-$button-width: 10px;
-$navigation-width: 256px;
-
-
 .theme__sidebar {
   @include rounded_corners(4px 4px 0 );
   background: $color-x-light;
