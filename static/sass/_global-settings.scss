@@ -1,15 +1,9 @@
-$asset-server-url: 'https://assets.ubuntu.com/v1/';
-
-$site-max-width:    auto;
-
-$color-brand:       #e95420;
-
+$site-max-width: auto;
 $breakpoint-cards: 1000px;
-
 $breakpoint-medium: 790px;
-
 $breakpoint-search: 982px;
-
 $button-width: 10px;
-
 $navigation-width: 256px;
+$color-brand: #e95420;
+$color-navigation-toggle-hover: rgba(0, 0, 0, .1);
+$asset-server-url: 'https://assets.ubuntu.com/v1/';
