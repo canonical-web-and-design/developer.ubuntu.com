@@ -65,10 +65,14 @@
             background-color: #e3e3e3 !important;
           }
         }
-        a, a:link, a:link:hover {
+        a,
+        a:link,
+        a:link:hover {
           background-color: transparent;
         }
-        a.external, a.external:link, a.external:link:hover {
+        a.external,
+        a.external:link,
+        a.external:link:hover {
           color: $cool-grey;
           background-image: url('https://assets.ubuntu.com/v1/7d47725b-external-link.svg');
           background-position: right 1rem top 1rem;
