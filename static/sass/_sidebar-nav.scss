@@ -58,103 +58,102 @@
       padding-left: 0;
       padding-right: 0;
       user-select: none;
+    }
 
-      li {
-        display: none;
-        float: left;
-        margin: 0;
-        padding-left: 0;
-        padding-top: $grid-gutter-width;
-        position: relative;
-        width: 50%;
+    ul li {
+      display: none;
+      float: left;
+      margin: 0;
+      padding-left: 0;
+      padding-top: $grid-gutter-width;
+      position: relative;
+      width: 50%;
 
-        @media only screen and (min-width: $breakpoint-medium) {
-          display: block;
-          float: none;
-          padding-right: $grid-gutter-width * 2;
-          width: 100%;
+      @media only screen and (min-width: $breakpoint-medium) {
+        display: block;
+        float: none;
+        padding-right: $grid-gutter-width * 2;
+        width: 100%;
+      }
+
+      &.active,
+      &.active-parent {
+        color: $color-brand;
+        display: block;
+      }
+
+      a {
+        border: 0;
+        color: $color-mid-dark;
+        display: block;
+        line-height: 1.3;
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
         }
 
-        &.active,
-        &.active-parent {
+        &:hover,
+        &.active {
           color: $color-brand;
-          display: block;
+        }
+      }
+
+      &::after {
+        cursor: pointer;
+        display: block;
+        height: 1.875em;
+        position: absolute;
+        right: $grid-gutter-width;
+        top: $grid-gutter-width / 2;
+        width: $button-width;
+      }
+
+      &.collapsed {
+        cursor: pointer;
+        padding-right: $grid-gutter-width + $button-width;
+
+        & > ul {
+          display: none;
         }
 
-        a {
-          //background: #333;
-          border: 0;
-          color: $color-mid-dark;
-          display: block;
-          line-height: 1.3;
-          padding-left: $grid-gutter-width;
-          padding-right: $grid-gutter-width;
+        &::after {
+          content: '+';
+        }
+      }
 
-          &:hover,
-          &:focus {
-            text-decoration: none;
+      &.expanded {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+
+        & > ul {
+          border-bottom: 1px solid $color-mid-light;
+          display: block;
+          padding-bottom: .625rem;
+
+          & > li {
+            display: block;
+            padding-left: $grid-gutter-width;
+            padding-right: 0;
           }
 
-          &:hover,
-          &.active {
-            color: $color-brand;
+          & > li a {
+            padding: 0;
+          }
+
+          @media only screen and (min-width: $breakpoint-medium) {
+            border: 0;
+            margin-left: inherit;
+            padding-bottom: 0;
+            padding-left: $grid-gutter-width;
           }
         }
 
         &::after {
-          cursor: pointer;
-          display: block;
-          height: 1.875em;
-          position: absolute;
-          right: $grid-gutter-width;
-          top: $grid-gutter-width / 2;
-          width: $button-width;
-        }
-
-        &.collapsed {
-          cursor: pointer;
-          padding-right: $grid-gutter-width + $button-width;
-
-          & > ul {
-            display: none;
-          }
-
-          &::after {
-            content: '+';
-          }
-        }
-
-        &.expanded {
-          cursor: pointer;
-          display: block;
-          width: 100%;
-
-          & > ul {
-            border-bottom: 1px solid $color-mid-light;
-            display: block;
-            padding-bottom: .625rem;
-
-            & > li {
-              display: block;
-              padding-left: $grid-gutter-width;
-              padding-right: 0;
-
-              a {
-                padding: 0;
-              }
-            }
-
-            @media only screen and (min-width: $breakpoint-medium) {
-              border: 0;
-              margin-left: inherit;
-              padding-bottom: 0;
-              padding-left: $grid-gutter-width;
-            }
-          }
-
-          &::after {
-            content: '-';
-          }
+          content: '-';
         }
       }
     }
@@ -182,14 +181,12 @@
           }
         }
 
-        & > ul {
-          & > li {
-            display: none;
-            padding-right: 0;
+        & > ul > li {
+          display: none;
+          padding-right: 0;
 
-            @media only screen and (min-width: $breakpoint-medium) {
-              display: block;
-            }
+          @media only screen and (min-width: $breakpoint-medium) {
+            display: block;
           }
         }
 
