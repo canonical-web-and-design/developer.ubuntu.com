@@ -10,6 +10,7 @@ install:
   - node_modules/node-sass/bin/node-sass --include-path node_modules static/sass --output static/css
   - pip install flake8==3.0.4
   - pip install -r requirements.txt
+  - sudo apt-get update
   - sudo apt-get install -y linkchecker
 before_script:
   - python manage.py runserver &
