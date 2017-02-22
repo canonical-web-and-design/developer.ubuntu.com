@@ -20,7 +20,7 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
  * A monitor with VGA or HDMI interface
  * A VGA or HDMI cable
  * A network connection with Internet access
- * An [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
+ * An [Ubuntu Desktop 16.04.2 LTS image](http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-desktop-amd64.iso)
  * An Ubuntu Core image
 
 ### Ubuntu Core image
