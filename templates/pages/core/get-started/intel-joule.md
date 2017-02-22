@@ -22,7 +22,7 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 * A USB keyboard and a mouse
 * A USB Hub for all the above USB pieces (4)
 * An 802.11 a/b/g/n WiFi network with Internet access
-* An [Ubuntu Desktop 16.04.1 LTS image](http://releases.ubuntu.com/16.04.1/ubuntu-16.04.1-desktop-amd64.iso)
+* An [Ubuntu Desktop 16.04.2 LTS image](http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-desktop-amd64.iso)
 * An Ubuntu Core image
 
 ### Ubuntu Core image
