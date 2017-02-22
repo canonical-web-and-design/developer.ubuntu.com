@@ -16,6 +16,7 @@ db.sqlite3
 *.css.map
 
 # Node
+node_modules/
 .npm/
 npm-debug.log*
 
