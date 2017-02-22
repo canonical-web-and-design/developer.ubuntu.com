@@ -1,10 +1,10 @@
 .search-result {
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid $color-search-result-border;
   margin-bottom: 1.5em;
 }
 
 .result-url {
-  color: #888;
+  color: $color-search-result-url;
   display: block;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .header-search {
-  background-color: #ebebeb;
+  background-color: $color-header-search-background;
   display: none;
   overflow: hidden;
   padding: 6px;
@@ -111,7 +111,7 @@
     }
 
     &:hover {
-      background: rgba(0, 0, 0, .1);
+      background: $color-translucent-black;
     }
   }
 
@@ -132,7 +132,7 @@
 
   &__field,
   .header-search__field {
-    background-color: #ebebeb;
+    background-color: $color-header-search-background;
     border: 0;
     border-radius: 4px;
     box-shadow: none;
@@ -144,9 +144,9 @@
     width: 100%;
 
     @media (min-width: $breakpoint-search) {
-      background-color: #c34113;
+      background-color: $color-header-search-field-background;
       border-bottom: 0;
-      color: #fff;
+      color: $color-x-light;
     }
   }
 
