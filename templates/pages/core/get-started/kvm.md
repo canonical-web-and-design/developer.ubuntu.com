@@ -27,9 +27,9 @@ This is the best outcome — it means that Ubuntu Core will run fast on your sys
 
 ### 2. Download Ubuntu Core
 
-Download the [Ubuntu Core image for amd64](http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-amd64.img.xz) and uncompress it with the following commands:
+Download the [Ubuntu Core image for amd64](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-amd64.img.xz) and uncompress it with the following commands:
 
-    wget http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-amd64.img.xz
+    wget http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-amd64.img.xz
     unxz ubuntu-core-16-amd64.img.xz
 
 You have an image ready to boot.

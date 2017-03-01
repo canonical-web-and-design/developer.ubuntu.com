@@ -20,8 +20,8 @@ We will walk you through the steps of flashing Ubuntu Core on a Raspberry Pi 2 o
 
 ### Ubuntu Core image
 
- * [Ubuntu Core 16 image for Raspberry Pi 2](http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-pi2.img.xz)
-  * [Ubuntu Core 16 image for Raspberry Pi 3](http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-pi3.img.xz)
+ * [Ubuntu Core 16 image for Raspberry Pi 2](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi2.img.xz)
+  * [Ubuntu Core 16 image for Raspberry Pi 3](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi3.img.xz)
 
 ## Installation instructions
 
