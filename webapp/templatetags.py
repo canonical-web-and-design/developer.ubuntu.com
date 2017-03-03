@@ -1,4 +1,7 @@
+import dateutil.parser
+from datetime import datetime
 from django import template
+from operator import itemgetter
 
 from webapp.lib.feeds import get_json_feed_content, get_rss_feed_content
 from webapp.lib.markdown import get_page_data as _get_page_data
@@ -52,6 +55,42 @@ def grid_cards(context, pages):
     page_data = _get_page_data(pages, request.path)
     return {
         'pages': page_data,
+    }
+
+
+@register.inclusion_tag(
+    'includes/components/tutorial_cards.html'
+)
+def tutorial_cards(feed_config, limit=3):
+    base_feed_url = (
+        "https://tutorials.ubuntu.com/api/tutorials/{type}.json"
+    )
+
+    # Check for categories list, otherwise create an empty list to cycle
+    if feed_config is not True and 'categories' in feed_config:
+        categories = feed_config['categories']
+    else:
+        categories = ['']
+
+    # Cycle through requested categories and aggregate results
+    feed_data = []
+    for category in categories:
+        if not category:
+            feed_type = 'recent'
+        else:
+            feed_type = '-'.join(['recent', category])
+        feed_url = base_feed_url.format(type=feed_type)
+        feed_data += get_json_feed_content(feed_url, limit=limit)
+
+    # Sort tutorials by updated, descending. Grab limit from aggregated items.
+    feed_data = sorted(feed_data, key=itemgetter('updated'), reverse=True)
+    feed_data = feed_data[:limit]
+
+    for item in feed_data:
+        item['updated_datetime'] = dateutil.parser.parse(item['updated'])
+
+    return {
+        'feed': feed_data,
     }
 
 

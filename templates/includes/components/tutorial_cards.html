@@ -1,0 +1,32 @@
+<div class="col-12 cards__container">
+
+    <h2 class="cards__title">Latest tutorials</h2>
+
+    <ul class="p-list">
+        {% for item in feed %}
+            <li class="cards__item col-4">
+                <a class="cards__link" href="{{ item.link }}">
+                    <div class="p-card--highlighted u-no-padding">
+                        <div class="tutorial-card__header">
+                            <span class="tutorial-card__category">{{ item.category|first }}</span>
+                            <h3 class="tutorial-card__title">{{ item.title }}</h3>
+                        </div>
+                        <div class="tutorial-card__content">
+                            <p class="tutorial-card__date">
+                                <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
+                            </p>
+                            <p class="tutorial-card__summary">{{ item.summary|truncate_chars:195 }}</p>
+                            <p class="tutorial-card__tags">
+                                {% for tag in item.tags|slice:":2" %}{% if not forloop.first %}, {% endif %}{{ tag }}{% endfor %}
+                            </p>
+                        </div>
+                        <div class="tutorial-card__footer">
+                            <p class="tutorial-card__difficulty">{{ item.difficultyName }}</p>
+                            <p class="tutorial-card__duration">{{ item.duration }} minutes</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
