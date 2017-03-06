@@ -6,6 +6,8 @@ from operator import itemgetter
 from webapp.lib.feeds import get_json_feed_content, get_rss_feed_content
 from webapp.lib.markdown import get_page_data as _get_page_data
 from webapp.sitemap import sitemap
+from django.utils.html import conditional_escape
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -115,5 +117,6 @@ def truncate_chars(value, max_length):
         truncated = value[:max_length]
         if not length == (max_length + 1) and value[max_length + 1] != " ":
             truncated = truncated[:truncated.rfind(" ")]
-        return truncated
+        escaped_html = conditional_escape(truncated)
+        return mark_safe(escaped_html + "&hellip;")
     return value

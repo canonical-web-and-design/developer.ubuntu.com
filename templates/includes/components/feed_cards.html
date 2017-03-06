@@ -2,7 +2,7 @@
 <div class="col-12 cards__container">
 
     <h2 class="cards__title">Latest news</h2>
-    
+
     <ul class="p-list">
     {% for item in feed %}
         <li class="cards__item col-4">
@@ -10,7 +10,7 @@
                 <div class="p-card--highlighted">
                     <h3 class="p-card--highlighted__title">{{ item.title }}</h3>
                     <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
-                    <p class="p-card--highlighted__content">{{ item.description|truncate_chars:80 }}&hellip;</p>
+                    <p class="p-card--highlighted__content">{{ item.description|truncate_chars:80 }}</p>
                     <p class="note p-card--highlighted__source">Ubuntu Insights</p>
                 </div>
             </a>
