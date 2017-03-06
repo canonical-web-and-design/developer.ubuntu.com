@@ -51,40 +51,40 @@
     padding-left: 22px;
     text-transform: uppercase;
   }
+}
 
-  .p-card--highlighted {
-    padding-bottom: 40px;
-    position: relative;
+.p-card--highlighted {
+  padding-bottom: 40px;
+  position: relative;
 
-    @media only screen and (min-width: $breakpoint-cards) {
-      min-height: 20em;
-    }
+  @media only screen and (min-width: $breakpoint-cards) {
+    min-height: 20em;
+  }
 
-    &__content {
-      color: $color-dark;
-      font-weight: 300;
-    }
+  &__content {
+    color: $color-dark;
+    font-weight: 300;
+  }
 
-    &__title {
-      color: $color-dark;
-      font-size: 1.3125rem;
-      font-weight: 300;
-    }
+  &__title {
+    color: $color-dark;
+    font-size: 1.3125rem;
+    font-weight: 300;
+  }
 
-    &__source {
-      bottom: 20px;
-      color: $color-mid-dark;
-      font-weight: 300;
-      margin-bottom: 0;
-      position: absolute;
-      text-transform: uppercase;
-    }
+  &__source {
+    bottom: 20px;
+    color: $color-mid-dark;
+    font-weight: 300;
+    margin-bottom: 0;
+    position: absolute;
+    text-transform: uppercase;
+  }
 
-    &__date {
-      color: $color-mid-dark;
-      font-weight: 300;
-      margin-top: -1rem;
-    }
+  &__date {
+    color: $color-mid-dark;
+    font-weight: 300;
+    margin-top: -1rem;
   }
 }
 
