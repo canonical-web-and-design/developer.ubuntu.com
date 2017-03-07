@@ -1,18 +1,25 @@
-
 {% extends base_template %}
 
 {% block inner_content %}
 
 {{ block.super }}
 
-{% page_cards summary_pages %}
-
-<div class="cards">
-{% if insights_feed %}
-    {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
-    {% feed_cards feed_url limit=3 %}
-    {% endwith %}
+{% if summary_pages %}
+    {% page_cards summary_pages %}
 {% endif %}
-</div>
+
+{% if insights_feed %}
+    <div class="cards">
+        {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
+            {% feed_cards feed_url limit=3 %}
+        {% endwith %}
+    </div>
+{% endif %}
+
+{% if tutorial_feed %}
+    <div class="cards">
+        {% tutorial_cards tutorial_feed %}
+    </div>
+{% endif %}
 
 {% endblock %}
