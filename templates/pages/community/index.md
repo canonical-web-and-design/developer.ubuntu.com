@@ -39,7 +39,7 @@ Whether you want to snap your own app or an established open source application,
 
 ## Contribute to our documentation
 
-Please feel free to report an inaccuracy or suggest improvements in the documentation.
+Feel free to report an inaccuracy or suggest improvements in the documentation.
 
 [Ubuntu Core documentation](https://github.com/CanonicalLtd/ubuntu-core-docs)
 
