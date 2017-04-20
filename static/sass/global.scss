@@ -12,33 +12,8 @@
 'helpers',
 'search';
 
-
 .nav-global-main {
   margin-top: 0;
-}
-
-body {
-  background: $color-light; // temporary style
-}
-
-.theme__wrap,
-.p-footer__inner {
-  margin: 0 auto;
-
-  @media only screen and (min-width: $breakpoint-large) {
-    width: $breakpoint-large;
-  }
-}
-
-.theme__wrap {
-  background: $color-x-light;
-  clear: both;
-
-  @media only screen and (min-width: $breakpoint-large) {
-    @include rounded-corners(4px);
-    box-shadow: 0 0 3px $color-mid-light;
-    margin-bottom: 30px !important;
-  }
 }
 
 a,
@@ -74,10 +49,6 @@ a:link:hover {
   padding-top: 0;
 }
 
-.theme__inner {
-  margin: 0 auto;
-}
-
 .theme {
   .p-navigation {
     background: $color-brand;
@@ -88,7 +59,6 @@ a:link:hover {
 
     @media only screen and (min-width: $breakpoint-large) {
       border-bottom: 0;
-      margin-bottom: 30px; // temporary style
     }
 
     .p-navigation__toggle {

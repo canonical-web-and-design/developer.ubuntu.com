@@ -1,9 +1,7 @@
 @import 'helpers';
 
 .theme__sidebar {
-  @include rounded-corners(4px 4px 0);
   background: $color-x-light;
-  border-left: 1px solid $color-mid-light;
   display: flex;
   padding: 10px 0 0;
 }
