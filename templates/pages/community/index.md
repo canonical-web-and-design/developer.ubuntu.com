@@ -15,12 +15,6 @@ insights_feed:
 
 The Ubuntu community provides you with a strong support network that can help you solve your development challenges.
 
-## Contribute
-
-You can contribute documentation to:
-[Ubuntu Core](https://github.com/CanonicalLtd/ubuntu-core-docs)
-[Snapcraft.io](https://github.com/CanonicalLtd/snappy-docs)
-
 ## Participate on Ask Ubuntu
 
 A collaboratively-edited question and answer site for Ubuntu users and developers. 100% free, no registration required.
@@ -28,16 +22,6 @@ A collaboratively-edited question and answer site for Ubuntu users and developer
 [Ask a question now](http://www.askubuntu.com/questions/ask?tags=application-development)
 
 [View frequently asked questions](http://www.askubuntu.com/questions/tagged/application-development?sort=frequent)
-
-## Other ways to get involved
-
-There are lots of ways to get involved with the Ubuntu community. 
-
-[Follow Ubuntu App Developers on Facebook](https://www.facebook.com/ubuntuappdev)
-
-[Follow @ubuntudev on Twitter](https://twitter.com/ubuntudev?lang=en)
-
-[Visit the community site](http://community.ubuntu.com/)
 
 ## Interacting with the Snapcraft community
 
@@ -53,4 +37,20 @@ Whether you want to snap your own app or an established open source application,
 
 [Join the mailing list](https://lists.ubuntu.com/mailman/listinfo/snapcraft?)
 
+## Contribute to our documentation
 
+Please feel free to report an inaccuracy or suggest improvements in the documentation.
+
+[Ubuntu Core documentation](https://github.com/CanonicalLtd/ubuntu-core-docs)
+
+[Snapcraft.io documentation](https://github.com/CanonicalLtd/snappy-docs)
+
+## Other ways to get involved
+
+There are lots of ways to get involved with the Ubuntu community. 
+
+[Follow Ubuntu App Developers on Facebook](https://www.facebook.com/ubuntuappdev)
+
+[Follow @ubuntudev on Twitter](https://twitter.com/ubuntudev?lang=en)
+
+[Visit the community site](http://community.ubuntu.com/)
