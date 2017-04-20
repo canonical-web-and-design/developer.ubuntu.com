@@ -1,3 +1,4 @@
+bpython==0.16
 Django==1.10.2
 dj-static==0.0.6
 django-versioned-static-url==0.8
