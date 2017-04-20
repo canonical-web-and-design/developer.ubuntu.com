@@ -22,6 +22,27 @@ urlpatterns += [
             'template_name': default_markdown_template
         }
     ),
+    url(
+        r'^(?P<path>devices(/.*)?)$',
+        MarkdownView.as_view(),
+        {
+            'template_name': default_markdown_template
+        }
+    ),
+    url(
+        r'^(?P<path>community(/.*)?)$',
+        MarkdownView.as_view(),
+        {
+            'template_name': default_markdown_template
+        }
+    ),
+    url(
+        r'^(?P<path>snapcraft(/.*)?)$',
+        MarkdownView.as_view(),
+        {
+            'template_name': default_markdown_template
+        }
+    ),
     url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),
 ]
 
