@@ -87,16 +87,6 @@ a:link:hover {
       width: 25px;
     }
 
-    .p-navigation__inner {
-      border-color: $color-mid-light;
-      width: auto;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        margin: 0 auto;
-        width: $breakpoint-large;
-      }
-    }
-
     &__links {
       background: darken($color-light, 3%);
       float: left;
