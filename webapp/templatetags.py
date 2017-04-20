@@ -1,5 +1,4 @@
 import dateutil.parser
-from datetime import datetime
 from django import template
 from operator import itemgetter
 
