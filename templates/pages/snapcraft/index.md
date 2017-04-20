@@ -2,10 +2,17 @@
 title: Snapcraft
 description: Snapcraft summary page
 page_type: modular
+insights_feed:
+    tag: snapcraft
+tutorial_feed:
+    categories:
+        - snapcraft
 ----
 
 # Snapcraft
 
-Mauris at ex finibus, dapibus odio et, rhoncus ex. Praesent eleifend lorem purus, ut varius dui volutpat id. Nulla congue id augue eu tristique. Suspendisse scelerisque ut eros ut finibus. In vel mi orci. Quisque sapien mi, lobortis sed eros eu, blandit pretium dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+A snap is a secure, easily upgraded, universal Linux package.
 
-Phasellus viverra in ante id iaculis. Nullam auctor justo eu ex eleifend, eu vehicula lorem interdum. Etiam cursus interdum mollis. Vivamus sit amet dolor justo.
+The easiest way to package your code as a snap is to use Snapcraft, which supports building from source and from existing packages, integrates into your CI process and handles publishing your snaps to the world.
+
+[Get started at snapcraft.io](https://snapcraft.io/)
