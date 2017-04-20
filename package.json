@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "docs-vanilla-theme": "1.1.0",
+    "vanilla-docs-theme": "1.4.0",
     "node-sass": "4.5.2",
     "sass-lint": "1.10.2"
   },
