@@ -4,8 +4,8 @@
 @import 'global-settings';
 
 // import vanilla themes
-@import 'docs-vanilla-theme/scss/theme';
-@include docs-vanilla-theme;
+@import 'vanilla-docs-theme/scss/theme';
+@include vanilla-docs-theme;
 
 @import
 'sidebar-nav',
