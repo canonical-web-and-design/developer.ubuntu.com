@@ -23,7 +23,7 @@ For testers and early adopters, the daily desktop build version can be downloade
 
 With Ubuntu Make, you can easily install the latest stable version of the most popular IDEs, regardless of your language and technology of choice.
 
-[Install and use Ubuntu Make](#)
+[Install and use Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make)
 
 ***
 
@@ -31,9 +31,9 @@ With Ubuntu Make, you can easily install the latest stable version of the most p
 
 From the simplest servers to powerful hyperscale servers and the cloud, Ubuntu Server can scale to fit all your needs. Ubuntu runs on x86, ARM and Power architectures and comes with all the tools you need to manage at scale.
 
-[For the long term support and latest versions of Ubuntu Server](https://www.ubuntu.com/download/server)
+[Download Ubuntu Server](https://www.ubuntu.com/download/server)
 
-[For the upcoming release of Ubuntu Server](http://releases.ubuntu.com/)
+[Get the upcoming release of Ubuntu Server](http://releases.ubuntu.com/)
 
 ***
 
