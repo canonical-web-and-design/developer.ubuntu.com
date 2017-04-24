@@ -30,7 +30,7 @@ urlpatterns += [
         }
     ),
     url(
-        r'^(?P<path>community(/.*)?)$',
+        r'^(?P<path>community-resources(/.*)?)$',
         MarkdownView.as_view(),
         {
             'template_name': default_markdown_template
@@ -38,6 +38,13 @@ urlpatterns += [
     ),
     url(
         r'^(?P<path>snapcraft(/.*)?)$',
+        MarkdownView.as_view(),
+        {
+            'template_name': default_markdown_template
+        }
+    ),
+    url(
+        r'^(?P<path>target-platforms(/.*)?)$',
         MarkdownView.as_view(),
         {
             'template_name': default_markdown_template
