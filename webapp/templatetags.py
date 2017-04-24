@@ -98,14 +98,13 @@ def tutorial_cards(feed_config, limit=3):
 @register.inclusion_tag(
     'includes/components/sidebar_nav.html', takes_context=True
 )
-def sidebar_nav(context, root_path=None):
+def sidebar_nav(context):
     request = context['request']
-    site_tree = sitemap.build_navigation(
-        root_path=root_path,
+    nav_items = sitemap.build_navigation(
         current_path=request.path,
     )
     return {
-        'sitemap': site_tree,
+        'sitemap': nav_items,
     }
 
 
