@@ -1,5 +1,5 @@
-<nav class="sidebar-nav__nav{% if request.path == '/core' %} active{% endif %}">
-    <h2 class="sidebar-nav__title"><a class="sidebar-nav__title-link" href="/core">Core</a></h2>
+<nav class="p-sidebar-nav__nav{% if request.path == '/core' %} active{% endif %}">
+    <h2 class="p-sidebar-nav__title"><a class="sidebar-nav__title-link" href="/core">Core</a></h2>
     {% sidebar_nav 'core' %}
 </nav>
 
@@ -16,7 +16,7 @@
         }
     }
 
-    var items = document.querySelectorAll('.sidebar-nav__nav ul li');
+    var items = document.querySelectorAll('.p-sidebar-nav__nav ul li');
 
     for(var num = 0; num < items.length; num++) {
         var item = items[num];
