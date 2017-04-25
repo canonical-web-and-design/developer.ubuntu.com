@@ -1,35 +1,36 @@
-root:
-  - Devices:
-    - Devices
-  - Topics:
-    - Development setup
-    - Ubuntu core
-    - Snapcraft
-    - Native apps
-    - Scops
-    - Web apps
-    - LXD containers
-    - MAAS
-  - Supporting content:
-    - Community resources
-    - Design
+-
+  _type: section
+  _items:
+    - devices
+    - target-platforms
 
-core:
-  get-started:
-    installation-medias:
-    raspberry-pi-2-3:
-    intel-joule:
-    dragonboard-410c:
-    intel-nuc:
-    artik-5-10:
-    kvm:
-    developer-setup:
-  tutorials:
-  examples:
-    hooks:
-    interfaces:
-    gadget-snaps:
-    assertions:
-  publish-and-distribute:
-  documentation:
-  troubleshooting:
+-
+  _title: Topics
+  _type: section
+  _items:
+    - core:
+      - get-started:
+        - installation-medias
+        - raspberry-pi-2-3
+        - intel-joule
+        - dragonboard-410c
+        - intel-nuc
+        - artik-5-10
+        - kvm
+        - developer-setup
+      - tutorials
+      - examples:
+        - hooks
+        - interfaces
+        - gadget-snaps
+        - assertions
+      - publish-and-distribute
+      - documentation
+      - troubleshooting
+    - snapcraft
+
+-
+  _title: Supporting content
+  _type: section
+  _items:
+  - community-resources

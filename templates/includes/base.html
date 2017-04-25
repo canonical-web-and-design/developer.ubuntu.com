@@ -87,6 +87,9 @@
 
 <div class="row">
   <div class="p-layout__wrap">
+    <div class="col-3 p-layout__sidebar">
+      {% include './base/sidebar.html' %}
+    </div>
     {% block content %}{% endblock %}
   </div>
 </div>

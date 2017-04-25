@@ -1,13 +1,39 @@
 <ul class="p-sidebar-nav__list">
-    {% for key, item in sitemap.children.items %}
-        <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
-        {% if item.children %}
-        <ul class="p-sidebar-nav__secondary">
-            {% for key, item in item.children.items %}
-                <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
-            {% endfor %}
-        </ul>
+    {% for item in sitemap %}
+
+        {% if item.type == 'back' %}
+
+            <li class="p-sidebar-nav__group">
+                <a href="{{ item.path }}">&larr; Back</a>
+
+        {% elif item.type == 'section' %}
+
+            <li class="p-sidebar-nav__group">
+                {% if item.title %}{{ item.title }}{% endif %}
+
+        {% else %}
+
+            <li>
+                <h2 class="p-sidebar-nav__title"><a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a></h2>
+
         {% endif %}
-        </li>
+
+                {% if item.children %}
+                    <ul class="p-sidebar-nav__primary">
+                        {% for item in item.children %}
+                            <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
+                            {% if item.children %}
+                            <ul class="p-sidebar-nav__secondary">
+                                {% for item in item.children %}
+                                    <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+
     {% endfor %}
 </ul>
