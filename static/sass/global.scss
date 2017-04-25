@@ -12,6 +12,26 @@
 'helpers',
 'search';
 
+// Patterns
+@import
+'patterns_card',
+'patterns_divider';
+
+// Utilities
+@import
+'utilities_margin-collapse',
+'utilities_padding-collapse';
+
+// Include all the CSS
+
+// Patterns
+@include vf-p-card;
+@include theme-p-divider;
+
+// Utilities
+@include vf-u-margin-collapse;
+@include vf-u-padding-collapse;
+
 .nav-global-main {
   margin-top: 0;
 }
