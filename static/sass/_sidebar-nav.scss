@@ -9,7 +9,7 @@
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
-  
+
   &__title {
     border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
@@ -33,7 +33,7 @@
   &__title-link:hover {
     color: $color-brand;
   }
-  
+
   &__group {
     border-bottom: 0;
   }
@@ -248,11 +248,11 @@
     padding: 0;
     position: relative;
     vertical-align: middle;
-    
+
     @media only screen and (min-width: $breakpoint-medium) {
       border-bottom: 1px dotted $color-mid-light;
     }
-    
+
     svg {
       display: inline-block;
       margin-right: 5px;
@@ -261,7 +261,7 @@
         fill: $color-mid-dark;
       }
     }
-  }  
+  }
 
   &__content {
     padding: 20px;
