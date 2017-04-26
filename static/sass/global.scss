@@ -14,13 +14,14 @@
 
 // Patterns
 @import
-'patterns_card',
+'vanilla-framework/scss/patterns_card',
 'patterns_divider';
 
 // Utilities
 @import
-'utilities_margin-collapse',
-'utilities_padding-collapse';
+'vanilla-framework/scss/utilities_margin-collapse',
+'vanilla-framework/scss/utilities_padding-collapse';
+
 
 // Include all the CSS
 
