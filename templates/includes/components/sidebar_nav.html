@@ -1,25 +1,17 @@
 <ul class="p-sidebar-nav__list">
     {% for item in sitemap %}
-
         {% if item.type == 'back' %}
-
-            <li class="p-sidebar-nav__group">
-                <a href="{{ item.path }}">&larr; Back</a>
-
+            <li class="p-sidebar-nav__back-link">
+                <a href="{{ item.path }}"><svg xmlns="//www.w3.org/2000/svg" height="13" width="6" viewBox="0 0 3 10"><g fill-rule="evenodd" fill="none"><g fill="#333"><path class="chevron-left" d="M3 10V8.25l-.062-.09c-.186-.266-.368-.54-.545-.823-.225-.36-.436-.727-.633-1.104C1.57 5.87 1.337 5.36 1.182 5c.155-.36.387-.87.578-1.234.197-.376.408-.744.633-1.104.177-.284.36-.556.545-.823L3 1.75V0l-.584.77c-.324.45-.637.906-.927 1.374-.326.523-.617 1.03-.874 1.524-.238.456-.432.88-.56 1.196L0 5l.056.136c.133.324.323.74.56 1.195.258.496.55 1.004.873 1.526.29.468.6.926.925 1.376L3 10z"/></g></g></svg> Back to homepage</a>
         {% elif item.type == 'section' %}
 
-            <li class="p-sidebar-nav__group">
-                {% if item.title %}{{ item.title }}{% endif %}
-
         {% else %}
-
-            <li>
+            </li>
+            <li class="p-sidebar-nav__group">
                 <h2 class="p-sidebar-nav__title"><a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a></h2>
-
         {% endif %}
 
                 {% if item.children %}
-                    <ul class="p-sidebar-nav__primary">
                         {% for item in item.children %}
                             <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
                             {% if item.children %}
@@ -31,9 +23,13 @@
                             {% endif %}
                             </li>
                         {% endfor %}
-                    </ul>
                 {% endif %}
             </li>
 
     {% endfor %}
+    {% if request.path == '' %}
+    <li class="p-sidebar-nav__group">
+        <a class="external" href="https://myapps.developer.ubuntu.com/">My apps</a>
+    </li>
+    {% endif %}
 </ul>

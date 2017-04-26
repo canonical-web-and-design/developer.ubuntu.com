@@ -1,26 +1,24 @@
 @import 'helpers';
 
-.theme__sidebar {
+.p-layout__sidebar {
   background: $color-x-light;
   display: flex;
-  padding: 10px 0 0;
 }
 
 .p-sidebar-nav {
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
-
+  
   &__title {
     border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
-    margin-bottom: .625rem;
+    margin-bottom: 0;
     padding-bottom: .625rem;
-    padding-left: $grid-gutter-width;
+    padding-left: 0;
 
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
-      margin-top: 1rem;
       padding-bottom: 0;
     }
   }
@@ -34,6 +32,10 @@
 
   &__title-link:hover {
     color: $color-brand;
+  }
+  
+  &__group {
+    border-bottom: 0;
   }
 
   &__nav {
@@ -59,7 +61,6 @@
     }
 
     ul li {
-      display: none;
       float: left;
       margin: 0;
       padding-left: 0;
@@ -75,6 +76,7 @@
       }
 
       &.active,
+      &.is-visible,
       &.active-parent {
         color: $color-brand;
         display: block;
@@ -240,50 +242,26 @@
         padding: 0;
       }
     }
+  }
 
-    .versions-nav {
-      padding: 1em 0;
+  &__back-link {
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    
+    @media only screen and (min-width: $breakpoint-medium) {
+      border-bottom: 1px dotted $color-mid-light;
+    }
+    
+    svg {
+      display: inline-block;
+      margin-right: 5px;
 
-      .unavailable {
-        color: $color-dark;
-        text-decoration: line-through;
-      }
-
-      .label {
-        display: block;
-        margin-bottom: .5rem;
-      }
-
-      ul {
-        border-right: 1px solid $color-mid-light;
-        display: inline;
-        padding-bottom: .2rem;
-
-        li {
-          display: inline-block;
-          margin-right: .3rem;
-
-          a {
-            border-bottom: 1px solid $color-dark;
-            line-height: 1.1;
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-          }
-
-          strong {
-            border-bottom: 1px solid $color-brand;
-          }
-        }
-      }
-
-      .stable {
-        border-bottom: 1px solid $color-dark;
-        margin-left: .5rem;
-        text-decoration: none;
+      .chevron-left {
+        fill: $color-mid-dark;
       }
     }
-  }
+  }  
 
   &__content {
     padding: 20px;

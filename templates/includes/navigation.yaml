@@ -1,7 +1,6 @@
 -
   _type: section
   _items:
-    - devices
     - target-platforms
 
 -
@@ -33,4 +32,4 @@
   _title: Supporting content
   _type: section
   _items:
-  - community-resources
+    - community-resources

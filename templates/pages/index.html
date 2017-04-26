@@ -3,15 +3,23 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-<div class="row u-no-padding--left">
-    <h1>Developer</h1>
-</div>
-
-<div class="row u-no-padding--left">
-    <div class="col-8">
-        <ul class="u-no-padding--left">
-            <li><a href="/core">Core pages</a></li>
-        </ul>
-    </div>
+<div class="col-12 p-layout__main">
+    <main id="main-content" class="p-layout__inner">           
+        <div class="row">
+            <h1>Developer</h1>
+            <p>Millions of developers use Ubuntu to write, build and deploy their code. What will you do with Ubuntu?</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-6">
+                <h2>Build an embedded device</h2>
+                <p>Use Ubuntu Core to secure and keep your IoT deployments up to date.</p>
+            </div>
+            <div class="col-6">
+                <h2>Package and distribute your code</h2>
+                <p>Use Snapcraft to publish apps to Linux desktop, server, cloud and devices.</p>
+            </div>
+        </div>
+    </main>
 </div>
 {% endblock content %}
