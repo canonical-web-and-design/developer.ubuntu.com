@@ -23,13 +23,6 @@ urlpatterns += [
         }
     ),
     url(
-        r'^(?P<path>devices(/.*)?)$',
-        MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
-    ),
-    url(
         r'^(?P<path>community-resources(/.*)?)$',
         MarkdownView.as_view(),
         {
