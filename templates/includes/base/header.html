@@ -8,10 +8,6 @@
             </a>
         </div>
 
-        <button class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible'); document.getElementById('search').classList.remove('is-visible')">
-            <img src="{{ ASSET_SERVER_URL }}12387180-navigation-menu-plain.svg" class="p-navigation__icon" alt="Expand/collapse menu" />
-        </button>
-
         <button class="header-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible'); document.getElementById('navigation').classList.remove('is-visible')">
             <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
         </button>
@@ -20,6 +16,7 @@
             <span class="u-off-screen">
                 <a href="#main-content">Jump to main content</a>
             </span>
+            <a class="p-navigation__my-apps-link" href="https://myapps.developer.ubuntu.com/">My Apps</a>
         </nav>
 
         <form id="search" action="/search" class="header-search">
