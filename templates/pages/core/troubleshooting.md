@@ -32,28 +32,23 @@ The snappy IRC channel can be useful when you need an urgent response or think t
 Launchpad is the tool used by the Ubuntu community to track bugs and host code. If you think you have encountered a bug, check if it's already been filed and, if not, file it on Launchpad. We value your feedback.
 
 ### Ubuntu Core and snapd
-[Open bugs](https://bugs.launchpad.net/snappy/+bugs)
-
-[File a new bug](https://bugs.launchpad.net/snappy/+filebug)
+* [Open bugs](https://bugs.launchpad.net/snappy/+bugs)
+* [File a new bug](https://bugs.launchpad.net/snappy/+filebug)
 
 ### Template policies
 Sometimes a policy denial is linked to a bug in the template Ubuntu Core policy.
 
-[Open bugs](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+bugs)
-
-[File a new bug](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+filebug)
+* [Open bugs](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+bugs)
+* [File a new bug](https://bugs.launchpad.net/ubuntu/+source/ubuntu-core-security/+filebug)
 
 ### Snapcraft
-[Open bugs](https://bugs.launchpad.net/snapcraft/+bugs)
-
-[File a new bug](https://bugs.launchpad.net/snapcraft/+filebug)
+* [Open bugs](https://bugs.launchpad.net/snapcraft/+bugs)
+* [File a new bug](https://bugs.launchpad.net/snapcraft/+filebug)
 
 ### Ubuntu Store
-[Open bugs](https://bugs.launchpad.net/software-center-agent)
-
-[File a new bug](https://bugs.launchpad.net/software-center-agent/+filebug)
+* [Open bugs](https://bugs.launchpad.net/software-center-agent)
+* [File a new bug](https://bugs.launchpad.net/software-center-agent/+filebug)
 
 ### Our developer site (developer.ubuntu.com)
-[Open bugs](https://bugs.launchpad.net/developer-ubuntu-com/+bugs)
-
-[File a new bug](https://bugs.launchpad.net/developer-ubuntu-com/+filebug)
+* [Open bugs](https://bugs.launchpad.net/developer-ubuntu-com/+bugs)
+* [File a new bug](https://bugs.launchpad.net/developer-ubuntu-com/+filebug)
