@@ -21,10 +21,6 @@
 // Patterns
 @include theme-p-divider;
 
-.p-form-validation .is-caution .p-form-validation__input {
-  background-image: url('#{$assets-path}c41194d3-icon-warning.svg');
-}
-
 .nav-global-main {
   margin-top: 0;
 }
