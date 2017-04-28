@@ -1,0 +1,6 @@
+@mixin developer-p-cards {
+  .p-card--featured {
+    @include p-card;
+    background: $color-light;
+  }
+}

@@ -14,11 +14,13 @@
 
 // Patterns
 @import
+'patterns_cards',
 'patterns_divider';
 
 // Include all the CSS
 
 // Patterns
+@include developer-p-cards;
 @include theme-p-divider;
 
 .nav-global-main {
