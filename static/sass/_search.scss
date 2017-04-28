@@ -79,7 +79,7 @@
   .no-js & {
     display: block;
   }
-  
+
   @media (min-width: $breakpoint-search) {
     background-color: transparent;
     border: 0;
@@ -89,7 +89,23 @@
     padding-left: 14px;
     width: auto;
   }
-  
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color-x-light;
+  }
+
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: $color-x-light;
+  }
+
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: $color-x-light;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $color-x-light;
+  }
+
   &__toggle {
     background-color: transparent;
     border: 0;
