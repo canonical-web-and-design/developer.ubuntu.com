@@ -72,24 +72,24 @@
   padding: 6px;
   width: 100%;
 
-  @media (min-width: $breakpoint-search) {
-    background-color: transparent;
-    border-top: 1px solid darken($color-brand, 6%);
+  @media only screen and (min-width: $breakpoint-medium) {
+    padding: 10px 6px 10px;
   }
 
   .no-js & {
     display: block;
   }
-
-  @media (min-width: 982px) {
+  
+  @media (min-width: $breakpoint-search) {
+    background-color: transparent;
     border: 0;
-    display: block;
-    float: left;
+    display: inline-block;
+    float: right;
     height: 46px;
     padding-left: 14px;
     width: auto;
   }
-
+  
   &__toggle {
     background-color: transparent;
     border: 0;
