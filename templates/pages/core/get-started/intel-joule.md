@@ -14,8 +14,8 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 ## Hardware and software requirements
 
 * An Intel® Joule
-    * The board needs to have its BIOS updated to version #174, which is available
-[here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-12-18-174-Public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
+    * The board needs to have its BIOS updated to version #193, which is available
+[here](https://downloadmirror.intel.com/26206/eng/joule-firmware-2017-02-19-193-public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
 * 2 USB 2.0 or 3.0 flash drives (2GB min.)
 * A monitor with an HDMI interface
 * A Mini HDMI to HDMI cable
@@ -27,9 +27,9 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 
 ### Ubuntu Core image
 
-[Ubuntu Core 16 (beta 4) image for Intel Joule](http://people.canonical.com/~platform/snappy/tuchuck/uc16-beta4/tuchuck-20170113012040.img.xz)
+[Ubuntu Core 16 image for Intel Joule](http://cdimage.ubuntu.com/ubuntu-core/16/stable/20170323/ubuntu-core-16-joule.img.xz)
 
-* MD5SUM: ad0a1ac59a42b38d515251745f486834
+* MD5SUM: 03adc0bce55ed1d87c10f79bf5b7e2fa
 
 ## Installation instructions
 
@@ -41,7 +41,7 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 * Once the system is ready, insert the second USB flash drive
 * Open a terminal and run the following command, where `<disk label>` is the name of the second USB flash drive:
 
-        xzcat /media/ubuntu/<disk label>/tuchuck*.img.xz | sudo dd of=/dev/mmcblk0 bs=32M status=progress; sync
+        xzcat /media/ubuntu/<disk label>/ubuntu-core-16-joule.img.xz | sudo dd of=/dev/mmcblk0 bs=32M status=progress; sync
 
 * Remove all USB flash drives and reboot the system, it will reboot from the internal memory now containing Ubuntu Core
 
@@ -51,14 +51,14 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 
 As an alternative to Ubuntu Core, you can also install Ubuntu Desktop 16.04 LTS, where you can use your favourite development tools to create and run snaps.
 
-* The board needs to have its BIOS updated to version #174, which is available
-[here](https://downloadmirror.intel.com/26206/eng/Joule-Firmware-2016-12-18-174-Public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
+* The board needs to have its BIOS updated to version #193, which is available
+[here](https://downloadmirror.intel.com/26206/eng/joule-firmware-2017-02-19-193-public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule).
 
 ### Ubuntu image
 
-[Intel Joule - Ubuntu Desktop 16.04 LTS (beta 4) image](http://people.canonical.com/~platform/snappy/tuchuck/desktop-beta4/tuchuck-xenial-desktop-iso-20170109-0.iso)
+[Intel Joule - Ubuntu Desktop 16.04 LTS image](http://people.canonical.com/~platform/snappy/tuchuck/desktop-final/tuchuck-xenial-desktop-iso-20170317-0.iso)
 
-* MD5SUM: 097b4d7f4b828e307f290f31e24a686d
+* MD5SUM: 07e4895b2921117288ff611c6f5fea28
 
 Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias).
 
@@ -73,3 +73,16 @@ Booting the board from the USB flash drive will start the Ubuntu installer.
 * Pick a hostname, user account and password
 * Wait for the configuration to finish. If you connected to a WiFi network at step 4, it will take several minutes to download and apply additional updates. You can now reboot the system
 * Ubuntu is installed. Use your account and password to log in
+
+### Change the default audio output
+
+In the current release, the analog audio port on mezzanine board is chosen as the default audio output. To use HDMI audio, you need to modify the Joule sound configuration file: `/etc/modprobe.d/joule-snd.conf`.
+
+#### Edit configuration
+
+1. Open an editor to modify the configuration file:
+
+        $ sudo nano /etc/modprobe.d/joule-snd.conf
+
+* To use HDMI audio, uncomment the line `#blacklist snd_sock_skl` and comment the line `softdep snd_hda_intel pre: snd_sock_skl`. You can revert these changes if you want to change your sound output back to defaults.
+* Reboot the system to apply the new setting.
