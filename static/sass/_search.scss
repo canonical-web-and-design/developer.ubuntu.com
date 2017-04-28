@@ -93,23 +93,47 @@
   input {
 
     &:focus {
-      color: $color-x-light;
+      color: $color-dark;
     }
 
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: $color-x-light;
+      color: $color-dark;
     }
 
     &::-moz-placeholder { /* Firefox 19+ */
-      color: $color-x-light;
+      color: $color-dark;
     }
 
     &:-ms-input-placeholder { /* IE 10+ */
-      color: $color-x-light;
+      color: $color-dark;
     }
 
     &:-moz-placeholder { /* Firefox 18- */
-      color: $color-x-light;
+      color: $color-dark;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+
+      &:focus {
+        color: $color-x-light;
+      }
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color-x-light;
+      }
+
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-x-light;
+      }
+
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: $color-x-light;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $color-x-light;
+      }
+
     }
   }
 
@@ -147,6 +171,10 @@
     margin-left: -40px;
     padding: 3px 2px;
     width: 40px;
+
+    &:hover {
+      background: none;
+    }
   }
 
   &__label {
