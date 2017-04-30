@@ -2,8 +2,6 @@
 title: Community resources
 description: Community resources page
 page_type: modular
-summary_pages:
-    - contribute
 insights_feed:
     tag: ubucon,community
     

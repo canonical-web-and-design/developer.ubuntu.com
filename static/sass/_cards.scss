@@ -4,7 +4,6 @@
 .cards {
   clear: both;
 
-
   &__container {
     @media only screen and (max-width: $breakpoint-large) {
       width: 100%;
@@ -14,9 +13,9 @@
   & &__link {
     transition: none;
 
-
     &:hover {
       border: 0;
+      text-decoration: none;
     }
 
     &::after {
@@ -82,7 +81,6 @@
   &__date {
     color: $color-mid-dark;
     font-weight: 300;
-    margin-top: -1rem;
   }
 }
 
