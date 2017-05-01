@@ -112,7 +112,7 @@
       color: $color-dark;
     }
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-search) {
 
       &:focus {
         color: $color-x-light;
