@@ -95,20 +95,25 @@
     &:focus {
       color: $color-dark;
     }
+    // sass-lint:disable no-vendor-prefixes
 
-    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    // Chrome/Opera/Safari
+    &::-webkit-input-placeholder {
       color: $color-dark;
     }
 
-    &::-moz-placeholder { /* Firefox 19+ */
+    // Firefox 19+
+    &::-moz-placeholder {
       color: $color-dark;
     }
 
-    &:-ms-input-placeholder { /* IE 10+ */
+    // IE 10+
+    &:-ms-input-placeholder {
       color: $color-dark;
     }
 
-    &:-moz-placeholder { /* Firefox 18- */
+    // Firefox 18-
+    &:-moz-placeholder {
       color: $color-dark;
     }
 
@@ -118,22 +123,26 @@
         color: $color-x-light;
       }
 
-      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      // Chrome/Opera/Safari
+      &::-webkit-input-placeholder {
         color: $color-x-light;
       }
 
-      &::-moz-placeholder { /* Firefox 19+ */
+      // Firefox 19+
+      &::-moz-placeholder {
         color: $color-x-light;
       }
 
-      &:-ms-input-placeholder { /* IE 10+ */
+      // IE 10+
+      &:-ms-input-placeholder {
         color: $color-x-light;
       }
 
-      &:-moz-placeholder { /* Firefox 18- */
+      // Firefox 18-
+      &:-moz-placeholder {
         color: $color-x-light;
       }
-
+      // sass-lint:enable no-vendor-prefixes
     }
   }
 
