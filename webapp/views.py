@@ -51,7 +51,7 @@ class MarkdownView(TemplateView):
                 return loader_instance
         raise Exception("Could not find MarkdownLoader")
 
-    def _find_template_source(self, path):
+    def _find_template_source(self, path=''):
         template_root = getattr(settings, 'TEMPLATE_FINDER_PATH', None)
         if template_root:
             path = ''.join([template_root, '/', path])
@@ -99,7 +99,7 @@ class MarkdownView(TemplateView):
         return context
 
     def get(self, request, *args, **kwargs):
-        request_path = self.kwargs['path']
+        request_path = self.kwargs.get('path')
         markdown, metadata = self._parse_markdown(request_path)
 
         context = self.get_context_data(
