@@ -6,7 +6,6 @@
         {% elif item.type == 'section' %}
 
         {% else %}
-            </li>
             <li class="p-sidebar-nav__group">
                 <h2 class="p-sidebar-nav__title"><a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a></h2>
         {% endif %}
