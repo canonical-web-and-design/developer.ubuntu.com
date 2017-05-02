@@ -1,35 +1,27 @@
--
-  _type: section
-  _items:
-    - target-platforms
-
--
-  _title: Topics
-  _type: section
-  _items:
-    - core:
-      - get-started:
-        - installation-medias
-        - raspberry-pi-2-3
-        - intel-joule
-        - dragonboard-410c
-        - intel-nuc
-        - artik-5-10
-        - kvm
-        - developer-setup
-      - tutorials
-      - examples:
-        - hooks
-        - interfaces
-        - gadget-snaps
-        - assertions
-      - publish-and-distribute
-      - documentation
-      - troubleshooting
-    - snapcraft
-
--
-  _title: Supporting content
-  _type: section
-  _items:
-    - community-resources
+_options:
+  nesting_limit: 2
+_options_local:
+  nesting_limit: 1
+_items:
+  - target-platforms
+  - core:
+    - get-started:
+      - installation-medias
+      - raspberry-pi-2-3
+      - intel-joule
+      - dragonboard-410c
+      - intel-nuc
+      - artik-5-10
+      - kvm
+      - developer-setup
+    - tutorials
+    - examples:
+      - hooks
+      - interfaces
+      - gadget-snaps
+      - assertions
+    - publish-and-distribute
+    - documentation
+    - troubleshooting
+  - snapcraft
+  - community-resources
