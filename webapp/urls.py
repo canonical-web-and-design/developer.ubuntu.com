@@ -43,6 +43,13 @@ urlpatterns += [
             'template_name': default_markdown_template
         }
     ),
+    url(
+        r'^$',
+        MarkdownView.as_view(),
+        {
+            'template_name': 'includes/homepage_markdown.html'
+        }
+    ),
     url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),
 ]
 
