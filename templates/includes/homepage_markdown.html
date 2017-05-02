@@ -1,0 +1,14 @@
+{% extends 'includes/core.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block main_content %}
+<div class="row">
+
+    {% block inner_content %}
+        {% block markdown %}{% endblock %}
+        {% block after_markdown %}{% endblock %}
+    {% endblock %}
+
+</div>
+{% endblock main_content %}
