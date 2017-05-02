@@ -228,7 +228,12 @@ class Sitemap:
                 config = yaml.load(navigation_file)
 
         sitemap = self.get()
-        sorted_tree = self._populate_navigation(config, sitemap)
+
+        if isinstance(config, dict) and '_items' in config:
+            config_items = config['_items']
+        else:
+            config_items = [config]
+        sorted_tree = self._populate_navigation(config_items, sitemap)
 
         # Determine current path and only load correct section
         current_path = current_path.strip('/')
