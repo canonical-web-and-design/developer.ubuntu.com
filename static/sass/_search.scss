@@ -95,7 +95,7 @@
     &:focus {
       color: $color-dark;
     }
-    // sass-lint:disable no-vendor-prefixes, quotes
+    // sass-lint:disable no-vendor-prefixes
 
     // Chrome/Opera/Safari
     &::-webkit-input-placeholder {
@@ -142,7 +142,7 @@
       &:-moz-placeholder {
         color: $color-x-light;
       }
-      // sass-lint:enable border-zero, quotes
+      // sass-lint:enable no-vendor-prefixes
     }
   }
 
