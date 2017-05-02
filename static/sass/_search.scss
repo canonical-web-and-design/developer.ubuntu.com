@@ -72,22 +72,69 @@
   padding: 6px;
   width: 100%;
 
-  @media (min-width: $breakpoint-search) {
-    background-color: transparent;
-    border-top: 1px solid darken($color-brand, 6%);
+  @media only screen and (min-width: $breakpoint-medium) {
+    padding: 10px 6px 10px;
   }
 
   .no-js & {
     display: block;
   }
 
-  @media (min-width: 982px) {
+  @media (min-width: $breakpoint-search) {
+    background-color: transparent;
     border: 0;
-    display: block;
-    float: left;
+    display: inline-block;
+    float: right;
     height: 46px;
     padding-left: 14px;
     width: auto;
+  }
+
+  input {
+
+    &:focus {
+      color: $color-dark;
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color-dark;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $color-dark;
+    }
+
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $color-dark;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $color-dark;
+    }
+
+    @media (min-width: $breakpoint-search) {
+
+      &:focus {
+        color: $color-x-light;
+      }
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color-x-light;
+      }
+
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-x-light;
+      }
+
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: $color-x-light;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: $color-x-light;
+      }
+
+    }
   }
 
   &__toggle {
@@ -124,6 +171,10 @@
     margin-left: -40px;
     padding: 3px 2px;
     width: 40px;
+
+    &:hover {
+      background: none;
+    }
   }
 
   &__label {
