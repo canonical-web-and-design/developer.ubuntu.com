@@ -3,7 +3,7 @@ title: Community resources
 description: Community resources page
 page_type: modular
 insights_feed:
-    tag: ubucon,community
+    tag: community,developer
     
 ----
 
