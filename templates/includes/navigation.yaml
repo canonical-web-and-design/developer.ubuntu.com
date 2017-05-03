@@ -1,7 +1,7 @@
 _options:
   nesting_limit: 2
 _options_local:
-  nesting_limit: 1
+  nesting_limit: 0
 _items:
   - target-platforms
   - core:
