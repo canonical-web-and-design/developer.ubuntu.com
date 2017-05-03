@@ -11,19 +11,17 @@ Ubuntu works on any distribution or target platform, from IoT devices to servers
 
 {% include "includes/components/target-platforms.html" %}
 
-## Desktop
+## IoT
 
-Whether you are a beginner or a skilled developer, we recommend you install and test your software on the stable version of Ubuntu Desktop.
+Ubuntu is at the heart of many smart devices – from edge computing and wearables to autonomous vehicles and drones.
 
-[Download Ubuntu Desktop](https://www.ubuntu.com/download/desktop)
+For fast iterations on your software and hardware stack, we recommend you install Ubuntu Server on your board.
 
-For testers and early adopters, the daily desktop build version can be downloaded anytime.
+[See available images](https://www.ubuntu.com/download/server)
 
-[Get the Ubuntu daily build](http://cdimage.ubuntu.com/daily-live/current/)
+When you are ready to deploy more advanced prototypes or a production environment, running  your snaps on Ubuntu Core is the best option. Snaps are confined for stricter security and provide automated software updates so your app is always fresh and never broken.
 
-With Ubuntu Make, you can easily install the latest stable version of the most popular IDEs, regardless of your language and technology of choice.
-
-[Install and use Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make)
+[Get started with Ubuntu Core](/core)
 
 ***
 
@@ -37,16 +35,16 @@ From the simplest servers to powerful hyperscale servers and the cloud, Ubuntu S
 
 ***
 
-## IoT
+## Desktop
 
-Ubuntu is at the heart of many smart devices – from edge computing and wearables to autonomous vehicles and drones.
+Whether you are a beginner or a skilled developer, we recommend you install and test your software on the stable version of Ubuntu Desktop.
 
-For fast iterations on your software and hardware stack, we recommend you install Ubuntu Server on your board.
+[Download Ubuntu Desktop](https://www.ubuntu.com/download/desktop)
 
-[See available images](https://www.ubuntu.com/download/server)
+For testers and early adopters, the daily desktop build version can be downloaded anytime.
 
-When you are ready to deploy more advanced prototypes or a production environment, running  your snaps on Ubuntu Core is the best option. Snaps are confined for stricter security and provide automated software updates so your app is always fresh and never broken.
+[Get the Ubuntu daily build](http://cdimage.ubuntu.com/daily-live/current/)
 
-[Get started with Ubuntu Core](/core)
+With Ubuntu Make, you can easily install the latest stable version of the most popular IDEs, regardless of your language and technology of choice.
 
-
+[Install and use Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make)
