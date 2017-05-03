@@ -18,7 +18,7 @@
   ubuntu.globalNav.setup();
 
   /* External links classes */
-  var links = document.querySelector('.theme__wrap').querySelectorAll('a');
+  var links = document.querySelector('.p-layout__inner').querySelectorAll('a');
   links.forEach(function(link) {
 	if (link.hostname && link.hostname != location.hostname) {
 	  link.className += ' p-link--external';
