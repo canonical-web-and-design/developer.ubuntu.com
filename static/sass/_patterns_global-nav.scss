@@ -1,0 +1,17 @@
+// Override global nav styling
+@mixin developer-p-global-nav {
+
+  // global nav overrides
+  .nav-global-wrapper {
+    display: none;
+    width: $breakpoint-large !important;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: block;
+    }
+  }
+
+  .nav-global-main {
+    margin-top: 0;
+  }
+}
