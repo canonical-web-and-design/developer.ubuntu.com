@@ -97,15 +97,42 @@ class Sitemap:
         pass reference to the current nesting level of sorted/unsorted dicts.
         """
         options = options or DEFAULT_NAVIGATION_OPTIONS
+        current_path = options.get('current_path', '')
+        root_path = options.get('root_path', '/')
         nesting_limit = options['nesting_limit']
         remaining_depth = options.get('remaining_depth', nesting_limit)
 
         nav_items = []
         for config_item in config:
             # Set node context
-            is_root = True
+            is_root = False
             remaining_node_depth = remaining_depth
             node_options = deepcopy(options)
+
+            # Normalise nested string path items
+            if isinstance(config_item, dict) and '_items' not in config_item:
+                for k, v in config_item.items():
+                    config_item = {
+                        '_path': k,
+                        '_items': v,
+                    }
+
+            # Normalise simple string path items
+            if isinstance(config_item, str):
+                config_item = {'_path': config_item}
+
+            current_node_path = current_path
+            if '_path' in config_item:
+                current_node_path = '{current}/{node}'.format(
+                    current=current_path,
+                    node=config_item['_path'],
+                )
+                node_options['current_path'] = current_node_path
+            is_root = current_node_path == root_path
+
+            # If this is the root, reset options
+            if is_root:
+                remaining_node_depth = node_options['nesting_limit']
 
             # Set new defaults for current and any children
             if '_options' in config_item:
@@ -123,18 +150,6 @@ class Sitemap:
                     remaining_node_depth = local_options['nesting_limit']
                     node_options['remaining_depth'] = remaining_node_depth
 
-            # Normalise nested string path items
-            if isinstance(config_item, dict) and '_type' not in config_item:
-                for k, v in config_item.items():
-                    config_item = {
-                        '_path': k,
-                        '_items': v,
-                    }
-
-            # Normalise simple string path items
-            if isinstance(config_item, str):
-                config_item = {'_path': config_item}
-
             if config_item.get('_type') == 'section':
                 new = {
                     'type': 'section',
@@ -143,11 +158,7 @@ class Sitemap:
                 }
                 # Section is a wrapper that does not count as
                 # a level. Pass the current level of sitemap
-                new['children'] = self._populate_navigation(
-                    config_item['_items'],
-                    sitemap,
-                    options=node_options,
-                )
+                sitemap_children = sitemap
             else:
                 key = config_item['_path']
                 new = {
@@ -155,15 +166,17 @@ class Sitemap:
                     'title': config_item.get('_title', sitemap[key]['title']),
                     'description': sitemap[key]['description'],
                 }
-                if remaining_node_depth and '_items' in config_item:
-                    remaining_node_depth -= 1
-                    node_options['remaining_depth'] = remaining_node_depth
-                    new['children'] = self._populate_navigation(
-                        config_item['_items'],
-                        sitemap[key]['children'],
-                        options=node_options,
-                    )
+                if 'children' in sitemap[key]:
+                    sitemap_children = sitemap[key]['children']
 
+            if remaining_node_depth and '_items' in config_item:
+                remaining_node_depth -= 1
+                node_options['remaining_depth'] = remaining_node_depth
+                new['children'] = self._populate_navigation(
+                    config_item['_items'],
+                    sitemap_children,
+                    options=node_options,
+                )
             nav_items.append(new)
         return nav_items
 
@@ -265,7 +278,7 @@ class Sitemap:
 
         sitemap = self.get()
 
-        options = {}
+        options = DEFAULT_NAVIGATION_OPTIONS
         if isinstance(config, dict) and '_items' in config:
             config_items = config['_items']
 
@@ -280,25 +293,33 @@ class Sitemap:
                     options['remaining_depth'] = remaining_node_depth
         else:
             config_items = config
+
+        # Determine current path and root
+        current_path = current_path.strip('/')
+        root_path_key = None
+        if current_path:
+            root_path_key = current_path.split('/')[0]
+        options['root_path'] = '/{path}'.format(
+            path=root_path_key or ''
+        )
+
         sorted_tree = self._populate_navigation(
             config_items,
             sitemap,
             options=options
         )
 
-        # Determine current path and only load correct section
-        current_path = current_path.strip('/')
-        root_path = None
         if current_path:
-            root_path = current_path.split('/')[0]
             self._set_active_navigation_items(sorted_tree, current_path)
-        if root_path:
-            sorted_tree = [self._find_navigation_item(sorted_tree, root_path)]
-            back_link = [{
-                'type': 'back',
-                'path': '/',
-            }]
-            sorted_tree = back_link + sorted_tree
+        if root_path_key:
+            root_node = self._find_navigation_item(sorted_tree, root_path_key)
+            if root_node.get('children'):
+                sorted_tree = [root_node]
+                back_link = [{
+                    'type': 'back',
+                    'path': '/',
+                }]
+                sorted_tree = back_link + sorted_tree
 
         return sorted_tree
 
