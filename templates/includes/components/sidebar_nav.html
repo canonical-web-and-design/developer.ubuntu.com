@@ -18,7 +18,7 @@
                 <a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a>
 
         {% endif %}
-
+            {% if item.type == 'heading' %}</li>{% endif %}
                 {% if item.children %}
                     <ul class="p-sidebar-nav__secondary">
                         {% for item in item.children %}
@@ -34,7 +34,7 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-            </li>
+            {% if not item.type == 'heading' %}</li>{% endif %}
 
     {% endfor %}
 </ul>

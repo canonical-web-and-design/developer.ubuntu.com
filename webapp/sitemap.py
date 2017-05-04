@@ -322,6 +322,8 @@ class Sitemap:
                     'path': '/',
                 }]
                 sorted_tree = back_link + sorted_tree
+            elif root_node.get('type') == 'heading':
+                root_node['type'] = None
 
         return sorted_tree
 
