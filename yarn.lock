@@ -1556,15 +1556,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-vanilla-docs-theme@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/vanilla-docs-theme/-/vanilla-docs-theme-1.5.1.tgz#c32a6696af0815905f05b8158d3ca8e16cbc3516"
+vanilla-docs-theme@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/vanilla-docs-theme/-/vanilla-docs-theme-1.5.3.tgz#cb630c1f37bb3c83d8fc9b25052a5ef5c71b7e4c"
   dependencies:
-    vanilla-framework "1.2.0"
+    vanilla-framework "1.2.1"
 
-vanilla-framework@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.2.0.tgz#686cb37f6bece416e1972ba06340ed894df3fda7"
+vanilla-framework@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-1.2.1.tgz#7dae027477420d509fb3bb4f9cb3384e6d9575b1"
 
 verror@1.3.6:
   version "1.3.6"
