@@ -7,7 +7,7 @@ insights_feed:
 tutorial_feed: true
 ----
 
-# Millions of developers use Ubuntu to write, build and deploy their code
+# Use Ubuntu to write, build and deploy your code
 
 ## What will you do with Ubuntu?
 
