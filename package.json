@@ -1,8 +1,8 @@
 {
   "devDependencies": {
-    "vanilla-docs-theme": "1.5.1",
     "node-sass": "4.5.2",
-    "sass-lint": "1.10.2"
+    "sass-lint": "1.10.2",
+    "vanilla-docs-theme": "^1.5.3"
   },
   "scripts": {
     "watch": "node-sass --include-path node_modules --watch --source-map true --recursive static/sass/global.scss static/css/global.css",
