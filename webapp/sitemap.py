@@ -132,6 +132,7 @@ class Sitemap:
 
             # If this is the root, reset options
             if is_root:
+                config_item['_type'] = 'heading'
                 remaining_node_depth = node_options['nesting_limit']
 
             # Set new defaults for current and any children
@@ -162,6 +163,7 @@ class Sitemap:
             else:
                 key = config_item['_path']
                 new = {
+                    'type': config_item.get('_type'),
                     'path': sitemap[key]['path'],
                     'title': config_item.get('_title', sitemap[key]['title']),
                     'description': sitemap[key]['description'],
