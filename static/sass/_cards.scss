@@ -1,5 +1,4 @@
 @charset 'utf-8';
-@import 'global-settings';
 
 .cards {
   clear: both;
@@ -33,6 +32,7 @@
   & &__item {
     @media only screen and (max-width: $breakpoint-cards) {
       margin-left: 0;
+      padding-bottom: 0;
       width: 100%;
     }
 
@@ -90,13 +90,13 @@
     background: url('#{$assets-path}a88aa78c-card_background.png') no-repeat right bottom;
     background-size: cover;
     border-radius: 2px 2px 0 0;
-    color: $color-tutorial-card-header-font;
+    color: $color-x-light;
     min-height: 120px;
     padding: 10px 16px;
   }
 
   &__content {
-    border-bottom: 1px solid $color-tutorial-card-separator;
+    border-bottom: 1px solid $color-mid-light;
     color: $color-dark;
     font-weight: 300;
     margin: 16px;
@@ -137,7 +137,7 @@
   }
 
   &__date {
-    color: $color-tutorial-card-meta-font;
+    color: $color-mid-dark;
     font-weight: 300;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -149,7 +149,7 @@
 
   &__tags {
     bottom: 0;
-    color: $color-tutorial-card-meta-font;
+    color: $color-mid-dark;
     font-weight: 300;
     margin-bottom: 10px;
     margin-top: 20px;
