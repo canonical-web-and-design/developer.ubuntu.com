@@ -89,17 +89,6 @@
     text-decoration: none;
   }
 
-  .p-navigation .p-navigation__link:hover {
-    background: $color-light;
-    border-color: $color-mid-light;
-    text-decoration: none;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      background: lighten($color-brand, 6%);
-      border-color: darken($color-brand, 6%);
-    }
-  }
-
   .p-navigation__links {
     border-right: 0;
   }
