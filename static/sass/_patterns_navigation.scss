@@ -7,7 +7,7 @@
     color: $color-x-light;
     padding: 0;
 
-    @media only screen and (min-width: $breakpoint-large) {
+    @media only screen and (min-width: $breakpoint-medium) {
       border-bottom: 0;
     }
 
@@ -45,7 +45,7 @@
         font-size: .875rem;
         font-weight: bold;
         overflow: hidden;
-        padding: 13px 14px;
+        padding: 10px 14px;
         width: auto;
       }
     }
