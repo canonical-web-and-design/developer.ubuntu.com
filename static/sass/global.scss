@@ -12,6 +12,10 @@
 @import 'vanilla-docs-theme/scss/theme';
 @include vanilla-docs-theme;
 
+// vendors
+@import
+'../components/canonical-global-nav/src/sass/main';
+
 @import
 'sidebar-nav',
 'search';
