@@ -9,14 +9,12 @@
   }
 
   &__title {
-    border-bottom: 1px solid $color-mid-light;
     font-size: 1.125rem;
     margin-bottom: 0;
     padding-bottom: .625rem;
     padding-left: 0;
 
     @media only screen and (min-width: $breakpoint-medium) {
-      border: 0;
       padding-bottom: 0;
     }
   }
@@ -62,14 +60,15 @@
       float: left;
       margin: 0;
       padding-left: 0;
-      padding-top: $grid-gutter-width;
+      padding-top: 0;
       position: relative;
-      width: 50%;
+      width: 100%;
 
       @media only screen and (min-width: $breakpoint-medium) {
         display: block;
         float: none;
         padding-right: $grid-gutter-width * 2;
+        padding-top: $grid-gutter-width;
         width: 100%;
       }
 
@@ -99,59 +98,69 @@
         }
       }
 
-      &::after {
-        cursor: pointer;
-        display: block;
-        height: 1.875em;
-        position: absolute;
-        right: $grid-gutter-width;
-        top: $grid-gutter-width / 2;
-        width: $grid-gutter-width / 2;
-      }
-
-      &.collapsed {
-        cursor: pointer;
-        padding-right: $grid-gutter-width * 1.5;
-
-        & > ul {
-          display: none;
+      @media only screen and (min-width: $breakpoint-medium) {
+        &::after,
+        &.collapsed::after,
+        &.expanded::after {
+          content: '';
         }
 
         &::after {
-          content: '+';
-        }
-      }
-
-      &.expanded {
-        cursor: pointer;
-        display: block;
-        width: 100%;
-
-        & > ul {
-          border-bottom: 1px solid $color-mid-light;
+          background-position: center 90%;
+          background-repeat: no-repeat;
+          cursor: pointer;
           display: block;
-          padding-bottom: .625rem;
+          height: 1.5rem;
+          position: absolute;
+          right: $grid-gutter-width;
+          top: $grid-gutter-width / 2;
+          width: $grid-gutter-width / 2;
+        }
 
-          & > li {
-            display: block;
-            padding-left: $grid-gutter-width;
-            padding-right: 0;
+        &.collapsed {
+          cursor: pointer;
+          padding-right: $grid-gutter-width * 1.5;
+
+          & > ul {
+            display: none;
           }
 
-          & > li a {
-            padding: 0;
-          }
-
-          @media only screen and (min-width: $breakpoint-medium) {
-            border: 0;
-            margin-left: inherit;
-            padding-bottom: 0;
-            padding-left: $grid-gutter-width;
+          &::after {
+            background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
           }
         }
 
-        &::after {
-          content: '-';
+        &.expanded {
+          cursor: pointer;
+          display: block;
+          width: 100%;
+
+          & > ul {
+            border-bottom: 1px solid $color-mid-light;
+            display: block;
+            padding-bottom: .625rem;
+
+            & > li {
+              display: block;
+              padding-left: $grid-gutter-width;
+              padding-right: 0;
+            }
+
+            & > li a {
+              padding: 0;
+            }
+
+            @media only screen and (min-width: $breakpoint-medium) {
+              border: 0;
+              margin-left: inherit;
+              padding-bottom: 0;
+              padding-left: $grid-gutter-width;
+            }
+          }
+
+          &::after {
+            background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
+          }
         }
       }
     }
@@ -168,6 +177,7 @@
       @media only screen and (min-width: $breakpoint-medium) {
         margin-bottom: -1px;
       }
+
 
       & > li {
         padding-bottom: $grid-gutter-width / 2;
@@ -195,7 +205,7 @@
           li {
             display: block;
             padding-left: 0;
-            width: 50%;
+            width: 100%;
 
             @media only screen and (min-width: $breakpoint-medium) {
               padding-right: $grid-gutter-width;
@@ -242,14 +252,28 @@
     }
   }
 
+  &__tertiary {
+    display: none;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: block;
+    }
+  }
+
+  .expanded  &__tertiary {
+    display: block;
+
+    li {
+      padding-left: $grid-gutter-width / 2;
+      padding-top: 10px;
+    }
+  }
+
   &__back-link {
     padding: 0;
     position: relative;
     vertical-align: middle;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      border-bottom: 1px dotted $color-mid-light;
-    }
+    border-bottom: 1px dotted $color-mid-light;
 
     svg {
       display: inline-block;
