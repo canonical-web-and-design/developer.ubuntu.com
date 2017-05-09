@@ -4,6 +4,7 @@
   // global nav overrides
   .global-nav {
     padding-left: 1rem;
+
     // left align the nav
     &__wrapper {
       margin: 0;
@@ -13,7 +14,8 @@
       margin-top: 0;
     }
 
-    ol, ul {
+    ol,
+    ul {
       padding-left: 0;
     }
   }
