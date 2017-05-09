@@ -1,0 +1,26 @@
+{
+  "name": "developer.ubuntu.com",
+  "description": "Django website for developer.ubuntu.com",
+  "main": "index.md",
+  "authors": [
+    "Canonical webteam"
+  ],
+  "license": "LGPL v3",
+  "keywords": [
+    "website",
+    "developer"
+  ],
+  "homepage": "https://developer.ubuntu.com",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/components"
+  ],
+  "dependencies": {
+    "canonical-global-nav": "~0.1.8"
+  }
+}

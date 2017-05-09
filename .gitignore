@@ -1,6 +1,7 @@
 # App
 .bundle/
 .docker-project
+static/components
 *.sqlite
 *-cache/
 
