@@ -38,7 +38,7 @@
     .p-navigation__link:link {
 
       @media only screen and (min-width: $breakpoint-medium) {
-        background: $color-brand;
+        background-color: $color-brand;
         border: 0;
         color: $color-x-light;
         display: block;
@@ -47,6 +47,10 @@
         overflow: hidden;
         padding: 10px 14px;
         width: auto;
+
+        .p-link--external {
+          @include link-svg-icon($color-x-light);
+        }
       }
     }
 
