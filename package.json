@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "global-nav": "0.0.2",
     "node-sass": "4.5.2",
     "sass-lint": "1.10.2",
     "vanilla-docs-theme": "^1.5.3"
