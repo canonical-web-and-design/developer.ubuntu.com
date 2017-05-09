@@ -7,7 +7,7 @@
     color: $color-x-light;
     padding: 0;
 
-    @media only screen and (min-width: $breakpoint-large) {
+    @media only screen and (min-width: $breakpoint-medium) {
       border-bottom: 0;
     }
 
@@ -38,15 +38,19 @@
     .p-navigation__link:link {
 
       @media only screen and (min-width: $breakpoint-medium) {
-        background: $color-brand;
+        background-color: $color-brand;
         border: 0;
         color: $color-x-light;
         display: block;
         font-size: .875rem;
         font-weight: bold;
         overflow: hidden;
-        padding: 13px 14px;
+        padding: 10px 14px;
         width: auto;
+
+        .p-link--external {
+          @include link-svg-icon($color-x-light);
+        }
       }
     }
 
@@ -87,17 +91,6 @@
   .p-navigation .p-navigation__logo .p-navigation__link:hover {
     background: none;
     text-decoration: none;
-  }
-
-  .p-navigation .p-navigation__link:hover {
-    background: $color-light;
-    border-color: $color-mid-light;
-    text-decoration: none;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      background: lighten($color-brand, 6%);
-      border-color: darken($color-brand, 6%);
-    }
   }
 
   .p-navigation__links {

@@ -80,10 +80,10 @@
     display: block;
   }
 
-  @media (min-width: $breakpoint-search) {
+  @media (min-width: $breakpoint-medium) {
     background-color: transparent;
     border: 0;
-    display: inline-block;
+    display: inline;
     float: right;
     height: 46px;
     padding-left: 14px;
@@ -117,7 +117,7 @@
       color: $color-dark;
     }
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
 
       &:focus {
         color: $color-x-light;
@@ -154,7 +154,7 @@
     padding: 9px;
     width: auto;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: none;
     }
 
@@ -203,7 +203,7 @@
     padding-right: 40px;
     width: 100%;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       background-color: $color-header-search-field-background;
       border-bottom: 0;
       color: $color-x-light;
@@ -219,13 +219,13 @@
   &__image--large-screen {
     display: none;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: block;
     }
   }
 
   &__image--small-screen {
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: none;
     }
   }
