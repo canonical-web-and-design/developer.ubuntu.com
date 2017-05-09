@@ -4,8 +4,10 @@ python:
 before_install:
   - nvm install 7.4.0
   - nvm use 7.4.0
+  - npm install -g bower
 install:
   - npm install
+  - bower install
   - npm run build
   - node_modules/node-sass/bin/node-sass --include-path node_modules static/sass --output static/css
   - pip install flake8==3.0.4
