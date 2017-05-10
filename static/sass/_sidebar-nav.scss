@@ -1,6 +1,7 @@
 .p-layout__sidebar {
   background: $color-x-light;
   display: flex;
+  padding-top: 10px;
 }
 
 .p-sidebar-nav {
@@ -9,7 +10,7 @@
   }
 
   &__title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-bottom: 0;
     padding-bottom: .625rem;
     padding-left: 0;
@@ -67,8 +68,7 @@
       @media only screen and (min-width: $breakpoint-medium) {
         display: block;
         float: none;
-        padding-right: $grid-gutter-width * 2;
-        padding-top: $grid-gutter-width;
+        padding: $grid-gutter-width / 2 $grid-gutter-width * 2 $grid-gutter-width / 2 0;
         width: 100%;
       }
 
@@ -106,7 +106,7 @@
         }
 
         &::after {
-          background-position: center 90%;
+          background-position: center 40%;
           background-repeat: no-repeat;
           cursor: pointer;
           display: block;
@@ -257,6 +257,7 @@
 
     @media only screen and (min-width: $breakpoint-medium) {
       display: block;
+      padding-top: 10px;
     }
   }
 
@@ -270,10 +271,11 @@
   }
 
   &__back-link {
+    border-bottom: 1px dotted $color-mid-light;
+    top: -10px;
     padding: 0;
     position: relative;
     vertical-align: middle;
-    border-bottom: 1px dotted $color-mid-light;
 
     svg {
       display: inline-block;
