@@ -12,6 +12,7 @@
   & &__link {
     background: none;
     transition: none;
+    padding: 0;
 
     &:hover {
       border: 0;
@@ -45,7 +46,7 @@
     background: $color-transparent url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
     color: $color-mid-dark;
     font-size: 1rem;
-    margin-bottom: .75rem;
+    margin-bottom: 0;
     padding-left: 22px;
     text-transform: uppercase;
   }
