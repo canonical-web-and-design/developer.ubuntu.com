@@ -28,6 +28,7 @@
 'patterns_divider',
 'patterns_global-nav',
 'patterns_footer',
+'patterns_layout',
 'patterns_navigation';
 
 
@@ -38,6 +39,7 @@
 @include theme-p-divider;
 @include developer-p-footer;
 @include developer-p-global-nav;
+@include developer-p-layout;
 @include developer-p-navigation;
 
 a:hover,
