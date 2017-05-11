@@ -7,10 +7,6 @@
         </a>
     </div>
 
-    <button class="header-search__toggle" onclick="document.getElementById('search').classList.toggle('is-visible'); document.getElementById('navigation').classList.remove('is-visible')">
-        <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image" alt="Perform a search" />
-    </button>
-
     <nav id="navigation" class="p-navigation__nav u-float--right">
         <span class="u-off-screen">
             <a href="#main-content">Jump to main content</a>
@@ -19,15 +15,6 @@
             <li class="p-navigation__link"><a class="p-link--external" href="https://myapps.developer.ubuntu.com/">My Apps</a></li>
         </ul>
     </nav>
-
-    <form id="search" action="/search" class="header-search u-float--right">
-        <label for="search" class="header-search__label">Search</label>
-        <input class="header-search__field" type="search" name="q" id="search" placeholder="Search the site" />
-        <button type="submit" class="header-search__submit">
-            <img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" class="header-search__image--large-screen" alt="Perform a search" />
-            <img src="{{ ASSET_SERVER_URL }}19750a6d-search-black.svg" class="header-search__image--small-screen" alt="Perform a search" />
-        </button>
-    </form>
 
 </header>
 {% endblock header %}

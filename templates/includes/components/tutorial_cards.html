@@ -5,7 +5,7 @@
     <ul class="p-list u-no-padding--left u-no-margin--left">
         {% for item in feed %}
             <li class="cards__item col-4">
-                <a class="cards__link" href="{{ item.link }}">
+                <a class="cards__link u-no-padding" href="{{ item.link }}">
                     <div class="p-card--highlighted u-no-padding">
                         <div class="tutorial-card__header">
                             <span class="tutorial-card__category">{{ item.category|first }}</span>

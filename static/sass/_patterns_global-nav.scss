@@ -3,7 +3,9 @@
 
   // global nav overrides
   .global-nav {
-    padding-left: 1rem;
+    @media only screen and (min-width: $breakpoint-medium) {
+      padding-left: 1rem;
+    }
 
     // left align the nav
     &__wrapper {
