@@ -1,4 +1,4 @@
-<ul class="p-sidebar-nav__list">
+<ul class="p-sidebar-nav__list {% if not is_root %}js-mobile-no-collapse{% endif %}">
     {% for item in sitemap %}
         {% if item.type == 'back' %}
 
@@ -9,6 +9,7 @@
 
             <li class="p-sidebar-nav__group">
                 <h2 class="p-sidebar-nav__title"><a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a></h2>
+            </li>
 
         {% elif item.type == 'section' %}
 
@@ -18,22 +19,21 @@
                 <a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a>
 
         {% endif %}
-            {% if item.type == 'heading' %}</li>{% endif %}
-                {% if item.children %}
-                    <ul class="p-sidebar-nav__secondary">
-                        {% for item in item.children %}
-                            <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
-                                {% if item.children %}
-                                <ul class="p-sidebar-nav__tertiary">
-                                    {% for item in item.children %}
-                                        <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+            {% if item.children %}
+                {% if not item.type == 'heading' %}<ul class="p-sidebar-nav__secondary">{% endif %}
+                {% for item in item.children %}
+                    <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
+                        {% if item.children %}
+                        <ul class="p-sidebar-nav__tertiary">
+                            {% for item in item.children %}
+                                <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                {% if not item.type == 'heading' %}</ul>{% endif %}
+            {% endif %}
             {% if not item.type == 'heading' %}</li>{% endif %}
 
     {% endfor %}
