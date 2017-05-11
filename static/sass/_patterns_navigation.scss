@@ -11,6 +11,32 @@
       border-bottom: 0;
     }
 
+    .p-navigation__toggle {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: 0;
+      float: right;
+      height: 47px;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px 10px 11px 10px;
+      width: 47px;
+
+
+      @media (min-width: $breakpoint-medium) {
+        display: none;
+      }
+    }
+
+    .p-navigation__toggle:hover {
+      background-color: $color-navigation-toggle-hover;
+    }
+
+    .p-navigation__icon {
+      height: 25px;
+      width: 25px;
+    }
+
     &__links {
       background: darken($color-light, 3%);
       float: right;

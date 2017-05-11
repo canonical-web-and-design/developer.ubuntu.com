@@ -1,7 +1,6 @@
 .p-layout__sidebar {
   background: $color-x-light;
   display: flex;
-  padding-top: 10px;
 }
 
 .p-sidebar-nav {
@@ -17,6 +16,18 @@
 
     @media only screen and (min-width: $breakpoint-medium) {
       padding-bottom: 0;
+    }
+  }
+
+  &__list {
+    border-bottom: 1px solid $color-mid-light;
+    display: none;
+    padding-bottom: .5rem;
+    padding-top: 10px;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      border: 0;
+      display: block;
     }
   }
 
@@ -37,9 +48,7 @@
 
   &__nav {
     // To enabling hiding of the bottom-most border in the navigation
-    border-bottom: 1px solid $color-mid-light;
     overflow: hidden;
-    padding-bottom: .5em;
     width: 100%;
 
     @media only screen and (min-width: $breakpoint-medium) {
