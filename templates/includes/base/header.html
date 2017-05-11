@@ -6,11 +6,11 @@
           developer
         </a>
     </div>
-
-    <button class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible');">
-        <img src="{{ ASSET_SERVER_URL }}12387180-navigation-menu-plain.svg" class="p-navigation__icon" alt="Expand/collapse menu" />
-    </button>
-
+    {% if not is_root %}
+        <button class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible');">
+            <img src="{{ ASSET_SERVER_URL }}12387180-navigation-menu-plain.svg" class="p-navigation__icon" alt="Expand/collapse menu" />
+        </button>
+    {% endif %}
     <nav class="p-navigation__nav u-float--right">
         <span class="u-off-screen">
             <a href="#main-content">Jump to main content</a>

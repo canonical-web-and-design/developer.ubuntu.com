@@ -25,6 +25,10 @@
     padding-bottom: .5rem;
     padding-top: 10px;
 
+    &.js-mobile-no-collapse {
+      display: block;
+    }
+
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
       display: block;
