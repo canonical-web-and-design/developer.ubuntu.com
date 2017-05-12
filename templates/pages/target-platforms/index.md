@@ -21,7 +21,7 @@ For fast iterations on your software and hardware stack, we recommend you instal
 
 When you are ready to deploy more advanced prototypes or a production environment, running  your snaps on Ubuntu Core is the best option. Snaps are confined for stricter security and provide automated software updates so your app is always fresh and never broken.
 
-[Get started with Ubuntu Core](/core)
+[Get started with Ubuntu Core &rsaquo;](/core)
 
 ***
 
