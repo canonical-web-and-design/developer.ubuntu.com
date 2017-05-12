@@ -57,7 +57,7 @@
   position: relative;
 
   @media only screen and (min-width: $breakpoint-cards) {
-    min-height: 20em;
+    min-height: 22em;
   }
 
   &__content {
@@ -97,7 +97,6 @@
   }
 
   &__content {
-    border-bottom: 1px solid $color-mid-light;
     color: $color-dark;
     font-weight: 300;
     margin: 16px;
@@ -157,13 +156,40 @@
     position: absolute;
   }
 
-  &__difficulty {
-    margin: 10px 0;
-  }
-
   &__duration {
     margin: 10px 0;
     text-align: right;
   }
 
+  &__difficulty {
+    background-image: url('#{$assets-path}19c4273e-level+of+difficulty.svg');
+    background-position-y: 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-left: 3px;
+    text-indent: -99999px;
+    width: 75px;
+  }
+
+  &__difficulty--1 {
+    background-position-x: -60px;
+  }
+
+  &__difficulty--2 {
+    background-position-x: -45px;
+  }
+
+  &__difficulty--3 {
+    background-position-x: -30px;
+  }
+
+  &__difficulty--4 {
+    background-position-x: -15px;
+  }
+
+  &__difficulty--5 {
+    background-position-x: -0;
+  }
 }
