@@ -11,8 +11,8 @@
   &__title {
     font-size: 1rem;
     margin-bottom: 0;
-    padding-bottom: .625rem;
     padding-left: 0;
+    margin-top: -1px;
 
     @media only screen and (min-width: $breakpoint-medium) {
       padding-bottom: 0;
@@ -21,12 +21,15 @@
 
   &__list {
     border-bottom: 1px solid $color-mid-light;
-    display: none;
     padding-bottom: .5rem;
     padding-top: 10px;
 
     &.js-mobile-no-collapse {
-      display: block;
+      display: none;
+
+      &.is-visible {
+        display: block;
+      }
     }
 
     @media only screen and (min-width: $breakpoint-medium) {
@@ -266,8 +269,7 @@
   }
 
   &__tertiary {
-    display: none;
-
+    display: block;
     @media only screen and (min-width: $breakpoint-medium) {
       display: block;
       padding-top: 10px;
@@ -286,9 +288,11 @@
   &__back-link {
     border-bottom: 1px dotted $color-mid-light;
     top: -10px;
+    float: left;
+    margin-left: -1px;
     padding: 0;
     position: relative;
-    vertical-align: middle;
+    display: inline-block;
 
     svg {
       display: inline-block;
