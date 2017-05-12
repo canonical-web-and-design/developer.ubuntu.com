@@ -106,10 +106,8 @@ def sidebar_nav(context):
     is_root = True
     if nav_items:
         first_item = nav_items[0]
-        is_root = not (
-            not first_item['type'] == 'back' and
-            not first_item['type'] == 'heading'
-        )
+        if first_item['type'] == 'back' or first_item['type'] == 'heading':
+            is_root = False
     return {
         'sitemap': nav_items,
         'is_root': is_root,
