@@ -8,7 +8,7 @@ description: Interface examples
 Interfaces allow snaps to communicate or share resources according to a protocol defined by the interface. For example, the serial port interface is offered by the Ubuntu Core snap to let other snaps access the serial port of your board or computer.
 
 * [For more information about creating interfaces](http://docs.ubuntu.com/core/en/guides/build-device/interfaces)
-* [For more information about using interfaces in your snap](http://snapcraft.io/docs/reference/interfaces).
+* [For more information about using interfaces in your snap](http://snapcraft.io/docs/reference/interfaces)
 
 
 ## Serial port interface
