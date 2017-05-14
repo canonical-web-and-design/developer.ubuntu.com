@@ -19,7 +19,7 @@ We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 
 
 ## Installation instructions
 
- 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions](/core/get-started/installation-medias)
+ 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions&nbsp;&rsaquo;](/core/get-started/installation-medias)
  * Prepare your Artik to boot from the SD card, by setting the "SW2" switches to 1:on and 2:on
  * Insert the SD card
  * Connect the 5V power supply to the board, then use the power button on the board to switch it on
@@ -35,7 +35,7 @@ As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, 
 * [ARTIK 5 - Ubuntu Server 16.04 LTS image](http://people.canonical.com/~platform/snappy/artik/archive/artik5-ubuntu-server.img.tar.xz)
 * [ARTIK 10 - Ubuntu Server 16.04 LTS image](http://people.canonical.com/~platform/snappy/artik/archive/artik10-ubuntu-server.img.tar.xz)
 
-Download and copy the image for your board on an SD card by following the [installation media instructions](/core/get-started/installation-medias).
+Download and copy the image for your board on an SD card by following the [installation media instructions&nbsp;&rsaquo;](/core/get-started/installation-medias).
 
 ### Installation instructions
 
