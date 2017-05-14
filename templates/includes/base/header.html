@@ -6,8 +6,8 @@
           developer
         </a>
     </div>
-    {% if not is_root %}
-        <button class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible');">
+    {% if 'core' in request.path %}{% else %}
+        <button id="navigation-toggle" class="p-navigation__toggle" onclick="document.getElementById('navigation').classList.toggle('is-visible');">
             <img src="{{ ASSET_SERVER_URL }}12387180-navigation-menu-plain.svg" class="p-navigation__icon" alt="Expand/collapse menu" />
         </button>
     {% endif %}
