@@ -1,29 +1,41 @@
-@import 'helpers';
-
-.theme__sidebar {
-  @include rounded-corners(4px 4px 0);
+.p-layout__sidebar {
   background: $color-x-light;
-  border-left: 1px solid $color-mid-light;
   display: flex;
-  padding: 10px 0 0;
 }
 
-.sidebar-nav {
+.p-sidebar-nav {
   @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
 
   &__title {
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-top: -1px;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__list {
     border-bottom: 1px solid $color-mid-light;
-    font-size: 1.125rem;
-    margin-bottom: .625rem;
-    padding-bottom: .625rem;
-    padding-left: $grid-gutter-width;
+    padding-bottom: .5rem;
+    padding-top: 10px;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+
+      &.is-visible,
+      &.js-mobile-no-collapse {
+        display: block;
+      }
+    }
 
     @media only screen and (min-width: $breakpoint-medium) {
       border: 0;
-      margin-top: 1rem;
-      padding-bottom: 0;
+      display: block;
     }
   }
 
@@ -38,11 +50,13 @@
     color: $color-brand;
   }
 
+  &__group {
+    border-bottom: 0;
+  }
+
   &__nav {
     // To enabling hiding of the bottom-most border in the navigation
-    border-bottom: 1px solid $color-mid-light;
     overflow: hidden;
-    padding-bottom: .5em;
     width: 100%;
 
     @media only screen and (min-width: $breakpoint-medium) {
@@ -61,22 +75,22 @@
     }
 
     ul li {
-      display: none;
       float: left;
       margin: 0;
       padding-left: 0;
-      padding-top: $grid-gutter-width;
+      padding-top: 0;
       position: relative;
-      width: 50%;
+      width: 100%;
 
       @media only screen and (min-width: $breakpoint-medium) {
         display: block;
         float: none;
-        padding-right: $grid-gutter-width * 2;
+        padding: $grid-gutter-width / 2 $grid-gutter-width * 2 $grid-gutter-width / 2 0;
         width: 100%;
       }
 
       &.active,
+      &.is-visible,
       &.active-parent {
         color: $color-brand;
         display: block;
@@ -101,59 +115,69 @@
         }
       }
 
-      &::after {
-        cursor: pointer;
-        display: block;
-        height: 1.875em;
-        position: absolute;
-        right: $grid-gutter-width;
-        top: $grid-gutter-width / 2;
-        width: $button-width;
-      }
-
-      &.collapsed {
-        cursor: pointer;
-        padding-right: $grid-gutter-width + $button-width;
-
-        & > ul {
-          display: none;
+      @media only screen and (min-width: $breakpoint-medium) {
+        &::after,
+        &.collapsed::after,
+        &.expanded::after {
+          content: '';
         }
 
         &::after {
-          content: '+';
-        }
-      }
-
-      &.expanded {
-        cursor: pointer;
-        display: block;
-        width: 100%;
-
-        & > ul {
-          border-bottom: 1px solid $color-mid-light;
+          background-position: center 40%;
+          background-repeat: no-repeat;
+          cursor: pointer;
           display: block;
-          padding-bottom: .625rem;
+          height: 1.5rem;
+          position: absolute;
+          right: $grid-gutter-width;
+          top: $grid-gutter-width / 2;
+          width: $grid-gutter-width / 2;
+        }
 
-          & > li {
-            display: block;
-            padding-left: $grid-gutter-width;
-            padding-right: 0;
+        &.collapsed {
+          cursor: pointer;
+          padding-right: $grid-gutter-width * 1.5;
+
+          & > ul {
+            display: none;
           }
 
-          & > li a {
-            padding: 0;
-          }
-
-          @media only screen and (min-width: $breakpoint-medium) {
-            border: 0;
-            margin-left: inherit;
-            padding-bottom: 0;
-            padding-left: $grid-gutter-width;
+          &::after {
+            background-image: url('#{$assets-path}04d2075a-chevron_down.svg');
           }
         }
 
-        &::after {
-          content: '-';
+        &.expanded {
+          cursor: pointer;
+          display: block;
+          width: 100%;
+
+          & > ul {
+            border-bottom: 1px solid $color-mid-light;
+            display: block;
+            padding-bottom: .625rem;
+
+            & > li {
+              display: block;
+              padding-left: $grid-gutter-width;
+              padding-right: 0;
+            }
+
+            & > li a {
+              padding: 0;
+            }
+
+            @media only screen and (min-width: $breakpoint-medium) {
+              border: 0;
+              margin-left: inherit;
+              padding-bottom: 0;
+              padding-left: $grid-gutter-width;
+            }
+          }
+
+          &::after {
+            background-image: url('#{$assets-path}f3f43376-chevron_up.svg');
+          }
         }
       }
     }
@@ -170,6 +194,7 @@
       @media only screen and (min-width: $breakpoint-medium) {
         margin-bottom: -1px;
       }
+
 
       & > li {
         padding-bottom: $grid-gutter-width / 2;
@@ -197,7 +222,7 @@
           li {
             display: block;
             padding-left: 0;
-            width: 50%;
+            width: 100%;
 
             @media only screen and (min-width: $breakpoint-medium) {
               padding-right: $grid-gutter-width;
@@ -242,47 +267,40 @@
         padding: 0;
       }
     }
+  }
 
-    .versions-nav {
-      padding: 1em 0;
+  &__tertiary {
+    display: block;
+    @media only screen and (min-width: $breakpoint-medium) {
+      display: block;
+      padding-top: 10px;
+    }
+  }
 
-      .unavailable {
-        color: $color-dark;
-        text-decoration: line-through;
-      }
+  .expanded  &__tertiary {
+    display: block;
 
-      .label {
-        display: block;
-        margin-bottom: .5rem;
-      }
+    li {
+      display: block;
+      padding-left: $grid-gutter-width / 2;
+      padding-top: 10px;
+    }
+  }
 
-      ul {
-        border-right: 1px solid $color-mid-light;
-        display: inline;
-        padding-bottom: .2rem;
+  &__back-link {
+    border-bottom: 1px dotted $color-mid-light;
+    top: -10px;
+    float: left;
+    padding: 0;
+    position: relative;
+    display: inline-block;
 
-        li {
-          display: inline-block;
-          margin-right: .3rem;
+    svg {
+      display: inline-block;
+      margin-right: 5px;
 
-          a {
-            border-bottom: 1px solid $color-dark;
-            line-height: 1.1;
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-          }
-
-          strong {
-            border-bottom: 1px solid $color-brand;
-          }
-        }
-      }
-
-      .stable {
-        border-bottom: 1px solid $color-dark;
-        margin-left: .5rem;
-        text-decoration: none;
+      .chevron-left {
+        fill: $color-mid-dark;
       }
     }
   }

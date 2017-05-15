@@ -69,7 +69,7 @@ As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, 
 
 * [Intel NUC - Ubuntu Desktop 16.04 LTS image](http://people.canonical.com/~platform/snappy/nuc/ubuntu-server-16.04.1-20160817-0.iso)
 
-Download and copy the image on an USB flash drive by following the [installation media instructions](/core/get-started/installation-medias).
+Download and copy the image on an USB flash drive by following the [installation media instructions &rsaquo;](/core/get-started/installation-medias).
 
 ### Installation instructions
 

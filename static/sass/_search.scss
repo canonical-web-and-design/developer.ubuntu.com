@@ -1,10 +1,10 @@
 .search-result {
-  border-bottom: 1px solid $color-search-result-border;
+  border-bottom: 1px solid $color-mid-light;
   margin-bottom: 1.5em;
 }
 
 .result-url {
-  color: $color-search-result-url;
+  color: $color-mid-dark;
   display: block;
 }
 
@@ -66,28 +66,84 @@
 }
 
 .header-search {
-  background-color: $color-header-search-background;
+  background-color: $color-mid-light;
   display: none;
   overflow: hidden;
   padding: 6px;
   width: 100%;
 
-  @media (min-width: $breakpoint-search) {
-    background-color: transparent;
-    border-top: 1px solid darken($color-brand, 6%);
+  @media only screen and (min-width: $breakpoint-medium) {
+    padding: 10px 6px 10px;
   }
 
   .no-js & {
     display: block;
   }
 
-  @media (min-width: 982px) {
+  @media (min-width: $breakpoint-medium) {
+    background-color: transparent;
     border: 0;
-    display: block;
-    float: left;
+    display: inline;
+    float: right;
     height: 46px;
     padding-left: 14px;
     width: auto;
+  }
+
+  input {
+
+    &:focus {
+      color: $color-dark;
+    }
+    // sass-lint:disable no-vendor-prefixes
+
+    // Chrome/Opera/Safari
+    &::-webkit-input-placeholder {
+      color: $color-dark;
+    }
+
+    // Firefox 19+
+    &::-moz-placeholder {
+      color: $color-dark;
+    }
+
+    // IE 10+
+    &:-ms-input-placeholder {
+      color: $color-dark;
+    }
+
+    // Firefox 18-
+    &:-moz-placeholder {
+      color: $color-dark;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+
+      &:focus {
+        color: $color-x-light;
+      }
+
+      // Chrome/Opera/Safari
+      &::-webkit-input-placeholder {
+        color: $color-x-light;
+      }
+
+      // Firefox 19+
+      &::-moz-placeholder {
+        color: $color-x-light;
+      }
+
+      // IE 10+
+      &:-ms-input-placeholder {
+        color: $color-x-light;
+      }
+
+      // Firefox 18-
+      &:-moz-placeholder {
+        color: $color-x-light;
+      }
+      // sass-lint:enable no-vendor-prefixes
+    }
   }
 
   &__toggle {
@@ -98,7 +154,7 @@
     padding: 9px;
     width: auto;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: none;
     }
 
@@ -124,6 +180,10 @@
     margin-left: -40px;
     padding: 3px 2px;
     width: 40px;
+
+    &:hover {
+      background: none;
+    }
   }
 
   &__label {
@@ -132,7 +192,7 @@
 
   &__field,
   .header-search__field {
-    background-color: $color-header-search-background;
+    background-color: $color-mid-light;
     border: 0;
     border-radius: 4px;
     box-shadow: none;
@@ -143,7 +203,7 @@
     padding-right: 40px;
     width: 100%;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       background-color: $color-header-search-field-background;
       border-bottom: 0;
       color: $color-x-light;
@@ -159,13 +219,13 @@
   &__image--large-screen {
     display: none;
 
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: block;
     }
   }
 
   &__image--small-screen {
-    @media (min-width: $breakpoint-search) {
+    @media (min-width: $breakpoint-medium) {
       display: none;
     }
   }

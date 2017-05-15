@@ -33,13 +33,13 @@ The process is the same on any operating system, you will: download an image fil
 
  * Then, run the `sync` command to finalize the process
 
- * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device](/core/get-started).
+ * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device &nbsp;&rsaquo;](/core/get-started)
 
 ## On Windows
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
 
- * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [7-zip](http://www.7-zip.org/).
+ * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [7-zip](http://www.7-zip.org/)
 
  * Insert your SD card or USB flash drive
 
@@ -60,14 +60,14 @@ need 2 elements:
 
  * When ready click on **Write** and wait for the process to complete.
 
- * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device](/core/get-started).
+ * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device&nbsp;&rsaquo;](/core/get-started)
 
 ## On Mac OS
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
 
  * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [The
- Unarchiver](https://itunes.apple.com/gb/app/the-unarchiver/id425424353?mt=12).
+ Unarchiver](https://itunes.apple.com/gb/app/the-unarchiver/id425424353?mt=12)
 
  * Insert your SD card or USB flash drive
 
@@ -112,4 +112,4 @@ Terminal app there), then run the following command:
         3719+1 records out
         3899999744 bytes transferred in 642.512167 secs (6069924 bytes/sec)
 
- * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device](/core/get-started).
+ * You can now eject your removable drive. You are ready to [install Ubuntu Core on your device&nbsp;&rsaquo;](/core/get-started)

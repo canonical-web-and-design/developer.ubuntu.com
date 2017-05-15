@@ -1,0 +1,125 @@
+// Default navigation styling
+@mixin developer-p-navigation {
+  .p-navigation {
+    background: $color-brand;
+    border: $color-mid-light;
+    border-color: $color-mid-light;
+    color: $color-x-light;
+    padding: 0;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      border-bottom: 0;
+    }
+
+    .p-navigation__toggle {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: 0;
+      float: right;
+      height: 45px;
+      margin: 0;
+      overflow: hidden;
+      padding: 10px 10px 11px 10px;
+      width: 47px;
+
+
+      @media (min-width: $breakpoint-medium) {
+        display: none;
+      }
+    }
+
+    .p-navigation__toggle:hover {
+      background-color: $color-navigation-toggle-hover;
+    }
+
+    .p-navigation__icon {
+      height: 25px;
+      width: 25px;
+    }
+
+    &__links {
+      background: darken($color-light, 3%);
+      float: right;
+      padding: 0;
+      width: auto;
+
+      @media only screen and (min-width: $breakpoint-medium) {
+        width: auto;
+      }
+
+      &::after {
+        background: lighten($color-brand, 12%);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+    }
+
+    .p-navigation__link,
+    .p-navigation__link:visited,
+    .p-navigation__link:link {
+
+      @media only screen and (min-width: $breakpoint-medium) {
+        background-color: $color-brand;
+        border: 0;
+        color: $color-x-light;
+        display: block;
+        font-size: .875rem;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 14px;
+        width: auto;
+
+        .p-link--external {
+          @include link-svg-icon($color-x-light);
+        }
+      }
+    }
+
+    .p-navigation__link--last-item {
+      border: 0;
+    }
+  }
+
+  .p-navigation .p-navigation__logo {
+    border: 0;
+    display: block;
+    margin: 6px 7px 6px 1rem;
+    padding-right: 5px;
+
+    @media only screen and (min-width: $breakpoint-medium) {
+      margin: 10px 7px 10px 1rem;
+    }
+
+    .p-navigation__link {
+      background: none;
+      border: 0;
+      color: $color-x-light;
+      font-size: 1.4375rem;
+      font-weight: normal;
+      padding: 0;
+      width: 100%;
+
+      &::before {
+        width: 0;
+      }
+
+      &:last-of-type {
+        border: 0;
+      }
+    }
+  }
+
+  .p-navigation .p-navigation__logo .p-navigation__link:hover {
+    background: none;
+    text-decoration: none;
+  }
+
+  .p-navigation__links {
+    border-right: 0;
+  }
+}

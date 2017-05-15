@@ -25,6 +25,6 @@ The user name is your Ubuntu SSO user name, it has been reminded to you at the e
 
 ## Install and develop snaps
 
-Your board is ready to have snaps installed &mdash; [get started with the `snap` command](http://snapcraft.io/docs/core/usage).
+Your board is ready to have snaps installed &mdash; [get started with the `snap` command](http://snapcraft.io/docs/core/usage)
 
-You can install a classic Ubuntu environment on top of Ubuntu Core to have a fully-fledged development environment and [develop snaps on target](/core/get-started/developer-setup).
+You can install a classic Ubuntu environment on top of Ubuntu Core to have a fully-fledged development environment and [develop snaps on target &rsaquo;](/core/get-started/developer-setup)

@@ -1,5 +1,4 @@
 import dateutil.parser
-from datetime import datetime
 from django import template
 from operator import itemgetter
 
@@ -99,14 +98,19 @@ def tutorial_cards(feed_config, limit=3):
 @register.inclusion_tag(
     'includes/components/sidebar_nav.html', takes_context=True
 )
-def sidebar_nav(context, root_path=None):
+def sidebar_nav(context):
     request = context['request']
-    site_tree = sitemap.build_navigation(
-        root_path=root_path,
+    nav_items = sitemap.build_navigation(
         current_path=request.path,
     )
+    is_root = True
+    if nav_items:
+        first_item = nav_items[0]
+        if first_item['type'] == 'back' or first_item['type'] == 'heading':
+            is_root = False
     return {
-        'sitemap': site_tree,
+        'sitemap': nav_items,
+        'is_root': is_root,
     }
 
 

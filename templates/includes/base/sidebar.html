@@ -1,50 +1,43 @@
-<nav class="sidebar-nav__nav{% if request.path == '/core' %} active{% endif %}">
-    <h2 class="sidebar-nav__title"><a class="sidebar-nav__title-link" href="/core">Core</a></h2>
-    {% sidebar_nav 'core' %}
+<nav class="p-sidebar-nav__nav">
+    {% sidebar_nav %}
 </nav>
 
 <script>
-    function expandCollapse(clickEvent) {
-        var item = clickEvent.target;
-        var link = item.querySelector('[href]');
-        var linkWidth = link.offsetWidth;
-        var clickOffset = clickEvent.offsetX;
+    (function navigationInit() {
+        function expandCollapse(clickEvent) {
+            var item = clickEvent.target;
+            var link = item.querySelector('[href]');
+            var linkWidth = link.offsetWidth;
+            var clickOffset = clickEvent.offsetX;
 
-        if (clickOffset > linkWidth) {
-            collapsed = ! item.classList.toggle('expanded');
-            item.classList.toggle('collapsed', collapsed);
-        }
-    }
-
-    var items = document.querySelectorAll('.sidebar-nav__nav ul li');
-
-    for(var num = 0; num < items.length; num++) {
-        var item = items[num];
-        var link = item.querySelector('[href]');
-
-        if (! link) {continue;}
-
-        // Get paths, removing leading and trailing slashes for consistency
-        linkPath = link.pathname.replace(/(^\/|\/$)/g, "");
-        currentPath = location.pathname.replace(/(^\/|\/$)/g, "");
-
-        // Make current navigation item appear active
-        // @TODO: Replace this with a static JS-less solution
-        //        once we have a more intelligent
-        //        docs navigation mechanism.
-        if (linkPath == currentPath) {
-            item.classList.add('active');
-        }
-
-        // For lists with child lists, add expand/collapse functionality
-        if (item.querySelector('ul')) {
-            if (currentPath.startsWith(linkPath)) {
-                item.classList.add('expanded');
-            } else {
-                item.classList.add('collapsed');
+            if (clickOffset > linkWidth) {
+                collapsed = ! item.classList.toggle('expanded');
+                item.classList.toggle('collapsed', collapsed);
             }
-
-            item.addEventListener('click', expandCollapse);
         }
-    }
+
+        var items = document.querySelectorAll('.p-sidebar-nav__nav ul li');
+
+        for(var num = 0; num < items.length; num++) {
+            var item = items[num];
+            var link = item.querySelector('[href]');
+
+            if (! link) {continue;}
+
+            // Get paths, removing leading and trailing slashes for consistency
+            linkPath = link.pathname.replace(/(^\/|\/$)/g, "");
+            currentPath = location.pathname.replace(/(^\/|\/$)/g, "");
+
+            // For lists with child lists, add expand/collapse functionality
+            if (item.querySelector('ul')) {
+                if (currentPath.startsWith(linkPath)) {
+                    item.classList.add('expanded');
+                } else {
+                    item.classList.add('collapsed');
+                }
+
+                item.addEventListener('click', expandCollapse);
+            }
+        }
+    })();
 </script>

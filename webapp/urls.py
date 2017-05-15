@@ -23,14 +23,7 @@ urlpatterns += [
         }
     ),
     url(
-        r'^(?P<path>devices(/.*)?)$',
-        MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
-    ),
-    url(
-        r'^(?P<path>community(/.*)?)$',
+        r'^(?P<path>community-resources(/.*)?)$',
         MarkdownView.as_view(),
         {
             'template_name': default_markdown_template
@@ -41,6 +34,20 @@ urlpatterns += [
         MarkdownView.as_view(),
         {
             'template_name': default_markdown_template
+        }
+    ),
+    url(
+        r'^(?P<path>target-platforms(/.*)?)$',
+        MarkdownView.as_view(),
+        {
+            'template_name': default_markdown_template
+        }
+    ),
+    url(
+        r'^$',
+        MarkdownView.as_view(),
+        {
+            'template_name': 'includes/homepage_markdown.html'
         }
     ),
     url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),

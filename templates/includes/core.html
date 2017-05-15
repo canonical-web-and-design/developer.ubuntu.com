@@ -1,12 +1,8 @@
 {% extends 'includes/base.html' %}
 
 {% block content %}
-  <div class="col-3 theme__sidebar">
-    {% include './base/sidebar.html' %}
-  </div>
-
-  <div class="col-12 theme__main">
-    <main id="main-content" class="theme__inner">
+  <div class="col-12 p-layout__main">
+    <main id="main-content" class="p-layout__inner">
       {% block main_content %}{% endblock %}
     </main>
   </div>

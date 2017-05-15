@@ -1,0 +1,24 @@
+// Override global nav styling
+@mixin developer-p-global-nav {
+
+  // global nav overrides
+  .global-nav {
+    @media only screen and (min-width: $breakpoint-medium) {
+      padding-left: 1rem;
+    }
+
+    // left align the nav
+    &__wrapper {
+      margin: 0;
+    }
+
+    &__list {
+      margin-top: 0;
+    }
+
+    ol,
+    ul {
+      padding-left: 0;
+    }
+  }
+}

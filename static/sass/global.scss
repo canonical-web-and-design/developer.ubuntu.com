@@ -3,311 +3,49 @@
 // import global settings
 @import 'global-settings';
 
-// import vanilla themes
-@import 'docs-vanilla-theme/scss/theme';
-@include docs-vanilla-theme;
+// Settings
+@import
+'settings_breakpoints',
+'settings_colors';
+
+// import vanilla theme
+@import 'vanilla-docs-theme/scss/theme';
+@include vanilla-docs-theme;
+
+// vendors
+@import
+'../components/canonical-global-nav/src/sass/main';
 
 @import
 'sidebar-nav',
-'helpers',
 'search';
 
+@import 'cards';
 
-.nav-global-main {
-  margin-top: 0;
-}
+// Patterns
+@import
+'patterns_cards',
+'patterns_divider',
+'patterns_global-nav',
+'patterns_footer',
+'patterns_layout',
+'patterns_navigation';
 
-body {
-  background: $color-light; // temporary style
-}
 
-.theme__wrap,
-.p-footer__inner {
-  margin: 0 auto;
+// Include all the CSS
 
-  @media only screen and (min-width: $breakpoint-large) {
-    width: $breakpoint-large;
-  }
-}
-
-.theme__wrap {
-  background: $color-x-light;
-  clear: both;
-
-  @media only screen and (min-width: $breakpoint-large) {
-    @include rounded-corners(4px);
-    box-shadow: 0 0 3px $color-mid-light;
-    margin-bottom: 30px !important;
-  }
-}
-
-a,
-a:link,
-a:visited {
-  border-bottom-color: transparent;
-  color: $color-brand;
-}
+// Patterns
+@include developer-p-cards;
+@include theme-p-divider;
+@include developer-p-footer;
+@include developer-p-global-nav;
+@include developer-p-layout;
+@include developer-p-navigation;
 
 a:hover,
 a:visited:hover,
 a:link:hover {
   border-bottom-color: currentcolor;
-}
-
-.p-link--external::after {
-  background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'15\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M4.867 1.313C.6 1.32.067 1.443.067 4.51v6.4c0 3.2.533 3.2 5.333 3.2h2.133c4.8 0 5.334 0 5.334-3.2v-1.6h-1.6v1.068c0 2.133 0 2.133-4.267 2.133H5.933c-4.266 0-4.266 0-4.266-2.132V5.044c0-1.93.034-2.112 3.2-2.13v-1.6z\'/%3E%3Cpath d=\'M-1-1h16v16H-1\'/%3E%3Cpath fill=\'%23e95420\' d=\'M6.435 2.16c.11-.446 7.113-2.196 7.448-1.86.335.334-1.416 7.335-1.863 7.447-.447.112-5.697-5.14-5.586-5.586z\'/%3E%3Cpath fill=\'%23e95420\' d=\'M9.032 3.38L4.705 7.708l1.767 1.767L10.8 5.148\'/%3E%3C/g%3E%3C/svg%3E');
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: .7rem .7rem;
-  content: '';
-  display: inline-block;
-  height: .7rem;
-  margin: 0 0 0 4px;
-  position: relative;
-  right: 0;
-  top: -.3rem;
-  width: .7rem;
-}
-
-.theme__main {
-  border-color: $color-mid-light;
-  padding-top: 0;
-}
-
-.theme__inner {
-  margin: 0 auto;
-}
-
-.theme {
-  .p-navigation {
-    background: $color-brand;
-    border-bottom-color: $color-mid-light;
-    border-color: $color-mid-light;
-    color: $color-x-light;
-    padding: 0;
-
-    @media only screen and (min-width: $breakpoint-large) {
-      border-bottom: 0;
-      margin-bottom: 30px; // temporary style
-    }
-
-    .p-navigation__toggle {
-      background-color: transparent;
-      background-repeat: no-repeat;
-      border: 0;
-      float: right;
-      height: 47px;
-      margin: 0;
-      overflow: hidden;
-      padding: 10px 10px 11px 10px;
-      width: 47px;
-
-
-      @media (min-width: $breakpoint-medium) {
-        display: none;
-      }
-    }
-
-    .p-navigation__toggle:hover {
-      background-color: $color-navigation-toggle-hover;
-    }
-
-    .p-navigation__icon {
-      height: 25px;
-      width: 25px;
-    }
-
-    .p-navigation__inner {
-      border-color: $color-mid-light;
-      width: auto;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        margin: 0 auto;
-        width: $breakpoint-large;
-      }
-    }
-
-    &__links {
-      background: darken($color-light, 3%);
-      float: left;
-      padding: 0;
-      width: 100%;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        border-right: 1px solid lighten($color-brand, 12%);
-        width: auto;
-      }
-
-      &::after {
-        background: lighten($color-brand, 12%);
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 1px;
-      }
-    }
-
-    .p-navigation__link,
-    .p-navigation__link:visited,
-    .p-navigation__link:link {
-      background: darken($color-light, 3%);
-      border-right: 1px solid $color-mid-light;
-      color: $color-dark;
-      float: left;
-      font-size: 1rem;
-      font-weight: normal;
-      padding: 9px 10px;
-      width: 50%;
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        background: $color-brand;
-        border-bottom: 0;
-        border-left: 1px solid darken($color-brand, 6%);
-        border-right: 0;
-        color: $color-x-light;
-        font-size: .875rem;
-        font-weight: bold;
-        overflow: hidden;
-        padding: 13px 14px;
-        width: auto;
-
-        &:last-of-type {
-          border-right: 1px solid darken($color-brand, 6%);
-        }
-      }
-
-      @media only screen and (min-width: $breakpoint-medium) {
-        &::before {
-          background: lighten($color-brand, 12%);
-          content: ' ';
-          display: block;
-          height: 100%;
-          left: 0;
-          position: absolute;
-          top: 0;
-          width: 1px;
-        }
-      }
-    }
-
-    .p-navigation__link--last-item {
-      border-bottom: 0;
-    }
-  }
-
-  .p-navigation .p-navigation__logo {
-    border: 0;
-    margin: 6px 7px 6px 1rem;
-    padding-right: 5px;
-
-    .p-navigation__link {
-      background: none;
-      border: 0;
-      color: $color-x-light;
-      font-size: 1.4375rem;
-      font-weight: normal;
-      padding: 0;
-      width: 100%;
-
-      &::before {
-        width: 0;
-      }
-
-      &:last-of-type {
-        border: 0;
-      }
-    }
-  }
-
-  .p-navigation .p-navigation__logo .p-navigation__link:hover {
-    background: none;
-    text-decoration: none;
-  }
-
-  .p-navigation .p-navigation__link:hover {
-    background: $color-light;
-    border-color: $color-mid-light;
-    text-decoration: none;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      background: lighten($color-brand, 6%);
-      border-color: darken($color-brand, 6%);
-    }
-  }
-
-  .p-navigation__links {
-    border-right: 0;
-  }
-}
-
-.theme__aside {
-  margin-top: -.5rem;
-  padding-top: 0;
-}
-
-.theme > .p-footer {
-  border-color: $color-mid-light;
-}
-
-.p-inline-list--tags {
-  margin-top: -1rem;
-
-  &__link {
-    color: $color-mid-dark !important;
-
-    &:link,
-    &:visited {
-      color: $color-mid-dark;
-      text-decoration: none;
-    }
-  }
-}
-
-.p-toc {
-  border-left-color: $color-mid-light;
-  padding-top: .75rem;
-
-  &__header {
-    color: $color-mid-dark;
-  }
-
-  &__item {
-    margin-bottom: .5rem;
-  }
-
-  &__link,
-  &__link:visited,
-  &__link:link {
-    color: $color-mid-dark;
-  }
-}
-
-// pagination
-.p-pagination {
-  display: flex;
-
-  &__item {
-    flex: 1;
-  }
-
-  &__link--previous {
-    margin-bottom: 1rem;
-  }
-
-  &__item--left {
-    text-align: right;
-  }
-
-  &__link {
-    &:link,
-    &:visited {
-      border: 1px solid $color-mid-dark;
-      color: inherit;
-    }
-  }
 }
 
 .grid-list {
@@ -377,34 +115,11 @@ a:link:hover {
     border-bottom: 0;
   }
 
-  .odd:nth-last-child(-n+2) {
-    border-bottom: 0;
-  }
-}
-
-// global nav overrides
-.nav-global-wrapper {
-  display: none;
-  width: $breakpoint-large !important;
-
   @media only screen and (min-width: $breakpoint-medium) {
-    display: block;
+    .odd:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
   }
-}
-
-// override vanilla pre
-pre {
-  background-color: $color-light;
-  border: 1px solid $color-mid-light;
-  border-radius: 4px;
-  color: $color-dark;
-  font-family: Ubuntu Mono;
-  font-size: 1rem;
-  font-weight: 300;
-  overflow: hidden;
-  padding: .7rem 1rem;
-  position: relative;
-  width: 100%;
 }
 
 // tutorial-intro
@@ -469,4 +184,3 @@ pre {
 }
 
 
-@import 'cards';

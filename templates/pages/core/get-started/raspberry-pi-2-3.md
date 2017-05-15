@@ -25,7 +25,7 @@ We will walk you through the steps of flashing Ubuntu Core on a Raspberry Pi 2 o
 
 ## Installation instructions
 
- 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions](/core/get-started/installation-medias)
+ 1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions&nbsp;&rsaquo;](/core/get-started/installation-medias)
  * Attach the monitor and keyboard to the board. You can alternatively use a serial cable.
  * Insert the SD card and plug the power adaptor into the board
 

@@ -1,5 +1,9 @@
 # App
-cache.sqlite
+.bundle/
+.docker-project
+static/components
+*.sqlite
+*-cache/
 
 # Python
 __pycache__/
@@ -26,6 +30,7 @@ pids
 *.seed
 
 # Common
+*.bak
 *.log
 logs/
 

@@ -1,0 +1,6 @@
+// site specific footer pattern styling
+@mixin developer-p-footer {
+  .p-footer {
+    border-color: $color-mid-light;
+  }
+}
