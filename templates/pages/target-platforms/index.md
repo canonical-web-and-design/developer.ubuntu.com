@@ -31,7 +31,9 @@ From the simplest servers to powerful hyperscale servers and the cloud, Ubuntu S
 
 [Download Ubuntu Server](https://www.ubuntu.com/download/server)
 
-[Get the upcoming release of Ubuntu Server](http://releases.ubuntu.com/)
+Daily server builds for the upcoming release are available for testers and early adopters.
+
+[Get the Ubuntu Server daily build](http://cdimage.ubuntu.com/ubuntu-server/daily/current/)
 
 ***
 
@@ -41,9 +43,9 @@ Whether you are a beginner or a skilled developer, we recommend you install and 
 
 [Download Ubuntu Desktop](https://www.ubuntu.com/download/desktop)
 
-For testers and early adopters, the daily desktop build version can be downloaded anytime.
+Daily desktop builds for the upcoming release are available for testers and early adopters.
 
-[Get the Ubuntu daily build](http://cdimage.ubuntu.com/daily-live/current/)
+[Get the Ubuntu Desktop daily build](http://cdimage.ubuntu.com/daily-live/current/)
 
 With Ubuntu Make, you can easily install the latest stable version of the most popular IDEs, regardless of your language and technology of choice.
 
