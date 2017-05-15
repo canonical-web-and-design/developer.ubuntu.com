@@ -7,7 +7,7 @@ page_type: modular
 
 # Target platforms
 
-Ubuntu works on any distribution or target platform, from IoT devices to servers and desktops.
+Ubuntu works on any distribution or target platform, from [IoT](#iot) devices to [servers](#server) and [desktops](#desktop).
 
 {% include "includes/components/target-platforms.html" %}
 
