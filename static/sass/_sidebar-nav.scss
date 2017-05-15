@@ -25,12 +25,11 @@
     padding-top: 10px;
 
     @media only screen and (max-width: $breakpoint-medium) {
-      &.js-mobile-no-collapse {
-        display: none;
+      display: none;
 
-        &.is-visible {
-          display: block;
-        }
+      &.is-visible,
+      &.js-mobile-no-collapse {
+        display: block;
       }
     }
 

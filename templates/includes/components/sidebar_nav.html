@@ -1,4 +1,4 @@
-<ul id="navigation" class="p-sidebar-nav__list u-clearfix {% if is_root %}js-mobile-no-collapse{% endif %}">
+<ul id="navigation" class="p-sidebar-nav__list u-clearfix {% if not is_root %}js-mobile-no-collapse{% endif %}">
     {% for item in sitemap %}
         {% if item.type == 'back' %}
 
