@@ -115,8 +115,10 @@ a:link:hover {
     border-bottom: 0;
   }
 
-  .odd:nth-last-child(-n+2) {
-    border-bottom: 0;
+  @media only screen and (min-width: $breakpoint-medium) {
+    .odd:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
   }
 }
 
