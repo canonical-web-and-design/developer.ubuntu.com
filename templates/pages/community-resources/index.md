@@ -27,7 +27,6 @@ Whether you want to snap your own app or an established open source application,
 - [Talk about Snapcraft on the forum](https://forum.snapcraft.io/)
 - [Ask a question on Stack Overflow](http://stackoverflow.com/questions/tagged/snapcraft)
 - [Chat in real time](https://rocket.ubuntu.com/channel/snapcraft?)
-- [Join the mailing list](https://lists.ubuntu.com/mailman/listinfo/snapcraft?)
 
 ## Contribute to our documentation
 
@@ -43,3 +42,7 @@ There are lots of ways to get involved with the Ubuntu community.
 - [Follow Ubuntu App Developers on Facebook](https://www.facebook.com/ubuntuappdev)
 - [Follow @ubuntudev on Twitter](https://twitter.com/ubuntudev?lang=en)
 - [Visit the community site](http://community.ubuntu.com/)
+
+## Access your Debian or click packages
+
+If you have an existing Debian or phone app in the store and would like to access your dashboard, [visit My Apps](https://myapps.developer.ubuntu.com)
