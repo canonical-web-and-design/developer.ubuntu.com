@@ -13,7 +13,7 @@
                         </div>
                         <div class="tutorial-card__content">
                             <p class="tutorial-card__date">
-                                <time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time>
+                                <time pubdate datetime="{{ item.published }}">{{ item.published_datetime|date:"j F Y" }}</time>
                             </p>
                             <p class="tutorial-card__summary">{{ item.summary|truncate_chars:195 }}</p>
                         </div>
