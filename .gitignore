@@ -1,52 +1,48 @@
-# App
-.bundle/
-.docker-project
-static/components
-*.sqlite
+# OS & editor files
+Desktop.ini
+Thumbs.db
+._*
+*.DS_Store
+*~
+\#*\#
+__*
+.AppleDouble
+.LSOverride
+.spelling
+
+# Cache and backup
+*.bak
+*.pyc
 *-cache/
 
-# Python
-__pycache__/
-env/
-*.pyc
-
-# Django
-media/
-db.sqlite3
-
-# Sass
-.sass-cache/
-*.css
-*.css.map
-
-# Node
-node_modules/
-.npm/
-npm-debug.log*
-
-# Runtime
+# Local data
+*.sqlite*
+*.log
+logs/
 pids
 *.pid
 *.seed
+.*-metadata
 
-# Common
-*.bak
-*.log
-logs/
+# Local dependencies
+.bundle/
+node_modules/
+bower_components/
+vendor/
 
-# Windows
-Desktop.ini
-Thumbs.db
+# Build files
+/build/
+_site/
 
-# OSX
-._*
-*.DS_Store
-
-# Linux
-*~
-.compose-project-name
-static/css
-
-# Environment
+# Local environment settings
+.docker-project
 .envrc
-.python-version
+env/
+env3/
+
+# Sass
+*.css
+*.css.map
+
+# Project-specific ignores
+/static/components
