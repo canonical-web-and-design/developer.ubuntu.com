@@ -83,14 +83,12 @@ def tutorial_cards(feed_config, limit=3):
         feed_url = base_feed_url.format(type=feed_type)
         feed_data += get_json_feed_content(feed_url, limit=limit)
 
-    # Sort tutorials by updated, descending. Grab limit from aggregated items.
-    feed_data = sorted(feed_data, key=itemgetter('updated'), reverse=True)
+    # Sort tutorials by published, descending. Grab limit from aggregated items
+    feed_data = sorted(feed_data, key=itemgetter('published'), reverse=True)
     feed_data = feed_data[:limit]
 
     for item in feed_data:
-        item['published'] = item.get('published', item['updated'])
         item['published_datetime'] = dateutil.parser.parse(item['published'])
-        item['updated_datetime'] = dateutil.parser.parse(item['updated'])
 
     return {
         'feed': feed_data,
