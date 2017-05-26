@@ -25,9 +25,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
 ALLOWED_HOSTS = ['*']
 DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
 
-USE_X_FORWARDED_HOST = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = False
