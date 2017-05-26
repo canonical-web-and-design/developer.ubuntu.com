@@ -11,8 +11,8 @@
   &__title {
     font-size: 1rem;
     margin-bottom: 0;
-    padding-left: 0;
     margin-top: -1px;
+    padding-left: 0;
 
     @media only screen and (min-width: $breakpoint-medium) {
       padding-bottom: 0;
@@ -289,11 +289,11 @@
 
   &__back-link {
     border-bottom: 1px dotted $color-mid-light;
-    top: -10px;
+    display: inline-block;
     float: left;
     padding: 0;
     position: relative;
-    display: inline-block;
+    top: -10px;
 
     svg {
       display: inline-block;

@@ -1,13 +1,13 @@
 {
   "devDependencies": {
-    "node-sass": "4.5.2",
-    "sass-lint": "1.10.2",
+    "node-sass": "^4.5.3",
+    "sass-lint": "^1.10.2",
     "vanilla-docs-theme": "^1.5.3"
   },
   "scripts": {
-    "watch": "node-sass --include-path node_modules --watch --source-map true --recursive static/sass/global.scss static/css/global.css",
-    "clean": "rm -rf node_modules yarn-error.log",
     "build": "node-sass --include-path node_modules static/sass --output static/css",
-    "test": "sass-lint static/**/*.scss --verbose --no-exit"
+    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
+    "test": "sass-lint static/**/*.scss --verbose --no-exit",
+    "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite"
   }
 }

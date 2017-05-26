@@ -11,8 +11,8 @@
 
   & &__link {
     background: none;
-    transition: none;
     padding: 0;
+    transition: none;
 
     &:hover {
       border: 0;
@@ -166,9 +166,9 @@
     background-position-y: 5px;
     background-repeat: no-repeat;
     display: inline-block;
-    margin-top: 12px;
     margin-bottom: -12px;
     margin-left: 3px;
+    margin-top: 12px;
     text-indent: -99999px;
     width: 75px;
   }
@@ -193,3 +193,4 @@
     background-position-x: -0;
   }
 }
+
