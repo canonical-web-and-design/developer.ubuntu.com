@@ -1,2 +1,5 @@
+en: '/'
+en(/(?P<path>.*))?: /{path}
+
 # Remove trailing slash, .html, or index from URLs
 (?P<path>.*)?(/|.html|index): /{path}

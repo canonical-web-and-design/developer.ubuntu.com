@@ -7,7 +7,6 @@ from django.http import (
     HttpResponseServerError,
 )
 from django.template import (
-    Context,
     loader,
     RequestContext,
     Template,
@@ -23,13 +22,12 @@ from webapp.loaders import MarkdownLoader
 
 def custom_404(request):
     t = loader.get_template('error/404.html')
-    context = RequestContext(request, {'request_path': request.path})
-    return HttpResponseNotFound(t.render(context))
+    return HttpResponseNotFound(t.render({'request_path': request.path}))
 
 
 def custom_500(request):
     t = loader.get_template('error/500.html')
-    return HttpResponseServerError(t.render(Context({})))
+    return HttpResponseServerError(t.render({'request_path': request.path}))
 
 
 class MarkdownView(TemplateView):
