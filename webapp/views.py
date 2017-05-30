@@ -22,12 +22,18 @@ from webapp.loaders import MarkdownLoader
 
 def custom_404(request):
     t = loader.get_template('error/404.html')
-    return HttpResponseNotFound(t.render({'request_path': request.path}))
+    return HttpResponseNotFound(t.render({
+        'request': request,
+        'request_path': request.path
+    }))
 
 
 def custom_500(request):
     t = loader.get_template('error/500.html')
-    return HttpResponseServerError(t.render({'request_path': request.path}))
+    return HttpResponseServerError(t.render({
+        'request': request,
+        'request_path': request.path
+    }))
 
 
 class MarkdownView(TemplateView):
