@@ -3,3 +3,6 @@ en(/(?P<path>.*))?: /{path}
 
 # Remove trailing slash, .html, or index from URLs
 (?P<path>.*)?(/|.html|index): /{path}
+
+# Redirects for old content
+(en/)?snappy/start/?: /core/get-started
