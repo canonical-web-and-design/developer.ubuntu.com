@@ -1,5 +1,12 @@
-en: '/'
-en(/(?P<path>.*))?: /{path}
+(en|zh-cn): '/'
+(en|zh-cn)(/(?P<path>.*))?: /{path}
 
 # Remove trailing slash, .html, or index from URLs
 (?P<path>.*)?(/|.html|index): /{path}
+
+# Redirects for old content
+(en/|zh-cn/)?phone/devices/?: https://docs.ubuntu.com/phone/en/devices/index
+(en/|zh-cn/)?snappy/start/?: /core/get-started
+(en/|zh-cn/)?phone(?P<path>.*)/?: https://docs.ubuntu.com/phone/en{path}
+(en/|zh-cn/)?desktop/?: https://www.ubuntu.com/desktop
+(en/|zh-cn/)?snappy/?: /core
