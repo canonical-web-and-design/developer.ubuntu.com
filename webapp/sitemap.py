@@ -315,16 +315,17 @@ class Sitemap:
             self._set_active_navigation_items(sorted_tree, current_path)
         if root_path_key:
             root_node = self._find_navigation_item(sorted_tree, root_path_key)
-            if root_node.get('children'):
-                sorted_tree = [root_node]
-                back_link = [{
-                    'type': 'back',
-                    'path': '/',
-                }]
-                sorted_tree = back_link + sorted_tree
-            elif root_node.get('type') == 'heading':
-                root_node['type'] = None
-
+            if root_node:
+                if root_node.get('children'):
+                    sorted_tree = [root_node]
+                    back_link = [{
+                        'type': 'back',
+                        'path': '/',
+                    }]
+                    sorted_tree = back_link + sorted_tree
+                elif root_node.get('type') == 'heading':
+                    print('2')
+                    root_node['type'] = None
         return sorted_tree
 
 
