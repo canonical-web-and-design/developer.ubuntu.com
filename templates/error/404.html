@@ -1,15 +1,15 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}404 - Page not found{% endblock %}
+
 {% load versioned_static %}
 <!doctype html>
 
-<html>
-    <head>
-        <title>404 - Page not found</title>
-        
-        <link rel="stylesheet" href="{% versioned_static 'css/global.css' %}" />
-    </head>
-
-    <body>
-        <h1>404 - Page not found</h1>
-        <p>There is no page at this URL.</p>
-    </body>
-</html>
+{% block content %}
+<div class="col-12  p-layout__main">
+    <main class="p-layout__inner">
+        <h1 style="displa">404: Page not found</h1>
+        <p>Sorry, we couldn&rsquo;t find that page.</p>
+    </main>
+</div>
+{% endblock content %}
