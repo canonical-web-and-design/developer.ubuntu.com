@@ -8,4 +8,5 @@
 (en/|zh-cn/)?phone/devices/?: https://docs.ubuntu.com/phone/en/devices/index
 (en/|zh-cn/)?snappy/start/?: /core/get-started
 (en/|zh-cn/)?phone(?P<path>.*)/?: https://docs.ubuntu.com/phone/en{path}
+(en/|zh-cn/)?api/?: https://docs.ubuntu.com/phone/en/
 (en/|zh-cn/)?snappy/?: /core
