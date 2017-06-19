@@ -1,6 +1,6 @@
 ---
 title: Compute Module 3
-image: https://i.imgur.com/gBkNbEv.jpg
+image: https://assets.ubuntu.com/v1/2d9f8097-Compute-Module-small-500x2802.jpg
 description: Ubuntu Core works on minimal setups, embed and go!
 ---
 
@@ -15,10 +15,10 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
   * A Compute Module 3
   * A Compute Module IO board
   * Two micro USB to USB cables (one for power, one to setup the CM from the host)
-  * An HDMI cable for the display
+  * An HDMI cable and a display
   * A USB keyboard
-  * A USB to RJ45 adaptor
-  * A USB hub to attach the keyboard and the RJ45 adaptor
+  * A USB to RJ45 adaptor or a WiFi dongle
+  * A USB hub to attach the keyboard and the RJ45 adaptor/WiFi dongle (note that the keyboard and display can be replaced with a serial cable connected directly to pins of the IO board)
   * An Ubuntu Core image
 
 ### Ubuntu Core image
@@ -55,12 +55,13 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
  * Identify the device by opening the "Disks" application:
     * Locate the EMMC partition of the Compute Module in the left pane
     * Note down its "Device" address on the right pane.
+    * If it's mounted, unmount it by clicking the square icon below the partition diagram or the eject icon in a file manager
  * Download the [Ubuntu Core image](#ubuntu-core-image). When this is done you should have an `ubuntu-core-16-armhf+cm3.img.xz` file in your `~/Downloads` directory
- * Flash the Ubuntu Core on the EMMC partition with:
+ * Flash Ubuntu Core on the EMMC partition with:
 
         xzcat ~/Downloads/<image file .xz> | sudo dd of=<device address> bs=32M; sync
 
-     This process will take some time. After completion, you can reboot your Compute Module IO board and follow the first boot process with the monitor and keboard attached to it.
+     This process will take some time. After completion, you can reboot your Compute Module IO board and follow the first boot process with the display and keboard attached to it.
 
 
 {% include "includes/markdown/get_started_first_boot.md" %}
