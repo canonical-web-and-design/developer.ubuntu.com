@@ -9,6 +9,7 @@ _items:
       - installation-medias
       - raspberry-pi-2-3
       - intel-joule
+      - compute-module-3
       - dragonboard-410c
       - intel-nuc
       - artik-5-10
