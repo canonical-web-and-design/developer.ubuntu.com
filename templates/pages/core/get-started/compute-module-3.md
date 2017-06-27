@@ -23,7 +23,9 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
 
 ### Ubuntu Core image
 
-[Ubuntu Core 16 image for Compute Module 3](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/ubuntu-core-16-armhf+cm3.img.xz)
+[Ubuntu Core 16 image for Compute Module 3](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz)
+
+* SHA256: 1c01130550b37447c7e345e234e337a16b7c58c1e1ceab64e15f0195bdc4e014
 
 ## Installation instructions
 
@@ -47,7 +49,10 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
  1. Position the Compute Module on the IO board
  * Attach the USB hub, RJ45 adaptor, keyboard and monitor (HDMI) to the board
  * Ensure the `J4` switch (`USB SLAVE BOOT ENABLE`) on the IO board is in the `EN` position
- * With the two micro USB to USB cables, plug the host machine into the IO Board USB slave port (`J15`) and power on the IO board.
+     ![J4](https://assets.ubuntu.com/v1/55329e6f-CM3_J4.JPG?w=300)
+ * With the first micro USB to USB cable, plug the host machine into the IO Board USB slave port (`J15`)
+     ![J15](https://assets.ubuntu.com/v1/2073d0aa-CM3_J15.JPG?w=300)
+ * With the second micro USB to USB cable, power on the IO board.
 
 ### 3. Back to the host system
 
@@ -55,13 +60,12 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
  * Identify the device by opening the "Disks" application:
     * Locate the EMMC partition of the Compute Module in the left pane
     * Note down its "Device" address on the right pane.
-    * If it's mounted, unmount it by clicking the square icon below the partition diagram or the eject icon in a file manager
- * Download the [Ubuntu Core image](#ubuntu-core-image). When this is done you should have an `ubuntu-core-16-armhf+cm3.img.xz` file in your `~/Downloads` directory
+    * If the partition is mounted, unmount it by clicking the square icon below the partition diagram or the eject icon in a file manager
+ * Download the [Ubuntu Core image](#ubuntu-core-image). When this is done you should have an `ubuntu-core-16-cm3.img.xz` file in your `~/Downloads` directory
  * Flash Ubuntu Core on the EMMC partition with:
 
         xzcat ~/Downloads/<image file .xz> | sudo dd of=<device address> bs=32M; sync
 
-     This process will take some time. After completion, you can reboot your Compute Module IO board and follow the first boot process with the display and keboard attached to it.
-
+     This process will take some time. After completion, you can reboot your Compute Module IO board and follow the first boot process with the display, keyboard and RJ45/WiFI dongle attached to it.
 
 {% include "includes/markdown/get_started_first_boot.md" %}
