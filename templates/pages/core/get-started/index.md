@@ -5,6 +5,7 @@ page_type: summary
 summary_pages:
     - raspberry-pi-2-3
     - intel-joule
+    - compute-module-3
     - dragonboard-410c
     - intel-nuc
     - artik-5-10
@@ -13,7 +14,6 @@ summary_pages:
 
 # Get started
 
-Ubuntu Core is supported on a variety of chipsets, boards, SOCs and virtual machines, including Raspberry Pi 2 and 3, Qualcomm DragonBoard 410c, Intel NUC, Intel Joule, Samsung Artik and KVM.
+Ubuntu Core is supported on a variety of chipsets, boards, SOCs and virtual machines, including Raspberry Pi 2 and 3, Compute Module 3, Qualcomm DragonBoard 410c, Intel NUC, Intel Joule, Samsung Artik and KVM.
 
 We will guide you through the steps of installing Ubuntu Core on these platforms.
-
