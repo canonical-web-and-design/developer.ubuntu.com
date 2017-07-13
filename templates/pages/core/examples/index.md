@@ -7,6 +7,11 @@ description: Reusable code snippets to speed up your Ubuntu Core development and
 
 Here you can find example code and example implementations of the key Ubuntu Core components. This will help you build your own implementations and better understand how these key components are built. Read the code or branch it to get started with your own projects.
 
+## Run a kiosk with Ubuntu Core
+The Mir display server can be used to create a lightweight user interface on a board running Ubuntu Core.
+
+[See the kiosk example &rsaquo;](/core/examples/snaps-on-mir)
+
 ##Hooks
 A hook is an executable file that is called under a certain pre-configured condition. For example, a hook can ensure a database update occurs when a snap gets upgraded.
 

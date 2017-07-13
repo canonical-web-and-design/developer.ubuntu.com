@@ -17,6 +17,7 @@ _items:
       - developer-setup
     - tutorials
     - examples:
+      - snaps-on-mir
       - hooks
       - interfaces
       - gadget-snaps

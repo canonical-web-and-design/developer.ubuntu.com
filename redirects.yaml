@@ -12,3 +12,4 @@
 (en/|zh-cn/)?start/?: https://docs.ubuntu.com/phone/en/
 (en/|zh-cn/)?snappy/?: /core
 (en/|zh-cn/)?snappy/guides/security-whitepaper/?: /core/documentation
+(en/|zh-cn/)?/snappy/guides/mir-snaps/?: /core/examples/snaps-on-mir
