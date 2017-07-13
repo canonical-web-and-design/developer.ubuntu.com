@@ -104,7 +104,7 @@ Terminal app there), then run the following command:
 
  * You can now copy the image to the SD card, using the following command:
 
-        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32MB
+        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32M
 
       When finalised you will see the following message:
 
