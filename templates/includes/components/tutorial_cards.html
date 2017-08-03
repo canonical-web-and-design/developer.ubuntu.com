@@ -1,29 +1,33 @@
 <div class="col-12 cards__container">
 
-    <h2 class="cards__title">Latest tutorials</h2>
+  <h2 class="cards__title">Latest tutorials</h2>
 
+  {% if feed %}
     <ul class="p-list u-no-padding--left u-no-margin--left">
-        {% for item in feed %}
-            <li class="cards__item col-4">
-                <a class="cards__link u-no-padding" href="{{ item.link }}">
-                    <div class="p-card--highlighted u-no-padding">
-                        <div class="tutorial-card__header">
-                            <span class="tutorial-card__category">{{ item.category|first }}</span>
-                            <h3 class="tutorial-card__title">{{ item.title }}</h3>
-                        </div>
-                        <div class="tutorial-card__content">
-                            <p class="tutorial-card__date">
-                                <time pubdate datetime="{{ item.published }}">{{ item.published_datetime|date:"j F Y" }}</time>
-                            </p>
-                            <p class="tutorial-card__summary">{{ item.summary|truncate_chars:195 }}</p>
-                        </div>
-                        <div class="tutorial-card__footer">
-                            <p class="tutorial-card__difficulty tutorial-card__difficulty--{{ item.difficulty }}">{{ item.difficulty }} out of 5</p>
-                            <p class="tutorial-card__duration">Duration: {{ item.duration }} min</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        {% endfor %}
+      {% for item in feed %}
+        <li class="cards__item col-4">
+          <a class="cards__link u-no-padding" href="{{ item.link }}">
+            <div class="p-card--highlighted u-no-padding">
+              <div class="tutorial-card__header">
+                <span class="tutorial-card__category">{{ item.category|first }}</span>
+                <h3 class="tutorial-card__title">{{ item.title }}</h3>
+              </div>
+              <div class="tutorial-card__content">
+                <p class="tutorial-card__date">
+                  <time pubdate datetime="{{ item.published }}">{{ item.published_datetime|date:"j F Y" }}</time>
+                </p>
+                <p class="tutorial-card__summary">{{ item.summary|truncate_chars:195 }}</p>
+              </div>
+              <div class="tutorial-card__footer">
+                <p class="tutorial-card__difficulty tutorial-card__difficulty--{{ item.difficulty }}">{{ item.difficulty }} out of 5</p>
+                <p class="tutorial-card__duration">Duration: {{ item.duration }} min</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
     </ul>
+  {% else %}
+    <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/developer.ubuntu.com/issues/new">file an issue</a>.</p>
+  {% endif %}
 </div>
