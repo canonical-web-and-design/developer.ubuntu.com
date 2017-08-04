@@ -29,7 +29,7 @@ The process is the same on any operating system, you will: download an image fil
 
     * Else, run:
 
-            sudo dd if=~/Downloads/<image file> of=<drive address> bs=32M
+            sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
 
  * Then, run the `sync` command to finalize the process
 
