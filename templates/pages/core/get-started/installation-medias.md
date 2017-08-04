@@ -25,7 +25,7 @@ The process is the same on any operating system, you will: download an image fil
 
     * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, run:
 
-            xzcat ~/Downloads/<image file .xz> | sudo dd of=<drive address> bs=32M
+            xzcat ~/Downloads/<image file .xz> | sudo dd of=<drive address> bs=32m
 
     * Else, run:
 
@@ -104,7 +104,7 @@ Terminal app there), then run the following command:
 
  * You can now copy the image to the SD card, using the following command:
 
-        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32M
+        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
 
       When finalised you will see the following message:
 
