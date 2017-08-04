@@ -1,20 +1,24 @@
 {% get_rss_feed feed_url limit=limit as feed %}
+
 <div class="col-12 cards__container">
+  <h2 class="cards__title">Latest news</h2>
 
-    <h2 class="cards__title">Latest news</h2>
-
+  {% if feed %}
     <ul class="p-list u-no-padding--left u-no-margin--left">
-    {% for item in feed %}
+      {% for item in feed %}
         <li class="cards__item col-4">
-            <a class="cards__link" href="{{ item.link }}">
-                <div class="p-card--highlighted">
-                    <h3 class="p-card--highlighted__title">{{ item.title }}</h3>
-                    <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
-                    <p class="p-card--highlighted__content">{{ item.description|truncate_chars:80 }}</p>
-                    <p class="note p-card--highlighted__source">Ubuntu Insights</p>
-                </div>
-            </a>
+          <a class="cards__link" href="{{ item.link }}">
+            <div class="p-card--highlighted">
+              <h3 class="p-card--highlighted__title">{{ item.title }}</h3>
+              <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
+              <p class="p-card--highlighted__content">{{ item.description|truncate_chars:80 }}</p>
+              <p class="note p-card--highlighted__source">Ubuntu Insights</p>
+            </div>
+          </a>
         </li>
-    {% endfor %}
+      {% endfor %}
     </ul>
+  {% else %}
+    <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/developer.ubuntu.com/issues/new">file an issue</a>.</p>
+  {% endif %}
 </div>

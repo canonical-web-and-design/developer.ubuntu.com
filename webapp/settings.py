@@ -79,6 +79,7 @@ TEMPLATES = [
         'DIRS': [TEMPLATE_PATH],
         'OPTIONS': {
             'builtins': [
+                'canonicalwebteam.get_feeds.templatetags',
                 'webapp.templatetags',
             ],
             'context_processors': [

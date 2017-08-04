@@ -1,24 +1,13 @@
 import dateutil.parser
 from django import template
 from operator import itemgetter
-
-from webapp.lib.feeds import get_json_feed_content, get_rss_feed_content
+from canonicalwebteam.get_feeds import get_json_feed_content
 from webapp.lib.markdown import get_page_data as _get_page_data
 from webapp.sitemap import sitemap
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
 register = template.Library()
-
-
-@register.simple_tag
-def get_json_feed(feed_url, **kwargs):
-    return get_json_feed_content(feed_url, **kwargs)
-
-
-@register.simple_tag
-def get_rss_feed(feed_url, **kwargs):
-    return get_rss_feed_content(feed_url, **kwargs)
 
 
 @register.simple_tag(takes_context=True)
@@ -81,7 +70,12 @@ def tutorial_cards(feed_config, limit=3):
         else:
             feed_type = '-'.join(['recent', category])
         feed_url = base_feed_url.format(type=feed_type)
-        feed_data += get_json_feed_content(feed_url, limit=limit)
+
+        category_feed = get_json_feed_content(feed_url, limit=limit)
+        if category_feed:
+            feed_data += category_feed
+        else:
+            return {'feed': False}
 
     # Sort tutorials by published, descending. Grab limit from aggregated items
     feed_data = sorted(feed_data, key=itemgetter('published'), reverse=True)
