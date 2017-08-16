@@ -35,6 +35,10 @@ To see the list of what potential clients exist, just enter the snap set command
 snap set mir-kiosk-apps app=" "
 ```
 
+After setting an app, it will start on the display connected to your device:
+
+![rssnews app](https://assets.ubuntu.com/v1/1449b3d1-Screenshot+from+2017-08-16+15-45-42.png)
+
 ## Introduction
 
 This tutorial is ideal for someone seeking to build a kiosk-style device on Ubuntu Core. This tutorial uses a variety of Qt examples: PhotoViewer as shown above, or Clock as shown below, as well as many other applications. You can determine applications supported by the mir-kiosk-apps snap by interrogating the snap set command.
