@@ -9,7 +9,7 @@ This example has been verified to run on amd64 devices, amd64 kvm-qemu based VM,
 
 For getting Ubuntu Core installed and running please reference Getting Started for Ubuntu Core
 
-**Note:** for RPi3, gpu support not quite in the stable channel Ubuntu Core image, will need to use the rpi3 daily edge image
+**Note:** for RPi2 and RPi3, gpu support is not quite in the stable channel Ubuntu Core image, you will need to use the [daily edge image](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/)
 
 ## Quick Start to Experience
 
