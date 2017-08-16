@@ -69,14 +69,9 @@ Before beginning, you may need to set the virtual machine the VMM application wi
 Note that the insallation order will matter, install both the mir-kiosk and mir-libs snaps with the following commands via ssh into your device or VM.
 
 ``` bash
-ssh$ snap install mir-libs --channel=edge --devmode
-ssh$ snap install mir-kiosk --channel=edge --devmode
+ssh$ snap install mir-libs --channel=edge
+ssh$ snap install mir-kiosk --channel=edge
 ```
----
-
-**Note:** `--devmode` is used for simplicity, due to a regression introduced in a recent Ubuntu Core image.
-
----
 
 The mir-kiosk should launch, resulting in a black screen with a mouse cursor.
 
@@ -106,7 +101,7 @@ scp mir-kiosk-apps*.snap devicename@x.x.x.x:/home/devicename
 Then SSH to the device or VM and install it:
 
 ``` bash
-ssh$ snap install mir-kiosk-apps*.snap --devmode
+ssh$ snap install mir-kiosk-apps*.snap
 ```
 
 Due to the mir-kiosk-apps being from another provider (you in this case), you will need to manually connect the mir-kiosk-apps snap to the mir-libs interface.
@@ -116,19 +111,6 @@ ssh$ snap disable mir-kiosk-apps
 ssh$ snap connect mir-kiosk-apps:mir-libs mir-libs:mir-libs
 ssh$ snap enable mir-kiosk-apps
 ```
-
----
-
-**Note:** `--devmode` is used on the mir-kiosk-apps install due to a recent regression introduced in the latest Ubuntu Core image. Beware of this bug on any snap update.
-
-The workaround for it is:
-
-``` bash
-ssh$ snap disable
-ssh$ sudo /usr/lib/snapd/snap-discard-ns <snap-name>
-ssh$ snap enable
-```
----
 
 ### Tips
 
