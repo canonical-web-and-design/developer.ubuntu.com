@@ -5,15 +5,15 @@ description: How to create a kiosk snap running on top of Mir
 
 # Run a kiosk snap on Ubuntu Core
 
-This example has been verified to run on amd64 devices, amd64 kvm-qemu based VM, armhf/RPi3 and arm64/dragonboard.
+This example is ideal for someone seeking to build a kiosk-style device with Ubuntu Core. It showcases a set of Qt applications as examples apps you could run on a kiosk.
 
-For getting Ubuntu Core installed and running please reference Getting Started for Ubuntu Core
+This example has been tested on amd64 kvm-qemu based VM, armhf/RPi3 and arm64/dragonboard. To install Ubuntu Core on one of these devices, see the [Get Started](../get-started) section.
 
-**Note:** for RPi2 and RPi3, gpu support is not quite in the stable channel Ubuntu Core image, you will need to use the [daily edge image](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/)
+**Note:** for RPi2 and RPi3, GPU support is not yet in the stable Ubuntu Core image, you will need to use the [daily edge image](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/)
 
 ## Quick Start to Experience
 
-Download the latest ubuntu core image. Once you have your Ubuntu Core image running on your desired device/VM, ssh into your device/VM and install in this particular order. If you need more information or are new to snaps, please read through the more detailed subections of this webpage.
+Download the [latest Ubuntu Core stable image](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/) and install it. Once you have your Ubuntu Core image running on your desired device/VM, SSH into it and install the mir snaps in this particular order:
 
 ``` bash
 snap install mir-libs --channel=edge
@@ -21,56 +21,71 @@ snap install mir-kiosk --channel=edge
 snap install mir-kiosk-apps --channel=edge
 ```
 
-You should then see the something similar to the image below on your device or VM.
-
-If you are interested in trying out other client applications, you can use the snap set command. For instance:
+Once this is done, to start a client application, you need to use the `snap set` command. For instance, the RSSNews app:
 
 ``` bash
 snap set mir-kiosk-apps app=rssnews
 ```
 
-To see the list of what potential clients exist, just enter the snap set command like so:
+To see the list of what potential clients exist, just enter the `snap set` command with an empty value, like so:
 
 ``` bash
 snap set mir-kiosk-apps app=" "
 ```
 
-After setting an app, it will start on the display connected to your device:
+Once you set an app, it will start on the display connected to your device:
 
 ![rssnews app](https://assets.ubuntu.com/v1/1449b3d1-Screenshot+from+2017-08-16+15-45-42.png)
 
-## Introduction
+## Step by step example
 
-This tutorial is ideal for someone seeking to build a kiosk-style device on Ubuntu Core. This tutorial uses a variety of Qt examples: PhotoViewer as shown above, or Clock as shown below, as well as many other applications. You can determine applications supported by the mir-kiosk-apps snap by interrogating the snap set command.
+### Introduction
 
-The mir-kiosk-apps snap is strictly an example of a mir client apps, which developers can use as a template to follow/copy in order to create their own client application snap.
+The mir-kiosk-apps snap is an example of a mir client, which you can use as a template to copy in order to create your own client applications.
 
-Ubuntu Core recently added a solution for gl/gles drivers to be hosted by the core and accessed by snaps. Previously, vendor specific implementations had to be bundled with any gl/gles enabled application. With this solution in place, it should be that you may build an app using gles on one platform and run on another. For instance on build on intel and run on nvidia, or vice versa. Please let the snappy team know if you discover any issues around this. There's is an open bug on this topic, but it is believed to currently work.
+Ubuntu Core provides a solution for GL/GLES drivers to be hosted by the core and accessed by snaps. With this solution in place, you can build an app using GLES on one platform and run on another. For instance, build on Intel and run on Nvidia, or vice versa. Please let the snap team know if you discover any issues around this.
 
-The mir-kiosk snap is only targeted for Ubuntu Core. It is intended for kiosk-like products and applications. For products requiring many separate UI applications supported, Ubuntu Personal with the full Unity8 shell is the more appropriate solution.
+The mir-kiosk snap is only targeted at Ubuntu Core, not other snapd supported OSes. It is intended for kiosk-like products and applications.
 
-This document targets 16 Ubuntu Core and assumes your host machine is running at least 16.04 (up to date), with the stable-phone-overlay installed and using the latest snapcraft and snapd listed here. It might work with earlier versions, but I've only taken care to validate the latest mir on the latest snapcraft on the latest core.
+This document targets Ubuntu Core devices and assumes your host machine is running an up to date version of Ubuntu 16.04 LTS (or above), using the latest versions of snapcraft and snapd.
 
 ### Prerequisites
 
-You need to be on at least Ubuntu 16.04 LTS host to obtain the proper tools and the latest versions of stage packages. Note, you can install the mir-snaps on a bare metal install of Ubuntu Core on a actual device following these same instructions. However, this example uses a virtual machine to help people have a quick experience who might not have a seperate device, so please make sure Virtual Machine Manager is installed
+While you can install the mir snaps on a bare metal install of Ubuntu Core following these instructions, this example focuses on using a virtual machine to help people have a quick experience without needing a separate device.
+
+Make sure "Virtual Machine Manager" is installed to have a local display for your VM.
 
 ``` bash
-sudo apt install qemu-kvm virt-manager
+sudo apt install virt-manager
 ```
+
+You will also need an Ubuntu SSO account to create the first user on the Ubuntu Core installation during first boot.
+
+1. Start by creating an [Ubuntu SSO account](https://login.ubuntu.com)
+2. Import an SSH Key into your Ubuntu SSO account [on this page](https://login.ubuntu.com/ssh-keys). Instructions to generate an SSH Key on your computer can be found [here](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 ### 1. Download the Ubuntu Core image and set up your VM environment
 
-Now that Ubuntu Core 16 images are becoming available, I recommend using the latest images being published by the Snappy team. These can be found here. If you are new to Ubuntu Core or snaps, I highly recommend visiting snapcraft.io
+Download the latest stable Ubuntu Core image for amd64 and uncompress it with the following commands:
 
-Now launch your Virtual Machine Manager application (you have installed from steps above). Select the icon for “New Virtual Machine” (or menu to File->New Virtual Machine).
+```bash
+wget http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-amd64.img.xz
+unxz ubuntu-core-16-amd64.img.xz
+```
 
+Then, launch Virtual Machine Manager, select the icon for “New Virtual Machine” (or through the menu: "File" -> "New Virtual Machine").
 
-Before beginning, you may need to set the virtual machine the VMM application will use, go to File->Add Connection, select QEMU/KVM. Now to import the image you just created. In the dialog select the radio button for “Import Existing Disk Image”, browse to your `.img`  and select it. You can leave the other defaults. Once you select your way forward, it should launch another window with your Ubuntu Core image VM in it. Once the system settles it will provide you a prompt to walk through the Ubuntu Core console-config, this will occur on any device or VM where you've just freshly installed Ubuntu Core. Note the ip address will be provided for you to ssh into your device or VM.
+Before beginning, you may need to set the virtual machine engine. Go to "File" -> "Add Connection", select "QEMU/KVM".
 
-### 2. Install the mir-libs & mir-kiosk Snaps
+Now, to import the image you just uncompressed:
 
-Note that the insallation order will matter, install both the mir-kiosk and mir-libs snaps with the following commands via ssh into your device or VM.
+* In the "New Virtual Machine" dialog select the radio button for “Import Existing Disk Image”, browse to your `.img` file and select it.
+* You can leave the other defaults. Once you select your way forward, it should launch another window with your Ubuntu Core image VM running in it.
+* Once the system boots, it will provide you a prompt to walk you through the Ubuntu Core first boot setup. At the end of the process, an IP address and user name will be provided for you to SSH into your device or VM.
+
+### 2. Install the mir-libs and mir-kiosk snaps
+
+Install both the mir-kiosk and mir-libs snaps with the following commands via SSH into your device or VM. Note that the installation order matters:
 
 ``` bash
 ssh$ snap install mir-libs --channel=edge
@@ -89,17 +104,25 @@ On your host, if you haven’t already, install the snapcraft tools.
 sudo apt install snapcraft
 ```
 
-Now pull down the mir-kiosk-apps snap branch. For the purposes of building your own client-application to run on mir-kiosk, I recommend reading through 2 files in this branch: snapcraft.yaml and mir-kiosk-app-daemon. The snapcraft.yaml can be inspected for guidelines on what stage packages are being used. The mir-kiosk-app-daemon file can be used to determine which environment variables need to be set and you may also modify the last lines to change the example application called.
+Now clone the mir-kiosk-apps snap branch.
 
 ``` bash
 git clone -b master https://git.launchpad.net/mir-kiosk-apps
 cd mir-kiosk-apps
+```
+
+For the purposes of building your own client-application to run on mir-kiosk, I recommend reading through 2 files in this branch: `snapcraft.yaml` and `mir-kiosk-app-daemon`. The `snapcraft.yaml` can be inspected for guidelines on what stage packages are being used. The `mir-kiosk-app-daemon` file can be used to determine which environment variables need to be set and you may also modify the last lines to change the example application called.
+
+Run snapcraft to build the snap:
+
+```bash
 snapcraft
 ```
+
 Copy your snap over to your Ubuntu Core device or VM:
 
 ``` bash
-scp mir-kiosk-apps*.snap devicename@x.x.x.x:/home/devicename
+scp mir-kiosk-apps*.snap <username>@<IP address>:/home/<username>
 ```
 
 Then SSH to the device or VM and install it:
@@ -114,6 +137,18 @@ Due to the mir-kiosk-apps being from another provider (you in this case), you wi
 ssh$ snap disable mir-kiosk-apps
 ssh$ snap connect mir-kiosk-apps:mir-libs mir-libs:mir-libs
 ssh$ snap enable mir-kiosk-apps
+```
+
+Once this is done, to start a client application, you need to use the `snap set` command. For instance, the RSS News app:
+
+``` bash
+snap set mir-kiosk-apps app=rssnews
+```
+
+To see the list of what potential clients exist, just enter the `snap set` command with an empty value, like so:
+
+``` bash
+snap set mir-kiosk-apps app=" "
 ```
 
 ### Tips
