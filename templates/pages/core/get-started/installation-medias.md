@@ -23,13 +23,13 @@ The process is the same on any operating system, you will: download an image fil
 
  * Open a terminal (`Ctrl+Alt+T`) to copy the image to your removable drive
 
-    * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, run:
+  * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, run:
 
-            xzcat ~/Downloads/<image file .xz> | sudo dd of=<drive address> bs=32m
+        xzcat ~/Downloads/<image file .xz> | sudo dd of=<drive address> bs=32M
 
-    * Else, run:
+  * Else, run:
 
-            sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
+        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32M
 
  * Then, run the `sync` command to finalize the process
 
@@ -104,7 +104,7 @@ Terminal app there), then run the following command:
 
  * You can now copy the image to the SD card, using the following command:
 
-        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
+        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
 
       When finalised you will see the following message:
 
