@@ -18,10 +18,13 @@ We will walk you through the steps of flashing Ubuntu Core on a Raspberry Pi 2 o
   * A USB keyboard
   * An Ubuntu Core image
 
-### Ubuntu Core image
+### Ubuntu Core images
 
- * [Ubuntu Core 16 image for Raspberry Pi 2](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi2.img.xz)
-  * [Ubuntu Core 16 image for Raspberry Pi 3](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi3.img.xz)
+ * **Raspberry Pi 2**
+    * [Ubuntu Core 16 image for Raspberry Pi 2 (stable)](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi2.img.xz)
+ * **Rapsberry Pi 3**
+    * [Ubuntu Core 16 image for Raspberry Pi 3 (stable)](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-pi3.img.xz) - the older kernel shipped with this image can trigger Wi-Fi issues during first boot, a network cable is recommended.
+    * [Ubuntu Core 16 image for Raspberry Pi 3 (edge)](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/ubuntu-core-16-armhf+raspi3.img.xz) - this image provides reliable Wi-Fi at first boot, but is a daily build and not deemed stable.
 
 ## Installation instructions
 
