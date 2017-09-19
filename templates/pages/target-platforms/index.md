@@ -2,14 +2,14 @@
 title: Target platforms
 description: Target platforms page
 page_type: modular
-    
+
 ----
 
 # Target platforms
 
 Ubuntu works on any distribution or target platform, from [IoT](#iot) devices to [servers](#server) and [desktops](#desktop).
 
-{% include "includes/components/target-platforms.html" %}
+{% include "includes/components/target-platforms-featured.html" %}
 
 ## IoT
 
@@ -17,7 +17,7 @@ Ubuntu is at the heart of many smart devices – from edge computing and wearabl
 
 For fast iterations on your software and hardware stack, we recommend you install Ubuntu Server on your board.
 
-[See available images](https://www.ubuntu.com/download/server)
+[See supported boards &rsaquo;](/target-platforms/boards)
 
 When you are ready to deploy more advanced prototypes or a production environment, running  your snaps on Ubuntu Core is the best option. Snaps are confined for stricter security and provide automated software updates so your app is always fresh and never broken.
 

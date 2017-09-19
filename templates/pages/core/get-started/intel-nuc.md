@@ -2,16 +2,20 @@
 title: Intel NUC
 image: https://assets.ubuntu.com/v1/a69b2863-intel+nuc.svg?fmt=png&w=150
 description: Ubuntu Core can be easily installed on other architectures like Intel® 64 bits.
+tags: nuc, intel, core, server, iot, 64
+distributions:
+  - Ubuntu Core 16
+  - Ubuntu Server 16.04 LTS
 ---
 # Intel NUC
 
-We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At the end of this process, you will have a board ready for production or testing snaps.
+## Ubuntu Core
 
-(As an alternative, you can also [install Ubuntu Server 16.04 LTS](#alternative-install:-ubuntu-server-16.04-lts)).
+We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At the end of this process, you will have a board ready for production or testing snaps.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-## Hardware and software requirements
+### Hardware and software requirements
 
  * An Intel® NUC
     * The NUC needs to have its BIOS updated to the latest version. For this, you can follow online instructions [on the Intel website](http://www.intel.com/content/www/us/en/support/boards-and-kits/000005850.html)
@@ -23,20 +27,20 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
  * An [Ubuntu Desktop 16.04.2 LTS image](http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-desktop-amd64.iso)
  * An Ubuntu Core image
 
-### Ubuntu Core image
+#### Ubuntu Core image
 
 [Ubuntu Core 16 image for Intel NUC](http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-amd64.img.xz)
 
  * MD5SUM:  f335673a2a386fc839cc68376bc8d6dd
 
-## Installation instructions
+### Installation instructions
 
-### Prepare installation medias
+#### Prepare installation medias
 
  1. Download and copy the Ubuntu Desktop 16.04.1 LTS image on the first USB flash drive by following the Live USB Ubuntu Desktop instuctions for [Ubuntu](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu) | [Windows](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows) | [Mac OS X](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx)
  * Download the Ubuntu Core image for Intel NUC and **copy the file** on the second USB flash drive
 
-### Boot from the Live USB flash drive
+#### Boot from the Live USB flash drive
 
  * Connect the USB hub, keyboard, mouse and the monitor to the NUC
  * Insert the Live USB Ubuntu Desktop flash drive in the NUC
@@ -44,7 +48,7 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
  * Select the USB flash drive as a boot option
  * Select "Try Ubuntu without installing”
 
-### Flash Ubuntu Core
+#### Flash Ubuntu Core
 
  * Once the system is ready, insert the second USB flash drive containging the Ubuntu Core image file
  * Open a terminal and type the following command to check for directories mounted on the internal storage:
@@ -61,9 +65,11 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
 
 {% include "includes/markdown/get_started_first_boot.md" %}
 
-## Alternative install: Ubuntu Server 16.04 LTS
+---
 
-As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, where you can use your favourite development tools to create and run snaps.
+## Ubuntu Server
+
+As an alternative to Ubuntu Core, you can install Ubuntu Server 16.04 LTS, where you can use your favourite development tools to create and run snaps.
 
 ### Ubuntu image
 

@@ -2,22 +2,26 @@
 title: Samsung Artik 5 or 10
 image: https://assets.ubuntu.com/v1/c5dfb2cb-samsung-artik.png?w=150
 description: Ubuntu Core runs smoothly on both small and large footprint boards.
+tags: samsung, artik, iot, core, server, armhf
+distributions:
+  - Ubuntu Core 16
+  - Ubuntu Server 16.04 LTS
 ---
 
 # Samsung Artik 5 or 10
 
-We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 or 10. At the end of this process, you will have a board ready for production or testing snaps.
+## Ubuntu Core
 
-(As an alternative, you can also [install Ubuntu Server 16.04 LTS](#alternative-install:-ubuntu-server-16.04-lts)).
+We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 or 10. At the end of this process, you will have a board ready for production or testing snaps.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-## Ubuntu Core image
+### Ubuntu Core image
 
  * [Ubuntu Core 16 image for Samsung Artik 5](http://people.canonical.com/~platform/snappy/artik/uc-series16-final-image/artik5.img.xz)
  * [Ubuntu Core 16 image for Samsung Artik 10](http://people.canonical.com/~platform/snappy/artik/uc-series16-final-image/artik10.img.xz)
 
-## Installation instructions
+### Installation instructions
 
  1. Copy the Ubuntu Core image on the SD card by following the [installation media instructions&nbsp;&rsaquo;](/core/get-started/installation-medias)
  * Prepare your Artik to boot from the SD card, by setting the "SW2" switches to 1:on and 2:on
@@ -26,7 +30,9 @@ We will walk you through the steps of flashing Ubuntu Core on a Samsung Artik 5 
 
 {% include "includes/markdown/get_started_first_boot.md" %}
 
-## Alternative install: Ubuntu Server 16.04 LTS
+---
+
+## Ubuntu Server
 
 As an alternative to Ubuntu Core, you can also install Ubuntu Server 16.04 LTS, where you can use your favourite development tools to create and run snaps.
 

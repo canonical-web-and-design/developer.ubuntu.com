@@ -3,7 +3,8 @@ _options:
 _options_local:
   nesting_limit: 0
 _items:
-  - target-platforms
+  - target-platforms:
+    - boards
   - core:
     - get-started:
       - installation-medias
