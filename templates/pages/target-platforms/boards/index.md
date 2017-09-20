@@ -14,6 +14,6 @@ summary_pages:
 
 # Boards
 
-All of these boards are supported with official Ubuntu images, but they may not have completed the Ubuntu Certification program. You can find Ubuntu Certified hardware at [certification.ubuntu.com (https://certification.ubuntu.com)
+All of these boards are supported with official Ubuntu images, but they may not have completed the Ubuntu Certification program. You can find Ubuntu Certified hardware at [certification.ubuntu.com](https://certification.ubuntu.com)
 
 ## Install Ubuntu on:
