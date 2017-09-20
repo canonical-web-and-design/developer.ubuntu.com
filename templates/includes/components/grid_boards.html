@@ -9,7 +9,7 @@
             <ul class="p-list--divided">
               {% for d in page.distributions %}
                 <li class="p-list__item  is-ticked">
-                    <!--
+                    {% comment %}
                     "d" can be a string (internal link) or a dict (external link)
                     for example:
 
@@ -17,14 +17,14 @@
                       - Ubuntu Core 16
                       - external: Ubuntu Fridge 16.04 LTS
                         link: https://install-instructions.com
-                    -->
+                    {% endcomment %}
                     {% if d.external %}
                       <a href="{{ d.link }}" class="external"> {{ d.external }}</a>
                     {% else %}
-                      <!--
+                      {% comment %}
                       Truncate and slugify title into fragment for internal links:
                       "Ubuntu Fridge 20.04 LTS" -> "page.path/#ubuntu-fridge"
-                      -->
+                      {% endcomment %}
                       <a href="{{ page.path }}#{{ d|truncatewords:2|slugify }}"> {{ d }}</a>
                     {% endif %}
                   </a>
