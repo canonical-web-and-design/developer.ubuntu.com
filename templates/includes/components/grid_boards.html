@@ -3,7 +3,7 @@
     {% for page in pages %}
         <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}">
           <h3>{{ page.title }}</h3>
-          <!-- Do not display tags on grid items -->
+          {% comment %} Do not display tags on grid items {% endcomment %}
           <p class="board-tags" style="display:none;">{{ page.tags }}</p>
           <div class="grid-list__description">
             <ul class="p-list--divided">
