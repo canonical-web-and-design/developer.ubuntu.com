@@ -2,16 +2,20 @@
 title: Intel Joule
 image: https://assets.ubuntu.com/v1/1f53b707-INTEL_JOULE-LOGO.png?w=200
 description: Ubuntu Core lets you interact and control complex hardware and modules.
+tags: armhf, intel, joule, core, desktop, iot
+distributions:
+  - Ubuntu Core 16
+  - Ubuntu Desktop 16.04 LTS
 ---
 # Intel Joule
 
-We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At the end of this process, you will have a board ready for production or testing snaps.
+## Ubuntu Core
 
-(As an alternative, you can also [install Ubuntu Desktop 16.04 LTS](#alternative-install:-ubuntu-desktop-16.04-lts))
+We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At the end of this process, you will have a board ready for production or testing snaps.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-## Hardware and software requirements
+### Hardware and software requirements
 
 * An Intel® Joule
     * The board needs to have its BIOS updated to version #193, which is available
@@ -25,13 +29,13 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 * An [Ubuntu Desktop 16.04.2 LTS image](http://releases.ubuntu.com/16.04.2/ubuntu-16.04.2-desktop-amd64.iso)
 * An Ubuntu Core image
 
-### Ubuntu Core image
+#### Ubuntu Core image
 
 [Ubuntu Core 16 image for Intel Joule](http://cdimage.ubuntu.com/ubuntu-core/16/stable/20170323/ubuntu-core-16-joule.img.xz)
 
 * MD5SUM: 03adc0bce55ed1d87c10f79bf5b7e2fa
 
-## Installation instructions
+### Installation instructions
 
 1. Download and copy the Ubuntu Desktop 16.04.1 LTS image on the first USB flash drive by following the Live USB Ubuntu Desktop instuctions for [Ubuntu](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu) | [Windows](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows) | [Mac OS X](https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx)
 * Download the Ubuntu Core image for Intel Joule and **copy the file** on the second USB drive
@@ -47,9 +51,11 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel Joule. At
 
 {% include "includes/markdown/get_started_first_boot.md" %}
 
-## Alternative install: Ubuntu Desktop 16.04 LTS
+---
 
-As an alternative to Ubuntu Core, you can also install Ubuntu Desktop 16.04 LTS, where you can use your favourite development tools to create and run snaps.
+## Ubuntu Desktop
+
+As an alternative to Ubuntu Core, you can install Ubuntu Desktop 16.04 LTS, where you can use your favourite development tools to create and run snaps.
 
 * The board needs to have its BIOS updated to version #193, which is available
 [here](https://downloadmirror.intel.com/26206/eng/joule-firmware-2017-02-19-193-public.zip). BIOS update instructions can be found [here](https://software.intel.com/en-us/flashing-the-bios-on-joule)

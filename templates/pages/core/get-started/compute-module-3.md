@@ -2,15 +2,20 @@
 title: Compute Module 3
 image: https://assets.ubuntu.com/v1/2d9f8097-Compute-Module-small-500x2802.jpg
 description: Ubuntu Core works on minimal setups, embed and go!
+tags: raspberry, pi, compute, embedded, iot, raspi, core, armhf
+distributions:
+  - Ubuntu Core 16
 ---
 
 # Compute Module 3
+
+## Ubuntu Core
 
 We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3. At the end of this process, you will have a board ready for production or testing snaps.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-## Hardware and software requirements
+### Hardware and software requirements
 
   * A Compute Module 3
   * A Compute Module IO board
@@ -21,15 +26,15 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
   * A USB hub to attach the keyboard and the RJ45 adaptor/WiFi dongle (note that the keyboard and display can be replaced with a serial cable connected directly to pins of the IO board)
   * An Ubuntu Core image
 
-### Ubuntu Core image
+#### Ubuntu Core image
 
 [Ubuntu Core 16 image for Compute Module 3](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz)
 
 * SHA256: 1c01130550b37447c7e345e234e337a16b7c58c1e1ceab64e15f0195bdc4e014
 
-## Installation instructions
+### Installation instructions
 
-### 1. On the host system: Ubuntu Desktop 16.04 or above
+#### 1. On the host system: Ubuntu Desktop 16.04 or above
 
  1. In a terminal, download the USBboot tool you will use to setup the board, and install its build dependencies:
 
@@ -44,7 +49,7 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
 
  * Once started, it will wait for the Compute Module to be attached to the machine.
 
-### 2. On the Compute Module IO board
+#### 2. On the Compute Module IO board
 
  1. Position the Compute Module on the IO board
  * Attach the USB hub, RJ45 adaptor, keyboard and monitor (HDMI) to the board
@@ -54,7 +59,7 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
      ![J15](https://assets.ubuntu.com/v1/2073d0aa-CM3_J15.JPG?w=300)
  * With the second micro USB to USB cable, power on the IO board.
 
-### 3. Back to the host system
+#### 3. Back to the host system
 
  1. The USBboot tool should have recognized the attached Compute Module and mounted the EMMC partition as a new device
  * Identify the device by opening the "Disks" application:

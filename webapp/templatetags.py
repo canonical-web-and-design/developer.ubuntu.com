@@ -47,6 +47,15 @@ def grid_cards(context, pages):
         'pages': page_data,
     }
 
+@register.inclusion_tag(
+    'includes/components/grid_boards.html', takes_context=True
+)
+def grid_boards(context, pages):
+    request = context['request']
+    page_data = _get_page_data(pages, request.path)
+    return {
+        'pages': page_data,
+    }
 
 @register.inclusion_tag(
     'includes/components/tutorial_cards.html'

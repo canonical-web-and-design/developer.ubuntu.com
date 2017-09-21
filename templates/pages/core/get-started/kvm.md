@@ -2,16 +2,21 @@
 title: KVM
 image: https://assets.ubuntu.com/v1/aa0e2566-kvm-logo.png?w=120
 description: Develop on target or on your Linux desktop, run Ubuntu Core in a virtual environment.
+tags: local, virtual, host, core
+distributions:
+  - Ubuntu Core 16
 ---
 # KVM
+
+## Ubuntu Core
 
 We will walk you through the steps of installing Ubuntu Core on your Linux desktop in a virtual machine.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
-## Installation instructions
+### Installation instructions
 
-### 1. Install KVM
+#### 1. Install KVM
 
 Install the qemu-kvm package with the following command:
 
@@ -25,7 +30,7 @@ Then, run the kvm-ok command to check KVM status and your hardware:
 
 This is the best outcome — it means that Ubuntu Core will run fast on your system, taking advantage of hardware acceleration in your CPU.
 
-### 2. Download Ubuntu Core
+#### 2. Download Ubuntu Core
 
 Download the [Ubuntu Core image for amd64](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-amd64.img.xz) and uncompress it with the following commands:
 
@@ -34,7 +39,7 @@ Download the [Ubuntu Core image for amd64](http://cdimage.ubuntu.com/ubuntu-core
 
 You have an image ready to boot.
 
-### 3. Launch KVM
+#### 3. Launch KVM
 
 You can now launch a virtual machine with KVM, using the following command:
 
@@ -47,7 +52,7 @@ Note that this command also sets up port redirections:
 
 You should see a window, with your Ubuntu Core virtual machine booting inside it.
 
-### 4. First boot
+#### 4. First boot
 
   1. The system will boot then become ready to configure
   2. The device will display the prompt “Press enter to configure”
@@ -58,7 +63,7 @@ You should see a window, with your Ubuntu Core virtual machine booting inside it
         Remote access was enabled via authentication with the SSO user <Ubuntu SSO user name>
         Public SSH keys were added to the device for remote access.
 
-#### User login
+##### User login
 
 Once setup is done, you can login with SSH into Ubuntu Core, using the following command:
 
@@ -67,12 +72,12 @@ Once setup is done, you can login with SSH into Ubuntu Core, using the following
 The user name is your Ubuntu SSO user name, it has been reminded to you at the
 end of the account configuration step.
 
-##### First boot tips
+###### First boot tips
 
   * During setup,` console-conf` will download the SSH key registered with your store account and configure it so you can log into the device via `ssh -p 8022 <Ubuntu SSO account name>@localhost` without a password.
   * There is no default `ubuntu` user on these images, but you can run `sudo passwd <account name>` to set a password in case you need a local console login.
 
-### 5. Install snaps
+#### 5. Install snaps
 
 Your virtual machine is ready to have snaps installed.
 

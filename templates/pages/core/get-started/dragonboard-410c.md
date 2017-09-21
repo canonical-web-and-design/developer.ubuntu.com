@@ -2,9 +2,14 @@
 title: DragonBoard 410c
 image: https://assets.ubuntu.com/v1/d9ccf84b-qualcoom.png?w=180
 description: Ubuntu Core helps you harness the power of boards tailored for the IoT ecosystem.
+tags: dragonboard, arm64, iot, core
+distributions:
+  - Ubuntu Core 16
 ---
 
 # DragonBoard 410c
+
+## Ubuntu Core
 
 We will walk you through the steps of flashing Ubuntu Core on a DragonBoard 410c. At the end of this process, you will have a board ready for production or testing snaps.
 

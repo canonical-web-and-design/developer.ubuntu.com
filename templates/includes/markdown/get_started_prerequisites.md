@@ -1,4 +1,4 @@
-## User account prerequisites
+### User account prerequisites
 
 An Ubuntu SSO account is required to create the first user on an Ubuntu Core installation.
 
