@@ -66,10 +66,7 @@ need 2 elements:
 
  1. Download the Ubuntu Core image for your device in your `Downloads` folder
 
- * If the Ubuntu Core image file you have downloaded ends with an `.xz` file extension, you will need to extract it first. To do so, you might have to install an archive extractor software, like [The
- Unarchiver](https://itunes.apple.com/gb/app/the-unarchiver/id425424353?mt=12)
-
- * Insert your SD card or USB flash drive
+  * Insert your SD card or USB flash drive
 
  * Open a terminal window (Go to Application -> Utilities, you will find the
 Terminal app there), then run the following command:
@@ -104,7 +101,7 @@ Terminal app there), then run the following command:
 
  * You can now copy the image to the SD card, using the following command:
 
-        sudo dd if=~/Downloads/<image file> of=<drive address> bs=32m
+        sudo sh -c 'xzcat ~/Downloads/<image file> | sudo dd of=<drive address> bs=32m'
 
       When finalised you will see the following message:
 
