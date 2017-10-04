@@ -43,12 +43,16 @@ You have an image ready to boot.
 
 You can now launch a virtual machine with KVM, using the following command:
 
-    kvm -smp 2 -m 1500 -netdev user,id=mynet0,hostfwd=tcp::8022-:22,hostfwd=tcp::8090-:80 -device virtio-net-pci,netdev=mynet0 -drive file=ubuntu-core-16-amd64.img,format=raw
+    kvm -smp 2 -m 1500 -netdev user,id=mynet0,hostfwd=tcp::8022-:22,hostfwd=tcp::8090-:80 -device virtio-net-pci,netdev=mynet0 -vga qxl -drive file=ubuntu-core-16-amd64.img,format=raw
 
 Note that this command also sets up port redirections:
 
 * `localhost:8022` is redirecting to port `22` of the virtual machine for accessing it through SSH
 * `localhost:8090` is redirecting to its port `80`
+
+Note this command is required for graphics such as mir-kiosk:
+
+* `-vga qxl` sets the paravirtual graphics driver qxl
 
 You should see a window, with your Ubuntu Core virtual machine booting inside it.
 
