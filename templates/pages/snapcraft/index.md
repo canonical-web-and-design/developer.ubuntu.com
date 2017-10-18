@@ -1,4 +1,4 @@
-----
+---
 title: Snapcraft
 description: Snapcraft summary page
 page_type: modular
@@ -6,8 +6,8 @@ insights_feed:
     tag: snapcraft
 tutorial_feed:
     categories:
-        - snapcraft
-----
+        - packaging
+---
 
 # Snapcraft
 

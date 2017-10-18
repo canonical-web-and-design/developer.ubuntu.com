@@ -4,8 +4,7 @@ description: A series of tutorials, step by step practical guides to help you ac
 page_type: modular
 tutorial_feed:
     categories:
-        - snap
-        - snapcraft
+        - iot
 ---
 
 # Tutorials
