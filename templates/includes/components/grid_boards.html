@@ -2,7 +2,7 @@
 <ul id="boardsGrid" class="grid-list u-clearfix col-12 u-no-padding--left u-no-margin--left">
     {% for page in pages %}
         <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}">
-          <h3>{{ page.title }}</h3>
+          <h3>{{ page.title|safe }}</h3>
           {% comment %} Do not display tags on grid items {% endcomment %}
           <p class="board-tags" style="display:none;">{{ page.tags }}</p>
           <div class="grid-list__description">
