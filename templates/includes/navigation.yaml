@@ -5,7 +5,7 @@ _options_local:
 _items:
   - target-platforms:
     - boards:
-      - up2
+      - up-squared
   - core:
     - get-started:
       - installation-medias

@@ -26,3 +26,7 @@ Booting the board from the USB flash drive will start the Ubuntu installer.
 1. Insert the USB flash drive in the Up2 board
 * Power on the board
 * The installer will start automatically. Follow the prompts to install Ubuntu Server on the on-board eMMC disk. You can refer to [this tutorial](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-server#4) for complete Ubuntu Server installation guidance.
+
+### Next steps
+
+Your board is ready to develop and run snaps, secured application packages tailored for IoT, this tutorial will show you [how to create your first snap](https://tutorials.ubuntu.com/tutorial/create-your-first-snap).
