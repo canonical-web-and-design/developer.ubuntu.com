@@ -1,7 +1,7 @@
 ---
-title: Intel Up&sup2;
+title: Intel Up²
 image: https://assets.ubuntu.com/v1/1f53b707-INTEL_JOULE-LOGO.png?w=200
-description: The Up&sup2; board by Intel
+description: The Up² board by Intel
 tags: intel, server, lts, desktop, iot
 distributions:
   - Ubuntu Server 16.04 LTS

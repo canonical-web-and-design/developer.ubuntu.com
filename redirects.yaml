@@ -14,3 +14,7 @@
 (en/|zh-cn/)?snappy/guides/security-whitepaper/?: /core/documentation
 (en/|zh-cn/)?/snappy/guides/mir-snaps/?: /core/examples/snaps-on-mir
 (en/|zh-cn/)?/snappy/build-apps/? : /snapcraft
+
+# Boards
+intel/? : /target-platforms/boards#intel
+intel/up-squared/? : /target-platforms/boards/up-squared
