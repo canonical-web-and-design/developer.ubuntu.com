@@ -50,7 +50,7 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
 
 #### Flash Ubuntu Core
 
- * Once the system is ready, insert the second USB flash drive containging the Ubuntu Core image file
+ * Once the system is ready, insert the second USB flash drive containing the Ubuntu Core image file
  * Open a terminal and type the following command to check for directories mounted on the internal storage:
 
         mount | grep mmcblk
