@@ -15,7 +15,7 @@ We will walk you through the steps of installing Ubuntu Server on the Intel Up &
 
 ### Ubuntu image
 
-Intel provides a modified Ubuntu Server 16.04.3 LTS image shipped with a custom 4.10 kernel and tools from the Intel IoT Developer Kit such as MRAA and UPM.
+Intel provides a modified Ubuntu Server 16.04.3 LTS image shipped with a custom 4.10 kernel and the Intel IoT Developer Kit.
 
 * [Up&sup2; - Ubuntu Server 16.04 LTS image](https://up-community.org/media/ms1-release/ubuntu-16.04.3-server-upboard-201017-rc1-amd64.iso)
 
