@@ -51,6 +51,8 @@ a:link:hover {
 .grid-list {
   $grid-border-style: 1px dotted $color-mid-light;
 
+  list-style-type: none;
+
   @media only screen and (min-width: $breakpoint-medium) {
     display: flex;
     flex-wrap: wrap;
@@ -182,5 +184,3 @@ a:link:hover {
 .is-visible {
   display: block;
 }
-
-
