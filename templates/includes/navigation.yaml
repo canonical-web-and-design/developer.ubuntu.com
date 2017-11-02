@@ -4,7 +4,8 @@ _options_local:
   nesting_limit: 0
 _items:
   - target-platforms:
-    - boards
+    - boards:
+      - up-squared
   - core:
     - get-started:
       - installation-medias

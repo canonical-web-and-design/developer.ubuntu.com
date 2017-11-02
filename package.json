@@ -5,9 +5,17 @@
     "vanilla-docs-theme": "^1.5.3"
   },
   "scripts": {
-    "build": "node-sass --include-path node_modules static/sass --output static/css",
-    "watch": "node-sass --include-path node_modules --source-map true --watch static/sass --output static/css",
+    "build": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace static/css/**/*.css && postcss --use cssnano --dir static/css/minified static/css/**/*.css",
+    "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "test": "sass-lint static/**/*.scss --verbose --no-exit",
-    "clean": "rm -rf node_modules yarn-error.log static/css *.log *.sqlite"
+    "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle"
+  },
+  "dependencies": {
+    "watch-cli": "^0.2.2",
+    "sass-lint": "^1.10.2",
+    "postcss-cli": "^4.1.0",
+    "node-sass": "^4.5.3",
+    "cssnano": "^3.10.0",
+    "autoprefixer": "^6.3.1"
   }
 }
