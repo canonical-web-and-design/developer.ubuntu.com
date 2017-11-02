@@ -17,7 +17,7 @@ We will walk you through the steps of installing Ubuntu Server on the Intel Up &
 
 Intel provides a modified Ubuntu Server 16.04.3 LTS image shipped with a custom 4.10 kernel and the Intel IoT Developer Kit.
 
-* [Up&sup2; - Ubuntu Server 16.04 LTS image](https://up-community.org/media/ms1-release/ubuntu-16.04.3-server-upboard-201017-rc1-amd64.iso)
+* [Up&sup2; - Ubuntu Server 16.04 LTS image - Release candidate 1](https://up-community.org/media/ms1-release/ubuntu-16.04.3-server-upboard-201017-rc1-amd64.iso)
 
 Download and copy the image to a USB flash drive by following the installation media instructions for: [Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu), [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows) or [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos).
 
