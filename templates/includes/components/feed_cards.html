@@ -7,9 +7,9 @@
     <ul class="p-list u-no-padding--left u-no-margin--left">
       {% for item in feed %}
         <li class="cards__item col-4">
-          <a class="cards__link" href="{{ item.link }}">
+          <a class="cards__link" href="{{ item.link }}" title="{{ item.title }}">
             <div class="p-card--highlighted">
-              <h3 class="p-card--highlighted__title">{{ item.title|safe }}</h3>
+              <h3 class="p-card--highlighted__title">{{ item.title|truncatechars:50|safe }}</h3>
               <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
               <p class="p-card--highlighted__content">{{ item.description|truncatechars:80|safe }}</p>
               <p class="note p-card--highlighted__source">Ubuntu Insights</p>
