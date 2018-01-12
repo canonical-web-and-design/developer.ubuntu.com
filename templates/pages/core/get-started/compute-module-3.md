@@ -30,7 +30,7 @@ We will walk you through the steps of flashing Ubuntu Core on a Compute Module 3
 
 [Ubuntu Core 16 image for Compute Module 3](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-cm3.img.xz)
 
-* SHA256: 1c01130550b37447c7e345e234e337a16b7c58c1e1ceab64e15f0195bdc4e014
+Once downloaded, you can verify the integrity of the file by following [this tutorial](https://tutorials.ubuntu.com/tutorial/tutorial-how-to-verify-ubuntu), using the [SHA256SUM](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/SHA256SUMS) and [SHA256SUM.gpg](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/SHA256SUMS.gpg) files.
 
 ### Installation instructions
 
