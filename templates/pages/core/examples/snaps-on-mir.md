@@ -3,31 +3,32 @@ title: Run a kiosk snap on Ubuntu Core
 description: How to create a kiosk snap running on top of Mir
 ----
 
-# Run a kiosk snap on Ubuntu Core
+# Running a kiosk on Ubuntu Core
 
 This example is ideal for someone seeking to build a kiosk-style device with Ubuntu Core. It showcases a set of Qt applications as examples apps you could run on a kiosk.
 
-This example has been tested on amd64 kvm-qemu based VM, armhf/RPi3 and arm64/dragonboard. To install Ubuntu Core on one of these devices, see the [Get Started](../get-started) section.
+These examples have been tested on the following devices: amd64 kvm-qemu based VM, armhf/Raspberry Pi 3 and arm64/dragonboard 410c. To install Ubuntu Core on one of these devices, see the [Get Started](../get-started) section.
 
-**Note:** for RPi2 and RPi3, GPU support is not yet in the stable Ubuntu Core image, you will need to use the [daily edge image](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/)
+**Note:** for RPi2 and RPi3, GPU support is not yet in the stable Ubuntu Core image, you will need to use the [daily edge image](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/).
 
-## Quick Start to Experience
+## Quick Demo
 
-Download the [latest Ubuntu Core stable image](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/) and install it. Once you have your Ubuntu Core image running on your desired device/VM, SSH into it and install the mir snaps in this particular order:
+Download the [latest Ubuntu Core stable image](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/) or the latest [daily edge image for RPi2/3](http://cdimage.ubuntu.com/ubuntu-core/16/edge/current/) and install it. Once you have your Ubuntu Core image running on your desired device/VM, SSH into it and install the mir-kiosk and mir-kiosk-apps snaps in this particular order:
 
 ``` bash
-snap install mir-libs --channel=edge
-snap install mir-kiosk --channel=edge
-snap install mir-kiosk-apps --channel=edge
+snap install mir-kiosk --channel=beta
+snap install mir-kiosk-apps --channel=beta
 ```
 
-Once this is done, to start a client application, you need to use the `snap set` command. For instance, the RSSNews app:
+Once this is done, the photoviewer application should start automatically.
+
+There are other examples included. To change applications you need to use the `snap set` command. For instance, to bring up the RSSNews app:
 
 ``` bash
 snap set mir-kiosk-apps app=rssnews
 ```
 
-To see the list of what potential clients exist, just enter the `snap set` command with an empty value, like so:
+To see the list of available apps, just enter the `snap set` command with an empty value, like this:
 
 ``` bash
 snap set mir-kiosk-apps app=" "
@@ -41,7 +42,7 @@ Once you set an app, it will start on the display connected to your device:
 
 ### Introduction
 
-The mir-kiosk-apps snap is an example of a mir client, which you can use as a template to copy in order to create your own client applications.
+The mir-kiosk-apps snap is an example of a mir client, which you can use as a template to create your own client applications.
 
 Ubuntu Core provides a solution for GL/GLES drivers to be hosted by the core and accessed by snaps. With this solution in place, you can build an app using GLES on one platform and run on another. For instance, build on Intel and run on Nvidia, or vice versa. Please let the snap team know if you discover any issues around this.
 
@@ -83,16 +84,15 @@ Now, to import the image you just uncompressed:
 * You can leave the other defaults. Once you select your way forward, it should launch another window with your Ubuntu Core image VM running in it.
 * Once the system boots, it will provide you a prompt to walk you through the Ubuntu Core first boot setup. At the end of the process, an IP address and user name will be provided for you to SSH into your device or VM.
 
-### 2. Install the mir-libs and mir-kiosk snaps
+### 2. Install the mir-kiosk snap
 
-Install both the mir-kiosk and mir-libs snaps with the following commands via SSH into your device or VM. Note that the installation order matters:
+Install the mir-kiosk snap with the following commands via SSH into your device or VM.
 
 ``` bash
-ssh$ snap install mir-libs --channel=edge
-ssh$ snap install mir-kiosk --channel=edge
+ssh$ snap install mir-kiosk --channel=beta
 ```
 
-The mir-kiosk should launch, resulting in a black screen with a mouse cursor.
+mir-kiosk should launch, resulting in a black screen with a mouse cursor.
 
 ### 3. Get the mir-kiosk-apps snap running
 
@@ -107,13 +107,13 @@ sudo apt install snapcraft
 Now clone the mir-kiosk-apps snap branch.
 
 ``` bash
-git clone -b master https://git.launchpad.net/mir-kiosk-apps
+git clone https://github.com/MirServer/mir-kiosk-apps
 cd mir-kiosk-apps
 ```
 
 For the purposes of building your own client-application to run on mir-kiosk, I recommend reading through 2 files in this branch: `snapcraft.yaml` and `mir-kiosk-app-daemon`. The `snapcraft.yaml` can be inspected for guidelines on what stage packages are being used. The `mir-kiosk-app-daemon` file can be used to determine which environment variables need to be set and you may also modify the last lines to change the example application called.
 
-Run snapcraft to build the snap:
+Run snapcraft to build the snap - remember we are building this on a Xenial 16.04 host:
 
 ```bash
 snapcraft
@@ -128,36 +128,13 @@ scp mir-kiosk-apps*.snap <username>@<IP address>:/home/<username>
 Then SSH to the device or VM and install it:
 
 ``` bash
-ssh$ snap install mir-kiosk-apps*.snap
+ssh$ snap install mir-kiosk-apps*.snap --dangerous
 ```
-
-Due to the mir-kiosk-apps being from another provider (you in this case), you will need to manually connect the mir-kiosk-apps snap to the mir-libs interface.
-
-``` bash
-ssh$ snap disable mir-kiosk-apps
-ssh$ snap connect mir-kiosk-apps:mir-libs mir-libs:mir-libs
-ssh$ snap enable mir-kiosk-apps
-```
-
-Once this is done, to start a client application, you need to use the `snap set` command. For instance, the RSS News app:
-
-``` bash
-snap set mir-kiosk-apps app=rssnews
-```
-
-To see the list of what potential clients exist, just enter the `snap set` command with an empty value, like so:
-
-``` bash
-snap set mir-kiosk-apps app=" "
-```
+Once this is done, the photoviewer application should start automatically. 
 
 ### Tips
 
-* Check or tail `/var/log/syslog` if something isn’t launching or running as expected.
-
-* If you run out of memory from loading too many snaps, you can also grow your image size.
-
-        sudo qemu-img resize xenial_core_amd64.img +1G
+* Check the target's systemd journal  `journalctl` if something isn’t launching or running as expected.
 
 * To stop or start the app snap:
 
@@ -181,9 +158,8 @@ snap set mir-kiosk-apps app=" "
 
 ### Resources
 
-The various projects used for building mir-libs, mir-kiosk, mir-kiosk-apps, mir-demos-snap are located here:
+The projects used for building mir-kiosk and mir-kiosk-apps are located here:
 
-* [https://launchpad.net/mir-libs-snap](https://launchpad.net/mir-libs-snap)
-* [https://launchpad.net/mir-kiosk](https://launchpad.net/mir-kiosk)
-* [https://launchpad.net/mir-kiosk-apps](https://launchpad.net/mir-kiosk-apps)
-* [https://launchpad.net/mir-demos-snap](https://launchpad.net/mir-demos-snap)
+
+* [https://github.com/MirServer/mir-kiosk-apps](https://github.com/MirServer/mir-kiosk-apps)
+* [https://github.com/MirServer/mir-kiosk](https://github.com/MirServer/mir-kiosk)
