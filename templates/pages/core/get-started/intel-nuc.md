@@ -29,9 +29,9 @@ We will walk you through the steps of flashing Ubuntu Core on an Intel NUC. At t
 
 #### Ubuntu Core image
 
-[Ubuntu Core 16 image for Intel NUC](http://releases.ubuntu.com/ubuntu-core/16/ubuntu-core-16-amd64.img.xz)
+[Ubuntu Core 16 image for Intel NUC](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/ubuntu-core-16-amd64.img.xz)
 
- * MD5SUM:  f335673a2a386fc839cc68376bc8d6dd
+Once downloaded, you can verify the integrity of the file by following [this tutorial](https://tutorials.ubuntu.com/tutorial/tutorial-how-to-verify-ubuntu), using the [SHA256SUM](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/SHA256SUMS) and [SHA256SUM.gpg](http://cdimage.ubuntu.com/ubuntu-core/16/stable/current/SHA256SUMS.gpg) files.
 
 ### Installation instructions
 
