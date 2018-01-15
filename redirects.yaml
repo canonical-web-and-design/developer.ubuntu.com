@@ -14,6 +14,7 @@
 (en/|zh-cn/)?snappy/guides/security-whitepaper/?: /core/documentation
 (en/|zh-cn/)?/snappy/guides/mir-snaps/?: /core/examples/snaps-on-mir
 (en/|zh-cn/)?/snappy/build-apps/? : /snapcraft
+(en/|zh-cn/)?/snappy/start/raspberry-pi-2 : /core/get-started/raspberry-pi-2-3
 
 # Boards
 intel/? : /target-platforms/boards#intel
