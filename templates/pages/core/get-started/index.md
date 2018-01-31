@@ -4,11 +4,12 @@ description: Your Ubuntu Core first steps, installing Ubuntu Core on your board 
 page_type: summary
 summary_pages:
     - raspberry-pi-2-3
-    - intel-joule
     - compute-module-3
+    - orange-pi-zero
     - dragonboard-410c
     - intel-nuc
     - artik-5-10
+    - intel-joule
     - kvm
 ---
 
