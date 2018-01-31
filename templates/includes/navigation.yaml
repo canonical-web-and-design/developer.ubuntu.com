@@ -10,6 +10,7 @@ _items:
     - get-started:
       - installation-medias
       - raspberry-pi-2-3
+      - orange-pi-zero
       - intel-joule
       - compute-module-3
       - dragonboard-410c
