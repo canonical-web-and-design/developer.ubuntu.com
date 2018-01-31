@@ -10,7 +10,7 @@ distributions:
 
 ## Ubuntu Core
 
-We will walk you through the steps of flashing Ubuntu Core on an OrangePi Zero. At the end of this process, you will have a board ready for production or testing snaps.
+We will walk you through the steps of flashing Ubuntu Core on an Orange Pi Zero. At the end of this process, you will have a board ready for production or testing snaps.
 
 {% include "includes/markdown/get_started_prerequisites.md" %}
 
