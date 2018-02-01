@@ -42,6 +42,11 @@
 @include developer-p-layout;
 @include developer-p-navigation;
 
+
+html {
+  overflow-x: hidden !important;
+}
+
 a:hover,
 a:visited:hover,
 a:link:hover {
