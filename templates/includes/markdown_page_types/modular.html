@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if insights_feed %}
-    <div class="cards p-strip">
+    <div class="p-strip is-shallow">
         {% with "https://insights.ubuntu.com/feed?tag="|add:insights_feed.tag as feed_url %}
             {% feed_cards feed_url limit=3 %}
         {% endwith %}
@@ -17,7 +17,7 @@
 {% endif %}
 
 {% if tutorial_feed %}
-    <div class="cards p-strip">
+    <div class="p-strip is-shallow">
         {% tutorial_cards tutorial_feed %}
     </div>
 {% endif %}
