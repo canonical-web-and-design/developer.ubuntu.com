@@ -1,0 +1,16 @@
+@mixin developer-p-matrix {
+  // XXX Caleb 06/02/2018 Modifier to Matrix pattern so images are large
+  .p-matrix {
+    &__img {
+      &-container {
+        min-height: 5rem;
+        padding: 0.5rem 0 1rem 0;
+      }
+
+      &--large {
+        @extend .p-matrix__img;
+        max-width: 100%;
+      }
+    }
+  }
+}

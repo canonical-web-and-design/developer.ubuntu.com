@@ -1,6 +1,126 @@
-@mixin developer-p-cards {
-  .p-card--featured {
-    @include p-card;
-    background: $color-light;
+@mixin developer-p-card {
+  // XXX Caleb 05/02/2018 Custom styling for insights feed cards, and tutorial feed cards
+  .p-card--post {
+    @extend .p-card--highlighted;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    > .p-card__content {
+      border-top: 1px dotted $color-mid-light;
+      flex-shrink: 0;
+      margin: 0 $sp-x-small;
+      padding: $sp-x-small;
+
+      > h3, p {
+        margin: $sp-x-small 0;
+      }
+
+      > a {
+        display: block;
+        margin: $sp-x-small 0 $sp-medium 0;
+        min-height: 11rem;
+
+        @media only screen and (min-width: $breakpoint-medium) {
+          margin: $sp-x-small 0;
+        }
+      }
+    }
+
+    > .p-card__footer {
+      border-top: 1px dotted $color-mid-light;
+      font-size: .875rem;
+      margin: auto $sp-x-small 0;
+      max-width: inherit;
+      padding: $sp-medium $sp-x-small;
+    }
+  }
+
+  .p-card__footer {
+    border-top: 1px solid $color-mid-light;
+    margin-top: auto;
+    padding-top: 1rem;
+
+    &--tutorials {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+      padding: 1rem;
+    }
+  }
+
+  .p-card__header--insights {
+    border-radius: 2px;
+    border-top: 3px solid $color-mid-light;
+    padding: .875rem $sp-medium;
+  }
+
+  .p-card__header--tutorials {
+    background: url('#{$assets-path}a88aa78c-card_background.png') no-repeat right bottom;
+    background-size: cover;
+    border-radius: 2px 2px 0 0;
+    color: $color-x-light;
+    padding: 1rem;
+  }
+
+  .p-card__link {
+    &::after {
+      display: none;
+    }
+  }
+
+  .p-card__group-header {
+    background: transparent url(https://assets.ubuntu.com/v1/9334aabe-external-link-cool-grey.svg) no-repeat scroll left center/16px auto;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding-left: 22px;
+    text-transform: uppercase;
+  }
+
+  .tutorial-card {
+    &__header {
+      background: url('#{$assets-path}a88aa78c-card_background.png') no-repeat right bottom;
+      background-size: cover;
+      border-radius: 2px 2px 0 0;
+      color: $color-x-light;
+      min-height: 120px;
+      padding: 1rem;
+    }
+
+    &__duration {
+      display: inline-block;
+      margin-top: 0;
+      padding-left: 0.5rem;
+    }
+
+    &__difficulty {
+      background-image: url('#{$assets-path}19c4273e-level+of+difficulty.svg');
+      background-position-y: 5px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      text-indent: -99999px;
+      width: 75px;
+    }
+
+    &__difficulty--1 {
+      background-position-x: -60px;
+    }
+
+    &__difficulty--2 {
+      background-position-x: -45px;
+    }
+
+    &__difficulty--3 {
+      background-position-x: -30px;
+    }
+
+    &__difficulty--4 {
+      background-position-x: -15px;
+    }
+
+    &__difficulty--5 {
+      background-position-x: -0;
+    }
   }
 }
