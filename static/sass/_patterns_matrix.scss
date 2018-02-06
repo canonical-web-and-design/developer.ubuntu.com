@@ -4,11 +4,11 @@
     &__img {
       &-container {
         min-height: 5rem;
-        padding: 0.5rem 0 1rem 0;
+        padding: .5rem 0 1rem 0;
       }
 
       &--large {
-        @extend .p-matrix__img;
+        @extend .p-matrix__img; // sass-lint:disable-line placeholder-in-extend
         max-width: 100%;
       }
     }

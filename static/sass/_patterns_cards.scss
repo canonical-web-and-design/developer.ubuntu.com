@@ -1,7 +1,7 @@
 @mixin developer-p-card {
   // XXX Caleb 05/02/2018 Custom styling for insights feed cards, and tutorial feed cards
   .p-card--post {
-    @extend .p-card--highlighted;
+    @extend .p-card--highlighted; // sass-lint:disable-line placeholder-in-extend
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -12,7 +12,11 @@
       margin: 0 $sp-x-small;
       padding: $sp-x-small;
 
-      > h3, p {
+      > h3 {
+        margin: $sp-x-small 0;
+      }
+
+      > p {
         margin: $sp-x-small 0;
       }
 
@@ -70,8 +74,8 @@
   }
 
   .p-card__group-header {
-    background: transparent url(https://assets.ubuntu.com/v1/9334aabe-external-link-cool-grey.svg) no-repeat scroll left center/16px auto;
-    color: #666;
+    background: transparent url('#{$assets-path}9334aabe-external-link-cool-grey.svg') no-repeat scroll left center / 16px auto;
+    color: $color-mid-dark;
     font-size: 1rem;
     margin-bottom: 0;
     padding-left: 22px;
@@ -91,7 +95,7 @@
     &__duration {
       display: inline-block;
       margin-top: 0;
-      padding-left: 0.5rem;
+      padding-left: .5rem;
     }
 
     &__difficulty {
