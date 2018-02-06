@@ -1,9 +1,25 @@
-<ul class="grid-list u-clearfix col-12 u-no-padding--left u-no-margin--left">
-    {% for page in pages %}
-        <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}{% cycle ' odd' ' even' %}">
-            {% if page.image %}<div class="grid-list__image-container"><img class="grid-list__image" alt="{{ page.title }} logo" src="{{ page.image }}"></div>{% endif %}
-            <div class="grid-list__description"><p>{{ page.description }}</p></div>
-            <p class=""><a href="{{ page.path }}">Get started on {{ page.title }} &rsaquo;</a></p>
-        </li>
-    {% endfor %}
+<ul class="p-matrix">
+  {% for page in pages %}
+  <li class="p-matrix__item">
+    <div class="p-matrix__content">
+      {% if page.image %}
+      <div class="p-matrix__img-container">
+        <a href="{{ page.path }}"><img class="p-matrix__img--large" alt="{{ page.title }} logo" src="{{ page.image }}" /></a>
+      </div>
+      {% endif %}
+      <div class="p-matrix__desc">
+        <p>{{ page.description }}</p>
+        <p><a href="{{ page.path }}">Get started on {{ page.title }}&nbsp;&rsaquo;</a></p>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+  {% if not pages|length|divisibleby:3 %}
+    {% if pages|length == 2 or pages|length == 5 or pages|length == 8 or pages|length == 11 %}
+    <li class="p-matrix__item"></li>
+    {% else %}
+    <li class="p-matrix__item"></li>
+    <li class="p-matrix__item"></li>
+    {% endif %}
+  {% endif %}
 </ul>

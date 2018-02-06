@@ -3,12 +3,8 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block main_content %}
-<div class="row">
-
-    {% block inner_content %}
-        {% block markdown %}{% endblock %}
-        {% block after_markdown %}{% endblock %}
-    {% endblock %}
-
-</div>
+  {% block inner_content %}
+    {% block markdown %}{% endblock %}
+    {% block after_markdown %}{% endblock %}
+  {% endblock %}
 {% endblock main_content %}
