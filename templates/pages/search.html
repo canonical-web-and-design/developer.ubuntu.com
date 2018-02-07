@@ -3,17 +3,13 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
-<div class="row row-hero no-border search-container">
-    <div class="strip-inner-wrapper">
-        <h1>Search this site</h1>
-
-        <form action="/search" class="search">
-            <label for="search-input" class="search__label">Search</label>
-            <input name="q" id="search-input" type="search" value="{{ query }}" placeholder="e.g. juju" class="search__field" />
-            <button class="search__submit" type="submit">
-                <img class="search__image" src="{{ ASSET_SERVER_URL }}19750a6d-search-black.svg" alt="search" />
-            </button>
-        </form>
+<div class="row u-no-margin--left">
+  <h1>Search this site</h1>
+  <form action="/search" class="p-search-box">
+    <input name="q" id="search-input" type="search" value="{{ query }}" class="p-search-box__input" placeholder="Search">
+    <button type="reset" class="p-search-box__reset" alt="reset"><i class="p-icon--close"></i></button>
+    <button type="submit" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+  </form>
 
 {% if query %}
     {% if error %}
@@ -86,6 +82,5 @@
         {% endif %} {# results #}
     {% endif %}
 {% endif %} {# query #}
-    </div>
 </div>
 {% endblock content %}

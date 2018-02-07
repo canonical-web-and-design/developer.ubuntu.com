@@ -1,191 +1,46 @@
 @charset 'utf-8';
 
-// import global settings
-@import 'global-settings';
-
 // Settings
 @import
-'settings_breakpoints',
-'settings_colors';
+'settings';
 
-// import vanilla theme
-@import 'vanilla-docs-theme/scss/theme';
-@include vanilla-docs-theme;
+// Import vanilla theme
+@import 'vanilla-framework/scss/build';
+@include vanilla;
 
-// vendors
+// Vendors
 @import
 '../components/canonical-global-nav/src/sass/main';
-
-@import
-'sidebar-nav',
-'search';
-
-@import 'cards';
 
 // Patterns
 @import
 'patterns_cards',
-'patterns_divider',
 'patterns_global-nav',
-'patterns_footer',
-'patterns_layout',
+'patterns_matrix',
 'patterns_navigation';
 
-
-// Include all the CSS
-
-// Patterns
-@include developer-p-cards;
-@include theme-p-divider;
-@include developer-p-footer;
+@include developer-p-card;
 @include developer-p-global-nav;
-@include developer-p-layout;
+@include developer-p-matrix;
 @include developer-p-navigation;
 
-
-html {
-  overflow-x: hidden !important;
-}
-
-a:hover,
-a:visited:hover,
-a:link:hover {
-  border-bottom-color: currentcolor;
-}
-
-.grid-list {
-  $grid-border-style: 1px dotted $color-mid-light;
-
-  list-style-type: none;
-
-  @media only screen and (min-width: $breakpoint-medium) {
+// Wrapper components for docs layout
+.p-layout {
+  &__wrap {
     display: flex;
-    flex-wrap: wrap;
-  }
+    flex-direction: column;
+    margin-top: 0;
 
-  & &__image-container {
-    align-self: center;
-    display: flex;
-    margin-bottom: 1rem;
-    min-height: 7rem;
-  }
-
-  & &__image {
-    align-self: center;
-    flex: 0 0 auto;
-  }
-
-  & &__item {
-    border-bottom: $grid-border-style;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-
-    &.odd {
-      padding-left: 0;
-    }
-
-    @media only screen and (max-width: $breakpoint-medium) {
-      > [class*='col-'] {
-        // scss-lint:disable NestingDepth
-        &:first-child {
-          padding-right: $grid-gutter-width;
-          width: 25%;
-        }
-
-        &:last-child {
-          width: 75%;
-        }
-        // scss-lint:enable NestingDepth
-      }
-    }
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      border-right: $grid-border-style;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 1.5rem $grid-gutter-width 1.5rem;
-
-      &.last-col,
-      &:nth-child(even) {
-        border-right: 0;
-        margin-bottom: 0;
-      }
-
-      &.last-row,
-      &.last-item {
-        border-bottom: 0;
-      }
+    @media only screen and (min-width: $breakpoint-navigation-threshold) {
+      flex-direction: row;
     }
   }
 
-  .last-item:nth-last-child(-n+2) {
-    border-bottom: 0;
-  }
+  &__main {
+    padding: 0 1rem 1rem 1rem;
 
-  @media only screen and (min-width: $breakpoint-medium) {
-    .odd:nth-last-child(-n+2) {
-      border-bottom: 0;
+    @media only screen and (min-width: $breakpoint-navigation-threshold) {
+      padding: 2rem;
     }
   }
-}
-
-// tutorial-intro
-.tutorial-intro {
-  &__item {
-    align-items: flex-start;
-    display: flex;
-    position: relative;
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      display: block;
-
-      &::before {
-        background: url('#{$assets-path}5769a7c0-image-intro-dots.svg');
-        content: ' ';
-        display: block;
-        height: 5px;
-        left: -12%;
-        position: absolute;
-        top: 49px;
-        transition: 1s;
-        width: 20%;
-
-        @media only screen and (min-width: $breakpoint-large) {
-          left: -22%;
-          width: 39%;
-        }
-      }
-    }
-
-    &:first-child::before {
-      display: none;
-    }
-  }
-
-  &__title {
-    font-size: 1.0625rem;
-    margin-bottom: .5rem;
-    text-transform: uppercase;
-  }
-
-  &__image {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin-right: $grid-gutter-width;
-
-
-    @media only screen and (min-width: $breakpoint-medium) {
-      margin: 0 auto;
-      padding-bottom: 2rem;
-    }
-
-    @media only screen and (min-width: $breakpoint-large) {
-      padding-bottom: 2.5rem;
-    }
-  }
-}
-
-.is-visible {
-  display: block;
 }

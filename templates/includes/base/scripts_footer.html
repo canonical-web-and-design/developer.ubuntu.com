@@ -1,28 +1,13 @@
 {% load versioned_static %}
 <script>
-  /* Setup sticky table of contents */
-  var toc = document.querySelector('.p-toc');
-  if (toc) {
-    window.addEventListener(
-      'scroll',
-      function(scrollEvent) {
-        toc.classList.toggle(
-          'fixed',
-          window.innerWidth >= 768 && window.scrollY > 50
-        );
-      }
-    );
-  }
-
   /* Global navigation */
   ubuntu.globalNav.setup();
 
   /* External links classes */
-  var links = document.querySelector('.p-layout__inner').querySelectorAll('a');
+  var links = document.querySelector('main').querySelectorAll('a');
   links.forEach(function(link) {
 	if (link.hostname && link.hostname != location.hostname) {
 	  link.className += ' p-link--external';
 	}
   });
 </script>
-

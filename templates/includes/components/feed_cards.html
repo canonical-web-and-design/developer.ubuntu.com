@@ -1,23 +1,30 @@
 {% get_rss_feed feed_url limit=limit as feed %}
 
-<div class="col-12 cards__container">
-  <h2 class="cards__title">Latest news</h2>
+<div class="col-12">
+  <h2 class="p-card__group-header">Latest news</h2>
 
   {% if feed %}
-    <ul class="p-list u-no-padding--left u-no-margin--left">
+    <div class="row u-equal-height u-no-margin--left u-no-padding--left">
       {% for item in feed %}
-        <li class="cards__item col-4">
-          <a class="cards__link" href="{{ item.link }}" title="{{ item.title }}">
-            <div class="p-card--highlighted">
-              <h3 class="p-card--highlighted__title">{{ item.title|truncatechars:50|safe }}</h3>
-              <p class="p-card--highlighted__date"><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime|date:"j F Y" }}</time></p>
-              <p class="p-card--highlighted__content">{{ item.description|truncatechars:80|safe }}</p>
-              <p class="note p-card--highlighted__source">Ubuntu Insights</p>
-            </div>
-          </a>
-        </li>
+        <div class="col-4 p-card--post">
+          <header class="p-card__header--insights">
+            <h3 class="p-muted-heading">
+              {{ item.category }}
+            </h3>
+          </header>
+          <div class="p-card__content">
+            <h3 class="p-heading--five">
+              <a class="p-card__link" href="{{ item.link }}" title="{{ item.title }}">
+                {{ item.title | safe }}
+              </a>
+            </h3>
+            <small><time pubdate datetime="{{ item.updated }}">{{ item.updated_datetime | date:"j F Y" }}</time></small>
+            <p>{{ item.description | truncatechars:125 | safe }}</p>
+          </div>
+          <p class="p-card__footer">Ubuntu Insights</p>
+        </div>
       {% endfor %}
-    </ul>
+    </div>
   {% else %}
     <p>Feed failed to load. If you have time, please <a href="https://github.com/canonical-websites/developer.ubuntu.com/issues/new">file an issue</a>.</p>
   {% endif %}

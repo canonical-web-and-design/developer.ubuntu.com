@@ -1,38 +1,40 @@
-<input type="search" id="searchBoards" placeholder="Search boards" oninput="filterBoardsList()">
-<ul id="boardsGrid" class="grid-list u-clearfix col-12 u-no-padding--left u-no-margin--left">
-    {% for page in pages %}
-        <li class="col-6 grid-list__item{% if forloop.last %} last-item{% endif %}">
-          <h3>{{ page.title|safe }}</h3>
-          {% comment %} Do not display tags on grid items {% endcomment %}
-          <p class="board-tags" style="display:none;">{{ page.tags }}</p>
-          <div class="grid-list__description">
-            <ul class="p-list--divided">
-              {% for d in page.distributions %}
-                <li class="p-list__item  is-ticked">
-                  {% comment %}
-                  "d" can be a string (internal link) or a dict (external link)
-                  for example:
+<form class="p-search-box" style="max-width: 35em" onsubmit="return false">
+  <input type="search" id="searchBoards" class="p-search-box__input" name="search" placeholder="Search boards" oninput="filterBoardsList()">
+  <button type="reset" class="p-search-box__reset" alt="reset" onclick="prefillInput()"><i class="p-icon--close"></i></button>
+  <button type="button" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
+</form>
+<ul id="boardsList" class="p-list--divided is-split">
+  {% for page in pages %}
+    <li class="js-list p-list__item">
+      <h3>{{ page.title|safe }}</h3>
+      {% comment %} Do not display tags on grid items {% endcomment %}
+      <p class="board-tags" style="display:none;">{{ page.tags }}</p>
+      <ul class="p-list">
+        {% for d in page.distributions %}
+        <li class="p-list__item is-ticked" style="border-bottom: none">
+          {% comment %}
+          "d" can be a string (internal link) or a dict (external link)
+          for example:
 
-                  distributions:
-                    - Ubuntu Core 16
-                    - external: Ubuntu Fridge 16.04 LTS
-                      link: https://install-instructions.com
-                  {% endcomment %}
-                  {% if d.external %}
-                    <a href="{{ d.link }}" class="external"> {{ d.external }}</a>
-                  {% else %}
-                    {% comment %}
-                    Truncate and slugify title into fragment for internal links:
-                    "Ubuntu Fridge 20.04 LTS" -> "page.path/#ubuntu-fridge"
-                    {% endcomment %}
-                    <a href="{{ page.path }}#{{ d|truncatewords:2|slugify }}"> {{ d }}</a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
+          distributions:
+            - Ubuntu Core 16
+            - external: Ubuntu Fridge 16.04 LTS
+              link: https://install-instructions.com
+          {% endcomment %}
+          {% if d.external %}
+            <a href="{{ d.link }}" class="external"> {{ d.external }}</a>
+          {% else %}
+            {% comment %}
+            Truncate and slugify title into fragment for internal links:
+            "Ubuntu Fridge 20.04 LTS" -> "page.path/#ubuntu-fridge"
+            {% endcomment %}
+            <a href="{{ page.path }}#{{ d|truncatewords:2|slugify }}"> {{ d }}</a>
+          {% endif %}
         </li>
-    {% endfor %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
 </ul>
 
 <script>
@@ -55,8 +57,9 @@ function filterBoardsList() {
     var input, filter, ul, li, a, i, tags, h3;
     input = document.getElementById('searchBoards');
     filter = input.value.toUpperCase();
-    ul = document.getElementById("boardsGrid");
-    li = ul.getElementsByClassName('grid-list__item');
+    ul = document.getElementById("boardsList");
+    li = ul.getElementsByClassName('js-list');
+    console.log(li);
     for (i = 0; i < li.length; i++) {
         h3 = li[i].getElementsByTagName("h3")[0].innerText;
         tags = li[i].getElementsByClassName("board-tags")[0].innerText;

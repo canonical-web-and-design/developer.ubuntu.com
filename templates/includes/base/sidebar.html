@@ -1,43 +1,32 @@
-<nav class="p-sidebar-nav__nav">
-    {% sidebar_nav %}
+<nav class="p-navigation--sidebar">
+  {% sidebar_nav %}
 </nav>
 
 <script>
-    (function navigationInit() {
-        function expandCollapse(clickEvent) {
-            var item = clickEvent.target;
-            var link = item.querySelector('[href]');
-            var linkWidth = link.offsetWidth;
-            var clickOffset = clickEvent.offsetX;
 
-            if (clickOffset > linkWidth) {
-                collapsed = ! item.classList.toggle('expanded');
-                item.classList.toggle('collapsed', collapsed);
-            }
-        }
+// Sidebar accordion sections
+var sidenavButtons = document.querySelectorAll('.js-sidenav-button');
+sidenavButtons.forEach(function(element) {
+  element.addEventListener("click", function(e) {
+    e.preventDefault();
 
-        var items = document.querySelectorAll('.p-sidebar-nav__nav ul li');
+    if (this.parentNode.nextSibling) {
+      this.parentNode.classList.toggle("is-selected");
+    }
+  }, false);
+});
 
-        for(var num = 0; num < items.length; num++) {
-            var item = items[num];
-            var link = item.querySelector('[href]');
+// Sidebar menu overlay toggle
+var mobileMenuBtns = document.querySelectorAll('.js-mobile-menu-btn');
+mobileMenuBtns.forEach(function(element) {
+  element.addEventListener("click", function(e) {
+    e.preventDefault();
 
-            if (! link) {continue;}
+    this.classList.toggle("p-icon--close");
+    this.classList.toggle("p-icon--menu");
 
-            // Get paths, removing leading and trailing slashes for consistency
-            linkPath = link.pathname.replace(/(^\/|\/$)/g, "");
-            currentPath = location.pathname.replace(/(^\/|\/$)/g, "");
-
-            // For lists with child lists, add expand/collapse functionality
-            if (item.querySelector('ul')) {
-                if (currentPath.startsWith(linkPath)) {
-                    item.classList.add('expanded');
-                } else {
-                    item.classList.add('collapsed');
-                }
-
-                item.addEventListener('click', expandCollapse);
-            }
-        }
-    })();
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle("u-hide");
+  });
+});
 </script>

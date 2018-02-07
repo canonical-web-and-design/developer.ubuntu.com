@@ -53,9 +53,9 @@ Once downloaded, you can verify the integrity of the file by following [this tut
 
  1. Position the Compute Module on the IO board
  * Attach the USB hub, RJ45 adaptor, keyboard and monitor (HDMI) to the board
- * Ensure the `J4` switch (`USB SLAVE BOOT ENABLE`) on the IO board is in the `EN` position
+ * Ensure the `J4` switch (`USB SLAVE BOOT ENABLE`) on the IO board is in the `EN` position             
      ![J4](https://assets.ubuntu.com/v1/55329e6f-CM3_J4.JPG?w=300)
- * With the first micro USB to USB cable, plug the host machine into the IO Board USB slave port (`J15`)
+ * With the first micro USB to USB cable, plug the host machine into the IO Board USB slave port (`J15`)   
      ![J15](https://assets.ubuntu.com/v1/2073d0aa-CM3_J15.JPG?w=300)
  * With the second micro USB to USB cable, power on the IO board.
 

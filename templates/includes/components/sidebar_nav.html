@@ -1,40 +1,63 @@
-<ul id="navigation" class="p-sidebar-nav__list u-clearfix {% if not is_root %}js-mobile-no-collapse{% endif %}">
-    {% for item in sitemap %}
-        {% if item.type == 'back' %}
-
-            <li class="p-sidebar-nav__back-link">
-                <a href="{{ item.path }}"><svg xmlns="//www.w3.org/2000/svg" height="13" width="6" viewBox="0 0 3 10"><g fill-rule="evenodd" fill="none"><g fill="#333"><path class="chevron-left" d="M3 10V8.25l-.062-.09c-.186-.266-.368-.54-.545-.823-.225-.36-.436-.727-.633-1.104C1.57 5.87 1.337 5.36 1.182 5c.155-.36.387-.87.578-1.234.197-.376.408-.744.633-1.104.177-.284.36-.556.545-.823L3 1.75V0l-.584.77c-.324.45-.637.906-.927 1.374-.326.523-.617 1.03-.874 1.524-.238.456-.432.88-.56 1.196L0 5l.056.136c.133.324.323.74.56 1.195.258.496.55 1.004.873 1.526.29.468.6.926.925 1.376L3 10z"/></g></g></svg> Back to homepage</a>
-
-        {% elif item.type == 'heading' %}
-
-            <li class="p-sidebar-nav__group">
-                <h2 class="p-sidebar-nav__title"><a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a></h2>
-            </li>
-
-        {% elif item.type == 'section' %}
-
-        {% else %}
-
-            <li class="p-sidebar-nav__group">
-                <a href="{{ item.path }}" class="sidebar-nav__title-link {{ item.class|default:"" }}">{{ item.title }}</a>
-
-        {% endif %}
-            {% if item.children %}
-                {% if not item.type == 'heading' %}<ul class="p-sidebar-nav__secondary">{% endif %}
-                {% for item in item.children %}
-                    <li class="p-sidebar-nav__group"><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a>
-                        {% if item.children %}
-                        <ul class="p-sidebar-nav__tertiary">
-                            {% for item in item.children %}
-                                <li><a href="{{ item.path }}" class="{{ item.class|default:"" }}">{{ item.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-                {% if not item.type == 'heading' %}</ul>{% endif %}
-            {% endif %}
-            {% if not item.type == 'heading' %}</li>{% endif %}
-
-    {% endfor %}
-</ul>
+<header id="navigation" role="banner">
+  <div class="p-navigation__banner">
+    <div class="row">
+      <div class="sidebar__cta u-align--right">
+        <ul class="p-inline-list u-no-margin--top">
+          <li class="p-inline-list__item">
+            <i class="p-icon--menu js-mobile-menu-btn" aria-hidden="false"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="sidebar" class="sidebar__content u-no-margin--top u-no-padding--bottom u-hide" aria-hidden="true">
+  <ul class="p-list sidebar__first-level u-no-margin--top" data-js="sidebar-first-level">
+  {% for item in sitemap %}
+    {% if item.type == 'back' %}
+    <li>
+      <a class="sidebar__link" href="{{ item.path }}">
+        Back to homepage
+      </a>
+    </li>
+    {% elif item.children %}
+    <li>
+      <a class="sidebar__link{% for child in item.children %}{% if child.class == 'active' or child.class == 'active-parent' or item.active == True %} is-selected{% endif %}{% endfor %}" href="{{ item.path }}">
+        {{ item.title }}<i class="p-icon--plus js-sidenav-button"></i><i class="p-icon--minus js-sidenav-button"></i>
+      </a>
+      <ul class="sidebar__second-level">
+      {% for child in item.children %}
+      {% if child.children %}
+      <li>
+        <a class="sidebar__link{% for grandchild in child.children %}{% if grandchild.class == 'active' or grandchild.class == 'active-parent' or child.active == True %} is-selected{% endif %}{% endfor %}" href="{{ child.path }}">
+          {{ child.title }}<i class="p-icon--plus js-sidenav-button"></i><i class="p-icon--minus js-sidenav-button"></i>
+        </a>
+        <ul class="sidebar__third-level">
+          {% for grandchild in child.children %}
+          <li>
+            <a class="sidebar__link{% if grandchild.class == 'active' or grandchild.class == 'active-parent' %} is-selected{% endif %}" href="{{ grandchild.path }}">
+              {{ grandchild.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% else %}
+        <li>
+          <a class="sidebar__link{% if child.class == 'active' or child.class == 'active-parent' %} is-selected{% endif %}" href="{{ child.path }}">
+            {{ child.title }}
+          </a>
+        </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </li>
+    {% else %}
+    <li>
+      <a class="sidebar__link{% if item.class == 'active' or item.class == 'active-parent' %} is-selected{% endif %}" href="{{ item.path }}">{{ item.title }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+  <hr>
+</div>
