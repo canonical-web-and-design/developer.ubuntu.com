@@ -5,7 +5,7 @@ description: These steps will walk you through installing a developer environmen
 
 # Developer setup
 
-1. [Developing on target](#developing-on-target)
+1. [Developing on the target device](#developing-on-the-target-device)
     * [Installing and using developer tools](#installing-and-using-developer-tools)
 2. [Testing your snaps locally](#testing-your-snaps-locally)
     * [snap install](#snap-install)
@@ -17,7 +17,7 @@ description: These steps will walk you through installing a developer environmen
 4. [Platform specific](#platform-specific)
     * [RealSense snaps](#realsense-snaps-(intel-joule)) (Intel Joule)
 
-## Developing on target
+## Developing on the target device
 
 You can use any Ubuntu 16.04 LTS workstation to develop a snap using [snapcraft](http://snapcraft.io/docs/build-snaps/), then build for another architecture [using Launchpad or a chroot setup](http://snapcraft.io/docs/build-snaps/build-for-another-arch), but developing on the target device itself is convenient when testing device specific features and lets you iterate faster.
 
