@@ -1,5 +1,5 @@
 # [generated] Bracketed sections updated by Yeoman generator
-# generator-canonical-webteam@2.4.1
+# generator-canonical-webteam@3.0.0
 
 # [os] OS & editor files
 Desktop.ini
@@ -32,7 +32,6 @@ pids
 node_modules/
 vendor/
 bower_components/
-vendor/
 # Normally lockfiles would be committed, but we use yarn instead of NPM for locking dependencies
 package-lock.json
 
