@@ -15,9 +15,7 @@ Once you have Ubuntu Core running on your desired device, SSH into it and instal
 
 ``` bash
 sudo snap install mir-kiosk
-sudo snap install mir-kiosk-apps --edge
-sudo snap connect mir-kiosk-apps:wayland-socket-dir mir-kiosk:wayland-socket-dir
-sudo snap start mir-kiosk-apps
+sudo snap install mir-kiosk-apps --beta
 ```
 
 Once this is done, the photoviewer application should start.
@@ -52,26 +50,20 @@ This document targets Ubuntu Core devices and assumes your host machine is runni
 
 ### Prerequisites
 
-While you can install the mir snaps on a bare metal install of Ubuntu Core following these instructions, this example focuses on using a virtual machine to help people have a quick experience without needing a separate device.
-
-Make sure "Virtual Machine Manager" is installed to have a local display for your VM.
-
-``` bash
-sudo apt install virt-manager
-```
-
-You will also need an Ubuntu SSO account to create the first user on the Ubuntu Core installation during first boot.
+You will need an Ubuntu SSO account to create the first user on the Ubuntu Core installation during first boot.
 
 1. Start by creating an [Ubuntu SSO account](https://login.ubuntu.com)
 2. Import an SSH Key into your Ubuntu SSO account [on this page](https://login.ubuntu.com/ssh-keys). Instructions to generate an SSH Key on your computer can be found [here](https://help.ubuntu.com/community/SSH/OpenSSH/Keys)
 
 ### 1. Download the Ubuntu Core image and set up your VM environment
 
+While you can install the mir snaps on a bare metal install of Ubuntu Core following these instructions, this example focuses on using a virtual machine to help people have a quick experience without needing a separate device.
+
 Download the latest stable Ubuntu Core image for amd64 and uncompress it with the following commands:
 
 ```bash
 sudo snap install --beta ubuntu-core-vm --devmode
-sudo ubuntu-core-vm init edge
+sudo ubuntu-core-vm init
 sudo ubuntu-core-vm
 ```
 
@@ -131,24 +123,18 @@ Once this is done, the photoviewer application should start automatically.
 
 ### Tips
 
-* Check the target's systemd journal `journalctl` if something isn’t launching or running as expected.
+* Check the logs `snap logs mir-kiosk-apps` if something isn’t launching or running as expected.
 
 * To stop or start the app snap from your ssh session:
 ```bash
-sudo snap stop snap.mir-kiosk-apps
-sudo snap start snap.mir-kiosk-apps
+sudo snap stop mir-kiosk-apps
+sudo snap start mir-kiosk-apps
 ```
 
 * To stop or start the Mir snap:
 ```bash
-sudo snap stop snap.mir-kiosk
-sudo snap start snap.mir-kiosk
-```
-
-* You can check interfaces are connecting with:
-
-```bash
-snap interfaces
+sudo snap stop mir-kiosk
+sudo snap start mir-kiosk
 ```
 
 ### Resources
