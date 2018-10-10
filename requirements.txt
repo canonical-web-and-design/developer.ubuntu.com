@@ -8,6 +8,7 @@ django-template-finder-view==0.3
 django-unslashed==0.3.0
 django-yaml-redirects==0.5.4
 statsd<3.3.0
+prometheus_client==0.3.1
 talisker==0.9.14
 gunicorn[gevent]
 feedparser==5.2.1
