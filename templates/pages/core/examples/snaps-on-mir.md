@@ -139,7 +139,13 @@ sudo snap start mir-kiosk
 
 ### Resources
 
-The projects used for building mir-kiosk and mir-kiosk-apps are located here:
+#### The projects used for building mir-kiosk and mir-kiosk-apps
+  * [https://github.com/MirServer/mir-kiosk](https://github.com/MirServer/mir-kiosk)
+  * [https://github.com/MirServer/mir-kiosk-apps](https://github.com/MirServer/mir-kiosk-apps)
 
-* [https://github.com/MirServer/mir-kiosk-apps](https://github.com/MirServer/mir-kiosk-apps)
-* [https://github.com/MirServer/mir-kiosk](https://github.com/MirServer/mir-kiosk)
+#### Tutorials for building kiosk snaps
+  * [Make a secure Ubuntu kiosk](https://tutorials.ubuntu.com/tutorial/secure-ubuntu-kiosk)
+  * [Run a Web Kiosk/Web Display on Ubuntu Core](https://tutorials.ubuntu.com/tutorial/ubuntu-web-kiosk)
+  * [Make a Wayland-native Kiosk snap](https://tutorials.ubuntu.com/tutorial/wayland-kiosk)
+  * [Make a X11-based Kiosk Snap](https://tutorials.ubuntu.com/tutorial/x11-kiosk)
+  * [Make a HTML5/Electron-based Kiosk Snap](https://tutorials.ubuntu.com/tutorial/electron-kiosk)
