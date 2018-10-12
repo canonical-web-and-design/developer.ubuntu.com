@@ -9,7 +9,7 @@ django-unslashed==0.3.0
 django-yaml-redirects==0.5.4
 statsd<3.3.0
 prometheus_client==0.3.1
-talisker==0.9.14
+talisker==0.9.16
 gunicorn[gevent]
 feedparser==5.2.1
 lockfile==0.12.2
