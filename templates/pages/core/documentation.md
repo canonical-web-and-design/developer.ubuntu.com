@@ -17,4 +17,4 @@ Ubuntu Core is an important revolutionary step for Ubuntu. While it builds upon 
 
 This document outlines the differences between the traditional Linux distribution model and Ubuntu Core from a security point of view.
 
-[Download the Ubuntu Core 16 - Security Whitepaper (.pdf)](/static/resources/ubuntu-core-16-security-whitepaper.pdf)
+[Download the Ubuntu Core - Security Whitepaper (.pdf)](/static/resources/ubuntu-core-security-whitepaper.pdf)
