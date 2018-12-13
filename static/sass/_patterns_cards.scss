@@ -9,15 +9,15 @@
     > .p-card__content {
       border-top: 1px dotted $color-mid-light;
       flex-shrink: 0;
-      margin: 0 $sp-x-small;
-      padding: $sp-x-small;
+      margin: 0 $sp-small;
+      padding: $sp-small;
 
       > h3 {
-        margin: $sp-x-small 0;
+        margin: $sp-small 0;
       }
 
       > p {
-        margin: $sp-x-small 0;
+        margin: $sp-small 0;
       }
 
       > a {
@@ -34,9 +34,9 @@
     > .p-card__footer {
       border-top: 1px dotted $color-mid-light;
       font-size: .875rem;
-      margin: auto $sp-x-small 0;
+      margin: auto $sp-small 0;
       max-width: inherit;
-      padding: $sp-medium $sp-x-small;
+      padding: $sp-medium $sp-small;
     }
   }
 
@@ -56,6 +56,7 @@
   .p-card__header--insights {
     border-radius: 2px;
     border-top: 3px solid $color-mid-light;
+    margin-bottom: 0;
     padding: .875rem $sp-medium;
   }
 
@@ -109,22 +110,27 @@
 
     &__difficulty--1 {
       background-position-x: -60px;
+      margin-bottom: 0;
     }
 
     &__difficulty--2 {
       background-position-x: -45px;
+      margin-bottom: 0;
     }
 
     &__difficulty--3 {
       background-position-x: -30px;
+      margin-bottom: 0;
     }
 
     &__difficulty--4 {
       background-position-x: -15px;
+      margin-bottom: 0;
     }
 
     &__difficulty--5 {
       background-position-x: -0;
+      margin-bottom: 0;
     }
   }
 }

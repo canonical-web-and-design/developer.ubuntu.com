@@ -8,12 +8,12 @@
       {% for item in feed %}
         <div class="col-4 p-card--post">
           <header class="p-card__header--insights">
-            <h3 class="p-muted-heading">
+            <h3 class="p-muted-heading u-no-margin--bottom">
               {{ item.category }}
             </h3>
           </header>
           <div class="p-card__content">
-            <h3 class="p-heading--five">
+            <h3>
               <a class="p-card__link" href="{{ item.link }}" title="{{ item.title }}">
                 {{ item.title | safe }}
               </a>
