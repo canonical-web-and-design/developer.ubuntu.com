@@ -1,9 +1,9 @@
 <form class="p-search-box" style="max-width: 35em" onsubmit="return false">
   <input type="search" id="searchBoards" class="p-search-box__input" name="search" placeholder="Search boards" oninput="filterBoardsList()">
-  <button type="reset" class="p-search-box__reset" alt="reset" onclick="prefillInput()"><i class="p-icon--close"></i></button>
+  <button type="reset" class="p-search-box__reset" alt="reset" onclick="prefillInput()" style="margin-right: 0px;"><i class="p-icon--close"></i></button>
   <button type="button" class="p-search-box__button" alt="search"><i class="p-icon--search"></i></button>
 </form>
-<ul id="boardsList" class="p-list--divided is-split">
+<ul id="boardsList" class="p-list is-split">
   {% for page in pages %}
     <li class="js-list p-list__item">
       <h3>{{ page.title|safe }}</h3>
