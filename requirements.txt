@@ -19,5 +19,5 @@ python-dateutil==2.6.0
 python-frontmatter==0.2.1
 PyYAML==3.12
 requests==2.21.0
-requests-cache==0.4.12
+requests-cache==0.4.13
 ubuntudesign.gsa==1.0.1
