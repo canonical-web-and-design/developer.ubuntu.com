@@ -15,7 +15,7 @@ markdown==2.6.7
 mdx-anchors-away==1.0.1
 mdx-callouts==1.0.0
 mdx-foldouts==1.0.0
-python-dateutil==2.6.0
+python-dateutil==2.7.5
 python-frontmatter==0.2.1
 PyYAML==3.12
 requests==2.21.0
