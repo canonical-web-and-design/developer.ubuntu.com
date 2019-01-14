@@ -17,7 +17,7 @@ mdx-callouts==1.0.0
 mdx-foldouts==1.0.0
 python-dateutil==2.6.0
 python-frontmatter==0.2.1
-PyYAML==3.12
+PyYAML==3.13
 requests==2.21.0
 requests-cache==0.4.12
 ubuntudesign.gsa==1.0.1
