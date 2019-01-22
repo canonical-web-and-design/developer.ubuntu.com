@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "node-sass": "4.9.0",
+    "node-sass": "4.11.0",
     "sass-lint": "1.12.1",
     "vanilla-framework": "1.8.0"
   },
@@ -16,7 +16,7 @@
     "sass-lint": "1.12.1",
     "postcss-cli": "4.1.1",
     "global-nav": "0.2.3",
-    "node-sass": "4.9.0",
+    "node-sass": "4.11.0",
     "cssnano": "3.10.0",
     "autoprefixer": "6.7.7"
   }
