@@ -8,7 +8,9 @@
     "build": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --use cssnano --dir static/minified 'static/css/**/*.css'",
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
-    "test": "sass-lint static/**/*.scss --verbose --no-exit",
+    "test": "yarn run build && yarn run lint-scss && yarn run lint-py",
+    "lint-scss": "sass-lint static/**/*.scss --verbose --no-exit",
+    "lint-py": "flake8 webapp && black --check --line-length 79 webapp",
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle"
   },
   "dependencies": {
