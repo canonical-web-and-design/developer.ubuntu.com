@@ -7,7 +7,7 @@ from markdown.extensions.toc import (
     stashedHTML2text,
     TocExtension,
     TocTreeprocessor,
-    unique
+    unique,
 )
 
 
@@ -28,25 +28,18 @@ class VanillaTocTreeprocessor(TocTreeprocessor):
 
         toc_items = []
         for el in doc.iter():
-            if isinstance(el.tag, string_type) and re.match(
-                "[hH]2",
-                el.tag
-            ):
+            if isinstance(el.tag, string_type) and re.match("[hH]2", el.tag):
                 self.set_level(el)
-                text = ''.join(el.itertext()).strip()
+                text = "".join(el.itertext()).strip()
 
                 # Do not override pre-existing ids
                 if "id" not in el.attrib:
                     innertext = stashedHTML2text(text, self.markdown)
                     el.attrib["id"] = unique(
-                        self.slugify(innertext, self.sep),
-                        used_ids
+                        self.slugify(innertext, self.sep), used_ids
                     )
 
-                toc_items.append({
-                    'id': el.attrib["id"],
-                    'name': text
-                })
+                toc_items.append({"id": el.attrib["id"], "name": text})
 
                 if self.use_anchors:
                     self.add_anchor(el, el.attrib["id"])

@@ -14,11 +14,7 @@ find_template_loader = Engine.get_default().find_template_loader
 
 
 def make_origin(display_name, loader, name, dirs):
-    return Origin(
-        name=display_name,
-        template_name=name,
-        loader=loader,
-    )
+    return Origin(name=display_name, template_name=name, loader=loader)
 
 
 class MarkdownLoader(Loader):
@@ -54,12 +50,9 @@ class MarkdownLoader(Loader):
         Look for template through loaders, including checking if the source
         is a folder with an index file.
         """
-        template_name_parts = template_name.split('.md')
-        template_name_index = ''.join([template_name_parts[0], '/index.md'])
-        template_names = [
-            template_name,
-            template_name_index,
-        ]
+        template_name_parts = template_name.split(".md")
+        template_name_index = "".join([template_name_parts[0], "/index.md"])
+        template_names = [template_name, template_name_index]
         for loader in self.loaders:
             for template_name in template_names:
                 try:
@@ -73,8 +66,8 @@ class MarkdownLoader(Loader):
     def load_template(self, template_name, template_dirs=None):
         key = template_name
         if template_dirs:
-            dirs_hash = hashlib.sha1('|'.join(template_dirs)).hexdigest()
-            key = '-'.join([template_name, dirs_hash])
+            dirs_hash = hashlib.sha1("|".join(template_dirs)).hexdigest()
+            key = "-".join([template_name, dirs_hash])
 
         if settings.DEBUG or key not in self.template_cache:
             template, origin = self._generate_template(
@@ -84,7 +77,7 @@ class MarkdownLoader(Loader):
         return self.template_cache[key], None
 
     def _generate_template(self, template_name, template_dirs=None):
-        if not os.path.splitext(template_name)[1] in ('.md',):
+        if not os.path.splitext(template_name)[1] in (".md",):
             return self.find_template(template_name, template_dirs)
 
         try:
@@ -102,7 +95,7 @@ class MarkdownLoader(Loader):
         except NotImplementedError:
             template, origin = self.find_template(template_name, template_dirs)
 
-        if not hasattr(template, 'render'):
+        if not hasattr(template, "render"):
             try:
                 template = Template(source, origin, template_name)
             except (TemplateDoesNotExist, UnboundLocalError):
