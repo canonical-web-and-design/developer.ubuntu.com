@@ -21,3 +21,8 @@ PyYAML==3.13
 requests==2.21.0
 requests-cache==0.4.12
 ubuntudesign.gsa==1.0.1
+
+# Development dependencies
+flake8
+black
+

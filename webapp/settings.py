@@ -3,6 +3,7 @@ Django project settings
 """
 
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # This will set the SECRET_KEY to "no_secret", unless the SECRET_KEY
@@ -20,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # At this point you should ensure the SECRET_KEY environment variable is set
 # in the Production deployment with a secure key, e.g. from
 # http://www.miniwebtool.com/django-secret-key-generator/
-SECRET_KEY = os.environ.get('SECRET_KEY', 'no_secret')
+SECRET_KEY = os.environ.get("SECRET_KEY", "no_secret")
 
-ALLOWED_HOSTS = ['*']
-DEBUG = os.environ.get('DJANGO_DEBUG', 'false').lower() == 'true'
+ALLOWED_HOSTS = ["*"]
+DEBUG = os.environ.get("DJANGO_DEBUG", "false").lower() == "true"
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = "en-us"
+TIME_ZONE = "UTC"
 USE_I18N = False
 USE_L10N = False
 USE_TZ = False
@@ -37,64 +38,62 @@ USE_TZ = False
 # https://github.com/docker/docker/issues/23910
 
 # SEARCH_SERVER_URL = 'http://butlerov.internal/search'
-SEARCH_SERVER_URL = 'http://10.22.112.8/search'
+SEARCH_SERVER_URL = "http://10.22.112.8/search"
 SEARCH_DOMAINS = [
-    'developer.ubuntu.com',
-    'docs.ubuntu.com',
-    'tutorials.ubuntu.com',
+    "developer.ubuntu.com",
+    "docs.ubuntu.com",
+    "tutorials.ubuntu.com",
 ]
-SEARCH_LANGUAGE = '-lang_zh-CN'
+SEARCH_LANGUAGE = "-lang_zh-CN"
 
-WSGI_APPLICATION = 'webapp.wsgi.application'
-ROOT_URLCONF = 'webapp.urls'
+WSGI_APPLICATION = "webapp.wsgi.application"
+ROOT_URLCONF = "webapp.urls"
 APPEND_SLASH = False
 REMOVE_SLASH = True
 STATIC_ROOT = "static"
-STATIC_URL = '/static/'
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-TEMPLATE_FINDER_PATH = 'pages'
+STATIC_URL = "/static/"
+TEMPLATE_PATH = os.path.join(BASE_DIR, "templates")
+TEMPLATE_FINDER_PATH = "pages"
 
 WHITENOISE_ALLOW_ALL_ORIGINS = False
 
-ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
+ASSET_SERVER_URL = "https://assets.ubuntu.com/v1/"
 
 # See https://docs.djangoproject.com/en/dev/ref/contrib/
 INSTALLED_APPS = [
-    'webapp',
-    'django.contrib.staticfiles',
-    'django_versioned_static_url',
+    "webapp",
+    "django.contrib.staticfiles",
+    "django_versioned_static_url",
 ]
 
-MIDDLEWARE_CLASSES = [
-    'unslashed.middleware.RemoveSlashMiddleware',
-]
+MIDDLEWARE_CLASSES = ["unslashed.middleware.RemoveSlashMiddleware"]
 
-STATICFILES_FINDERS = [
-    'django_static_root_finder.finders.StaticRootFinder'
-]
+STATICFILES_FINDERS = ["django_static_root_finder.finders.StaticRootFinder"]
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_PATH],
-        'OPTIONS': {
-            'builtins': [
-                'canonicalwebteam.get_feeds.templatetags',
-                'webapp.templatetags',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [TEMPLATE_PATH],
+        "OPTIONS": {
+            "builtins": [
+                "canonicalwebteam.get_feeds.templatetags",
+                "webapp.templatetags",
             ],
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django_asset_server_url.asset_server_url',
+            "context_processors": [
+                "django.template.context_processors.request",
+                "django_asset_server_url.asset_server_url",
             ],
-            'loaders': [
-                ('webapp.loaders.MarkdownLoader',
+            "loaders": [
+                (
+                    "webapp.loaders.MarkdownLoader",
                     (
-                        'django.template.loaders.filesystem.Loader',
-                        'django.template.loaders.app_directories.Loader',
-                    )),
+                        "django.template.loaders.filesystem.Loader",
+                        "django.template.loaders.app_directories.Loader",
+                    ),
+                )
             ],
         },
-    },
+    }
 ]
 
 LOGGING_CONFIG = None

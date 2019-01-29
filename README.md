@@ -1,7 +1,7 @@
 developer.ubuntu.com codebase
 ===
 
-[![Build Status](https://travis-ci.org/ubuntudesign/developer.ubuntu.com.svg?branch=master)](https://travis-ci.org/ubuntudesign/developer.ubuntu.com)
+[![CircleCI build status](https://circleci.com/gh/canonical-websites/developer.ubuntu.com.svg?style=shield)](https://circleci.com/gh/canonical-websites/developer.ubuntu.com)
 
 This is the website codebase for developer.ubuntu.com, based on [django-blueprint](https://github.com/ubuntudesign/django-blueprint).
 

@@ -10,47 +10,37 @@ from webapp.views import custom_404, custom_500, MarkdownView
 # Match any redirects first
 urlpatterns = load_redirects()
 
-default_markdown_template = 'includes/base_markdown.html'
+default_markdown_template = "includes/base_markdown.html"
 
 # Try to find templates
 urlpatterns += [
-    url(r'^search/?$', SearchView.as_view(template_name="pages/search.html")),
+    url(r"^search/?$", SearchView.as_view(template_name="pages/search.html")),
     url(
-        r'^(?P<path>core(/.*)?)$',
+        r"^(?P<path>core(/.*)?)$",
         MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
+        {"template_name": default_markdown_template},
     ),
     url(
-        r'^(?P<path>community-resources(/.*)?)$',
+        r"^(?P<path>community-resources(/.*)?)$",
         MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
+        {"template_name": default_markdown_template},
     ),
     url(
-        r'^(?P<path>snapcraft(/.*)?)$',
+        r"^(?P<path>snapcraft(/.*)?)$",
         MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
+        {"template_name": default_markdown_template},
     ),
     url(
-        r'^(?P<path>target-platforms(/.*)?)$',
+        r"^(?P<path>target-platforms(/.*)?)$",
         MarkdownView.as_view(),
-        {
-            'template_name': default_markdown_template
-        }
+        {"template_name": default_markdown_template},
     ),
     url(
-        r'^$',
+        r"^$",
         MarkdownView.as_view(),
-        {
-            'template_name': 'includes/homepage_markdown.html'
-        }
+        {"template_name": "includes/homepage_markdown.html"},
     ),
-    url(r'^(?P<template>.*)/?$', TemplateFinder.as_view()),
+    url(r"^(?P<template>.*)/?$", TemplateFinder.as_view()),
 ]
 
 # Error handlers
