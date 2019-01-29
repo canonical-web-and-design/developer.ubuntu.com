@@ -8,19 +8,13 @@
 @import 'vanilla-framework/scss/build';
 @include vanilla;
 
-// Vendors
-@import
-'../global-nav/src/sass/main';
-
 // Patterns
 @import
 'patterns_cards',
-'patterns_global-nav',
 'patterns_matrix',
 'patterns_navigation';
 
 @include developer-p-card;
-@include developer-p-global-nav;
 @include developer-p-matrix;
 @include developer-p-navigation;
 
