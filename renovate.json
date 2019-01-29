@@ -5,6 +5,11 @@
   ],
   "packageRules": [
     {
+      "managers": ["pip"],
+      "packageNames": ["markdown"],
+      "allowedVersions": "<3"
+    },
+    {
       "depTypeList": ["devDependencies"],
       "extends": [":automergeMinor"]
     },
