@@ -10,6 +10,11 @@
       "allowedVersions": "<3"
     },
     {
+      "managers": ["pip"],
+      "packageNames": ["django"],
+      "allowedVersions": "<2"
+    },
+    {
       "depTypeList": ["devDependencies"],
       "extends": [":automergeMinor"]
     },
