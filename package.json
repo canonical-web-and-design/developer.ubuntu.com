@@ -5,7 +5,9 @@
     "vanilla-framework": "1.8.1"
   },
   "scripts": {
-    "build": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --use cssnano --dir static/minified 'static/css/**/*.css'",
+    "build": "yarn run build-css && yarn run build-js",
+    "build-css": "node-sass --include-path node_modules static/sass --output static/css && postcss --use autoprefixer --replace 'static/css/**/*.css' && postcss --use cssnano --dir static/minified 'static/css/**/*.css'",
+    "build-js": "mkdir -p static/js/modules && cp node_modules/global-nav/dist/index.js static/js/modules/global-nav.js",
     "watch": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "serve": "./entrypoint 0.0.0.0:${PORT}",
     "test": "yarn run build && yarn run lint-scss && yarn run lint-py",
@@ -17,7 +19,7 @@
     "watch-cli": "0.2.3",
     "sass-lint": "1.12.1",
     "postcss-cli": "6.1.1",
-    "global-nav": "0.2.3",
+    "global-nav": "1.2.1",
     "node-sass": "4.11.0",
     "cssnano": "4.1.8",
     "autoprefixer": "9.4.7"
