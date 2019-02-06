@@ -5,12 +5,12 @@
   ],
   "packageRules": [
     {
-      "managers": ["pip"],
+      "managers": ["pip_requirements"],
       "packageNames": ["markdown"],
       "allowedVersions": "<3"
     },
     {
-      "managers": ["pip"],
+      "managers": ["pip_requirements"],
       "packageNames": ["django"],
       "allowedVersions": "<2"
     },
