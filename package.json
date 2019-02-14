@@ -19,9 +19,9 @@
     "watch-cli": "0.2.3",
     "sass-lint": "1.12.1",
     "postcss-cli": "6.1.1",
-    "global-nav": "2.0.0",
+    "global-nav": "2.0.1",
     "node-sass": "4.11.0",
-    "cssnano": "4.1.8",
+    "cssnano": "4.1.9",
     "autoprefixer": "9.4.7"
   }
 }
