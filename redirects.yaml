@@ -15,6 +15,10 @@
 (en/|zh-cn/)?snappy/guides/mir-snaps/?: /core/examples/snaps-on-mir
 (en/|zh-cn/)?snappy/build-apps/? : /snapcraft
 (en/|zh-cn/)?snappy/start/raspberry-pi-2 : /core/get-started/raspberry-pi-2-3
+core/get-started/raspberry-pi-2-3/? : https://www.ubuntu.com/download/iot/raspberry-pi-2-3
+core/get-started/dragonboard-410c/? : https://www.ubuntu.com/download/iot/qualcomm-dragonboard-410c
+core/get-started/intel-nuc/? : https://www.ubuntu.com/download/iot/intel-nuc
+core/get-started/kvm/? : https://www.ubuntu.com/download/iot/kvm
 
 # Boards
 intel/? : /target-platforms/boards#intel
