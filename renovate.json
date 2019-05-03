@@ -8,6 +8,16 @@
     {
       "depTypeList": ["devDependencies"],
       "extends": [":automergeMinor"]
+    },
+    {
+      "managers": ["pip_requirements"],
+      "packageNames": ["markdown"],
+      "allowedVersions": "<3"
+    },
+    {
+      "managers": ["pip_requirements"],
+      "packageNames": ["django"],
+      "allowedVersions": "<2"
     }
   ]
 }
