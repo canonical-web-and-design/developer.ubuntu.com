@@ -1,4 +1,10 @@
-developer.ubuntu.com codebase
+***Retired and archived***
+
+*This project is being archived, https://developer.ubuntu.com is being retired, and all URLs are being [redirected elsewhere](https://gist.github.com/nottrobin/512101834d65aae7ad4bc42566f0ce77)*
+
+---
+
+developer.ubuntu.com legacy codebase
 ===
 
 [![CircleCI build status](https://circleci.com/gh/canonical-websites/developer.ubuntu.com.svg?style=shield)](https://circleci.com/gh/canonical-websites/developer.ubuntu.com)
